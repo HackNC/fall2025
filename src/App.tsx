@@ -114,9 +114,14 @@ const App: React.FC = () => {
                 <p className="text-gray-300 text-lg leading-relaxed mb-8">
                   You will have access to hands-on tech workshops, sponsor networking, as well as exciting talks about the awesome things happening right now with computer science and technology - not to mention all of the free food, shirts, stickers, and swag!
                 </p>
-                <button className="inline-flex items-center bg-gradient-to-r from-purple-500 to-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:from-purple-600 hover:to-blue-600 transition-all transform hover:scale-105 shadow-lg">
+                <a 
+                  href="https://hacknc-2024.devpost.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center bg-gradient-to-r from-purple-500 to-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:from-purple-600 hover:to-blue-600 transition-all transform hover:scale-105 shadow-lg"
+                >
                   Explore Past Projects <ExternalLink className="ml-2" size={18} />
-                </button>
+                </a>
               </div>
               <div className="flex justify-center">
                 <div className="w-80 h-80 bg-gradient-to-br from-purple-400 via-blue-500 to-indigo-600 rounded-full flex items-center justify-center">
