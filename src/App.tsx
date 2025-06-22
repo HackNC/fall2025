@@ -42,10 +42,10 @@ const App: React.FC = () => {
     }
   ];
 
-  const sponsors: string[] = [
-    'Bandwidth', 'Capital One', 'Infosys', 'Fidelity', 
-    'Lowes', 'Pendo', 'Nutanix', 'ResNET'
-  ];
+  // const sponsors: string[] = [
+  //   'Bandwidth', 'Capital One', 'Infosys', 'Fidelity', 
+  //   'Lowes', 'Pendo', 'Nutanix', 'ResNET'
+  // ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
@@ -97,10 +97,7 @@ const App: React.FC = () => {
 
           <div className="space-y-4 sm:space-y-0 sm:flex sm:justify-center sm:space-x-4">
             <button className="inline-flex items-center bg-gradient-to-r from-purple-500 to-blue-500 text-white px-8 py-4 rounded-full font-semibold hover:from-purple-600 hover:to-blue-600 transition-all transform hover:scale-105 shadow-lg">
-              Register Soon <ExternalLink className="ml-2" size={18} />
-            </button>
-            <button className="inline-flex items-center bg-black bg-opacity-40 backdrop-blur-sm text-white px-8 py-4 rounded-full font-semibold border-2 border-purple-400 hover:bg-purple-500 hover:border-purple-300 transition-all transform hover:scale-105 shadow-lg">
-              Learn More <Code className="ml-2" size={18} />
+              Registration Opens Soon <ExternalLink className="ml-2" size={18} />
             </button>
           </div>
         </div>
@@ -114,14 +111,19 @@ const App: React.FC = () => {
               <div>
                 <h2 className="text-4xl font-bold text-white mb-6">What is HackNC?</h2>
                 <p className="text-gray-300 text-lg leading-relaxed mb-6">
-                  HackNC is a weekend for students of all skill levels to broaden their talents. Your challenge is to make an awesome project in just 24 hours.
+                  HackNC is a weekend for students of all skill levels to broaden their talents. Your challenge is to make an awesome project in just 36 hours.
                 </p>
                 <p className="text-gray-300 text-lg leading-relaxed mb-8">
                   You will have access to hands-on tech workshops, sponsor networking, as well as exciting talks about the awesome things happening right now with computer science and technology - not to mention all of the free food, shirts, stickers, and swag!
                 </p>
-                <button className="inline-flex items-center bg-gradient-to-r from-purple-500 to-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:from-purple-600 hover:to-blue-600 transition-all transform hover:scale-105 shadow-lg">
+                <a 
+                  href="https://hacknc-2024.devpost.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center bg-gradient-to-r from-purple-500 to-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:from-purple-600 hover:to-blue-600 transition-all transform hover:scale-105 shadow-lg"
+                >
                   Explore Past Projects <ExternalLink className="ml-2" size={18} />
-                </button>
+                </a>
               </div>
               <div className="flex justify-center">
                 <div className="w-80 h-80 bg-gradient-to-br from-purple-400 via-blue-500 to-indigo-600 rounded-full flex items-center justify-center">
@@ -171,16 +173,16 @@ const App: React.FC = () => {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-white text-center mb-8">Our Sponsors</h2>
           <p className="text-gray-300 text-center text-lg mb-12 max-w-3xl mx-auto">
-            HackNC wouldn't be possible without the help of our sponsors. They help us give out cool prizes, and let us do our work smoothly.
+            HackNC wouldn't be possible without the help of our sponsors. They help us give out cool prizes, and let us do our work smoothly. Please contact us at sponsorship@hacknc.com if you are interested in sponsoring this amazing event!
           </p>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+          {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
             {sponsors.map((sponsor: string, index: number) => (
               <div key={index} className="bg-black bg-opacity-30 backdrop-blur-sm rounded-lg p-6 border border-purple-400 border-opacity-40 flex items-center justify-center hover:bg-opacity-50 hover:border-opacity-60 transition-all transform hover:scale-105 shadow-lg">
                 <h3 className="text-white font-semibold text-center">{sponsor}</h3>
               </div>
             ))}
-          </div>
+          </div> */}
 
           <div className="text-center">
             <p className="text-gray-300 mb-4">Looking to sponsor HackNC 2025?</p>
