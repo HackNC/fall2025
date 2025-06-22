@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, Calendar, MapPin, Users, Code, Award, Mail, ExternalLink } from 'lucide-react';
+import '@fontsource/jersey-15'; // npm install @fontsource/jersey-15 if not already installed
+import "@fontsource/Poppins";
 
 interface FAQItem {
   question: string;
@@ -48,10 +50,10 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
       {/* Navigation */}
-      <nav className="bg-black bg-opacity-30 backdrop-blur-sm fixed w-full z-50 border-b border-white border-opacity-20">
+      <nav className="font-Poppins bg-black bg-opacity-30 backdrop-blur-sm fixed w-full z-50 border-b border-white border-opacity-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
-            <div className="text-2xl font-bold text-white">
+            <div className="text-2xl font-bold text-white font-Poppins">
               HackNC <span className="text-purple-400">2025</span>
             </div>
             <div className="hidden md:flex space-x-8">
@@ -81,15 +83,15 @@ const App: React.FC = () => {
           <div className="flex flex-wrap justify-center gap-6 mb-12">
             <div className="flex items-center bg-black bg-opacity-30 backdrop-blur-sm rounded-lg px-6 py-3 border border-purple-400 border-opacity-50">
               <Calendar className="mr-3 text-purple-400" size={20} />
-              <span className="text-white font-semibold">November 2025</span>
+              <h3 className="text-white font-semibold">November 2025</h3>
             </div>
             <div className="flex items-center bg-black bg-opacity-30 backdrop-blur-sm rounded-lg px-6 py-3 border border-purple-400 border-opacity-50">
               <MapPin className="mr-3 text-purple-400" size={20} />
-              <span className="text-white font-semibold">UNC Chapel Hill</span>
+              <h3 className="text-white font-semibold">UNC Chapel Hill</h3>
             </div>
             <div className="flex items-center bg-black bg-opacity-30 backdrop-blur-sm rounded-lg px-6 py-3 border border-purple-400 border-opacity-50">
               <Users className="mr-3 text-purple-400" size={20} />
-              <span className="text-white font-semibold">24 Hours</span>
+              <h3 className="text-white font-semibold">24 Hours</h3>
             </div>
           </div>
 
@@ -175,7 +177,7 @@ const App: React.FC = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
             {sponsors.map((sponsor: string, index: number) => (
               <div key={index} className="bg-black bg-opacity-30 backdrop-blur-sm rounded-lg p-6 border border-purple-400 border-opacity-40 flex items-center justify-center hover:bg-opacity-50 hover:border-opacity-60 transition-all transform hover:scale-105 shadow-lg">
-                <span className="text-white font-semibold text-center">{sponsor}</span>
+                <h3 className="text-white font-semibold text-center">{sponsor}</h3>
               </div>
             ))}
           </div>
@@ -187,7 +189,7 @@ const App: React.FC = () => {
               className="inline-flex items-center bg-gradient-to-r from-purple-500 to-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:from-purple-600 hover:to-blue-600 transition-all transform hover:scale-105 shadow-lg"
             >
               <Mail className="mr-2" size={18} />
-              Contact Us
+              <h3>Contact Us</h3>
             </a>
           </div>
         </div>
