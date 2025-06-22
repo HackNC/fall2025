@@ -1,1 +1,39 @@
 @import "tailwindcss";
+@import "@fontsource/jersey-15";
+@import "@fontsource/poppins";
+
+h1{
+  font-family: "Jersey 15", cursive;
+  font-size: 48px;
+  /*font-weight: bold;*/
+}
+
+h2 {
+  font-family: "Jersey 15", cursive;
+  font-size: 36px;
+  font-weight: bold;
+}
+h3, button{
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: regular;
+}
+
+p{
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: regular;
+}
+
+nav {
+  font-family: "Poppins", sans-serif;
+  font-size: 21px;
+  font-weight: regular;
+}
+#faq{
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: regular;
+  font-style: italic;
+}
+
