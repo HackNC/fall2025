@@ -42,10 +42,10 @@ const App: React.FC = () => {
     }
   ];
 
-  const sponsors: string[] = [
-    'Bandwidth', 'Capital One', 'Infosys', 'Fidelity', 
-    'Lowes', 'Pendo', 'Nutanix', 'ResNET'
-  ];
+  // const sponsors: string[] = [
+  //   'Bandwidth', 'Capital One', 'Infosys', 'Fidelity', 
+  //   'Lowes', 'Pendo', 'Nutanix', 'ResNET'
+  // ];
 
   return (
     <div className="min-h-screen bg-gradient-to-l from-primary-light to-primary-dark text-primary-dark font-Poppins">
@@ -91,7 +91,6 @@ const App: React.FC = () => {
               <h3 className="text-primary-light font-semibold">24 Hours</h3>
             </div>
           </div>
-
           {/* <div className="space-y-4 sm:space-y-0 sm:flex sm:justify-center sm:space-x-4">
           </div> */}
         </div>
@@ -169,13 +168,13 @@ const App: React.FC = () => {
             HackNC wouldn't be possible without the help of our sponsors. They help us give out cool prizes, and let us do our work smoothly.
           </p>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+          {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
             {sponsors.map((sponsor: string, index: number) => (
               <div key={index} className="bg-primary-dark bg-opacity-30 backdrop-blur-sm rounded-lg p-6 border border-accent-purple border-opacity-40 flex items-center justify-center hover:bg-opacity-50 hover:border-opacity-60 transition-all transform hover:scale-105 shadow-lg">
                 <h3 className="text-primary-light font-semibold text-center">{sponsor}</h3>
               </div>
             ))}
-          </div>
+          </div> */}
 
           <div className="text-center">
             <div className="font-jersey text-4xl text-accent-yellow mb-4 italic">Looking to sponsor HackNC 2025?</div>
