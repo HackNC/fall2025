@@ -120,7 +120,7 @@ const App: React.FC = () => {
               </div>
               <div className="flex justify-center">
                 <img 
-                  src="public/EventPhoto.jpg" 
+                  src="/EventPhoto.jpg" 
                   alt="HackNC2024 Event Photo" 
                   className="rounded-lg shadow-lg w-full max-w-md"
                 />
