@@ -1,6 +1,9 @@
-@import "tailwindcss";
+/*@import "tailwindcss";*/
 @import "@fontsource/jersey-15";
 @import "@fontsource/poppins";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 h1{
   font-family: "Jersey 15", cursive;
@@ -30,6 +33,7 @@ nav {
   font-size: 21px;
   font-weight: regular;
 }
+
 #faq{
   font-family: "Poppins", sans-serif;
   font-size: 12px;
@@ -37,3 +41,11 @@ nav {
   font-style: italic;
 }
 
+.text-stroke {
+  -webkit-text-stroke: 0.3px #050423; /* Use your primary-light color */
+  text-stroke: 0.3px #050423;
+}
+
+.font-jersey {
+  font-family: "Jersey 15", cursive;
+}
