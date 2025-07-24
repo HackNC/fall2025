@@ -227,6 +227,14 @@ const Footer: React.FC = () => {
     );
 };
 
+const PageWrapper: React.FC<{children: React.ReactNode}> = (props) => {
+    return (
+        <div className="max-w-[100vw] min-h-[100vh] md:min-w-[100vw] md:max-h-[100vh]">
+            { props.children }
+        </div>
+    );
+}
+
 const PageContainer: React.FC = () => {
     const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -255,21 +263,19 @@ const PageContainer: React.FC = () => {
             className="flex md:flex-row flex-col overflow-x-scroll md:overflow-y-hidden"
             >
                 <Navigation />
-                <div className="min-w-[100vw] min-h-[100vh] md:max-h-[100vh]">
+                <PageWrapper>
                     <FrontPage />
-                </div>
-                <div className="min-w-[100vw] min-h-[100vh] md:max-h-[100vh]">
+                </PageWrapper>
+                <PageWrapper>
                     <AboutPage />
-                </div>
-                <div className="min-w-[100vw] min-h-[100vh] md:max-h-[100vh]">
+                </PageWrapper>
+                <PageWrapper>
                     <FaqPage />
-                </div>
-                <div className="min-w-[100vw] min-h-[100vh] md:max-h-[100vh]">
+                </PageWrapper>
+                <PageWrapper>
                     <SponsorPage />
-                </div>
-                <div className="min-w-[100vw] min-h-[100vh] md:max-h-[100vh]">
                     <Footer />
-                </div>
+                </PageWrapper>
             </div>
         </div>
     );
