@@ -249,20 +249,20 @@ const PageContainer: React.FC = () => {
             el.scrollLeft += event.deltaX - event.deltaY;
         };
 
-        window.addEventListener("wheel", handleWheel);
+        el.addEventListener("wheel", handleWheel, {passive: false});
 
         return () => {
-            window.removeEventListener("wheel", handleWheel);
+            el.removeEventListener("wheel", handleWheel);
         };
     }, []);
 
     return (
         <div className="bg-gradient-to-l from-primary-light to-primary-dark text-primary-dark font-Poppins">
+            <Navigation />
             <div
             ref={scrollRef} 
-            className="flex md:flex-row flex-col overflow-x-scroll md:overflow-y-hidden"
+            className="flex flex-col overflow-x-scroll md:flex-row md:overflow-y-hidden"
             >
-                <Navigation />
                 <PageWrapper>
                     <FrontPage />
                 </PageWrapper>
