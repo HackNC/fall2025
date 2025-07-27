@@ -242,7 +242,7 @@ const PageContainer: React.FC = () => {
         const el = scrollRef.current;
 
         if (!el) return;
-
+        // enabling horizontal vs vertical scrolling depending on screen size
         const handleWheel = (event: WheelEvent) => {
             if (window.innerWidth < 768) return;
             event.preventDefault();
