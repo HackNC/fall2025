@@ -9,7 +9,7 @@ interface FAQItem {
   answer: string;
 }
 
-const Navigation: React.FC<{layoutHandler: React.MouseEventHandler}> = (props) => {
+const Navigation: React.FC<{layoutHandler: React.MouseEventHandler, isHorizontal: Boolean}> = (props) => {
     return (
         <nav className="font-Poppins bg-primary-dark bg-opacity-40 backdrop-blur-sm fixed w-full z-50 border-b border-primary-light border-opacity-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -21,7 +21,11 @@ const Navigation: React.FC<{layoutHandler: React.MouseEventHandler}> = (props) =
                 <a href="#about" className="text-primary-light hover:text-purple-300 transition-colors">About</a>
                 <a href="#faq" className="text-primary-light hover:text-purple-300 transition-colors">FAQ</a>
                 <a href="#sponsors" className="text-primary-light hover:text-purple-300 transition-colors">Sponsors</a>
-                <button onClick={props.layoutHandler}>switch layout</button>
+                <button className="text-primary-light hover:text-purple-300 transition-colors" onClick={props.layoutHandler}>
+                    {
+                        props.isHorizontal ? "Vertical" : "Horizontal"
+                    }
+                </button>
                 </div>
             </div>
             </div>
@@ -270,7 +274,7 @@ const PageContainer: React.FC = () => {
 
     return (
         <div className="bg-gradient-to-l from-primary-light to-primary-dark text-primary-dark font-Poppins">
-            <Navigation layoutHandler={layoutHandler} />
+            <Navigation layoutHandler={layoutHandler} isHorizontal={isHorizontal} />
             <div
             ref={scrollRef} 
             className={isHorizontal ? "flex overflow-x-scroll overflow-y-hidden": "flex flex-col overflow-x-scroll"}
