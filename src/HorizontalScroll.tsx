@@ -9,7 +9,7 @@ interface FAQItem {
   answer: string;
 }
 
-const Navigation: React.FC = () => {
+const Navigation: React.FC<{layoutHandler: React.MouseEventHandler}> = (props) => {
     return (
         <nav className="font-Poppins bg-primary-dark bg-opacity-40 backdrop-blur-sm fixed w-full z-50 border-b border-primary-light border-opacity-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -17,10 +17,11 @@ const Navigation: React.FC = () => {
                 <div className="text-2xl font-bold text-primary-light font-Poppins">
                 HackNC <span className="text-accent-yellow">2025</span>
                 </div>
-                <div className="hidden md:flex space-x-8">
+                <div className="md:flex space-x-8">
                 <a href="#about" className="text-primary-light hover:text-purple-300 transition-colors">About</a>
                 <a href="#faq" className="text-primary-light hover:text-purple-300 transition-colors">FAQ</a>
                 <a href="#sponsors" className="text-primary-light hover:text-purple-300 transition-colors">Sponsors</a>
+                <button onClick={props.layoutHandler}>switch layout</button>
                 </div>
             </div>
             </div>
@@ -170,73 +171,85 @@ const SponsorPage: React.FC = () => {
     // ];
 
     return (
-        <div id="sponsors" className="py-16 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-6xl mx-auto">
-                <h2 className="text-6xl font-bold text-accent-blue text-center mb-8 text-stroke">Past Sponsors</h2>
-                <p className="text-primary-dark text-center text-lg mb-12 max-w-3xl mx-auto">
-                HackNC wouldn't be possible without the help of our sponsors. They help us give out cool prizes, and let us do our work smoothly.
-                </p>
-                
-                {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-                {sponsors.map((sponsor: string, index: number) => (
-                    <div key={index} className="bg-primary-dark bg-opacity-30 backdrop-blur-sm rounded-lg p-6 border border-accent-purple border-opacity-40 flex items-center justify-center hover:bg-opacity-50 hover:border-opacity-60 transition-all transform hover:scale-105 shadow-lg">
-                    <h3 className="text-primary-light font-semibold text-center">{sponsor}</h3>
+        <>
+            <div id="sponsors" className="py-16 px-4 sm:px-6 lg:px-8">
+                <div className="max-w-6xl mx-auto">
+                    <h2 className="text-6xl font-bold text-accent-blue text-center mb-8 text-stroke">Past Sponsors</h2>
+                    <p className="text-primary-dark text-center text-lg mb-12 max-w-3xl mx-auto">
+                    HackNC wouldn't be possible without the help of our sponsors. They help us give out cool prizes, and let us do our work smoothly.
+                    </p>
+                    
+                    {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+                    {sponsors.map((sponsor: string, index: number) => (
+                        <div key={index} className="bg-primary-dark bg-opacity-30 backdrop-blur-sm rounded-lg p-6 border border-accent-purple border-opacity-40 flex items-center justify-center hover:bg-opacity-50 hover:border-opacity-60 transition-all transform hover:scale-105 shadow-lg">
+                        <h3 className="text-primary-light font-semibold text-center">{sponsor}</h3>
+                        </div>
+                    ))}
+                    </div> */}
+
+                    <div className="text-center">
+                        <div className="font-jersey text-4xl text-accent-yellow mb-4 italic">Looking to sponsor HackNC 2025?</div>
+                        <a 
+                            href="mailto:sponsorship@hacknc.com" 
+                            className="inline-flex items-center bg-gradient-to-r from-accent-yellow to-accent-pink text-primary-light px-6 py-3 rounded-lg font-semibold hover:from-accent-yellow hover:to-accent-pink transition-all transform hover:scale-105 shadow-lg"
+                        >
+                            <Mail className="mr-2" size={18} />
+                            <h3>Contact Us</h3>
+                        </a>
                     </div>
-                ))}
-                </div> */}
-
-                <div className="text-center">
-                    <div className="font-jersey text-4xl text-accent-yellow mb-4 italic">Looking to sponsor HackNC 2025?</div>
-                    <a 
-                        href="mailto:sponsorship@hacknc.com" 
-                        className="inline-flex items-center bg-gradient-to-r from-accent-yellow to-accent-pink text-primary-light px-6 py-3 rounded-lg font-semibold hover:from-accent-yellow hover:to-accent-pink transition-all transform hover:scale-105 shadow-lg"
-                    >
-                        <Mail className="mr-2" size={18} />
-                        <h3>Contact Us</h3>
-                    </a>
-                </div>
-            </div>  
-        </div>
-    );
-};
-
-const Footer: React.FC = () => {
-    return (
-        <footer className="bg-black bg-opacity-50 backdrop-blur-sm border-t border-white border-opacity-20 py-12 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-6xl mx-auto">
-                <div className="flex flex-col md:flex-row justify-between items-center">
-                <div className="mb-6 md:mb-0">
-                    <p className="text-primary-light">&copy; HackNC 2025</p>
-                    <a 
-                    href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-accent-blue hover:text-purple-300 transition-colors"
-                    >
-                    MLH Code of Conduct
-                    </a>
-                </div>
-                <div className="flex space-x-4">
-                    <a href="mailto:hello@hacknc.com" className="text-primary-light hover:text-accent-blue transition-colors">
-                    <Mail size={24} />
-                    </a>
-                </div>
-                </div>
+                </div>  
             </div>
-        </footer>
+
+            <footer className="bg-black bg-opacity-50 backdrop-blur-sm border-t border-white border-opacity-20 py-12 px-4 sm:px-6 lg:px-8">
+                <div className="max-w-6xl mx-auto">
+                    <div className="flex flex-col md:flex-row justify-between items-center">
+                    <div className="mb-6 md:mb-0">
+                        <p className="text-primary-light">&copy; HackNC 2025</p>
+                        <a 
+                        href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-accent-blue hover:text-purple-300 transition-colors"
+                        >
+                        MLH Code of Conduct
+                        </a>
+                    </div>
+                    <div className="flex space-x-4">
+                        <a href="mailto:hello@hacknc.com" className="text-primary-light hover:text-accent-blue transition-colors">
+                        <Mail size={24} />
+                        </a>
+                    </div>
+                    </div>
+                </div>
+            </footer>
+        </>
     );
 };
 
-const PageWrapper: React.FC<{children: React.ReactNode}> = (props) => {
+const PageWrapper: React.FC<{children: React.ReactNode, classes: string}> = (props) => {
     return (
-        <div className="max-w-[100vw] min-h-[100vh] md:min-w-[100vw] md:max-h-[100vh]">
+        <div className={props.classes}>
             { props.children }
         </div>
     );
 }
 
+const BREAKPOINT = 768;
+const pages = [FrontPage, AboutPage, FaqPage, SponsorPage];
+
 const PageContainer: React.FC = () => {
+    const [isHorizontal, setIsHorizontal] = useState(window.innerWidth >= BREAKPOINT);
     const scrollRef = useRef<HTMLDivElement>(null);
+
+    const layoutHandler = () => setIsHorizontal(!isHorizontal);
+
+    useEffect(() => {
+        const isHorizontalHandler = () => setIsHorizontal(window.innerWidth >= BREAKPOINT);
+
+        window.addEventListener("resize", isHorizontalHandler)
+
+        return () => window.removeEventListener("resize", isHorizontalHandler);
+    }, [])
 
     useEffect(() => {
         const el = scrollRef.current;
@@ -244,38 +257,33 @@ const PageContainer: React.FC = () => {
         if (!el) return;
         // enabling horizontal vs vertical scrolling depending on screen size
         const handleWheel = (event: WheelEvent) => {
-            if (window.innerWidth < 768) return;
             event.preventDefault();
             el.scrollLeft += event.deltaX - event.deltaY;
         };
 
-        el.addEventListener("wheel", handleWheel, {passive: false});
+        if (isHorizontal) {
+            el.addEventListener("wheel", handleWheel, {passive: false});
+        }
 
-        return () => {
-            el.removeEventListener("wheel", handleWheel);
-        };
-    }, []);
+        return () => el.removeEventListener("wheel", handleWheel);
+    }, [isHorizontal]);
 
     return (
         <div className="bg-gradient-to-l from-primary-light to-primary-dark text-primary-dark font-Poppins">
-            <Navigation />
+            <Navigation layoutHandler={layoutHandler} />
             <div
             ref={scrollRef} 
-            className="flex flex-col overflow-x-scroll md:flex-row md:overflow-y-hidden"
+            className={isHorizontal ? "flex overflow-x-scroll overflow-y-hidden": "flex flex-col overflow-x-scroll"}
             >
-                <PageWrapper>
-                    <FrontPage />
-                </PageWrapper>
-                <PageWrapper>
-                    <AboutPage />
-                </PageWrapper>
-                <PageWrapper>
-                    <FaqPage />
-                </PageWrapper>
-                <PageWrapper>
-                    <SponsorPage />
-                    <Footer />
-                </PageWrapper>
+                {
+                    pages.map((Component, index) => {
+                        return (
+                            <PageWrapper key={index} classes={isHorizontal ? "max-w-[100vw] min-h-[100vh] min-w-[100vw] max-h-[100vh]" : "max-w-[100vw] min-h-[100vh]"}>
+                                <Component />
+                            </PageWrapper>
+                        );
+                    })
+                }
             </div>
         </div>
     );
