@@ -9,7 +9,7 @@ interface FAQItem {
   answer: string;
 }
 
-const Navigation: React.FC<{layoutHandler: React.MouseEventHandler, isHorizontal: Boolean}> = (props) => {
+const Navigation: React.FC = () => {
     return (
         <nav className="font-Poppins bg-primary-dark bg-opacity-40 backdrop-blur-sm fixed w-full z-50 border-b border-primary-light border-opacity-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -21,11 +21,6 @@ const Navigation: React.FC<{layoutHandler: React.MouseEventHandler, isHorizontal
                 <a href="#about" className="text-primary-light hover:text-purple-300 transition-colors">About</a>
                 <a href="#faq" className="text-primary-light hover:text-purple-300 transition-colors">FAQ</a>
                 <a href="#sponsors" className="text-primary-light hover:text-purple-300 transition-colors">Sponsors</a>
-                <button className="text-primary-light hover:text-purple-300 transition-colors" onClick={props.layoutHandler}>
-                    {
-                        props.isHorizontal ? "Vertical" : "Horizontal"
-                    }
-                </button>
                 </div>
             </div>
             </div>
@@ -230,9 +225,9 @@ const SponsorPage: React.FC = () => {
     );
 };
 
-const PageWrapper: React.FC<{children: React.ReactNode, classes: string}> = (props) => {
+const PageWrapper: React.FC<{children: React.ReactNode, className: string}> = (props) => {
     return (
-        <div className={props.classes}>
+        <div className={props.className}>
             { props.children }
         </div>
     );
@@ -244,8 +239,6 @@ const pages = [FrontPage, AboutPage, FaqPage, SponsorPage];
 const PageContainer: React.FC = () => {
     const [isHorizontal, setIsHorizontal] = useState(window.innerWidth >= BREAKPOINT);
     const scrollRef = useRef<HTMLDivElement>(null);
-
-    const layoutHandler = () => setIsHorizontal(!isHorizontal);
 
     useEffect(() => {
         const isHorizontalHandler = () => setIsHorizontal(window.innerWidth >= BREAKPOINT);
@@ -274,7 +267,7 @@ const PageContainer: React.FC = () => {
 
     return (
         <div className="bg-gradient-to-l from-primary-light to-primary-dark text-primary-dark font-Poppins">
-            <Navigation layoutHandler={layoutHandler} isHorizontal={isHorizontal} />
+            <Navigation />
             <div
             ref={scrollRef} 
             className={isHorizontal ? "flex overflow-x-scroll overflow-y-hidden": "flex flex-col overflow-x-scroll"}
@@ -282,7 +275,7 @@ const PageContainer: React.FC = () => {
                 {
                     pages.map((Component, index) => {
                         return (
-                            <PageWrapper key={index} classes={isHorizontal ? "max-w-[100vw] min-h-[100vh] min-w-[100vw] max-h-[100vh]" : "max-w-[100vw] min-h-[100vh]"}>
+                            <PageWrapper key={index} className={isHorizontal ? "max-w-[100vw] min-h-[100vh] min-w-[100vw] max-h-[100vh]" : "max-w-[100vw] min-h-[100vh]"}>
                                 <Component />
                             </PageWrapper>
                         );
