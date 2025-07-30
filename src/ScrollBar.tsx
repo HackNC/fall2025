@@ -31,18 +31,18 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({
   }, []);
 
   useEffect(() => {
-    if (isMobile || !containerRef.current) return;
+    const el = containerRef.current;
+    if (!el) return;
 
-    const container = containerRef.current;
-    const totalScrollWidth = container.scrollWidth;
+    // Update scroll progress and any UI
+    const totalScrollWidth = el.scrollWidth;
     const viewportWidth = window.innerWidth;
     const maxHorizontalScroll = totalScrollWidth - viewportWidth;
 
-    document.body.style.height = `${
-      maxHorizontalScroll + window.innerHeight
-    }px`;
+    document.body.style.height = `${maxHorizontalScroll + window.innerHeight
+      }px`;
 
-    const onScroll = () => {
+    const onScroll = (event: Event) => {
       const y = window.scrollY;
       setScrollY(y);
       const progress = Math.min(y / maxHorizontalScroll, 1);
@@ -50,7 +50,10 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({
     };
 
     window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    // window.addEventListener("wheel", handleWheel, { passive: false });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    }
   }, [isMobile]);
 
   const spriteLeft = HORIZONTAL_OFFSET + scrollProgress * maxSpriteTravel;
@@ -61,11 +64,10 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({
       {/* Horizontally Scrolling Container */}
       <div
         ref={containerRef}
-        className={`transition-transform duration-0 ease-linear ${
-          isMobile
-            ? "relative w-full flex flex-col"
-            : "fixed top-0 left-0 h-screen w-max flex"
-        }`}
+        className={`transition-transform duration-0 ease-linear ${isMobile
+          ? "relative w-full flex flex-col"
+          : "fixed top-0 left-0 h-screen w-max flex"
+          }`}
         style={{
           transform: isMobile ? "none" : `translateX(-${scrollY}px)`,
         }}

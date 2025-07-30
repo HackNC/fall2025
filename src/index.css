@@ -5,7 +5,7 @@
 @tailwind components;
 @tailwind utilities;
 
-h1{
+h1 {
   font-family: "Jersey 15", cursive;
   font-size: 48px;
   /*font-weight: bold;*/
@@ -16,13 +16,15 @@ h2 {
   font-size: 36px;
   font-weight: bold;
 }
-h3, button{
+
+h3,
+button {
   font-family: "Poppins", sans-serif;
   font-size: 20px;
   font-weight: regular;
 }
 
-p{
+p {
   font-family: "Poppins", sans-serif;
   font-size: 12px;
   font-weight: regular;
@@ -34,7 +36,7 @@ nav {
   font-weight: regular;
 }
 
-#faq{
+#faq {
   font-family: "Poppins", sans-serif;
   font-size: 12px;
   font-weight: regular;
@@ -42,7 +44,8 @@ nav {
 }
 
 .text-stroke {
-  -webkit-text-stroke: 0.3px #050423; /* Use your primary-light color */
+  -webkit-text-stroke: 0.3px #050423;
+  /* Use your primary-light color */
   text-stroke: 0.3px #050423;
 }
 
