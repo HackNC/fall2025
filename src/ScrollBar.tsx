@@ -36,7 +36,7 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({
 
     // Update scroll progress and any UI
     const totalScrollWidth = el.scrollWidth;
-    const viewportWidth = window.innerWidth;
+    const viewportWidth = el.offsetWidth;
     const maxHorizontalScroll = totalScrollWidth - viewportWidth;
 
     document.body.style.height = `${maxHorizontalScroll + window.innerHeight
@@ -64,9 +64,10 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({
       {/* Horizontally Scrolling Container */}
       <div
         ref={containerRef}
+        id="screens-container"
         className={`transition-transform duration-0 ease-linear ${isMobile
           ? "relative w-full flex flex-col"
-          : "fixed top-0 left-0 h-screen w-max flex"
+          : "flex flex-row"
           }`}
         style={{
           transform: isMobile ? "none" : `translateX(-${scrollY}px)`,

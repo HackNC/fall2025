@@ -8,12 +8,12 @@ const ScreenWrapper: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   return (
     <div
       className="
-        flex items-center justify-center
         bg-primary-dark bg-opacity-90 rounded-[140px] shadow-2xl
         mx-auto my-auto
-        w-[75vw] max-w-screen h-[80vh] max-h-screen
-        p-10 sm:p-10 md:p-12
-      ">
+        w-[75vw] h-[80vh] 
+        overflow-hidden
+      "
+      style={{ "--arcade-w": "75vw", "--arcade-h": "80vh" }}>
       {children}
     </div>
   );
@@ -35,6 +35,12 @@ const ScrollTestPage: React.FC = () => {
           <Navigation />
           <ScreenWrapper>
             <ScrollBar>
+              <SectionWrapper>
+                <FrontPage />
+              </SectionWrapper>
+              <SectionWrapper>
+                <FrontPage />
+              </SectionWrapper>
               <SectionWrapper>
                 <FrontPage />
               </SectionWrapper>
