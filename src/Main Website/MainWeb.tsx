@@ -10,8 +10,9 @@ const ScreenWrapper: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
       className="
         bg-primary-dark bg-opacity-90 rounded-[140px] shadow-2xl
         mx-auto my-auto
-        w-[75vw] h-[80vh] 
-        overflow-hidden
+        w-[75vw] h-[80vh]
+        overflow-x-hidden 
+        overflow-y-scroll
       "
       style={{ "--arcade-w": "75vw", "--arcade-h": "80vh" } as React.CSSProperties}>
       {children}
