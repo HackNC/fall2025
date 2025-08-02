@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from "react";
 import {
   ChevronDown,
   ChevronUp,
@@ -7,9 +7,9 @@ import {
   Users,
   ExternalLink,
   Mail,
-} from 'lucide-react';
-import '@fontsource/jersey-15';
-import '@fontsource/Poppins';
+} from "lucide-react";
+import "@fontsource/jersey-15";
+import "@fontsource/Poppins";
 
 interface FAQItem {
   question: string;
@@ -24,34 +24,34 @@ const HorizontalScrollTest: React.FC = () => {
 
   const faqData: FAQItem[] = [
     {
-      question: 'What is a hackathon?',
+      question: "What is a hackathon?",
       answer:
         "A hackathon is a weekend of fun and learning. You'll become a better programmer, meet awesome people, and make cool projects. There will also be opportunities to win fun prizes and network with our sponsors.",
     },
     {
-      question: 'Is this hackathon in-person or hybrid?',
+      question: "Is this hackathon in-person or hybrid?",
       answer:
-        'This year, we are running a completely in-person hackathon! We have lots of fun events and workshops for you all and most importantly, free food!',
+        "This year, we are running a completely in-person hackathon! We have lots of fun events and workshops for you all and most importantly, free food!",
     },
     {
-      question: 'Do I need extensive coding knowledge for HackNC?',
+      question: "Do I need extensive coding knowledge for HackNC?",
       answer:
         "Not at all! HackNC is a completely beginner friendly event, and we have a project track specifically for beginners. We'll have plenty of resources to help you get started, including beginner workshops, mentors, and more.",
     },
     {
-      question: 'Who can hack?',
+      question: "Who can hack?",
       answer:
-        'If you are a student at UNC, there is no age requirement. If you are coming from outside UNC, you must be 18 years of age or older to attend! High schoolers, undergraduates, and graduate students from any school are welcome to participate as hackers.',
+        "If you are a student at UNC, there is no age requirement. If you are coming from outside UNC, you must be 18 years of age or older to attend! High schoolers, undergraduates, and graduate students from any school are welcome to participate as hackers.",
     },
     {
-      question: 'How do teams work?',
+      question: "How do teams work?",
       answer:
         "Teams can be organized prior to HackNC or during the event itself. If you are already in a team, then you're all set! If not, that's completely fine! We have a team building event on Friday (Nov 1st), where you can meet other participants and form your teams. We strongly recommend around 3-4 members.",
     },
     {
-      question: 'Where do I park?',
+      question: "Where do I park?",
       answer:
-        'Parking will be free over the weekend. Please find availability in Rams Deck, Craige Deck, or Cobb Deck.',
+        "Parking will be free over the weekend. Please find availability in Rams Deck, Craige Deck, or Cobb Deck.",
     },
   ];
 
@@ -67,35 +67,36 @@ const HorizontalScrollTest: React.FC = () => {
       setIsMobile(window.innerWidth <= 768);
     };
     handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-    // Handle horizontal scroll effect
-useEffect(() => {
-  if (isMobile || !containerRef.current) return;
+  // Handle horizontal scroll effect
+  useEffect(() => {
+    if (isMobile || !containerRef.current) return;
 
-  const container = containerRef.current;
-  const totalScrollWidth = container.scrollWidth; // total width of all sections combined
-  const viewportWidth = window.innerWidth;
-  const maxHorizontalScroll = totalScrollWidth - viewportWidth;
+    const container = containerRef.current;
+    const totalScrollWidth = container.scrollWidth; // total width of all sections combined
+    const viewportWidth = window.innerWidth;
+    const maxHorizontalScroll = totalScrollWidth - viewportWidth;
 
-  // Set body height based on how much vertical scroll you need to cover full horizontal scroll
-  document.body.style.height = `${maxHorizontalScroll + window.innerHeight}px`;
+    // Set body height based on how much vertical scroll you need to cover full horizontal scroll
+    document.body.style.height = `${
+      maxHorizontalScroll + window.innerHeight
+    }px`;
 
-  const onScroll = () => {
-    const y = window.scrollY;
-    setScrollY(y);
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrollY(y);
 
-    // Calculate scroll progress as ratio of y to max horizontal scroll
-    const progress = Math.min(y / maxHorizontalScroll, 1);
-    setScrollProgress(progress);
-  };
+      // Calculate scroll progress as ratio of y to max horizontal scroll
+      const progress = Math.min(y / maxHorizontalScroll, 1);
+      setScrollProgress(progress);
+    };
 
-  window.addEventListener('scroll', onScroll);
-  return () => window.removeEventListener('scroll', onScroll);
-}, [isMobile]);
-
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [isMobile]);
 
   return (
     <>
@@ -104,11 +105,11 @@ useEffect(() => {
         ref={containerRef}
         className={`transition-transform duration-0 ease-linear ${
           isMobile
-            ? 'relative w-full flex flex-col'
-            : 'fixed top-0 left-0 h-screen w-max flex'
+            ? "relative w-full flex flex-col"
+            : "fixed top-0 left-0 h-screen w-max flex"
         } bg-gradient-to-l from-primary-light to-primary-dark text-primary-dark font-Poppins`}
         style={{
-          transform: isMobile ? 'none' : `translateX(-${scrollY}px)`,
+          transform: isMobile ? "none" : `translateX(-${scrollY}px)`,
         }}
       >
         {/* Hero Section */}
@@ -118,8 +119,8 @@ useEffect(() => {
               HackNC <span className="text-accent-yellow">2025</span>
             </h1>
             <p className="text-xl text-primary-light mb-8 max-w-2xl mx-auto">
-              UNC-Chapel Hill's annual fall hackathon - the largest hackathon
-              in the southeastern United States
+              UNC-Chapel Hill's annual fall hackathon - the largest hackathon in
+              the southeastern United States
             </p>
             <div className="flex flex-wrap justify-center gap-6">
               <InfoBlock icon={<Calendar size={20} />} text="November 2025" />
@@ -196,9 +197,7 @@ useEffect(() => {
                   </button>
                   {openFAQ === index && (
                     <div className="px-6 pb-4 py-5 bg-primary-dark bg-opacity-20">
-                      <p className="text-primary-light text-lg">
-                        {faq.answer}
-                      </p>
+                      <p className="text-primary-light text-lg">{faq.answer}</p>
                     </div>
                   )}
                 </div>
@@ -234,21 +233,21 @@ useEffect(() => {
       {/* FAKE horizontal scroll bar with running character */}
       {!isMobile && (
         <div className="fixed bottom-4 left-0 w-full px-8 z-50">
-            {/* Progress bar fill */}
-            {/* <div
+          {/* Progress bar fill */}
+          {/* <div
               className="absolute top-0 left-0 h-full bg-gradient-to-r from-accent-pink to-accent-yellow transition-all"
               style={{ width: `${scrollProgress * 100}%` }}
             /> */}
-            {/* Running character */}
-            <div
-              className="absolute bottom-[-12px] transition-transform"
-              style={{ left: `calc(${scrollProgress * 100}% - 16px)` }}
-            >
-              <img
-                src="/runner.gif" // Replace with your own running character GIF or sprite
-                alt="Running character"
-                className="w-10 h-10 select-none pointer-events-none"
-              />
+          {/* Running character */}
+          <div
+            className="absolute bottom-[-12px] transition-transform"
+            style={{ left: `calc(${scrollProgress * 100}% - 16px)` }}
+          >
+            <img
+              src="/runner.gif" // Replace with your own running character GIF or sprite
+              alt="Running character"
+              className="w-10 h-10 select-none pointer-events-none"
+            />
           </div>
         </div>
       )}
