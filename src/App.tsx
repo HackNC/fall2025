@@ -10,7 +10,7 @@ const App: React.FC = () => {
     // <HorizontalScrollTest />
     <PageContainer />
 
-    /* SampleWeb tests the Horizontal Scroll Bar Character */
+    /* SampleWeb tests the Horizontal Scroll Bar Character and the*/
     // <SampleWeb />
   );
 };
