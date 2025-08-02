@@ -5,13 +5,14 @@ interface HorizontalScrollerProps {
 }
 
 const SPRITE_WIDTH = 100; // width of the character sprite file
-const HORIZONTAL_OFFSET = 30; // padding from left and right side
+const HORIZONTAL_OFFSET = 130; // padding from left and right side
 const VERTICAL_OFFSET = 0; // adjusts banner and character vertical placement
 
 const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({
   children,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const innerScreenRef = useRef<HTMLDivElement>(null);
   const [scrollY, setScrollY] = useState(0);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -19,8 +20,9 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({
 
   useEffect(() => {
     const updateTravel = () => {
+      const scr = innerScreenRef.current;
       const maxTravel =
-        window.innerWidth - 2 * HORIZONTAL_OFFSET - SPRITE_WIDTH;
+        scr.offsetWidth - 2 * HORIZONTAL_OFFSET - SPRITE_WIDTH;
       setMaxSpriteTravel(maxTravel);
       setIsMobile(window.innerWidth <= 768);
     };
@@ -56,21 +58,21 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({
     }
   }, [isMobile]);
 
-  const spriteLeft = HORIZONTAL_OFFSET + scrollProgress * maxSpriteTravel;
+  const spriteLeft = scrollProgress * maxSpriteTravel;
   const bannerVisibleWidth = spriteLeft + SPRITE_WIDTH / 2;
 
   return (
-    <>
+    <div ref={innerScreenRef} className="w-100 h-100 relative">
       {/* Horizontally Scrolling Container */}
       <div
         ref={containerRef}
-        id="screens-container"
         className={`transition-transform duration-0 ease-linear ${isMobile
           ? "relative w-full flex flex-col"
           : "flex flex-row"
           }`}
         style={{
           transform: isMobile ? "none" : `translateX(-${scrollY}px)`,
+
         }}
       >
         {children}
@@ -79,7 +81,7 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({
       {/* Banner (reveals itself behind the character) */}
       {!isMobile && (
         <div
-          className="fixed z-40 pointer-events-none"
+          className="absolute z-40 pointer-events-none"
           style={{
             bottom: `calc(16px + ${VERTICAL_OFFSET}px)`,
             left: `${HORIZONTAL_OFFSET}px`,
@@ -99,7 +101,7 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({
       {/* Character */}
       {!isMobile && (
         <div
-          className="fixed z-50 pointer-events-none"
+          className="absolute z-50 pointer-events-none"
           style={{
             bottom: `calc(2px + ${VERTICAL_OFFSET}px)`,
             left: `${HORIZONTAL_OFFSET}px`,
@@ -123,7 +125,7 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

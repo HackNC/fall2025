@@ -43,15 +43,6 @@ nav {
   font-style: italic;
 }
 
-#screens-container > * {
-  width: var(--arcade-w);
-  height: var(--arcade-h);
-  flex-shrink: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .text-stroke {
   -webkit-text-stroke: 0.3px #050423;
   /* Use your primary-light color */
