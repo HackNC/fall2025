@@ -1,8 +1,8 @@
 // ScrollTestPage.tsx
 import React from "react";
 import ScrollBar from "./ScrollBar";
-import FrontPage from "./FrontPage";
-import Navigation from "./NavigationBar";
+import FrontPage from "../Pages/FrontPage";
+import Navigation from "../Pages/NavigationBar";
 
 const ScreenWrapper: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   return (
@@ -13,7 +13,7 @@ const ScreenWrapper: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
         w-[75vw] h-[80vh] 
         overflow-hidden
       "
-      style={{ "--arcade-w": "75vw", "--arcade-h": "80vh" }}>
+      style={{ "--arcade-w": "75vw", "--arcade-h": "80vh" } as React.CSSProperties}>
       {children}
     </div>
   );
