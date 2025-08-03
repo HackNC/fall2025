@@ -1,132 +1,127 @@
-import React, { useEffect, useRef, useState } from "react";
+  import React, { useEffect, useMemo, useRef, useState } from "react";
 
-interface HorizontalScrollerProps {
-  children: React.ReactNode;
-}
+  interface HorizontalScrollerProps {
+    children: React.ReactNode;
+  }
 
-const SPRITE_WIDTH = 100; // width of the character sprite file
-const HORIZONTAL_OFFSET = 130; // padding from left and right side
-const VERTICAL_OFFSET = 0; // adjusts banner and character vertical placement
+  const SPRITE_WIDTH = 100; // width of the character sprite file
+  const HORIZONTAL_OFFSET = 130; // padding from left and right side
+  const VERTICAL_OFFSET = 0; // adjusts banner and character vertical placement
 
-const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({
-  children,
-}) => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const innerScreenRef = useRef<HTMLDivElement>(null);
-  const [scrollY, setScrollY] = useState(0);
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-  const [maxSpriteTravel, setMaxSpriteTravel] = useState(0);
+  const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({
+    children,
+  }) => {
+    const scrollRef = useRef<HTMLDivElement>(null);
+    const containerRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const updateTravel = () => {
-      const scr = innerScreenRef.current;
-      const maxTravel =
-        scr.offsetWidth - 2 * HORIZONTAL_OFFSET - SPRITE_WIDTH;
-      setMaxSpriteTravel(maxTravel);
-      setIsMobile(window.innerWidth <= 768);
-    };
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+    const [scrollLeft, setScrollLeft] = useState(0);
+    const [scrollableWidth, setScrollableWidth] = useState(0);
+    
+    // Handle isMobile and scrollableWidth when the window resizes
+    useEffect(() => {
+      const isMobileHandler = () => setIsMobile(window.innerWidth <= 768);
+      const containerWidthHandler = () => {
+        const el = containerRef.current;
+        if (!el) return;
+        setScrollableWidth(el.scrollWidth - el.clientWidth);
+      };
+      const composedFunction = () => {
+        isMobileHandler();
+        containerWidthHandler();
+      }
 
-    updateTravel();
-    window.addEventListener("resize", updateTravel);
-    return () => window.removeEventListener("resize", updateTravel);
-  }, []);
+      containerWidthHandler();
 
-  useEffect(() => {
-    const el = containerRef.current;
-    if (!el) return;
+      window.addEventListener("resize", composedFunction);
 
-    // Update scroll progress and any UI
-    const totalScrollWidth = el.scrollWidth;
-    const viewportWidth = el.offsetWidth;
-    const maxHorizontalScroll = totalScrollWidth - viewportWidth;
+      return () => window.removeEventListener("resize", composedFunction);
+    }, [])
 
-    document.body.style.height = `${maxHorizontalScroll + window.innerHeight
-      }px`;
+    // Handle horizontal scrolling and scrollLeft
+    useEffect(() => {
+      const el = containerRef.current;
 
-    const onScroll = (event: Event) => {
-      const y = window.scrollY;
-      setScrollY(y);
-      const progress = Math.min(y / maxHorizontalScroll, 1);
-      setScrollProgress(progress);
-    };
+      if (!el) return;
+      // enabling horizontal vs vertical scrolling depending on screen size
+      const handleWheel = (event: WheelEvent) => {
+        event.preventDefault();
+        el.scrollLeft += event.deltaX - event.deltaY;
+        setScrollLeft(el.scrollLeft);
+      };
 
-    window.addEventListener("scroll", onScroll);
-    // window.addEventListener("wheel", handleWheel, { passive: false });
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-    }
-  }, [isMobile]);
+      if (!isMobile) {
+        el.addEventListener("wheel", handleWheel, {passive: false});
+      }
 
-  const spriteLeft = scrollProgress * maxSpriteTravel;
-  const bannerVisibleWidth = spriteLeft + SPRITE_WIDTH / 2;
+      return () => el.removeEventListener("wheel", handleWheel);
+    }, [isMobile]);
 
-  return (
-    <div ref={innerScreenRef} className="w-100 h-100 relative">
-      {/* Horizontally Scrolling Container */}
-      <div
-        ref={containerRef}
-        className={`transition-transform duration-0 ease-linear ${isMobile
-          ? "relative w-full flex flex-col"
-          : "flex flex-row"
-          }`}
-        style={{
-          transform: isMobile ? "none" : `translateX(-${scrollY}px)`,
+    // Handle changes to the scrollbar
+    const [spriteLeft, bannerVisibleWidth] = useMemo(() => {
+      const el = scrollRef.current;
+      let newSpriteLeft, newBannerVisibleWidth;
 
-        }}
-      >
-        {children}
-      </div>
+      if (!el) return [0, 0];
+      newSpriteLeft = (scrollLeft / scrollableWidth) * (el.scrollWidth - 2 * HORIZONTAL_OFFSET) - SPRITE_WIDTH / 2;
+      newBannerVisibleWidth = newSpriteLeft + SPRITE_WIDTH / 2;
 
-      {/* Banner (reveals itself behind the character) */}
-      {!isMobile && (
+      return [newSpriteLeft, newBannerVisibleWidth];
+    }, [scrollLeft, scrollableWidth, scrollRef]);
+
+    return (
+      <div ref={scrollRef} className="w-100 h-100 relative">
+        {/* Horizontally Scrolling Container */}
         <div
+          ref={containerRef}
+          className={`transition-transform duration-0 ease-linear ${isMobile
+            ? "relative w-full flex flex-col"
+            : "flex flex-row overflow-x-scroll"
+            }`}
+        >
+          {children}
+        </div>
+        <div className={isMobile ? "hidden" : ""}>
+          {/* Banner (reveals itself behind the character) */}
+          <div
           className="absolute z-40 pointer-events-none"
           style={{
             bottom: `calc(16px + ${VERTICAL_OFFSET}px)`,
             left: `${HORIZONTAL_OFFSET}px`,
             right: `${HORIZONTAL_OFFSET}px`,
             height: "32px",
-          }}
-        >
-          <div
+          }}>
+            <div
             className="h-full overflow-hidden absolute left-0"
-            style={{ width: `${bannerVisibleWidth}px` }}
-          >
-            <div className="h-full w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white text-center flex items-center justify-start pl-4 font-semibold tracking-widest uppercase"></div>
+            style={{ width: `${bannerVisibleWidth}px` }}>
+              <div className="h-full w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white text-center flex items-center justify-start pl-4 font-semibold tracking-widest uppercase"></div>
+            </div>
           </div>
-        </div>
-      )}
-
-      {/* Character */}
-      {!isMobile && (
-        <div
+          {/* Character */}
+          <div
           className="absolute z-50 pointer-events-none"
           style={{
             bottom: `calc(2px + ${VERTICAL_OFFSET}px)`,
             left: `${HORIZONTAL_OFFSET}px`,
             right: `${HORIZONTAL_OFFSET}px`,
-          }}
-        >
-          <div
+          }}>
+            <div
             className="absolute transition-transform"
             style={{
               bottom: "3px",
               left: `${spriteLeft}px`,
               width: `${SPRITE_WIDTH}px`,
-            }}
-          >
-            <img
+            }}>
+              <img
               src="/HackNC_Sprite.gif"
               alt="Horizontal Scroll Bar Character"
               className="select-none"
-              style={{ width: "100%" }}
-            />
+              style={{ width: "100%" }}/>
+            </div>
           </div>
         </div>
-      )}
-    </div>
-  );
-};
+      </div>
+    );
+  };
 
-export default HorizontalScroller;
+  export default HorizontalScroller;
