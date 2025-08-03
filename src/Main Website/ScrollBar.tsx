@@ -21,17 +21,18 @@
     // Handle isMobile and scrollableWidth when the window resizes
     useEffect(() => {
       const isMobileHandler = () => setIsMobile(window.innerWidth <= 768);
-      const containerWidthHandler = () => {
+      const scrollHandler = () => {
         const el = containerRef.current;
         if (!el) return;
+        setScrollLeft(el.scrollLeft)
         setScrollableWidth(el.scrollWidth - el.clientWidth);
       };
       const composedFunction = () => {
         isMobileHandler();
-        containerWidthHandler();
+        scrollHandler();
       }
 
-      containerWidthHandler();
+      scrollHandler();
 
       window.addEventListener("resize", composedFunction);
 
