@@ -56,3 +56,8 @@ nav {
 ::-webkit-scrollbar {
   display: none;
 }
+
+:root {
+  --arcade-w: 75vw;
+  --arcade-h: 80vh;
+}

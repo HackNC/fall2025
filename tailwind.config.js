@@ -14,6 +14,8 @@ export default {
         'accent-green': '#78C162',
         'accent-yellow': '#FCBA2A',
         'accent-pink': '#C73484',
+        'gradient-top': '#151A3C',
+        'gradient-bottom': '#3746A2',
       },
     },
   },

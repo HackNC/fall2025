@@ -6,7 +6,7 @@ import "@fontsource/Poppins";
 
 const Navigation: React.FC = () => {
     return (
-        <nav className="bg-primary-light backdrop-blur-sm fixed w-full z-50 bg-opacity-90">
+        <nav className="bg-primary-light backdrop-blur-sm w-full z-50 bg-opacity-90">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center py-4">
                     <div className="text-4xl font-bold text-primary-dark font-jersey">
