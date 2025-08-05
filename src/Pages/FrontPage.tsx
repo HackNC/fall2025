@@ -1,6 +1,6 @@
 import React from "react";
 
-// Define the props interface here
+// Define the props interface 
 interface FrontPageProps {
     scrollToSection: (id: string) => void;
 }
@@ -21,9 +21,9 @@ const FrontPage: React.FC<FrontPageProps> = ({ scrollToSection }) => {
                     <img src="/plain_arrow_pink.png" alt="pink arrow" className="max-w-[4%] max-h-[4%] scale-x-[-1]" />
                 </div>
             </div>
-            <button
+            {/* <button
                 onClick={() => scrollToSection("AboutPage")} className="bg-[url('/pink_arrow.png')] bg-cover bg-center w-[8%] h-[8%] absolute center-10 right-10 flex items-center justify-center transition-shadow">
-            </button>
+            </button> */}
         </div >
     );
 }

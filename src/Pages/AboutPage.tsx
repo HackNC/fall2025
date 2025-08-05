@@ -1,12 +1,12 @@
 import React from 'react';
 
-// Define the props interface here
-interface FrontPageProps {
-    scrollToSection: (id: string) => void;
-}
+// // Define the props interface here
+// interface FrontPageProps {
+//     scrollToSection: (id: string) => void;
+// }
 
 // placeholder rn 
-const AboutPage: React.FC<AboutPageProps> = ({ scrollToSection }) => {
+const AboutPage: React.FC = () => {
     return (
         <div id="AboutPage" className="flex text-center items-center justify-center">
             <div className="flex flex-col text-center text-primary-light text-shadow-font-purple tracking-widest mb-60">
