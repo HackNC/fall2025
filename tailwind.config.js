@@ -29,7 +29,7 @@ export default {
       textShadow: {
         'primary-dark': '0 2px 4px #050423',
         'primary-light': '0 2px 4px #EAE4DE',
-        'accent-purple': '0 2px 4px #281362',
+        'accent-purple': '0 4px 4px #281362',
         'accent-blue': '0 4px 4px #0F8EAE',
         'accent-green': '0 2px 4px #78C162',
         'accent-yellow': '0 2px 4px #FCBA2A',
@@ -43,7 +43,7 @@ export default {
         'font-orange': '0 2px 4px #FAD082',
         'font-peach': '0 2px 4px #FA9E82',
         'font-pink': '0 2px 4px #FA8282',
-        'font-purple': '0 2px 4px #C3D6FF'
+        'font-purple': '0 2px 2px #C3D6FF'
       },
     },
   },

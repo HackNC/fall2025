@@ -1,20 +1,32 @@
 import React from 'react';
 
-// placeholder rn 
-const AboutPage: React.FC = () => {
-    return (
-        <div id="AboutPage" className="flex flex-col text-center items-center" style={{ gap: "10%" }}>
-            <h1 className="text-xl font-bold mb-4" style={{ color: "var(--font-light-blue)", textShadow: "2px 2px 4px var(--font-dark-blue)" }}>
-                About HackNC 2025
-            </h1>
-            <p className="text-lg mb-4" style={{ color: "var(--font-cyan)" }}>
-                HackNC is the largest hackathon in North Carolina, bringing together students from all over to innovate and create.
-            </p>
-            <a href="/register" className="text-2xl font-semibold mb-2" style={{ color: "var(--font-green)" }}>
-                Register Now!
-            </a>
-        </div>
-    );
+// Define the props interface here
+interface FrontPageProps {
+    scrollToSection: (id: string) => void;
 }
 
+// placeholder rn 
+const AboutPage: React.FC<AboutPageProps> = ({ scrollToSection }) => {
+    return (
+        <div id="AboutPage" className="flex text-center items-center justify-center">
+            <div className="flex flex-col text-center text-primary-light text-shadow-font-purple tracking-widest mb-60">
+                <div className="items-start mb-10">
+                    <h1 className="">About</h1>
+                </div>
+                <p className="text-shadow-none text-start max-w-[100vh] text-2xl">
+                    HackNC is a weekend for students of all skill levels to broaden their talents.
+                    Your challenge is to make an awesome project in just 24 hours. You will have
+                    access to hands-on tech workshops, sponsor networking, as well as exciting talks
+                    about the awesome things happening right now with computer science and technology –
+                    not to mention all of the free food, shirts, stickers, and swag!
+                </p>
+            </div>
+
+            {/* FIX THIS LATER<
+            <button
+                onClick={() => scrollToSection("FrontPage")} className="bg-[url('/pink_arrow.png')] bg-cover bg-center w-[8%] h-[8%] absolute center-10 right-10 flex items-center justify-center transition-shadow">
+            </button> */}
+        </div >
+    )
+};
 export default AboutPage;

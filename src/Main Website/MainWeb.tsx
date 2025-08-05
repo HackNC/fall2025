@@ -75,7 +75,7 @@ const MainPage: React.FC = () => {
                 <AboutPage />
               </SectionWrapper>
               <SectionWrapper>
-                <FrontPage scrollToSection={scrollToSection} />
+                <AboutPage />
               </SectionWrapper>
               <SectionWrapper>
                 <FrontPage scrollToSection={scrollToSection} />

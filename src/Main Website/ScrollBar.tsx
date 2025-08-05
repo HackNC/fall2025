@@ -143,16 +143,16 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({ children }) => 
           <div
             className="absolute transition-transform"
             style={{
-              bottom: "3px",
+              bottom: "9px",
               left: `${spriteLeft}px`,
               width: `${SPRITE_WIDTH}px`,
             }}
           >
             <img
-              src="/HackNC_Sprite.gif"
+              src="/pixel_ram128.png"
               alt="Horizontal Scroll Bar Character"
               className="select-none"
-              style={{ width: "100%" }}
+              style={{ width: "90%" }}
             />
           </div>
         </div>
