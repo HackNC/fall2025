@@ -3,6 +3,7 @@ import React from "react";
 import ScrollBar from "./ScrollBar";
 import FrontPage from "../Pages/FrontPage";
 import Navigation from "../Pages/NavigationBar";
+import OurDetailBoardPage from "../Pages/OurBoardDetailPage";
 
 const ScreenWrapper: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   return (
@@ -48,6 +49,25 @@ const BottomDecor: React.FC = () => {
 
 
 const MainPage: React.FC = () => {
+  const infoCardProps = {
+    name: "Aidan",
+    position: "grunt worker",
+    laziness: 5,
+    strength: 3,
+    catchphrase: "the way the meatball tumbles"
+  }
+  const ourBoardDetailProps = {
+    mainImage: "public/HackNC24.png",
+    drawingImage: "public/HackNC_Sprite.gif",
+    infoCardProps: infoCardProps,
+    members: {
+      "aidan": "public/pixelRam6400.png",
+      "daniel": "public/HackNC_Sprite.gif",
+      "lai": "public/pixelRam6400.png",
+      "jodi": "public/HackNC_Sprite.gif",
+      "scott": "public/pixelRam6400.png",
+    },
+  }
   return (
     <>
       <div className="h-screen w-screen flex flex-col justify-center bg-primary-light">
@@ -56,7 +76,7 @@ const MainPage: React.FC = () => {
           <ScreenWrapper>
             <ScrollBar>
               <SectionWrapper>
-                <FrontPage />
+                <OurDetailBoardPage props={ourBoardDetailProps} />
               </SectionWrapper>
               <SectionWrapper>
                 <FrontPage />
