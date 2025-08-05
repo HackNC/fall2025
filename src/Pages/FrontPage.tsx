@@ -1,13 +1,26 @@
 import React from "react";
 
-const FrontPage: React.FC = () => {
+// Define the props interface here
+interface FrontPageProps {
+    scrollToSection: (id: string) => void;
+}
+
+const FrontPage: React.FC<FrontPageProps> = ({ scrollToSection }) => {
+
     return (
-        <div className="text-center">
-            <h1 className="text-4xl font-bold mb-4 text-white ">Welcome to the Front Page</h1>
-            <p className="text-lg text-white">This is a sample front page content.</p>
+        <div className="flex flex-col text-center items-center font-jersey tracking-widest"
+            style={{ gap: "2.5rems" }}>
+            <h1 className="text-9xl text-font-light-blue text-shadow-font-light-blue">HACKNC 2025</h1>
+            <img src="/hacknc_logo_no_text_ glow.svg" alt="hacknc 2025 logo" className="scale-x-[-1] max-w-[90%] max-h-[90%]" />
+            <div className="flex items-center justify-center space-x-4">
+                <img src="/plain_arrow_pink.png" alt="pink arrow" className="max-w-[4%] max-h-[4%]" />
+                <button id="play-now" onClick={() => scrollToSection("AboutPage")} className="text-7xl tracking-widest text-primary-light text-shadow-accent-pink font-thin mb-1">
+                    play now
+                </button>
+                <img src="/plain_arrow_pink.png" alt="pink arrow" className="max-w-[4%] max-h-[4%] scale-x-[-1]" />
+            </div>
         </div>
 
     );
 }
-
 export default FrontPage;

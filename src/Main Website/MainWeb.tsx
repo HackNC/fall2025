@@ -3,6 +3,7 @@ import React from "react";
 import ScrollBar from "./ScrollBar";
 import FrontPage from "../Pages/FrontPage";
 import Navigation from "../Pages/NavigationBar";
+import AboutPage from "../Pages/AboutPage";
 
 const ScreenWrapper: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   return (
@@ -38,13 +39,25 @@ const BottomDecor: React.FC = () => {
       className="flex justify-evenly items-end mx-auto"
       style={{ width: "calc(var(--arcade-w) * 0.80)" }}
     >
-      <img src="/arrows.svg" alt="game arrows" className="drop-shadow-xl w-[12vh] h-[7vh] max-w-[100px] max-h-[80px]" style={{ display: 'block' }} />
-      <img src="/button_green.svg" alt="green button" className="drop-shadow-xl w-[10vh] h-[7vh] max-w-[80px] max-h-[80px]" style={{ display: 'block' }} />
-      <img src="/button_pink.svg" alt="pink button" className="drop-shadow-xl w-[10vh] h-[7vh] max-w-[80px] max-h-[80px]" style={{ display: 'block' }} />
-      <img src="/joystick_pink.svg" alt="pink joystick" className="drop-shadow-xl w-[12vh] h-[10vh] max-w-[100px] max-h-[80px]" style={{ display: 'block' }} />
+      <img src="/arrows.svg" alt="game arrows" className="drop-shadow-2xl w-[12vh] h-[7vh] max-w-[100px] max-h-[80px]" style={{ display: 'block' }} />
+      <img src="/button_green.svg" alt="green button" className="drop-shadow-2xl w-[10vh] h-[7vh] max-w-[80px] max-h-[80px]" style={{ display: 'block' }} />
+      <img src="/button_pink.svg" alt="pink button" className="drop-shadow-2xl w-[10vh] h-[7vh] max-w-[80px] max-h-[80px]" style={{ display: 'block' }} />
+      <img src="/joystick_pink.svg" alt="pink joystick" className="drop-shadow-2xl w-[15vh] h-[15vh] max-w-[150px] max-h-[150px] -mt-10" style={{ display: 'block' }} />
     </div>
   );
 };
+
+// Button scroll handler
+const scrollToSection = (id: string) => {
+  const section = document.getElementById(id);
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+
+    // Fire global custom event for HorizontalScroller to track
+    window.dispatchEvent(new CustomEvent("customScrollTo", { detail: { id } }));
+  }
+};
+
 
 
 const MainPage: React.FC = () => {
@@ -56,16 +69,16 @@ const MainPage: React.FC = () => {
           <ScreenWrapper>
             <ScrollBar>
               <SectionWrapper>
-                <FrontPage />
+                <FrontPage scrollToSection={scrollToSection} />
               </SectionWrapper>
               <SectionWrapper>
-                <FrontPage />
+                <AboutPage />
               </SectionWrapper>
               <SectionWrapper>
-                <FrontPage />
+                <FrontPage scrollToSection={scrollToSection} />
               </SectionWrapper>
               <SectionWrapper>
-                <FrontPage />
+                <FrontPage scrollToSection={scrollToSection} />
               </SectionWrapper>
             </ScrollBar>
           </ScreenWrapper>
