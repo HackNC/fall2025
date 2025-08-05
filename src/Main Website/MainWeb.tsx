@@ -54,19 +54,21 @@ const MainPage: React.FC = () => {
     position: "grunt worker",
     laziness: 5,
     strength: 3,
-    catchphrase: "the way the meatball tumbles"
+    catchphrase: "the way the meatball tumbles",
+    members: {
+      "aidan": "public/joystick_pink.svg",
+      "daniel": "public/HackNC24.png",
+      "lai": "public/black_star_lead.png",
+      "jodi": "public/runner.gif",
+      "scott": "public/pixelRam6400.png",
+      "jade": "public/HackNC_Sprite.gif",
+      "harrison": "public/white_star_graphics.png",
+    },
   }
   const ourBoardDetailProps = {
     mainImage: "public/HackNC24.png",
     drawingImage: "public/HackNC_Sprite.gif",
     infoCardProps: infoCardProps,
-    members: {
-      "aidan": "public/pixelRam6400.png",
-      "daniel": "public/HackNC_Sprite.gif",
-      "lai": "public/pixelRam6400.png",
-      "jodi": "public/HackNC_Sprite.gif",
-      "scott": "public/pixelRam6400.png",
-    },
   }
   return (
     <>
