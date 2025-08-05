@@ -54,7 +54,7 @@ const scrollToSection = (id: string) => {
     section.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
 
     // Fire global custom event for HorizontalScroller to track
-    window.dispatchEvent(new CustomEvent("customScrollTo", { detail: { id } }));
+    window.dispatchEvent(new CustomEvent("customScrollTo", { detail: id }));
   }
 };
 

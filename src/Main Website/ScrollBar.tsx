@@ -82,17 +82,22 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({ children }) => 
       const customEvent = event as CustomEvent<{ id: string }>;
       const targetId = customEvent.detail.id;
       const target = document.getElementById(targetId);
+      console.log("target", target);
+      console.log("containerRef.current", containerRef.current);
+      console.log("scrollRef.current", scrollRef.current);
 
       if (target && scrollRef.current && containerRef.current) {
         // update scrollLeft based on target position to update progress bar
-        if (containerRef.current) {
-          setScrollLeft(containerRef.current.scrollLeft);
-        }
+        setTimeout(() => {
+          if (containerRef.current) {
+            setScrollLeft(containerRef.current.scrollLeft);
+          }
+        }, 0);
       }
     };
 
     window.addEventListener("customScrollTo", handleCustomScroll);
-    return () => window.removeEventListener("customScrollTo", handleCustomScroll);
+    return () => window.removeEventListener("customScrollToPage", handleCustomScroll);
   }, []);
 
   return (
