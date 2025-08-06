@@ -21,8 +21,8 @@ export default {
         'font-cyan': '#65E6DB',
         'font-green': '#8AFAA6',
         'font-orange': '#FAD082',
-        'font-peach': 'FA9E82',
-        'font-pink': 'FA8282',
+        'font-peach': '#FA9E82',
+        'font-pink': '#FA8282',
         'font-purple': '#C3D6FF'
       },
 
