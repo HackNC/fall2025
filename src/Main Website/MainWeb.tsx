@@ -2,6 +2,7 @@
 import React from "react";
 import ScrollBar from "./ScrollBar";
 import FrontPage from "../Pages/FrontPage";
+import OurBoardPage from "../Pages/OurBoardPage";
 import Navigation from "../Pages/NavigationBar";
 
 const ScreenWrapper: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
@@ -66,6 +67,9 @@ const MainPage: React.FC = () => {
               </SectionWrapper>
               <SectionWrapper>
                 <FrontPage />
+              </SectionWrapper>
+              <SectionWrapper>
+                <OurBoardPage />
               </SectionWrapper>
             </ScrollBar>
           </ScreenWrapper>
