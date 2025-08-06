@@ -13,13 +13,38 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({ children }) => 
   const scrollRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
+
+  // arcade screen things
+  // Get the computed value of --arcade-w
+  const rootStyles = getComputedStyle(document.documentElement);
+  const width = parseFloat(rootStyles.getPropertyValue('--arcade-w'));
+
+  // If not set or invalid, fallback
+  if (isNaN(width)) {
+    console.error('Invalid --arcade-w value');
+    return;
+  }
+  const arcadeW = (width / 100) * window.innerWidth;
+
+  // useStates
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [scrollLeft, setScrollLeft] = useState(0);
   const [scrollableWidth, setScrollableWidth] = useState(0);
-  const [currentPage, setCurrentPage] = useState(0);
-  // These are now state variables so updates trigger re-render
   const [spriteLeft, setSpriteLeft] = useState(0);
   const [bannerVisibleWidth, setBannerVisibleWidth] = useState(0);
+
+  // pink arrow navigation consts
+  const [currentPage, setCurrentPage] = useState(0);
+  const [startOfPage, setStartOfPage] = useState(true);
+  const [endOfPage, setEndOfPage] = useState(false);
+
+  // Custom events and useState for joystick scroll direction
+  const prevScroll = useRef(0);
+  const scrollingNext = new CustomEvent("scrollingNext", { detail: "next", bubbles: true });
+  const scrollingPrev = new CustomEvent("scrollingPrev", { detail: "previous", bubbles: true });
+  const noScrollEvent = new CustomEvent("noScrollEvent", { detail: "static", bubbles: true });
+  const [isScrolling, setIsScrolling] = useState(false);
+
 
   // Update isMobile and scrollable width on resize
   useEffect(() => {
@@ -42,10 +67,11 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({ children }) => 
     return () => window.removeEventListener("resize", composedFunction);
   }, []);
 
-  // Handle wheel scroll for horizontal scroll and button scroll
+  // Handle wheel scroll, button scroll, and scroll direction for horizontal scroll 
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
+    let timeout: NodeJS.Timeout;
 
     const handleWheel = (event: WheelEvent) => {
       event.preventDefault();
@@ -53,20 +79,73 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({ children }) => 
       setScrollLeft(el.scrollLeft);
     };
 
+    // Update pink arrow navigation existence
+    // Track scroll position and determine if at end
     const handleButtonScroll = () => {
       setScrollLeft(el.scrollLeft);
+      const visibleWidth = el.clientWidth;
+      const scrollableWidth = el.scrollWidth;
+      const scrolled = el.scrollLeft;
+
+      // Check if at the end
+      if (scrolled + visibleWidth >= scrollableWidth - 1) {
+        setEndOfPage(true);
+        setStartOfPage(false);
+      } else if (scrolled == 0) {
+        setStartOfPage(true);
+      } else {
+        setEndOfPage(false);
+        setStartOfPage(false);
+      }
+
+      // Update current page based on scroll position
+      const page = Math.round(scrolled / arcadeW);
+      setCurrentPage(page);
+    };
+
+    const handleScrollDirection = () => {
+
+      const currentScroll = el.scrollLeft;
+
+      setIsScrolling(true);
+
+      if (prevScroll.current < currentScroll) {
+        window.dispatchEvent(scrollingNext);
+        console.log("dispatching next")
+      } else if (prevScroll.current > currentScroll) {
+        window.dispatchEvent(scrollingPrev);
+        console.log("dispatching prev");
+      } else if (!isScrolling) {
+        window.dispatchEvent(noScrollEvent);
+      }
+      // handleNoScrollEvent();
+
+      console.log("dispatching static");
+      prevScroll.current = currentScroll;
+
+    }
+
+    const handleNoScrollEvent = () => {
+      // Detect activity
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        setIsScrolling(false);
+      }, 30000);
     };
 
     if (!isMobile) {
       el.addEventListener("wheel", handleWheel, { passive: false });
       el.addEventListener("scroll", handleButtonScroll);
+      el.addEventListener("scroll", handleScrollDirection);
     }
 
     return () => {
+      clearTimeout(timeout);
       el.removeEventListener("wheel", handleWheel);
-      el.removeEventListener("scroll", handleButtonScroll)
+      el.removeEventListener("scroll", handleButtonScroll);
+      el.removeEventListener("scroll", handleScrollDirection);
     };
-  }, [isMobile]);
+  }, [isMobile, prevScroll]);
 
   // Update spriteLeft and bannerVisibleWidth whenever scrollLeft or scrollableWidth changes
   useEffect(() => {
@@ -84,76 +163,82 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({ children }) => 
 
     setSpriteLeft(newSpriteLeft);
     setBannerVisibleWidth(newBannerVisibleWidth);
-  }, [scrollLeft, scrollableWidth]);
+  }, [scrollLeft, scrollableWidth, arcadeW]);
 
-  // // Listen for custom scroll events to update progress bar
-  // useEffect(() => {
-  //   const handleCustomScroll = (event: Event) => {
-  //     const customEvent = event as CustomEvent<{ id: string }>;
-  //     const targetId = customEvent.detail.id;
-  //     const target = document.getElementById(targetId);
-
-  //     if (target && scrollRef.current && containerRef.current) {
-  //       // update scrollLeft based on target position to update progress bar
-  //       setTimeout(() => {
-  //         if (containerRef.current) {
-  //           setScrollLeft(containerRef.current.scrollLeft);
-  //         }
-  //       }, 0);
-  //     }
-  //   };
-
-  //   window.addEventListener("customScrollTo", handleCustomScroll);
-  //   return () => window.removeEventListener("customScrollToPage", handleCustomScroll);
-  // }, []);
-
+  // Handle pink navigation button next
   const handleNext = () => {
-    // put dispatch signal later for joystick sprite change
-    if (containerRef.current) {
-      const container = containerRef.current;
-      const sectionWidth = window.innerWidth - (2 * HORIZONTAL_OFFSET);
-      const newScrollLeft = (currentPage + 1) + sectionWidth;
+    const container = containerRef.current;
+    if (!container) return;
 
-      container.scrollTo({
-        left: newScrollLeft,
-        behavior: 'smooth',
-      });
+    const maxScrollLeft = container.scrollWidth - container.clientWidth;
+    const nextScrollLeft = container.scrollLeft + arcadeW;
 
-      setCurrentPage((prev) => prev + sectionWidth);
-    }
-  }
+    // Scroll one page forward (even if it reaches the end)
+    container.scrollTo({
+      left: nextScrollLeft,
+      behavior: "smooth",
+    });
+
+    // Restrict currentPage to max
+    const clampedPage = Math.min(currentPage + 1, Math.floor(maxScrollLeft / arcadeW));
+    setCurrentPage(clampedPage);
+  };
+  // handle previous button
+  const handlePrevious = () => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const prevScrollLeft = Math.max(container.scrollLeft - arcadeW, 0);
+
+    container.scrollTo({
+      left: prevScrollLeft,
+      behavior: 'smooth',
+    });
+
+    // Decrease currentPage, but not below 0
+    setCurrentPage((prev) => Math.max(prev - 1, 0));
+  };
 
   return (
     <>
-      <div className="flex justify-center items-center">
-        <div ref={scrollRef} className="w-full h-full relative">
-          {/* Horizontally Scrolling Container */}
+      <div className="flex justify-evenly items-center relative w-full h-full">
+        {/* Previous Button */}
+        {!isMobile && !startOfPage && (
+          <button
+            onClick={handlePrevious}
+            className="bg-[url('/pink_arrow.png')] bg-cover bg-center w-[8%] h-[8%] absolute left-10 flex items-center justify-center transition-shadow scale-x-[-1]"
+          />
+        )}
+        {/* Scroll Container */}
+        <div ref={scrollRef} className="w-full h-full">
           <div
             ref={containerRef}
-            className={`transition-transform duration-0 ease-linear ${isMobile ? "relative w-full flex flex-col" : "flex flex-row overflow-x-scroll"
-              }`}
+            className={`transition-transform duration-0 ease-linear ${isMobile
+              ? "relative w-full flex flex-col"
+              : "flex flex-row overflow-x-scroll"}`}
           >
             {children}
           </div>
         </div>
-        <div className={isMobile ? "hidden" : ""} >
-          < button
-            onClick={() => handleNext()} className="bg-[url('/pink_arrow.png')] bg-cover bg-center w-[8%] h-[8%] absolute center-10 right-10 flex items-center justify-center transition-shadow">
-          </button>
-        </div>
-      </div >
-      {/* Banner and Sprite, hidden on mobile */}
-      < div className={isMobile ? "hidden" : ""} >
-        {/* Banner */}
-        < div
-          className="absolute z-40 pointer-events-none"
+
+        {/* Next Button */}
+        {!isMobile && !endOfPage && (
+          <button
+            onClick={handleNext}
+            className="bg-[url('/pink_arrow.png')] bg-cover bg-center w-[8%] h-[8%] absolute right-10 flex items-center justify-center transition-shadow"
+          />
+        )}
+      </div>
+
+      {/* Banner - hidden on mobile */}
+      {!isMobile && (
+        <div className="absolute z-40 pointer-events-none"
           style={{
             bottom: `calc(16px + ${VERTICAL_OFFSET}px)`,
             left: `${HORIZONTAL_OFFSET}px`,
             right: `${HORIZONTAL_OFFSET}px`,
             height: "32px",
-          }
-          }
+          }}
         >
           <div
             className="h-full overflow-hidden absolute left-0"
@@ -161,10 +246,12 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({ children }) => 
           >
             <div className="h-full w-full bg-gradient-to-r from-gradient-top via-accent-purple to-accent-pink text-primary-light flex items-center justify-start pl-4 tracking-widest uppercase rounded-3xl"></div>
           </div>
-        </div >
+        </div>
+      )}
 
-        {/* Character */}
-        < div
+      {/* Character - hidden on mobile */}
+      {!isMobile && (
+        <div
           className="absolute z-50 pointer-events-none"
           style={{
             bottom: `calc(2px + ${VERTICAL_OFFSET}px)`,
@@ -187,10 +274,9 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({ children }) => 
               style={{ width: "90%" }}
             />
           </div>
-        </div >
-      </div >
+        </div>
+      )}
     </>
   );
 };
-
 export default HorizontalScroller;

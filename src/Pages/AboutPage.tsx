@@ -5,6 +5,7 @@ import React from 'react';
 //     scrollToSection: (id: string) => void;
 // }
 
+//the vertical space thing should be fixed after padding in section wrapper
 // placeholder rn 
 const AboutPage: React.FC = () => {
     return (

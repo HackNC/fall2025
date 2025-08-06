@@ -36,7 +36,7 @@ export default {
         'accent-pink': '0 4px 4px #C73484',
         'gradient-top': '0 2px 4px #151A3C',
         'gradient-bottom': '0 2px 4px #3746A2',
-        'font-light-blue': '0 2px 4px #82CCFA',
+        'font-light-blue': '0 p10x 4px #82CCFA',
         'font-dark-blue': '0 2px 4px #82A8FA',
         'font-cyan': '0 2px 4px #65E6DB',
         'font-green': '0 2px 4px #8AFAA6',
