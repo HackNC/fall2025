@@ -20,23 +20,23 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({
 
   // Handle isMobile and scrollableWidth when the window resizes
   useEffect(() => {
-    const isMobileHandler = () => setIsMobile(window.innerWidth <= 768);
-    const scrollHandler = () => {
-      const el = containerRef.current;
+    const el = containerRef.current;
       if (!el) return;
+
+    const resizeHandler = () => {
+      setIsMobile(window.innerWidth <= 768);
       setScrollLeft(el.scrollLeft)
       setScrollableWidth(el.scrollWidth - el.clientWidth);
-    };
-    const composedFunction = () => {
-      isMobileHandler();
-      scrollHandler();
     }
 
-    scrollHandler();
+    resizeHandler();
 
-    window.addEventListener("resize", composedFunction);
+    const resizeObserver = new ResizeObserver(resizeHandler);
+    resizeObserver.observe(el);
 
-    return () => window.removeEventListener("resize", composedFunction);
+    return () => {
+      resizeObserver.disconnect();
+    };
   }, [])
 
   // Handle horizontal scrolling and scrollLeft

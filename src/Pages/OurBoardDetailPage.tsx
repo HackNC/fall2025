@@ -19,8 +19,14 @@ interface OurBoardDetailProps {
     infoCardProps: InfoCardProps;
 }
 
+interface OurBoardDetailStyles {
+    accentColor: string;
+    whiteStar: string;
+    blackStar: string;
+}
 
-const MemberCarousel: React.FC<{members: Record<string, string>}> = ({members}) => {
+
+const MemberCarousel: React.FC<{members: Record<string, string>, accentColor: string}> = ({members, accentColor}) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const memberKeys = Object.keys(members);
 
@@ -54,7 +60,12 @@ const MemberCarousel: React.FC<{members: Record<string, string>}> = ({members}) 
     return (
         <>
             <div 
-            className="text-white font-jersey text-[24px] tracking-[0.2rem] leading-none">
+                className={`font-jersey text-[24px] tracking-[0.15rem] leading-none -my-2`}
+                style={{ 
+                    color: `${accentColor}`,
+                    filter: `drop-shadow(0 0 4px ${accentColor})`, 
+                }}
+            >
                 team members
             </div>
             <div className="flex items-center gap-4">
@@ -65,28 +76,37 @@ const MemberCarousel: React.FC<{members: Record<string, string>}> = ({members}) 
                 alt="Back arrow"
                 />
             </button>
-            <div className="relative flex w-[250px] h-[125px] items-center justify-center overflow-hidden">
+            <div className="relative flex mt-1 w-[250px] h-[125px] items-center justify-center">
                 {keys.map((key, i) => {
-                    const relative = i - 2;
+                const relative = i - 2;
 
-                    const positionClasses = {
-                    "-2": "opacity-0 scale-50 -translate-x-20 z-0",
-                    "-1": "opacity-100 scale-75 -translate-x-20 z-10",
-                    "0": "opacity-100 scale-100 translate-x-0 z-20",
-                    "1": "opacity-100 scale-75 translate-x-20 z-10",
-                    "2": "opacity-0 scale-50 translate-x-20 z-0",
-                    }[relative.toString()];
+                const positionClasses = {
+                "-2": "opacity-0 scale-50 -translate-x-20 z-5",
+                "-1": "opacity-100 scale-75 -translate-x-20 z-10",
+                "0": "opacity-100 scale-100 translate-x-0 z-20",
+                "1": "opacity-100 scale-75 translate-x-20 z-10",
+                "2": "opacity-0 scale-50 translate-x-20 z-5",
+                }[relative.toString()];
 
-                    return (
-                    <img
-                        key={key}
-                        src={members[key]}
-                        alt={`Portrait of ${key}`}
-                        className={`absolute transition-all duration-500 ease-in-out w-24 h-24 object-cover rounded-full ${positionClasses}`}
-                    />
-                    );
-                })}
-                </div>
+                return (
+                    <div key={key} className={`absolute transition-all duration-1000 ease-in-out ${positionClasses}`}>
+                        <div 
+                            className="w-20 h-20 rounded-lg overflow-hidden bg-white"
+                            style={{
+                                filter: `drop-shadow(0 0 4px ${accentColor})`,
+                            }}
+                        >
+                            <img
+                                src={members[key]}
+                                alt={`Portrait of ${key}`}
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
+                        <p className={`mt-1 text-white text-center transition-opacity duration-700 ${relative === 0 ? "opacity-100" : "opacity-0"}`}>{key}</p>
+                    </div>
+                );
+            })}
+            </div>
             <button onClick={handleNext}>
                 <img
                 className="w-6 h-6"
@@ -100,49 +120,61 @@ const MemberCarousel: React.FC<{members: Record<string, string>}> = ({members}) 
 };
 
 
-const InfoCard: React.FC<{props:InfoCardProps}> = ({props}) => {
+const InfoCard: React.FC<{props: InfoCardProps, styles: OurBoardDetailStyles}> = ({props, styles}) => {
     const {name, position, laziness, strength, catchphrase, members} = props;
+    const {accentColor, whiteStar, blackStar} = styles;
 
     return (
-        <div className="flex flex-col items-center rounded-3xl border-4 border-t-0 border-indigo-200">
-            <div 
-            className="text-white font-jersey text-[48px] tracking-[0.2rem] leading-none -my-2">
-                {name}
+        <div className="w-[350px] py-6 border-4 border-t-0 border-indigo-200 rounded-3xl">
+            <div className="-mt-10 flex flex-col items-center">
+                <div 
+                    className="text-white font-jersey text-[48px] tracking-[0.25rem] leading-none -my-2"
+                    style={{
+                        filter: `drop-shadow(0 0 4px ${accentColor})`,
+                    }}
+                >
+                    {name}
+                </div>
+                <div 
+                    className={`font-jersey text-[24px] tracking-[0.15rem] leading-none`}
+                    style={{ 
+                        color: `${accentColor}`,
+                        filter: `drop-shadow(0 0 4px ${accentColor})`,
+                    }}
+                >
+                    {position}
+                </div>
+                <dl className="w-[250px] pt-4 pb-8 grid grid-cols-[50%_50%] gap-2 text-white">
+                    <dt>laziness</dt>
+                    <dd className="flex gap-2">{
+                        Array.from({ length: 5 }).map((_, i) => {
+                            if (i < laziness) {
+                                return <img key={i} className="w-4" src={whiteStar} alt="White Star" />
+                            } else {
+                                return <img key={i} className="w-4" src={blackStar} alt="Black Star" />
+                            }
+                        })
+                    }</dd>
+                    <dt>strength</dt>
+                    <dd className="flex gap-2">{
+                        Array.from({ length: 5 }).map((_, i) => {
+                            if (i < strength) {
+                                return <img key={i} className="w-4" src={whiteStar} alt="White Star" />
+                            } else {
+                                return <img key={i} className="w-4" src={blackStar} alt="Black Star" />
+                            }
+                        })
+                    }</dd>
+                    <dt>catchphrase</dt>
+                    <dd>"{catchphrase}"</dd>
+                </dl>
+                <MemberCarousel members={members} accentColor={accentColor} />
             </div>
-            <div 
-            className="text-white font-jersey text-[24px] tracking-[0.2rem] leading-none">
-                {position}
-            </div>
-            <dl className="w-full px-10 pt-5 pb-5 grid grid-cols-[40%_60%] text-white">
-                <dt>laziness</dt>
-                <dd className="flex">{
-                    Array.from({ length: 5 }).map((_, i) => {
-                        if (i < laziness) {
-                            return <img key={i} className="w-6" src="public/white_star_graphics.png" alt="White Star" />
-                        } else {
-                            return <img key={i} className="w-6" src="public/black_star_lead.png" alt="Black Star" />
-                        }
-                    })
-                }</dd>
-                <dt>strength</dt>
-                <dd className="flex">{
-                    Array.from({ length: 5 }).map((_, i) => {
-                        if (i < strength) {
-                            return <img key={i} className="w-6" src="public/white_star_graphics.png" alt="White Star" />
-                        } else {
-                            return <img key={i} className="w-6" src="public/black_star_lead.png" alt="Black Star" />
-                        }
-                    })
-                }</dd>
-                <dt>catchphrase</dt>
-                <dd>"{catchphrase}"</dd>
-            </dl>
-            <MemberCarousel members={members} />
         </div>
     )
 }
 
-const OurBoardDetailPage: React.FC<{props: OurBoardDetailProps}> = ({props}) => {
+const OurBoardDetailPage: React.FC<{props: OurBoardDetailProps, styles: OurBoardDetailStyles}> = ({props, styles}) => {
     const {mainImage, drawingImage, infoCardProps} = props;
     const drawingRef = useRef<HTMLImageElement>(null);
     const [drawingSize, setDrawingSize] = useState({ width: 0, height: 0 });
@@ -167,11 +199,11 @@ const OurBoardDetailPage: React.FC<{props: OurBoardDetailProps}> = ({props}) => 
     }, []);
 
     return (
-        <div className="w-full flex justify-center gap-5">
+        <div className="w-full flex md:flex-row justify-center gap-24 pb-6">
             <div className="flex justify-center items-center">
-                <div className="w-[200px] h-fit relative">
+                <div className="w-[200px] h-[225px] relative">
                     <img
-                    className="bg-white w-full h-[250px] rounded-xl border-4 border-indigo-200"
+                    className="bg-white w-full h-full rounded-xl border-4 border-indigo-200"
                     src={mainImage}
                     alt={`Picture of ${infoCardProps.name}`} />
                     <img
@@ -185,9 +217,7 @@ const OurBoardDetailPage: React.FC<{props: OurBoardDetailProps}> = ({props}) => 
                     alt={`Drawing by ${infoCardProps.name}`} />
                 </div>
             </div>
-            <div className="w-[400px] flex flex-col items-center">
-                <InfoCard props={infoCardProps} />
-            </div>
+            <InfoCard props={infoCardProps} styles={styles} />
         </div>
     )
 }

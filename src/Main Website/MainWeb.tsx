@@ -50,11 +50,11 @@ const BottomDecor: React.FC = () => {
 
 const MainPage: React.FC = () => {
   const infoCardProps = {
-    name: "Aidan",
-    position: "grunt worker",
-    laziness: 5,
-    strength: 3,
-    catchphrase: "the way the meatball tumbles",
+    name: "UNI",
+    position: "co-lead director",
+    laziness: 4,
+    strength: 5,
+    catchphrase: "i am the strongest",
     members: {
       "aidan": "public/joystick_pink.svg",
       "daniel": "public/HackNC24.png",
@@ -70,6 +70,11 @@ const MainPage: React.FC = () => {
     drawingImage: "public/HackNC_Sprite.gif",
     infoCardProps: infoCardProps,
   }
+  const ourBoardDetailStyles = {
+    accentColor: "#c3d6ff",
+    whiteStar: "public/white_star_graphics.png",
+    blackStar: "public/black_star_lead.png"
+  }
   return (
     <>
       <div className="h-screen w-screen flex flex-col justify-center bg-primary-light">
@@ -78,7 +83,7 @@ const MainPage: React.FC = () => {
           <ScreenWrapper>
             <ScrollBar>
               <SectionWrapper>
-                <OurDetailBoardPage props={ourBoardDetailProps} />
+                <OurDetailBoardPage props={ourBoardDetailProps} styles={ourBoardDetailStyles} />
               </SectionWrapper>
               <SectionWrapper>
                 <FrontPage />
