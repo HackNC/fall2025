@@ -27,26 +27,32 @@ interface OurBoardDetailStyles {
 
 interface BorderAttrs {
     width: string;
+    height: string;
+    borderWidth: string;
     imageSlice: number;
     imageWidth: number;
 }
 
 // Add custom border to items
-const BorderItem: React.FC<{border: string, borderAttrs: BorderAttrs, className?: string, children: React.ReactNode}> = ({border, borderAttrs, className, children}) => {
-    const {width, imageSlice, imageWidth} = borderAttrs;
+const BorderItem: React.FC<{border: string, borderAttrs: BorderAttrs, className?: string, children: React.ReactNode, image?: boolean}> = ({border, borderAttrs, className = "", children, image = false}) => {
+    const {width, height, borderWidth, imageSlice, imageWidth} = borderAttrs;
 
     return (
-        <div
-        className={className}
-        style={{
-            borderStyle: "solid",
-            borderWidth: width,
-            borderImageSource: `url(${border})`,
-            borderImageRepeat: "repeat",
-            borderImageSlice: imageSlice,
-            borderImageWidth: imageWidth,
-        }}>
-            {children}
+        <div className={`relative ${className}`} style={{ width: width, height: height }}>
+            <div
+            className={`${image ? "z-10" : ""} w-full h-full absolute`}
+            style={{
+                borderStyle: "solid",
+                borderWidth: borderWidth,
+                borderImageSource: `url(${border})`,
+                borderImageRepeat: "repeat",
+                borderImageSlice: imageSlice,
+                borderImageWidth: imageWidth,
+            }}>
+            </div>
+            <div className={`${image ? "w-full h-full flex justify-center items-center" : ""} absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2`}>
+                {children}
+            </div>
         </div>
     );
 }
@@ -123,7 +129,7 @@ const Carousel: React.FC<{members: Record<string, string>, accentColor: string}>
                     alt="Prev arrow"
                     />
                 </button>
-                <div className="w-[250px] h-[125px] mt-4 scale- -mx-2 flex items-center justify-center relative">
+                <div className="w-[300px] h-[125px] mt-4 scale- -mx-2 flex items-center justify-center relative">
                     {names.map((name, idx) => {
                         const relativeIdx = idx - 2;
 
@@ -185,21 +191,25 @@ const InfoCard: React.FC<{props: InfoCardProps, styles: OurBoardDetailStyles}> =
 }
 
 const OurBoardDetailPage: React.FC<{props: OurBoardDetailProps, styles: OurBoardDetailStyles}> = ({props, styles}) => {
-    const portraitBorderAttrs = { width: "32px", imageSlice: 384, imageWidth: 32, }
-    const drawingBorderAttrs = { width: "32px", imageSlice: 256, imageWidth: 32, }
-    const infoBorderAttrs = { width: "32px", imageSlice: 384, imageWidth: 32, }
+    const portraitBorderAttrs = { width: "270px", height: "300px", borderWidth: "32px", imageSlice: 384, imageWidth: 32 }
+    const drawingBorderAttrs = { width: "160px", height: "150px", borderWidth: "32px", imageSlice: 256, imageWidth: 32 }
+    const infoBorderAttrs = { width: "400px", height: "400px", borderWidth: "32px", imageSlice: 384, imageWidth: 32 }
 
     return (
-        <div className="flex flex-col md:flex-row gap-4">
+        <div className="flex flex-row gap-4 pb-8">
             <div className="flex justify-center items-center">
-                <BorderItem border={styles.border} borderAttrs={portraitBorderAttrs} className="w-[250px] h-[250px] relative">
-                    <img className="w-full h-full object-cover" src={props.mainImage} alt={`Picture of ${props.infoCardProps.name}`} />
-                    <BorderItem border={styles.border} borderAttrs={drawingBorderAttrs} className="w-[100px] h-[100px] absolute -bottom-10 -right-10">
-                        <img className="w-full h-full object-cover" src={props.drawingImage} alt={`Drawing by ${props.infoCardProps.name}`} />
-                    </BorderItem>
+            <div className="relative">
+                <BorderItem border={styles.border} borderAttrs={portraitBorderAttrs} image>
+                    <img className="bg-white w-[220px] h-[270px] rounded-3xl object-cover" src={props.mainImage} alt={`Picture of ${props.infoCardProps.name}`} />
                 </BorderItem>
+                <div className="absolute -bottom-8 -right-8">
+                    <BorderItem border={styles.border} borderAttrs={drawingBorderAttrs} className="z-30" image>
+                        <img className="bg-white w-[120px] h-[120px] rounded-xl object-cover" src={props.drawingImage} alt={`Drawing by ${props.infoCardProps.name}`} />
+                    </BorderItem>
+                </div>
             </div>
-            <BorderItem border={styles.border} borderAttrs={infoBorderAttrs} className="px-6">
+            </div>
+            <BorderItem border={styles.border} borderAttrs={infoBorderAttrs}>
                 <InfoCard props={props.infoCardProps} styles={styles}/>
                 <Carousel members={props.infoCardProps.members} accentColor={styles.accentColor} />
             </BorderItem>
