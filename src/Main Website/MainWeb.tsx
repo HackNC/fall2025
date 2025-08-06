@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import ScrollBar from "./ScrollBar";
 import FrontPage from "../Pages/FrontPage";
+import OurBoardPage from "../Pages/OurBoardPage";
 import Navigation from "../Pages/NavigationBar";
 import AboutPage from "../Pages/AboutPage";
 import BottomDecor from "./BottomDecor";
@@ -29,7 +30,7 @@ const ScreenWrapper: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
 const SectionWrapper: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   return (
     <>
-      <section className="w-[var(--arcade-w)] h-[var(--arcade-h)] flex flex-shrink-0 items-center justify-center bg-transparent px-4">
+      <section className="w-[var(--arcade-w)] h-[var(--arcade-h)] flex flex-shrink-0 items-center justify-center bg-transparent pb-16">
         {children}
       </section>
     </>
@@ -66,6 +67,9 @@ const MainPage: React.FC = () => {
               </SectionWrapper>
               <SectionWrapper>
                 <FrontPage scrollToSection={scrollToSection} />
+              </SectionWrapper>
+              <SectionWrapper>
+                <OurBoardPage />
               </SectionWrapper>
             </ScrollBar>
           </ScreenWrapper>
