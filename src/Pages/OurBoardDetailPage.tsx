@@ -12,7 +12,6 @@ interface InfoCardProps {
     members: Record<string, string>;
 }
 
-
 interface OurBoardDetailProps {
     mainImage: string;
     drawingImage: string;
@@ -21,23 +20,77 @@ interface OurBoardDetailProps {
 
 interface OurBoardDetailStyles {
     accentColor: string;
+    border: string;
     whiteStar: string;
     blackStar: string;
 }
 
+interface BorderAttrs {
+    width: string;
+    imageSlice: number;
+    imageWidth: number;
+}
 
-const MemberCarousel: React.FC<{members: Record<string, string>, accentColor: string}> = ({members, accentColor}) => {
+// Add custom border to items
+const BorderItem: React.FC<{border: string, borderAttrs: BorderAttrs, className?: string, children: React.ReactNode}> = ({border, borderAttrs, className, children}) => {
+    const {width, imageSlice, imageWidth} = borderAttrs;
+
+    return (
+        <div
+        className={className}
+        style={{
+            borderStyle: "solid",
+            borderWidth: width,
+            borderImageSource: `url(${border})`,
+            borderImageRepeat: "repeat",
+            borderImageSlice: imageSlice,
+            borderImageWidth: imageWidth,
+        }}>
+            {children}
+        </div>
+    );
+}
+
+// Add glow to items and text
+const GlowItem: React.FC<{accentColor: string, className?: string, children: React.ReactNode, glowOnly?: boolean}> = ({accentColor, className, children, glowOnly = false}) => {
+    return (
+        <div
+        className={className}
+        style={{
+            ...glowOnly ? {} : {color: `${accentColor}`},
+            filter: `drop-shadow(0 0 4px ${accentColor})`,
+        }}>
+            {children}
+        </div>
+    );
+}
+
+const CarouselItem: React.FC<{relativeIdx: number, name: string, image: string, accentColor: string, styles: string}> = ({relativeIdx, name, image, accentColor, styles}) => {
+    return(
+        <div className={`absolute transition-all duration-500 ease-in-out ${styles}`}>
+            <GlowItem accentColor={accentColor} className="w-20 h-20 overflow-hidden rounded-lg bg-white">
+                <img
+                src={image}
+                alt={`Portrait of ${name}`}
+                className="w-full h-full object-cover" />
+            </GlowItem>
+            <p className={`transition-opacity duration-700 ${relativeIdx === 0 ? "opacity-100" : "opacity-0"} text-white text-center`}>{name}</p>
+        </div>
+    );
+}
+
+const Carousel: React.FC<{members: Record<string, string>, accentColor: string}> = ({members, accentColor}) => {
     const [currentIndex, setCurrentIndex] = useState(0);
-    const memberKeys = Object.keys(members);
+    const memberNames = Object.keys(members);
 
     const handleNext = () => {
-        setCurrentIndex(currentIndex === 0 ? memberKeys.length - 1 : currentIndex - 1);
+        setCurrentIndex(currentIndex === 0 ? memberNames.length - 1 : currentIndex - 1);
     };
     const handlePrev = () => {
-        setCurrentIndex(currentIndex === memberKeys.length - 1 ? 0 : currentIndex + 1);
+        setCurrentIndex(currentIndex === memberNames.length - 1 ? 0 : currentIndex + 1);
     };
 
-    const keys = useMemo(() => {
+    const names = useMemo(() => {
         const idxs = [
             currentIndex - 2,
             currentIndex - 1,
@@ -45,181 +98,113 @@ const MemberCarousel: React.FC<{members: Record<string, string>, accentColor: st
             currentIndex + 1,
             currentIndex + 2,
         ]
-        const newKeys = idxs.map((idx) => {
+        const newNames = idxs.map((idx) => {
             if (idx < 0) {
-                return memberKeys[idx + memberKeys.length];
-            } else if (idx > memberKeys.length - 1) {
-                return memberKeys[idx - memberKeys.length];
+                return memberNames[idx + memberNames.length];
+            } else if (idx > memberNames.length - 1) {
+                return memberNames[idx - memberNames.length];
             } else {
-                return memberKeys[idx];
+                return memberNames[idx];
             }
         })
-        return newKeys;
+        return newNames;
     }, [currentIndex]);
 
     return (
         <>
-            <div 
-                className={`font-jersey text-[24px] tracking-[0.15rem] leading-none -my-2`}
-                style={{ 
-                    color: `${accentColor}`,
-                    filter: `drop-shadow(0 0 4px ${accentColor})`, 
-                }}
-            >
+            <GlowItem accentColor={accentColor} className="-mb-6 font-jersey text-[24px] text-center tracking-[0.15rem] leading-none">
                 team members
-            </div>
-            <div className="flex items-center gap-4">
-            <button onClick={handlePrev}>
-                <img
-                className="transform rotate-180 w-6 h-6"
-                src="/plain_arrow.png"
-                alt="Back arrow"
-                />
-            </button>
-            <div className="relative flex mt-1 w-[250px] h-[125px] items-center justify-center">
-                {keys.map((key, i) => {
-                const relative = i - 2;
+            </GlowItem>
+            <div className="flex justify-center items-center">
+                <button onClick={handlePrev}>
+                    <img
+                    className="w-6 h-6 transform rotate-180"
+                    src="/plain_arrow.png"
+                    alt="Prev arrow"
+                    />
+                </button>
+                <div className="w-[250px] h-[125px] mt-4 scale- -mx-2 flex items-center justify-center relative">
+                    {names.map((name, idx) => {
+                        const relativeIdx = idx - 2;
 
-                const positionClasses = {
-                "-2": "opacity-0 scale-50 -translate-x-20 z-5",
-                "-1": "opacity-100 scale-75 -translate-x-20 z-10",
-                "0": "opacity-100 scale-100 translate-x-0 z-20",
-                "1": "opacity-100 scale-75 translate-x-20 z-10",
-                "2": "opacity-0 scale-50 translate-x-20 z-5",
-                }[relative.toString()];
-
-                return (
-                    <div key={key} className={`absolute transition-all duration-1000 ease-in-out ${positionClasses}`}>
-                        <div 
-                            className="w-20 h-20 rounded-lg overflow-hidden bg-white"
-                            style={{
-                                filter: `drop-shadow(0 0 4px ${accentColor})`,
-                            }}
-                        >
-                            <img
-                                src={members[key]}
-                                alt={`Portrait of ${key}`}
-                                className="w-full h-full object-cover"
-                            />
-                        </div>
-                        <p className={`mt-1 text-white text-center transition-opacity duration-700 ${relative === 0 ? "opacity-100" : "opacity-0"}`}>{key}</p>
-                    </div>
-                );
-            })}
-            </div>
-            <button onClick={handleNext}>
-                <img
-                className="w-6 h-6"
-                src="/plain_arrow.png"
-                alt="Next arrow"
-                />
-            </button>
+                        const positionClasses = {
+                        "-2": "opacity-0 scale-[60%] -translate-x-[80px] z-5",
+                        "-1": "opacity-100 scale-[80%] -translate-x-[80px] z-10",
+                        "0": "opacity-100 scale-[100%] translate-x-0 z-20",
+                        "1": "opacity-100 scale-[80%] translate-x-[80px] z-10",
+                        "2": "opacity-0 scale-[60%] translate-x-[80px] z-5",
+                        }[relativeIdx.toString()];
+                        
+                        if (positionClasses) {
+                            return <CarouselItem key={name} relativeIdx={relativeIdx} name={name} image={members[name]} accentColor={accentColor} styles={positionClasses} />;
+                        }
+                    })}
+                </div>
+                <button onClick={handleNext}>
+                    <img
+                    className="w-6 h-6"
+                    src="/plain_arrow.png"
+                    alt="Next arrow"
+                    />
+                </button>
             </div>
         </>
     );
 };
 
+const InfoCardStarField: React.FC<{fieldName: string, value: number, max: number, filledStar: string, emptyStar: string}> = ({fieldName, value, max, filledStar, emptyStar}) => {
+    return(
+        <>
+        <dt>{fieldName}</dt>
+        <dd className="flex gap-2">{
+            Array.from({ length: max }).map((_, i) => {
+                return <img key={i} className="w-4" src={i < value ? filledStar : emptyStar} alt={i < value ? "Filled star" : "Empty star"} />
+            })
+        }</dd>
+        </>
+    );
+}
 
 const InfoCard: React.FC<{props: InfoCardProps, styles: OurBoardDetailStyles}> = ({props, styles}) => {
     const {name, position, laziness, strength, catchphrase, members} = props;
-    const {accentColor, whiteStar, blackStar} = styles;
+    const {accentColor, border, whiteStar, blackStar} = styles;
 
     return (
-        <div className="w-[350px] py-6 border-4 border-t-0 border-indigo-200 rounded-3xl">
-            <div className="-mt-10 flex flex-col items-center">
-                <div 
-                    className="text-white font-jersey text-[48px] tracking-[0.25rem] leading-none -my-2"
-                    style={{
-                        filter: `drop-shadow(0 0 4px ${accentColor})`,
-                    }}
-                >
-                    {name}
-                </div>
-                <div 
-                    className={`font-jersey text-[24px] tracking-[0.15rem] leading-none`}
-                    style={{ 
-                        color: `${accentColor}`,
-                        filter: `drop-shadow(0 0 4px ${accentColor})`,
-                    }}
-                >
-                    {position}
-                </div>
-                <dl className="w-[250px] pt-4 pb-8 grid grid-cols-[50%_50%] gap-2 text-white">
-                    <dt>laziness</dt>
-                    <dd className="flex gap-2">{
-                        Array.from({ length: 5 }).map((_, i) => {
-                            if (i < laziness) {
-                                return <img key={i} className="w-4" src={whiteStar} alt="White Star" />
-                            } else {
-                                return <img key={i} className="w-4" src={blackStar} alt="Black Star" />
-                            }
-                        })
-                    }</dd>
-                    <dt>strength</dt>
-                    <dd className="flex gap-2">{
-                        Array.from({ length: 5 }).map((_, i) => {
-                            if (i < strength) {
-                                return <img key={i} className="w-4" src={whiteStar} alt="White Star" />
-                            } else {
-                                return <img key={i} className="w-4" src={blackStar} alt="Black Star" />
-                            }
-                        })
-                    }</dd>
-                    <dt>catchphrase</dt>
-                    <dd>"{catchphrase}"</dd>
-                </dl>
-                <MemberCarousel members={members} accentColor={accentColor} />
-            </div>
+        <div>
+            <GlowItem accentColor={accentColor} className="font-jersey text-[63px] text-white text-center tracking-[0.20rem] leading-none" glowOnly>{name}</GlowItem>
+            <GlowItem accentColor={accentColor} className={`-mt-2 font-jersey text-[21px] text-white text-center tracking-[0.10rem] leading-none`}>{position}</GlowItem>
+            <dl className="mx-4 mt-2 mb-6 grid grid-cols-2 gap-2 text-white">
+                <InfoCardStarField fieldName="laziness" value={laziness} max={5} filledStar={whiteStar} emptyStar={blackStar} />
+                <InfoCardStarField fieldName="strength" value={strength} max={5} filledStar={whiteStar} emptyStar={blackStar} />
+                <dt>catchphrase</dt>
+                <dl>"{catchphrase}"</dl>
+            </dl>
         </div>
-    )
+    );     
+        
 }
 
 const OurBoardDetailPage: React.FC<{props: OurBoardDetailProps, styles: OurBoardDetailStyles}> = ({props, styles}) => {
-    const {mainImage, drawingImage, infoCardProps} = props;
-    const drawingRef = useRef<HTMLImageElement>(null);
-    const [drawingSize, setDrawingSize] = useState({ width: 0, height: 0 });
-
-    useEffect(() => {
-    const el = drawingRef.current;
-    if (el) {
-        const updateSize = () => {
-        setDrawingSize({
-            width: el.offsetWidth,
-            height: el.offsetHeight,
-        });
-        };
-
-        // Wait for image to load
-        if (el.complete) {
-        updateSize();
-        } else {
-        el.onload = updateSize;
-        }
-    }
-    }, []);
+    const portraitBorderAttrs = { width: "32px", imageSlice: 384, imageWidth: 32, }
+    const drawingBorderAttrs = { width: "32px", imageSlice: 256, imageWidth: 32, }
+    const infoBorderAttrs = { width: "32px", imageSlice: 384, imageWidth: 32, }
 
     return (
-        <div className="w-full flex md:flex-row justify-center gap-24 pb-6">
+        <div className="flex flex-col md:flex-row gap-4">
             <div className="flex justify-center items-center">
-                <div className="w-[200px] h-[225px] relative">
-                    <img
-                    className="bg-white w-full h-full rounded-xl border-4 border-indigo-200"
-                    src={mainImage}
-                    alt={`Picture of ${infoCardProps.name}`} />
-                    <img
-                    ref={drawingRef}
-                    className={`bg-white w-24 h-24 rounded-xl border-4 border-indigo-200 absolute`}
-                    style={{
-                        bottom: `-${drawingSize.height * 0.5}px`,
-                        right: `-${drawingSize.width * 0.25}px`,
-                    }}
-                    src={drawingImage}
-                    alt={`Drawing by ${infoCardProps.name}`} />
-                </div>
+                <BorderItem border={styles.border} borderAttrs={portraitBorderAttrs} className="w-[250px] h-[250px] relative">
+                    <img className="w-full h-full object-cover" src={props.mainImage} alt={`Picture of ${props.infoCardProps.name}`} />
+                    <BorderItem border={styles.border} borderAttrs={drawingBorderAttrs} className="w-[100px] h-[100px] absolute -bottom-10 -right-10">
+                        <img className="w-full h-full object-cover" src={props.drawingImage} alt={`Drawing by ${props.infoCardProps.name}`} />
+                    </BorderItem>
+                </BorderItem>
             </div>
-            <InfoCard props={infoCardProps} styles={styles} />
+            <BorderItem border={styles.border} borderAttrs={infoBorderAttrs} className="px-6">
+                <InfoCard props={props.infoCardProps} styles={styles}/>
+                <Carousel members={props.infoCardProps.members} accentColor={styles.accentColor} />
+            </BorderItem>
         </div>
-    )
+    );
 }
 
 export default OurBoardDetailPage;

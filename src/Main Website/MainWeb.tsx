@@ -56,28 +56,29 @@ const MainPage: React.FC = () => {
     strength: 5,
     catchphrase: "i am the strongest",
     members: {
-      "aidan": "public/joystick_pink.svg",
-      "daniel": "public/HackNC24.png",
-      "lai": "public/black_star_lead.png",
-      "jodi": "public/runner.gif",
-      "scott": "public/pixelRam6400.png",
-      "jade": "public/HackNC_Sprite.gif",
-      "harrison": "public/white_star_graphics.png",
+      "aidan": "/joystick_pink.svg",
+      "daniel": "/HackNC24.png",
+      "lai": "/black_star_lead.png",
+      "jodi": "/runner.gif",
+      "scott": "/pixelRam6400.png",
+      "jade": "/HackNC_Sprite.gif",
+      "harrison": "/white_star_graphics.png",
     },
   }
   const ourBoardDetailProps = {
-    mainImage: "public/HackNC24.png",
-    drawingImage: "public/HackNC_Sprite.gif",
+    mainImage: "/HackNC24.png",
+    drawingImage: "/HackNC_Sprite.gif",
     infoCardProps: infoCardProps,
   }
   const ourBoardDetailStyles = {
     accentColor: "#c3d6ff",
-    whiteStar: "public/white_star_graphics.png",
-    blackStar: "public/black_star_lead.png"
+    border: "/hacker_exp_border.png",
+    whiteStar: "/white_star_graphics.png",
+    blackStar: "/black_star_lead.png"
   }
   return (
     <>
-      <div className="h-screen w-screen flex flex-col justify-center bg-primary-light">
+      <div className="h-full w-full flex flex-col justify-center bg-primary-light">
         <div className="flex flex-col">
           <Navigation />
           <ScreenWrapper>
@@ -86,13 +87,13 @@ const MainPage: React.FC = () => {
                 <OurDetailBoardPage props={ourBoardDetailProps} styles={ourBoardDetailStyles} />
               </SectionWrapper>
               <SectionWrapper>
-                <FrontPage />
+                <OurDetailBoardPage props={ourBoardDetailProps} styles={ourBoardDetailStyles} />
               </SectionWrapper>
               <SectionWrapper>
-                <FrontPage />
+                <OurDetailBoardPage props={ourBoardDetailProps} styles={ourBoardDetailStyles} />
               </SectionWrapper>
               <SectionWrapper>
-                <FrontPage />
+              <OurDetailBoardPage props={ourBoardDetailProps} styles={ourBoardDetailStyles} />
               </SectionWrapper>
             </ScrollBar>
           </ScreenWrapper>
