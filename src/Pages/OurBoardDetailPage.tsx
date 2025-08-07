@@ -139,12 +139,12 @@ const Carousel: React.FC<{members: Record<string, string>, accentColor: string}>
             <div className="flex justify-center items-center mb-12">
                 <button onClick={handlePrev}>
                     <img
-                    className="w-6 h-6 transform rotate-180"
+                    className="w-6 h-6 mr-3 transform rotate-180"
                     src="/plain_arrow.png"
                     alt="Prev arrow"
                     />
                 </button>
-                <div className="w-[300px] h-[125px] mt-4 scale- -mx-2 flex items-center justify-center relative">
+                <div className="w-[275px] h-[125px] mt-4 scale- -mx-2 flex items-center justify-center relative">
                     {names.map((name, idx) => {
                         const relativeIdx = idx - 2;
 
@@ -163,7 +163,7 @@ const Carousel: React.FC<{members: Record<string, string>, accentColor: string}>
                 </div>
                 <button onClick={handleNext}>
                     <img
-                    className="w-6 h-6"
+                    className="w-6 h-6 ml-2"
                     src="/plain_arrow.png"
                     alt="Next arrow"
                     />
