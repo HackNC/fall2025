@@ -224,6 +224,16 @@ const OurBoardDetailPage: React.FC<{props: OurBoardDetailProps, styles: OurBoard
                         <img className="bg-white w-[120px] h-[120px] rounded-xl object-cover" src={props.drawingImage} alt={`Drawing by ${props.infoCardProps.name}`} />
                     </BorderItem>
                 </div>
+                <div className="flex gap-2 absolute bottom-[2px] left-4">{
+                    Array.from({ length: 3 }).map((_, i) => {
+                        return <img key={i} className="w-7 z-20" src={styles.filledStar} alt="Filled star" />
+                    })
+                }</div>
+                <div className="flex gap-2 absolute top-[2px] right-4">{
+                    Array.from({ length: 3 }).map((_, i) => {
+                        return <img key={i} className="w-7 z-20" src={styles.filledStar} alt="Filled star" />
+                    })
+                }</div>
             </div>
             </div>
             <div className="mt-12">
