@@ -49,32 +49,33 @@ const BottomDecor: React.FC = () => {
 
 
 const MainPage: React.FC = () => {
+  const members = {
+    "aidan": "/joystick_pink.svg",
+    "daniel": "/HackNC24.png",
+    "lai": "/black_star_lead.png",
+    "jodi": "/runner.gif",
+    "scott": "/pixelRam6400.png",
+    "jade": "/HackNC_Sprite.gif",
+    "harrison": "/white_star_graphics.png",
+  }
   const infoCardProps = {
     name: "UNI",
     position: "co-lead director",
     laziness: 4,
     strength: 5,
     catchphrase: "i am the strongest",
-    members: {
-      "aidan": "/joystick_pink.svg",
-      "daniel": "/HackNC24.png",
-      "lai": "/black_star_lead.png",
-      "jodi": "/runner.gif",
-      "scott": "/pixelRam6400.png",
-      "jade": "/HackNC_Sprite.gif",
-      "harrison": "/white_star_graphics.png",
-    },
   }
   const ourBoardDetailProps = {
     mainImage: "/HackNC24.png",
     drawingImage: "/HackNC_Sprite.gif",
     infoCardProps: infoCardProps,
+    members: members,
   }
   const ourBoardDetailStyles = {
     accentColor: "#c3d6ff",
-    border: "/hacker_exp_border.png",
-    whiteStar: "/white_star_graphics.png",
-    blackStar: "/black_star_lead.png"
+    border: "/lead_border.png",
+    filledStar: "/white_star_graphics.png",
+    emptyStar: "/black_star_lead.png"
   }
   return (
     <>
