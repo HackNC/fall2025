@@ -1,5 +1,5 @@
 import React from "react";
-//import StaticPage from './staticPage';
+import StaticPage from './StaticPage/StaticPage'
 // import HorizontalScrollTest from './HorizontalScrollTest';
 import PageContainer from "./Archives/HorizontalScroll";
 import SampleWeb from "./Main Website/MainWeb";
@@ -8,12 +8,12 @@ import HorizontalScroll from "./Archives/HorizontalScroll";
 
 const App: React.FC = () => {
   return (
-    //<StaticPage />
+    <StaticPage />
     // <HorizontalScrollTest />
     // <PageContainer />
     // <HorizontalScroll / >
     /* SampleWeb tests the Horizontal Scroll Bar Character */
-    <SampleWeb />
+    //  <SampleWeb />
   );
 };
 export default App;

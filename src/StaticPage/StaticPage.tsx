@@ -80,7 +80,7 @@ const StaticPage: React.FC = () => {
           <div className="flex flex-wrap justify-center gap-6 mb-12">
             <div className="flex items-center bg-primary-dark bg-opacity-30 backdrop-blur-sm rounded-lg px-6 py-3 border border-accent-pink border-opacity-50">
               <Calendar className="mr-3 text-accent-pink" size={20} />
-              <h3 className="text-primary-light font-semibold">November 2025</h3>
+              <h3 className="text-primary-light font-semibold">October 2025</h3>
             </div>
             <div className="flex items-center bg-primary-dark bg-opacity-30 backdrop-blur-sm rounded-lg px-6 py-3 border border-accent-pink border-opacity-50">
               <MapPin className="mr-3 text-accent-pink" size={20} />
@@ -119,9 +119,9 @@ const StaticPage: React.FC = () => {
                 </a>
               </div>
               <div className="flex justify-center">
-                <img 
-                  src="/EventPhoto.jpg" 
-                  alt="HackNC2024 Event Photo" 
+                <img
+                  src="/EventPhoto.jpg"
+                  alt="HackNC2024 Event Photo"
                   className="rounded-lg shadow-lg w-full max-w-md"
                 />
               </div>
@@ -143,8 +143,8 @@ const StaticPage: React.FC = () => {
                 >
                   <span className="text-accent-yellow font-semibold text-lg pr-4 italic">{faq.question}</span>
                   <div className="flex-shrink-0">
-                    {openFAQ === index ? 
-                      <ChevronUp className="text-accent-yellow" size={24} /> : 
+                    {openFAQ === index ?
+                      <ChevronUp className="text-accent-yellow" size={24} /> :
                       <ChevronDown className="text-accent-yellow" size={24} />
                     }
                   </div>
@@ -167,7 +167,7 @@ const StaticPage: React.FC = () => {
           <p className="text-primary-dark text-center text-lg mb-12 max-w-3xl mx-auto">
             HackNC wouldn't be possible without the help of our sponsors. They help us give out cool prizes, and let us do our work smoothly.
           </p>
-          
+
           {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
             {sponsors.map((sponsor: string, index: number) => (
               <div key={index} className="bg-primary-dark bg-opacity-30 backdrop-blur-sm rounded-lg p-6 border border-accent-purple border-opacity-40 flex items-center justify-center hover:bg-opacity-50 hover:border-opacity-60 transition-all transform hover:scale-105 shadow-lg">
@@ -178,8 +178,8 @@ const StaticPage: React.FC = () => {
 
           <div className="text-center">
             <div className="font-jersey text-4xl text-accent-yellow mb-4 italic">Looking to sponsor HackNC 2025?</div>
-            <a 
-              href="mailto:sponsorship@hacknc.com" 
+            <a
+              href="mailto:sponsorship@hacknc.com"
               className="inline-flex items-center bg-gradient-to-r from-accent-yellow to-accent-pink text-primary-light px-6 py-3 rounded-lg font-semibold hover:from-accent-yellow hover:to-accent-pink transition-all transform hover:scale-105 shadow-lg"
             >
               <Mail className="mr-2" size={18} />
@@ -195,9 +195,9 @@ const StaticPage: React.FC = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-6 md:mb-0">
               <p className="text-primary-light">&copy; HackNC 2025</p>
-              <a 
-                href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" 
-                target="_blank" 
+              <a
+                href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-accent-blue hover:text-purple-300 transition-colors"
               >
