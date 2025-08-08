@@ -30,7 +30,7 @@ const ScreenWrapper: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
 const SectionWrapper: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   return (
     <>
-      <section className="w-[var(--arcade-w)] h-[var(--arcade-h)] flex flex-shrink-0 items-center justify-center bg-transparent pb-16">
+      <section className="w-[var(--arcade-w)] h-[var(--arcade-h)] flex flex-shrink-0 items-center justify-center bg-transparent pb-[5vh]">
         {children}
       </section>
     </>

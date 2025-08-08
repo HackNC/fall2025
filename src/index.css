@@ -6,13 +6,13 @@
 @tailwind utilities;
 
 h1 {
-  font-family: "Jersey 15", cursive;
+  font-family: "Jersey 15";
   font-size: 48pt;
   /*font-weight: bold;*/
 }
 
 h2 {
-  font-family: "Jersey 15", cursive;
+  font-family: "Jersey 15";
   font-size: 36pt;
   font-weight: bold;
 }

@@ -9,12 +9,18 @@ import React from 'react';
 // placeholder rn 
 const AboutPage: React.FC = () => {
     return (
-        <div id="AboutPage" className="flex text-center items-center justify-center">
-            <div className="flex flex-col text-center text-primary-light text-shadow-font-purple tracking-widest mb-60">
-                <div className="items-start mb-10">
+        <div
+            id="AboutPage"
+            className="flex items-center justify-center relative px-4 py-20 text-center"
+        >
+            <div className="flex flex-col text-primary-light text-shadow-font-purple tracking-widest max-w-4xl">
+                {/* Page Title */}
+                <div className="absolute top-0 left-1/2 transform -translate-x-1/2">
                     <h1 className="">About</h1>
                 </div>
-                <p className="text-shadow-none text-start max-w-[100vh] text-2xl">
+
+                {/* Description Text */}
+                <p className="text-shadow-none text-left text-2xl max-w-[100vh] leading-relaxed pt-[5vh]">
                     HackNC is a weekend for students of all skill levels to broaden their talents.
                     Your challenge is to make an awesome project in just 24 hours. You will have
                     access to hands-on tech workshops, sponsor networking, as well as exciting talks
@@ -23,11 +29,14 @@ const AboutPage: React.FC = () => {
                 </p>
             </div>
 
-            {/* FIX THIS LATER<
+            {/* Scroll Button Placeholder */}
+            {/*
             <button
-                onClick={() => scrollToSection("FrontPage")} className="bg-[url('/pink_arrow.png')] bg-cover bg-center w-[8%] h-[8%] absolute center-10 right-10 flex items-center justify-center transition-shadow">
-            </button> */}
-        </div >
-    )
+                onClick={() => scrollToSection("FrontPage")}
+                className="bg-[url('/pink_arrow.png')] bg-cover bg-center w-[8%] h-[8%] absolute right-10 top-1/2 transform -translate-y-1/2 transition-shadow"
+            />
+            */}
+        </div>
+    );
 };
 export default AboutPage;

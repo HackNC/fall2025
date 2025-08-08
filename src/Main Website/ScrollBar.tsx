@@ -71,7 +71,8 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({ children }) => 
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
-    let timeout: NodeJS.Timeout;
+    let timeout: ReturnType<typeof setTimeout>;
+
 
     const handleWheel = (event: WheelEvent) => {
       event.preventDefault();
@@ -125,13 +126,13 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({ children }) => 
 
     }
 
-    const handleNoScrollEvent = () => {
-      // Detect activity
-      clearTimeout(timeout);
-      timeout = setTimeout(() => {
-        setIsScrolling(false);
-      }, 30000);
-    };
+    // const handleNoScrollEvent = () => {
+    //   // Detect activity
+    //   clearTimeout(timeout);
+    //   timeout = setTimeout(() => {
+    //     setIsScrolling(false);
+    //   }, 30000);
+    // };
 
     if (!isMobile) {
       el.addEventListener("wheel", handleWheel, { passive: false });
