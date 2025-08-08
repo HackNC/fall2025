@@ -3,6 +3,7 @@ import React from "react";
 import ScrollBar from "./ScrollBar";
 import FrontPage from "../Pages/FrontPage";
 import Navigation from "../Pages/NavigationBar";
+import FAQ from "../Pages/FAQPage";
 
 const ScreenWrapper: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   return (
@@ -16,21 +17,27 @@ const ScreenWrapper: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
         drop-shadow-lg
         shadow-inner-lg
       "
-      style={{
-        width: "var(--arcade-w)", height: "var(--arcade-h)"
-      } as React.CSSProperties}>
+      style={
+        {
+          width: "var(--arcade-w)",
+          height: "var(--arcade-h)",
+        } as React.CSSProperties
+      }
+    >
       {children}
     </div>
   );
 };
 
-const SectionWrapper: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
+const SectionWrapper: React.FC<React.PropsWithChildren<{}>> = ({
+  children,
+}) => {
   return (
     <section className="w-[var(--arcade-w)] h-[var(--arcade-h)] flex flex-shrink-0 items-center justify-center bg-transparent px-4">
       {children}
     </section>
   );
-}
+};
 
 const BottomDecor: React.FC = () => {
   return (
@@ -38,14 +45,33 @@ const BottomDecor: React.FC = () => {
       className="flex justify-evenly items-end mx-auto"
       style={{ width: "calc(var(--arcade-w) * 0.80)" }}
     >
-      <img src="/arrows.svg" alt="game arrows" className="drop-shadow-xl w-[12vh] h-[7vh] max-w-[100px] max-h-[80px]" style={{ display: 'block' }} />
-      <img src="/button_green.svg" alt="green button" className="drop-shadow-xl w-[10vh] h-[7vh] max-w-[80px] max-h-[80px]" style={{ display: 'block' }} />
-      <img src="/button_pink.svg" alt="pink button" className="drop-shadow-xl w-[10vh] h-[7vh] max-w-[80px] max-h-[80px]" style={{ display: 'block' }} />
-      <img src="/joystick_pink.svg" alt="pink joystick" className="drop-shadow-xl w-[12vh] h-[10vh] max-w-[100px] max-h-[80px]" style={{ display: 'block' }} />
+      <img
+        src="/arrows.svg"
+        alt="game arrows"
+        className="drop-shadow-xl w-[12vh] h-[7vh] max-w-[100px] max-h-[80px]"
+        style={{ display: "block" }}
+      />
+      <img
+        src="/button_green.svg"
+        alt="green button"
+        className="drop-shadow-xl w-[10vh] h-[7vh] max-w-[80px] max-h-[80px]"
+        style={{ display: "block" }}
+      />
+      <img
+        src="/button_pink.svg"
+        alt="pink button"
+        className="drop-shadow-xl w-[10vh] h-[7vh] max-w-[80px] max-h-[80px]"
+        style={{ display: "block" }}
+      />
+      <img
+        src="/joystick_pink.svg"
+        alt="pink joystick"
+        className="drop-shadow-xl w-[12vh] h-[10vh] max-w-[100px] max-h-[80px]"
+        style={{ display: "block" }}
+      />
     </div>
   );
 };
-
 
 const MainPage: React.FC = () => {
   return (
@@ -62,7 +88,7 @@ const MainPage: React.FC = () => {
                 <FrontPage />
               </SectionWrapper>
               <SectionWrapper>
-                <FrontPage />
+                <FAQ />
               </SectionWrapper>
               <SectionWrapper>
                 <FrontPage />
