@@ -205,9 +205,10 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({ children }) => 
       <div className="flex justify-evenly items-center relative w-full h-full">
         {/* Previous Button */}
         {!isMobile && !startOfPage && (
+          // Previous Pink Arrow Navigation 
           <button
             onClick={handlePrevious}
-            className="bg-[url('/pink_arrow.png')] bg-cover bg-center w-[8%] h-[8%] absolute left-10 flex items-center justify-center transition-shadow scale-x-[-1]"
+            className="bg-[url('/pink_arrow.png')] bg-cover bg-center w-[8%] h-[8%] absolute left-10 flex items-center justify-center transition-shadow scale-x-[-1] z-50"
           />
         )}
         {/* Scroll Container */}
