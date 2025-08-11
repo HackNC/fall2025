@@ -10,11 +10,11 @@ import React from 'react';
 const AboutPage: React.FC = () => {
     return (
         <div id="AboutPage" className="flex text-center items-center justify-center">
-            <div className="flex flex-col text-center text-primary-light text-shadow-font-purple tracking-widest mb-60">
-                <div className="items-start mb-10">
+            <div className="m-5 md:m-0 flex flex-col text-center text-primary-light text-shadow-font-purple tracking-widest mb-60">
+                <div className="items-start md:mb-10">
                     <h1 className="">About</h1>
                 </div>
-                <p className="text-shadow-none text-start max-w-[100vh] text-2xl">
+                <p className="text-shadow-none text-start max-w-[100vh] text-md sm:text-lg md:text-2xl">
                     HackNC is a weekend for students of all skill levels to broaden their talents.
                     Your challenge is to make an awesome project in just 24 hours. You will have
                     access to hands-on tech workshops, sponsor networking, as well as exciting talks
