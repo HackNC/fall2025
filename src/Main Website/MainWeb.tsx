@@ -3,7 +3,6 @@ import React from "react";
 import ScrollBar from "./ScrollBar";
 import FrontPage from "../Pages/FrontPage";
 import Navigation from "../Pages/NavigationBar";
-import Countdown  from "../Pages/Countdown";
 
 const ScreenWrapper: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   return (
@@ -57,7 +56,7 @@ const MainPage: React.FC = () => {
           <ScreenWrapper>
             <ScrollBar>
               <SectionWrapper>
-                <Countdown />
+                <FrontPage />
               </SectionWrapper>
               <SectionWrapper>
                 <FrontPage />

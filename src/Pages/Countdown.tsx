@@ -10,12 +10,17 @@ const Countdown: React.FC = () => {
     const [hoursLeft, setHoursLeft] = useState("00");
     const [minutesLeft, setMinutesLeft] = useState("00");
     const [secondsLeft, setSecondsLeft] = useState("00");
-    const hackathonStartDate = new Date("October 10, 2025 00:00:00");
+    let hackathonStartDate = new Date("October 10, 2025 00:00:00");
 
     useEffect(() => {
         const timeLeftHandler = () => {
-            const currentDate = new Date();
+            const toNewYorkTime = (date: Date) => {
+                return new Date(date.toLocaleString("en-US", { timeZone: "America/New_York" }));
+            }
 
+            let currentDate = new Date();
+            currentDate = toNewYorkTime(currentDate);
+            hackathonStartDate = toNewYorkTime(hackathonStartDate);
             const diffMs = hackathonStartDate.getTime() - currentDate.getTime();
             const diffSec = diffMs / 1000;
 
@@ -24,6 +29,7 @@ const Countdown: React.FC = () => {
                 const hours = Math.floor((diffSec - (days * SECONDS_PER_DAY)) / SECONDS_PER_HOUR);
                 const minutes = Math.floor((diffSec - (days * SECONDS_PER_DAY + hours * SECONDS_PER_HOUR)) / SECONDS_PER_MINUTE);
                 const seconds = Math.floor(diffSec - (days * SECONDS_PER_DAY + hours * SECONDS_PER_HOUR + minutes * SECONDS_PER_MINUTE));
+                
                 const formatTime = (time: number) => {
                     return String(time).padStart(2, "0");
                 };

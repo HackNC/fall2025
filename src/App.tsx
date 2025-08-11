@@ -8,12 +8,12 @@ import HorizontalScroll from "./Archives/HorizontalScroll";
 
 const App: React.FC = () => {
   return (
-    // <StaticPage />
+    <StaticPage />
     // <HorizontalScrollTest />
     // <PageContainer />
     // <HorizontalScroll / >
     /* SampleWeb tests the Horizontal Scroll Bar Character */
-    <SampleWeb />
+    //  <SampleWeb />
   );
 };
 export default App;
