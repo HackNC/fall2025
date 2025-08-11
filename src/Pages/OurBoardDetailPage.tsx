@@ -213,7 +213,7 @@ const OurBoardDetailPage: React.FC<{props: OurBoardDetailProps, styles: OurBoard
     const infoBorderAttrs = { width: "400px", height: "350px", borderWidth: "32px", imageSlice: 384, imageWidth: 32 };
 
     return (
-        <div className="flex flex-row gap-4 mb-20">
+        <div className="flex flex-col-reverse md:flex-row md:gap-4 mb-20">
             <div className="flex justify-center items-center">
             <div className="relative mt-12">
                 <BorderItem border={styles.border} borderAttrs={portraitBorderAttrs} image>
