@@ -4,12 +4,9 @@ import ScrollBar from "./ScrollBar";
 import FrontPage from "../Pages/FrontPage";
 import OurBoardPage from "../Pages/OurBoardPage";
 import Navigation from "../Pages/NavigationBar";
-<<<<<<< HEAD
 import AboutPage from "../Pages/AboutPage";
 import BottomDecor from "./BottomDecor";
-=======
 import OurDetailBoardPage from "../Pages/OurBoardDetailPage";
->>>>>>> feat/our-board-detail-page
 
 const ScreenWrapper: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   return (
@@ -89,7 +86,6 @@ const MainPage: React.FC = () => {
           <ScreenWrapper>
             <ScrollBar>
               <SectionWrapper>
-<<<<<<< HEAD
                 <FrontPage scrollToSection={scrollToSection} />
               </SectionWrapper>
               <SectionWrapper>
@@ -103,8 +99,6 @@ const MainPage: React.FC = () => {
               </SectionWrapper>
               <SectionWrapper>
                 <OurBoardPage />
-=======
-                <OurDetailBoardPage props={ourBoardDetailProps} styles={ourBoardDetailStyles} />
               </SectionWrapper>
               <SectionWrapper>
                 <OurDetailBoardPage props={ourBoardDetailProps} styles={ourBoardDetailStyles} />
@@ -113,8 +107,7 @@ const MainPage: React.FC = () => {
                 <OurDetailBoardPage props={ourBoardDetailProps} styles={ourBoardDetailStyles} />
               </SectionWrapper>
               <SectionWrapper>
-              <OurDetailBoardPage props={ourBoardDetailProps} styles={ourBoardDetailStyles} />
->>>>>>> feat/our-board-detail-page
+                <OurDetailBoardPage props={ourBoardDetailProps} styles={ourBoardDetailStyles} />
               </SectionWrapper>
             </ScrollBar>
           </ScreenWrapper>

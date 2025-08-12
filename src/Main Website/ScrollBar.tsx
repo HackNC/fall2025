@@ -48,235 +48,237 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({ children }) => 
 
   // Update isMobile and scrollable width on resize
   useEffect(() => {
+    const isMobileHandler = () => setIsMobile(window.innerWidth <= 768);
+    const scrollHandler = () => {
+      const el = containerRef.current;
+      if (!el) return;
+      setScrollLeft(el.scrollLeft);
+      setScrollableWidth(el.scrollWidth - el.clientWidth);
+    };
+
+    const composedFunction = () => {
+      isMobileHandler();
+      scrollHandler();
+    };
+
+    scrollHandler();
+
+    window.addEventListener("resize", composedFunction);
+    return () => window.removeEventListener("resize", composedFunction);
+  }, []);
+
+  // Handle wheel scroll, button scroll, and scroll direction for horizontal scroll 
+  useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
-    setScrollLeft(el.scrollLeft);
-    setScrollableWidth(el.scrollWidth - el.clientWidth);
-  };
-
-  const composedFunction = () => {
-    isMobileHandler();
-    scrollHandler();
-  };
-
-  resizeHandler();
-
-  window.addEventListener("resize", composedFunction);
-  return () => window.removeEventListener("resize", composedFunction);
-}, []);
-
-// Handle wheel scroll, button scroll, and scroll direction for horizontal scroll 
-useEffect(() => {
-  const el = containerRef.current;
-  if (!el) return;
-  let timeout: ReturnType<typeof setTimeout>;
+    let timeout: ReturnType<typeof setTimeout>;
 
 
-  const handleWheel = (event: WheelEvent) => {
-    event.preventDefault();
-    el.scrollLeft += event.deltaX - event.deltaY;
-    setScrollLeft(el.scrollLeft);
-  };
+    const handleWheel = (event: WheelEvent) => {
+      event.preventDefault();
+      el.scrollLeft += event.deltaX - event.deltaY;
+      setScrollLeft(el.scrollLeft);
+    };
 
-  // Update pink arrow navigation existence
-  // Track scroll position and determine if at end
-  const handleButtonScroll = () => {
-    setScrollLeft(el.scrollLeft);
-    const visibleWidth = el.clientWidth;
-    const scrollableWidth = el.scrollWidth;
-    const scrolled = el.scrollLeft;
+    // Update pink arrow navigation existence
+    // Track scroll position and determine if at end
+    const handleButtonScroll = () => {
+      setScrollLeft(el.scrollLeft);
+      const visibleWidth = el.clientWidth;
+      const scrollableWidth = el.scrollWidth;
+      const scrolled = el.scrollLeft;
 
-    // Check if at the end
-    if (scrolled + visibleWidth >= scrollableWidth - 1) {
-      setEndOfPage(true);
-      setStartOfPage(false);
-    } else if (scrolled == 0) {
-      setStartOfPage(true);
-    } else {
-      setEndOfPage(false);
-      setStartOfPage(false);
+      // Check if at the end
+      if (scrolled + visibleWidth >= scrollableWidth - 1) {
+        setEndOfPage(true);
+        setStartOfPage(false);
+      } else if (scrolled == 0) {
+        setStartOfPage(true);
+      } else {
+        setEndOfPage(false);
+        setStartOfPage(false);
+      }
+
+      // Update current page based on scroll position
+      const page = Math.round(scrolled / arcadeW);
+      setCurrentPage(page);
+    };
+
+    const handleScrollDirection = () => {
+
+      const currentScroll = el.scrollLeft;
+
+      setIsScrolling(true);
+
+      if (prevScroll.current < currentScroll) {
+        window.dispatchEvent(scrollingNext);
+        console.log("dispatching next")
+      } else if (prevScroll.current > currentScroll) {
+        window.dispatchEvent(scrollingPrev);
+        console.log("dispatching prev");
+      } else if (!isScrolling) {
+        window.dispatchEvent(noScrollEvent);
+      }
+      // handleNoScrollEvent();
+
+      console.log("dispatching static");
+      prevScroll.current = currentScroll;
+
     }
 
-    // Update current page based on scroll position
-    const page = Math.round(scrolled / arcadeW);
-    setCurrentPage(page);
-  };
+    // const handleNoScrollEvent = () => {
+    //   // Detect activity
+    //   clearTimeout(timeout);
+    //   timeout = setTimeout(() => {
+    //     setIsScrolling(false);
+    //   }, 30000);
+    // };
 
-  const handleScrollDirection = () => {
-
-    const currentScroll = el.scrollLeft;
-
-    setIsScrolling(true);
-
-    if (prevScroll.current < currentScroll) {
-      window.dispatchEvent(scrollingNext);
-      console.log("dispatching next")
-    } else if (prevScroll.current > currentScroll) {
-      window.dispatchEvent(scrollingPrev);
-      console.log("dispatching prev");
-    } else if (!isScrolling) {
-      window.dispatchEvent(noScrollEvent);
+    if (!isMobile) {
+      el.addEventListener("wheel", handleWheel, { passive: false });
+      el.addEventListener("scroll", handleButtonScroll);
+      el.addEventListener("scroll", handleScrollDirection);
     }
-    // handleNoScrollEvent();
 
-    console.log("dispatching static");
-    prevScroll.current = currentScroll;
+    return () => {
+      // clearTimeout(timeout);
+      el.removeEventListener("wheel", handleWheel);
+      el.removeEventListener("scroll", handleButtonScroll);
+      el.removeEventListener("scroll", handleScrollDirection);
+    };
+  }, [isMobile, prevScroll]);
 
-  }
+  // Update spriteLeft and bannerVisibleWidth whenever scrollLeft or scrollableWidth changes
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el || scrollableWidth === 0) {
+      setSpriteLeft(0);
+      setBannerVisibleWidth(0);
+      return;
+    }
 
-  // const handleNoScrollEvent = () => {
-  //   // Detect activity
-  //   clearTimeout(timeout);
-  //   timeout = setTimeout(() => {
-  //     setIsScrolling(false);
-  //   }, 30000);
-  // };
+    const newSpriteLeft =
+      (scrollLeft / scrollableWidth) * (el.scrollWidth - 2 * HORIZONTAL_OFFSET) -
+      SPRITE_WIDTH / 2;
+    const newBannerVisibleWidth = newSpriteLeft + SPRITE_WIDTH / 2;
 
-  if (!isMobile) {
-    el.addEventListener("wheel", handleWheel, { passive: false });
-    el.addEventListener("scroll", handleButtonScroll);
-    el.addEventListener("scroll", handleScrollDirection);
-  }
+    setSpriteLeft(newSpriteLeft);
+    setBannerVisibleWidth(newBannerVisibleWidth);
+  }, [scrollLeft, scrollableWidth, arcadeW]);
 
-  return () => {
-    clearTimeout(timeout);
-    el.removeEventListener("wheel", handleWheel);
-    el.removeEventListener("scroll", handleButtonScroll);
-    el.removeEventListener("scroll", handleScrollDirection);
+  // Handle pink navigation button next
+  const handleNext = () => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const maxScrollLeft = container.scrollWidth - container.clientWidth;
+    const nextScrollLeft = container.scrollLeft + arcadeW;
+
+    // Scroll one page forward (even if it reaches the end)
+    container.scrollTo({
+      left: nextScrollLeft,
+      behavior: "smooth",
+    });
+
+    // Restrict currentPage to max
+    const clampedPage = Math.min(currentPage + 1, Math.floor(maxScrollLeft / arcadeW));
+    setCurrentPage(clampedPage);
   };
-}, [isMobile, prevScroll]);
+  // handle previous button
+  const handlePrevious = () => {
+    const container = containerRef.current;
+    if (!container) return;
 
-// Update spriteLeft and bannerVisibleWidth whenever scrollLeft or scrollableWidth changes
-useEffect(() => {
-  const el = scrollRef.current;
-  if (!el || scrollableWidth === 0) {
-    setSpriteLeft(0);
-    setBannerVisibleWidth(0);
-    return;
-  }
+    const prevScrollLeft = Math.max(container.scrollLeft - arcadeW, 0);
 
-  const newSpriteLeft =
-    (scrollLeft / scrollableWidth) * (el.scrollWidth - 2 * HORIZONTAL_OFFSET) -
-    SPRITE_WIDTH / 2;
-  const newBannerVisibleWidth = newSpriteLeft + SPRITE_WIDTH / 2;
+    container.scrollTo({
+      left: prevScrollLeft,
+      behavior: 'smooth',
+    });
 
-  setSpriteLeft(newSpriteLeft);
-  setBannerVisibleWidth(newBannerVisibleWidth);
-}, [scrollLeft, scrollableWidth, arcadeW]);
+    // Decrease currentPage, but not below 0
+    setCurrentPage((prev) => Math.max(prev - 1, 0));
+  };
 
-// Handle pink navigation button next
-const handleNext = () => {
-  const container = containerRef.current;
-  if (!container) return;
-
-  const maxScrollLeft = container.scrollWidth - container.clientWidth;
-  const nextScrollLeft = container.scrollLeft + arcadeW;
-
-  // Scroll one page forward (even if it reaches the end)
-  container.scrollTo({
-    left: nextScrollLeft,
-    behavior: "smooth",
-  });
-
-  // Restrict currentPage to max
-  const clampedPage = Math.min(currentPage + 1, Math.floor(maxScrollLeft / arcadeW));
-  setCurrentPage(clampedPage);
-};
-// handle previous button
-const handlePrevious = () => {
-  const container = containerRef.current;
-  if (!container) return;
-
-  const prevScrollLeft = Math.max(container.scrollLeft - arcadeW, 0);
-
-  container.scrollTo({
-    left: prevScrollLeft,
-    behavior: 'smooth',
-  });
-
-  // Decrease currentPage, but not below 0
-  setCurrentPage((prev) => Math.max(prev - 1, 0));
-};
-
-return (
-  <>
-    <div className="flex justify-evenly items-center relative w-full h-full">
-      {/* Previous Button */}
-      {!isMobile && !startOfPage && (
-        // Previous Pink Arrow Navigation 
-        <button
-          onClick={handlePrevious}
-          className="bg-[url('/pink_arrow.png')] bg-cover bg-center w-[8%] h-[8%] absolute left-10 flex items-center justify-center transition-shadow scale-x-[-1] z-50"
-        />
-      )}
-      {/* Scroll Container */}
-      <div ref={scrollRef} className="w-full h-full">
-        <div
-          ref={containerRef}
-          className={`transition-transform duration-0 ease-linear ${isMobile
-            ? "relative w-full flex flex-col"
-            : "flex flex-row overflow-x-scroll"}`}
-        >
-          {children}
+  return (
+    <>
+      <div className="flex justify-evenly items-center relative w-full h-full">
+        {/* Previous Button */}
+        {!isMobile && !startOfPage && (
+          // Previous Pink Arrow Navigation 
+          <button
+            onClick={handlePrevious}
+            className="bg-[url('/pink_arrow.png')] bg-cover bg-center w-[8%] h-[8%] absolute left-10 flex items-center justify-center transition-shadow scale-x-[-1] z-50"
+          />
+        )}
+        {/* Scroll Container */}
+        <div ref={scrollRef} className="w-full h-full">
+          <div
+            ref={containerRef}
+            className={`transition-transform duration-0 ease-linear ${isMobile
+              ? "relative w-full flex flex-col"
+              : "flex flex-row overflow-x-scroll"}`}
+          >
+            {children}
+          </div>
         </div>
+
+        {/* Next Button */}
+        {!isMobile && !endOfPage && (
+          <button
+            onClick={handleNext}
+            className="bg-[url('/pink_arrow.png')] bg-cover bg-center w-[8%] h-[8%] absolute right-10 flex items-center justify-center transition-shadow"
+          />
+        )}
       </div>
 
-      {/* Next Button */}
-      {!isMobile && !endOfPage && (
-        <button
-          onClick={handleNext}
-          className="bg-[url('/pink_arrow.png')] bg-cover bg-center w-[8%] h-[8%] absolute right-10 flex items-center justify-center transition-shadow"
-        />
-      )}
-    </div>
-
-    {/* Banner - hidden on mobile */}
-    {!isMobile && (
-      <div className="absolute z-40 pointer-events-none"
-        style={{
-          bottom: `calc(16px + ${VERTICAL_OFFSET}px)`,
-          left: `${HORIZONTAL_OFFSET}px`,
-          right: `${HORIZONTAL_OFFSET}px`,
-          height: "32px",
-        }}
-      >
-        <div
-          className="h-full overflow-hidden absolute left-0"
-          style={{ width: `${bannerVisibleWidth}px` }}
-        >
-          <div className="h-full w-full bg-gradient-to-r from-gradient-top via-accent-purple to-accent-pink text-primary-light flex items-center justify-start pl-4 tracking-widest uppercase rounded-3xl"></div>
-        </div>
-      </div>
-    )}
-
-    {/* Character - hidden on mobile */}
-    {!isMobile && (
-      <div
-        className="absolute z-50 pointer-events-none"
-        style={{
-          bottom: `calc(2px + ${VERTICAL_OFFSET}px)`,
-          left: `${HORIZONTAL_OFFSET}px`,
-          right: `${HORIZONTAL_OFFSET}px`,
-        }}
-      >
-        <div
-          className="absolute transition-transform"
+      {/* Banner - hidden on mobile */}
+      {!isMobile && (
+        <div className="absolute z-40 pointer-events-none"
           style={{
-            bottom: "9px",
-            left: `${spriteLeft}px`,
-            width: `${SPRITE_WIDTH}px`,
+            bottom: `calc(16px + ${VERTICAL_OFFSET}px)`,
+            left: `${HORIZONTAL_OFFSET}px`,
+            right: `${HORIZONTAL_OFFSET}px`,
+            height: "32px",
           }}
         >
-          <img
-            src="/pixel_ram128.png"
-            alt="Horizontal Scroll Bar Character"
-            className="select-none"
-            style={{ width: "90%" }}
-          />
+          <div
+            className="h-full overflow-hidden absolute left-0"
+            style={{ width: `${bannerVisibleWidth}px` }}
+          >
+            <div className="h-full w-full bg-gradient-to-r from-gradient-top via-accent-purple to-accent-pink text-primary-light flex items-center justify-start pl-4 tracking-widest uppercase rounded-3xl"></div>
+          </div>
         </div>
-      </div>
-    )}
-  </>
-);
+      )}
+
+      {/* Character - hidden on mobile */}
+      {!isMobile && (
+        <div
+          className="absolute z-50 pointer-events-none"
+          style={{
+            bottom: `calc(2px + ${VERTICAL_OFFSET}px)`,
+            left: `${HORIZONTAL_OFFSET}px`,
+            right: `${HORIZONTAL_OFFSET}px`,
+          }}
+        >
+          <div
+            className="absolute transition-transform"
+            style={{
+              bottom: "9px",
+              left: `${spriteLeft}px`,
+              width: `${SPRITE_WIDTH}px`,
+            }}
+          >
+            <img
+              src="/pixel_ram128.png"
+              alt="Horizontal Scroll Bar Character"
+              className="select-none"
+              style={{ width: "90%" }}
+            />
+          </div>
+        </div>
+      )}
+    </>
+  );
 };
 export default HorizontalScroller;
