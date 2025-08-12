@@ -10,10 +10,17 @@ const App: React.FC = () => {
   return (
     //<StaticPage />
     // <HorizontalScrollTest />
+<<<<<<< HEAD
     // <PageContainer />
     // <HorizontalScroll / >
     /* SampleWeb tests the Horizontal Scroll Bar Character */
     <SampleWeb />
+=======
+    <PageContainer />
+
+    /* SampleWeb tests the Horizontal Scroll Bar Character and the*/
+    // <SampleWeb />
+>>>>>>> feature/create-navigation
   );
 };
 export default App;
