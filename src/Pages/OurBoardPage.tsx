@@ -1,4 +1,5 @@
 import React from "react";
+import { Pages } from "./OurBoardPageComposed"
 
 type TeamCardProps = {
   teamName: string;
@@ -7,14 +8,39 @@ type TeamCardProps = {
   navID: string;
 };
 
-const TeamCard: React.FC<TeamCardProps> = ({ teamName, img, color, navID }) => {
+const leads = new CustomEvent("leads", { detail: Pages.LEADS, bubbles: true });
+const graphics = new CustomEvent("graphics", { detail: Pages.GRAPHICS, bubbles: true });
+const experience = new CustomEvent("experience", { detail: Pages.EXPERIENCE, bubbles: true });
+const operations = new CustomEvent("operations", { detail: Pages.OPERATIONS, bubbles: true });
+const sponsorship = new CustomEvent("sponsorship", { detail: Pages.SPONSORSHIP, bubbles: true });
+const development = new CustomEvent("development", { detail: Pages.DEVELOPMENT, bubbles: true });
+const marketing = new CustomEvent("marketing", { detail: Pages.MARKETING, bubbles: true });
 
-  // MAKE ENUM in Main(??) for all the teams, 
-  // maybe put this func in main so that it can set page directly (did by passing in navID) 
-  // make page and setPage that's a useState which will determine which board details page to render
-  // this function will dispatch 
+
+
+
+
+
+const TeamCard: React.FC<TeamCardProps> = ({ teamName, img, color, navID }) => {
   const handleOurBoardClick = (navID: string) => {
-    // window.dispatchEvent()
+    switch (navID) {
+      case "leads":
+        window.dispatchEvent(leads)
+      case "graphics":
+        window.dispatchEvent(graphics)
+      case "experience":
+        window.dispatchEvent(experience)
+      case "operations":
+        window.dispatchEvent(operations)
+      case "sponsorship":
+        window.dispatchEvent(sponsorship)
+      case "development":
+        window.dispatchEvent(development)
+      case "marketing":
+        window.dispatchEvent(marketing)
+      default:
+        window.dispatchEvent(leads)
+    }
   };
 
   return (
@@ -39,8 +65,8 @@ const OurBoardPage: React.FC = () => {
       <div className="flex justify-center flex-wrap align-center">
         <TeamCard teamName="leads" img="/EventPhoto.jpg" color="text-font-dark-blue" navID="leads" />
         <TeamCard teamName="graphics" img="/EventPhoto.jpg" color="text-font-light-blue" navID="graphics" />
-        <TeamCard teamName="hacker experience" img="/EventPhoto.jpg" color="text-font-cyan" navID="hacker experience" />
-        <TeamCard teamName="event operations" img="/EventPhoto.jpg" color="text-font-green" navID="event operations" />
+        <TeamCard teamName="hacker experience" img="/EventPhoto.jpg" color="text-font-cyan" navID="experience" />
+        <TeamCard teamName="event operations" img="/EventPhoto.jpg" color="text-font-green" navID="operations" />
         <TeamCard teamName="sponsorship" img="/EventPhoto.jpg" color="text-font-orange" navID="sponsorship" />
         <TeamCard teamName="development" img="/EventPhoto.jpg" color="text-font-peach" navID="development" />
         <TeamCard teamName="marketing" img="/EventPhoto.jpg" color="text-font-pink" navID="marketing" />

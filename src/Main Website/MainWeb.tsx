@@ -6,7 +6,6 @@ import OurBoardPage from "../Pages/OurBoardPage";
 import Navigation from "../Pages/NavigationBar";
 import AboutPage from "../Pages/AboutPage";
 import BottomDecor from "./BottomDecor";
-import OurDetailBoardPage from "../Pages/OurBoardDetailPage";
 
 const ScreenWrapper: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   return (
@@ -50,37 +49,9 @@ const scrollToSection = (id: string) => {
 
 
 const MainPage: React.FC = () => {
-  const members = {
-    "aidan": "/joystick_pink.svg",
-    "daniel": "/HackNC24.png",
-    "lai": "/black_star_lead.png",
-    "jodi": "/runner.gif",
-    "scott": "/pixelRam6400.png",
-    "jade": "/HackNC_Sprite.gif",
-    "harrison": "/white_star_graphics.png",
-  }
-  const infoCardProps = {
-    name: "UNI",
-    position: "co-lead director",
-    laziness: 4,
-    strength: 5,
-    catchphrase: "i am the strongest",
-  }
-  const ourBoardDetailProps = {
-    mainImage: "/HackNC24.png",
-    drawingImage: "/HackNC_Sprite.gif",
-    infoCardProps: infoCardProps,
-    members: members,
-  }
-  const ourBoardDetailStyles = {
-    accentColor: "#c3d6ff",
-    border: "/lead_border.png",
-    filledStar: "/white_star_graphics.png",
-    emptyStar: "/black_star_lead.png"
-  }
   return (
     <>
-      <div className="h-full w-full flex flex-col justify-center bg-primary-light">
+      <div className="h-screen w-screen flex flex-col justify-center bg-primary-light">
         <div className="flex flex-col">
           <Navigation />
           <ScreenWrapper>
@@ -99,15 +70,6 @@ const MainPage: React.FC = () => {
               </SectionWrapper>
               <SectionWrapper>
                 <OurBoardPage />
-              </SectionWrapper>
-              <SectionWrapper>
-                <OurDetailBoardPage props={ourBoardDetailProps} styles={ourBoardDetailStyles} />
-              </SectionWrapper>
-              <SectionWrapper>
-                <OurDetailBoardPage props={ourBoardDetailProps} styles={ourBoardDetailStyles} />
-              </SectionWrapper>
-              <SectionWrapper>
-                <OurDetailBoardPage props={ourBoardDetailProps} styles={ourBoardDetailStyles} />
               </SectionWrapper>
             </ScrollBar>
           </ScreenWrapper>
