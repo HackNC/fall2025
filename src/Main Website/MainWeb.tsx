@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import ScrollBar from "./ScrollBar";
 import FrontPage from "../Pages/FrontPage";
-import Navigation from "../Pages/NavigationBar";
+import Navigation from "./Navigation";
 import AboutPage from "../Pages/AboutPage";
 import BottomDecor from "./BottomDecor";
 import FAQ from "../Pages/FAQPage";
@@ -111,6 +111,7 @@ const MainPage: React.FC = () => {
       <div className="h-screen w-screen flex flex-col justify-center bg-primary-light">
         <div className="flex flex-col">
           <Navigation />
+          <div className="bg-transparent -mt-50"></div>
           <ScreenWrapper>
             <ScrollBar>
 

@@ -158,42 +158,13 @@ const Navigation: React.FC = () => {
               >
                 about
                 <span
-                  className={`inline-flex items-center transition-transform duration-200 ${
-                    aboutOpen ? "rotate-180" : ""
-                  }`}
-import React, { useState } from "react";
-
-const Navigation: React.FC = () => {
-  const [aboutOpen, setAboutOpen] = useState(false);
-
-  const toggleAboutDropdown = () => setAboutOpen((prev) => !prev);
-
-  return (
-    <nav className="sticky bg-primary-light w-full z-50">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex justify-between items-center -mt-10">
-          {/* Logo */}
-          <a href="FrontPage" className="flex items-center no-underline px-12 py-10">
-            <img
-              src="/logos/HackNC25.svg"
-              alt="HackNC Logo"
-              className="w-[66px] h-[66px]"
-            />
-            <h1 className="text-[47px]">HACKNC 2025</h1>
-          </a>
-
-          {/* Main Navigation */}
-          <ul className="flex gap-[100px] list-none">
-            {/* About Dropdown */}
-            <li className="relative">
-              <button
-                onClick={toggleAboutDropdown}
-                className="font-jersey bg-none border-none cursor-pointer flex items-center gap-[6px] p-0 text-[35px]"
-              >
-                about
-                <span
                   className={`inline-flex items-center transition-transform duration-200 ${aboutOpen ? "rotate-180" : ""
                     }`}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
                     strokeWidth="3"
                     stroke="currentColor"
                     className="w-5 h-5 max-[1047px]:w-4 max-[1047px]:h-4"
@@ -206,13 +177,13 @@ const Navigation: React.FC = () => {
                   </svg>
                 </span>
               </button>
+
               {/* Dropdown menu */}
               <div
-                className={`mt-2 absolute left-1/2 top-[calc(100%+3px)] -translate-x-1/2 z-50 transition-all duration-200 ${
-                  aboutOpen
-                    ? "opacity-100 translate-y-0 pointer-events-auto"
-                    : "opacity-0 -translate-y-1 pointer-events-none"
-                }`}
+                className={`mt-2 absolute left-1/2 top-[calc(100%+3px)] -translate-x-1/2 z-50 transition-all duration-200 ${aboutOpen
+                  ? "opacity-100 translate-y-0 pointer-events-auto"
+                  : "opacity-0 -translate-y-1 pointer-events-none"
+                  }`}
               >
                 <div
                   className="relative"
@@ -352,15 +323,13 @@ const Navigation: React.FC = () => {
           Includes background, menu links, divider, login, and glow image.
           ============================================================ */}
       <div
-        className={`fixed inset-0 z-[2000] flex flex-col max-[794px]:flex ${
-          mobileMenuOpen || bgVisible ? "" : "pointer-events-none"
-        }`}
+        className={`fixed inset-0 z-[2000] flex flex-col max-[794px]:flex ${mobileMenuOpen || bgVisible ? "" : "pointer-events-none"
+          }`}
       >
         {/* Background overlay */}
         <div
-          className={`absolute inset-0 bg-white transition-transform duration-500 ease-out origin-top ${
-            bgVisible ? "scale-y-100" : "scale-y-0"
-          }`}
+          className={`absolute inset-0 bg-white transition-transform duration-500 ease-out origin-top ${bgVisible ? "scale-y-100" : "scale-y-0"
+            }`}
         />
 
         {/* Menu content */}
@@ -371,44 +340,40 @@ const Navigation: React.FC = () => {
           {/* Main menu links */}
           <ul className="flex flex-col items-center gap-6 text-center text-primary-dark text-[32px] font-semibold max-[455px]:text-[30px] max-[375px]:text-[25px]">
             <li
-              className={`transition-all duration-300 ${
-                showAbout
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-2"
-              }`}
+              className={`transition-all duration-300 ${showAbout
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-2"
+                }`}
             >
               <a href="#" onClick={handleMobileItemClick}>
                 about
               </a>
             </li>
             <li
-              className={`transition-all duration-300 ${
-                showFaq
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-2"
-              }`}
+              className={`transition-all duration-300 ${showFaq
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-2"
+                }`}
             >
               <a href="#" onClick={handleMobileItemClick}>
                 faq
               </a>
             </li>
             <li
-              className={`transition-all duration-300 ${
-                showOurBoard
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-2"
-              }`}
+              className={`transition-all duration-300 ${showOurBoard
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-2"
+                }`}
             >
               <a href="#" onClick={handleMobileItemClick}>
                 our board
               </a>
             </li>
             <li
-              className={`transition-all duration-300 ${
-                showSponsors
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-2"
-              }`}
+              className={`transition-all duration-300 ${showSponsors
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-2"
+                }`}
             >
               <a href="#" onClick={handleMobileItemClick}>
                 sponsors
@@ -418,19 +383,17 @@ const Navigation: React.FC = () => {
 
           {/* Divider */}
           <div
-            className={`w-[60%] border-t-2 border-gray-300 my-6 transition-all duration-300 ${
-              showDivider ? "opacity-100" : "opacity-0"
-            }`}
+            className={`w-[60%] border-t-2 border-gray-300 my-6 transition-all duration-300 ${showDivider ? "opacity-100" : "opacity-0"
+              }`}
           ></div>
 
           {/* Login */}
           <ul className="flex flex-col items-center text-center text-primary-dark text-[32px] font-semibold max-[455px]:text-[30px] max-[375px]:text-[25px]">
             <li
-              className={`transition-all duration-300 ${
-                showLogin
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-2"
-              }`}
+              className={`transition-all duration-300 ${showLogin
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-2"
+                }`}
             >
               <a href="#" onClick={handleMobileItemClick}>
                 login
@@ -440,9 +403,8 @@ const Navigation: React.FC = () => {
 
           {/* HackNC Logo */}
           <div
-            className={`mt-[50px] transition-all duration-300 ${
-              showGlow ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
-            }`}
+            className={`mt-[50px] transition-all duration-300 ${showGlow ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
+              }`}
           >
             <img
               src="/HackNC_Glow.png"
