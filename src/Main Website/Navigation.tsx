@@ -161,11 +161,39 @@ const Navigation: React.FC = () => {
                   className={`inline-flex items-center transition-transform duration-200 ${
                     aboutOpen ? "rotate-180" : ""
                   }`}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
+import React, { useState } from "react";
+
+const Navigation: React.FC = () => {
+  const [aboutOpen, setAboutOpen] = useState(false);
+
+  const toggleAboutDropdown = () => setAboutOpen((prev) => !prev);
+
+  return (
+    <nav className="sticky bg-primary-light w-full z-50">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex justify-between items-center -mt-10">
+          {/* Logo */}
+          <a href="FrontPage" className="flex items-center no-underline px-12 py-10">
+            <img
+              src="/logos/HackNC25.svg"
+              alt="HackNC Logo"
+              className="w-[66px] h-[66px]"
+            />
+            <h1 className="text-[47px]">HACKNC 2025</h1>
+          </a>
+
+          {/* Main Navigation */}
+          <ul className="flex gap-[100px] list-none">
+            {/* About Dropdown */}
+            <li className="relative">
+              <button
+                onClick={toggleAboutDropdown}
+                className="font-jersey bg-none border-none cursor-pointer flex items-center gap-[6px] p-0 text-[35px]"
+              >
+                about
+                <span
+                  className={`inline-flex items-center transition-transform duration-200 ${aboutOpen ? "rotate-180" : ""
+                    }`}
                     strokeWidth="3"
                     stroke="currentColor"
                     className="w-5 h-5 max-[1047px]:w-4 max-[1047px]:h-4"
@@ -178,7 +206,6 @@ const Navigation: React.FC = () => {
                   </svg>
                 </span>
               </button>
-
               {/* Dropdown menu */}
               <div
                 className={`mt-2 absolute left-1/2 top-[calc(100%+3px)] -translate-x-1/2 z-50 transition-all duration-200 ${
