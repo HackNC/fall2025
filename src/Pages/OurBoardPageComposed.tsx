@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import OurBoardPage from "./OurBoardPage";
 import OurDetailBoardPage from "./OurBoardDetailPage";
-import { SectionWrapper } from "../Main Website/MainWeb";
 
-const [page, setPage] = useState(Pages.LEADS)
+// const [page, setPage] = useState(Pages.LEADS)
+
 export const enum Pages {
     LEADS = "Leads",
     GRAPHICS = "Graphics",
@@ -48,46 +48,42 @@ const LeadourBoardDetailStyles = {
 
 
 const OurBoardPageComposed: React.FC = () => {
-    useEffect(() => {
-        const handlePageSwitch = (event: CustomEvent) => {
-            switch (event.detail) {
-                case Pages.LEADS:
-                    setPage(Pages.LEADS)
-                case Pages.
-            }
-        };
+    // useEffect(() => {
+    //     const handlePageSwitch = (event: CustomEvent) => {
+    //         switch (event.detail) {
+    //             case Pages.LEADS:
+    //                 setPage(Pages.LEADS)
+    //             case Pages.
+    //         }
+    //     };
 
-        window.addEventListener()
+    //     window.addEventListener()
 
-    }, []);
+    // }, []);
 
-    const LeadsPage = () => {
-        return (
-            <>
-                <OurDetailBoardPage props={MinhourBoardDetailProps} styles={LeadourBoardDetailStyles} />
-            </>
-        )
-    }
+    // const LeadsPage = () => {
+    //     return (
+    //         <>
+    //             <OurDetailBoardPage props={MinhourBoardDetailProps} styles={LeadourBoardDetailStyles} />
+    //         </>
+    //     )
+    // }
 
+    // return (
+    //     // <>
+    //     //     <SectionWrapper>
+    //     //         <OurBoardPage />
+    //     //     </SectionWrapper>
+    //     //     <SectionWrapper>
+    //     //         {page === Pages.LEADS && (<LeadsPage />)}
 
+    //     //     </SectionWrapper>
 
+    //     // </>
+    // )
 
-
-
-
-
-
-    return (
-        <>
-            <SectionWrapper>
-                <OurBoardPage />
-            </SectionWrapper>
-            <SectionWrapper>
-                {page === Pages.LEADS && (<LeadsPage />)}
-
-            </SectionWrapper>
-
-        </>
+    return(
+        <></>
     )
 }
 export default OurBoardPageComposed;
