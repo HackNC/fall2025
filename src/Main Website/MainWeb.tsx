@@ -6,6 +6,7 @@ import OurBoardPage from "../Pages/OurBoardPage";
 import Navigation from "../Pages/NavigationBar";
 import AboutPage from "../Pages/AboutPage";
 import BottomDecor from "./BottomDecor";
+import FAQ from "../Pages/FAQPage";
 
 const ScreenWrapper: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   return (
@@ -19,15 +20,21 @@ const ScreenWrapper: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
         drop-shadow-lg
         shadow-inner-lg
       "
-      style={{
-        width: "var(--arcade-w)", height: "var(--arcade-h)"
-      } as React.CSSProperties}>
+      style={
+        {
+          width: "var(--arcade-w)",
+          height: "var(--arcade-h)",
+        } as React.CSSProperties
+      }
+    >
       {children}
     </div>
   );
 };
 
-const SectionWrapper: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
+const SectionWrapper: React.FC<React.PropsWithChildren<{}>> = ({
+  children,
+}) => {
   return (
     <>
       <section className="w-[var(--arcade-w)] h-[var(--arcade-h)] flex flex-shrink-0 items-center justify-center bg-transparent pb-[5vh]">
@@ -35,7 +42,7 @@ const SectionWrapper: React.FC<React.PropsWithChildren<{}>> = ({ children }) => 
       </section>
     </>
   );
-}
+};
 
 // "Play Now" Button scroll handler
 const scrollToSection = (id: string) => {
@@ -46,7 +53,39 @@ const scrollToSection = (id: string) => {
 };
 
 
-
+// const BottomDecor: React.FC = () => {
+//   return (
+//     <div
+//       className="flex justify-evenly items-end mx-auto"
+//       style={{ width: "calc(var(--arcade-w) * 0.80)" }}
+//     >
+//       <img
+//         src="/arrows.svg"
+//         alt="game arrows"
+//         className="drop-shadow-xl w-[12vh] h-[7vh] max-w-[100px] max-h-[80px]"
+//         style={{ display: "block" }}
+//       />
+//       <img
+//         src="/button_green.svg"
+//         alt="green button"
+//         className="drop-shadow-xl w-[10vh] h-[7vh] max-w-[80px] max-h-[80px]"
+//         style={{ display: "block" }}
+//       />
+//       <img
+//         src="/button_pink.svg"
+//         alt="pink button"
+//         className="drop-shadow-xl w-[10vh] h-[7vh] max-w-[80px] max-h-[80px]"
+//         style={{ display: "block" }}
+//       />
+//       <img
+//         src="/joystick_vertical.svg"
+//         alt="pink joystick"
+//         className="drop-shadow-xl w-[12vh] h-[10vh] max-w-[100px] max-h-[80px]"
+//         style={{ display: "block" }}
+//       />
+//     </div>
+//   );
+// };
 
 const MainPage: React.FC = () => {
   return (
@@ -62,11 +101,12 @@ const MainPage: React.FC = () => {
               <SectionWrapper>
                 <AboutPage />
               </SectionWrapper>
-              <SectionWrapper>
+              {/* <SectionWrapper>
                 <AboutPage />
-              </SectionWrapper>
+              </SectionWrapper> */}
               <SectionWrapper>
-                <FrontPage scrollToSection={scrollToSection} />
+                {/* <FrontPage scrollToSection={scrollToSection} /> */}
+                <FAQ />
               </SectionWrapper>
               <SectionWrapper>
                 <OurBoardPage />
