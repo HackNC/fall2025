@@ -12,7 +12,7 @@ const Navigation: React.FC = () => {
           {/* Logo */}
           <a href="FrontPage" className="flex items-center no-underline px-12 py-10">
             <img
-              src="/HackNC25.svg"
+              src="/logos/HackNC25.svg"
               alt="HackNC Logo"
               className="w-[66px] h-[66px]"
             />
@@ -83,7 +83,7 @@ const Navigation: React.FC = () => {
 
           {/* MLH Banner */}
           <img
-            src="/MLHBanner.png"
+            src="/logos/MLHBanner.png"
             alt="MLH Banner"
             className="w-[112px] h-auto mr-12 pt-[10px]"
           />

@@ -1,9 +1,9 @@
 import React from "react";
-import MainWeb from "./Main Website/MainWeb";
+import MainPage from "./Main Website/MainWeb";
 
 const App: React.FC = () => {
   return (
-    <MainWeb />
+    <MainPage />
   );
 };
 export default App;

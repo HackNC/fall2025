@@ -112,12 +112,12 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({ children }) => 
 
       if (prevScroll.current < currentScroll) {
         window.dispatchEvent(scrollingNext);
-        console.log("dispatching next")
+        // console.log("dispatching next")
       } else if (prevScroll.current > currentScroll) {
         window.dispatchEvent(scrollingPrev);
-        console.log("dispatching prev");
+        // console.log("dispatching prev");
       } else if (!isScrolling) {
-        window.dispatchEvent(noScrollEvent);
+        // window.dispatchEvent(noScrollEvent);
       }
       // handleNoScrollEvent();
 
@@ -208,7 +208,7 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({ children }) => 
           // Previous Pink Arrow Navigation 
           <button
             onClick={handlePrevious}
-            className="bg-[url('/pink_arrow.png')] bg-cover bg-center w-[8%] h-[8%] absolute left-10 flex items-center justify-center transition-shadow scale-x-[-1] z-50"
+            className="bg-[url('/frontPageAssets/pink_arrow.png')] bg-cover bg-center w-[8%] h-[8%] absolute left-10 flex items-center justify-center transition-shadow scale-x-[-1] z-50"
           />
         )}
         {/* Scroll Container */}
@@ -227,7 +227,7 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({ children }) => 
         {!isMobile && !endOfPage && (
           <button
             onClick={handleNext}
-            className="bg-[url('/pink_arrow.png')] bg-cover bg-center w-[8%] h-[8%] absolute right-10 flex items-center justify-center transition-shadow"
+            className="bg-[url('/frontPageAssets/pink_arrow.png')] bg-cover bg-center w-[8%] h-[8%] absolute right-10 flex items-center justify-center transition-shadow"
           />
         )}
       </div>
@@ -270,7 +270,7 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({ children }) => 
             }}
           >
             <img
-              src="/pixel_ram128.png"
+              src="/logos/pixel_ram128.png"
               alt="Horizontal Scroll Bar Character"
               className="select-none"
               style={{ width: "90%" }}
