@@ -15,10 +15,10 @@ const ScreenWrapper: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   return (
     <div
       className="
-        bg-gradient-to-b from-gradient-top to-gradient-bottom bg-opacity-90 rounded-[140px] shadow-2xl
+        md:rounded-[140px] md:shadow-2xl md:bg-gradient-to-b md:from-gradient-top md:to-gradient-bottom
         mx-auto my-auto
-        w-[75vw] h-[80vh]
-        overflow-x-hidden 
+        w-full h-full md:w-[75vw] md:h-[80vh]
+        overflow-x-auto
         overflow-y-scroll
         drop-shadow-lg
         shadow-inner-lg
@@ -38,7 +38,7 @@ const ScreenWrapper: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
 export const SectionWrapper: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   return (
     <>
-      <section className="w-[var(--arcade-w)] h-[var(--arcade-h)] flex flex-shrink-0 items-center justify-center bg-transparent pb-[5vh]">
+      <section className="min-w-[var(--arcade-w)] md:w-[var(--arcade-w)] min-h-[var(--arcade-h)] md:h-[var(--arcade-h)] flex flex-shrink-0 items-center justify-center bg-transparent pb-[5vh]">
         {children}
       </section>
     </>
@@ -108,8 +108,8 @@ const MainPage: React.FC = () => {
   }, []);
   return (
     <>
-      <div className="h-screen w-screen flex flex-col justify-center bg-primary-light">
-        <div className="flex flex-col">
+      <div className="h-screen w-screen flex flex-col justify-center md:bg-primary-light max-md:bg-gradient-to-b from-gradient-top to-gradient-bottom">
+        <div className="w-full h-full flex flex-col">
           <Navigation />
           <div className="bg-transparent -mt-50"></div>
           <ScreenWrapper>
