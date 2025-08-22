@@ -61,6 +61,7 @@ const GlowItem: React.FC<{ accentColor: string, className?: string, children: Re
     if (cutout) {
         return (
             <div className="relative h-fit overflow-hidden">
+                {/* this is the background for the names of board members */}
                 <div className="absolute w-full h-[80vh] bg-gradient-to-b from-gradient-top to-gradient-bottom bg-opacity-90 z-15 -translate-y-5"></div>
                 <div
                     className={`z-15 ${className}`}
@@ -193,8 +194,8 @@ const InfoCard: React.FC<{ props: InfoCardProps, styles: OurBoardDetailStyles }>
     return (
         <div>
             <div className="flex flex-col items-center">
-                <GlowItem accentColor={accentColor} className="w-fit px-6 font-jersey text-[63px] text-white text-center tracking-[0.20rem] leading-none" glowOnly cutout>{name}</GlowItem>
-                <GlowItem accentColor={accentColor} className={`-mt-2 font-jersey text-[21px] text-white text-center tracking-[0.10rem] leading-none`}>{position}</GlowItem>
+                <GlowItem accentColor={accentColor} className="w-fit px-6 font-jersey text-[63px] text-white text-center tracking-[0.20rem] leading-none" glowOnly>{name}</GlowItem>
+                <GlowItem accentColor={accentColor} className={`font-jersey text-[21px] text-white text-center tracking-[0.10rem] leading-none`}>{position}</GlowItem>
             </div>
             <dl className="mx-4 mt-2 mb-6 grid grid-cols-2 gap-2 text-white">
                 <InfoCardStarField fieldName="laziness" value={laziness} max={5} filledStar={filledStar} emptyStar={emptyStar} />
@@ -213,7 +214,7 @@ const OurBoardDetailPage: React.FC<{ props: OurBoardDetailProps, styles: OurBoar
     const infoBorderAttrs = { width: "400px", height: "350px", borderWidth: "32px", imageSlice: 384, imageWidth: 32 };
 
     return (
-        <div className="flex flex-row gap-4 mb-20">
+        <div className="flex flex-col md:flex-row gap-4 mb-20">
             <div className="flex justify-center items-center">
                 <div className="relative mt-12">
                     <BorderItem border={styles.border} borderAttrs={portraitBorderAttrs} image>
@@ -237,7 +238,7 @@ const OurBoardDetailPage: React.FC<{ props: OurBoardDetailProps, styles: OurBoar
                 </div>
             </div>
             <div className="mt-12">
-                <BorderItem border={styles.border} borderAttrs={infoBorderAttrs} className="border-t-transparent">
+                <BorderItem border={styles.border} borderAttrs={infoBorderAttrs} className="">
                     <InfoCard props={props.infoCardProps} styles={styles} />
                     <Carousel members={props.members} accentColor={styles.accentColor} />
                 </BorderItem>
