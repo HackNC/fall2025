@@ -6,7 +6,8 @@ import FrontPage from "../Pages/FrontPage";
 import Navigation from "./Navigation";
 import AboutPage from "../Pages/AboutPage";
 import BottomDecor from "./BottomDecor";
-import FAQ from "../Pages/FAQPage";
+// import FAQ from "../Pages/FAQPage";
+import NewFaqPage from "../Pages/NewFaqPage";
 import OurBoardPage from "../Pages/OurBoard/OurBoardPage";
 import { Minh, Naga, Alicia, Jack, Paige, Amber, Ayush, Harsehaj, Sanay, Sky, Davyd, Ishitha, Sahasra, Mason, Rishi, Yahan, Robert, Oscar, Alex } from "../Pages/OurBoard/OurBoardInfo";
 import Pages from "../Pages/OurBoard/PagesEnum"
@@ -127,7 +128,7 @@ const MainPage: React.FC = () => {
               </SectionWrapper> */}
               <SectionWrapper>
                 {/* <FrontPage scrollToSection={scrollToSection} /> */}
-                <FAQ />
+                <NewFaqPage />
               </SectionWrapper>
 
               <SectionWrapper>
