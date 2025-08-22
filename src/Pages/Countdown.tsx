@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '@fontsource/jersey-15';
+import { Calendar, MapPin, Users } from 'lucide-react';
 
 const SECONDS_PER_DAY = 24 * 60 * 60;
 const SECONDS_PER_HOUR = 60 * 60;
@@ -57,22 +58,30 @@ const Countdown: React.FC = () => {
 
     return (
         <div className="flex flex-col items-center">
-            <div 
-            className='-mb-[50px] font-jersey text-[75px] text-white'
-            style={{
-                filter: `drop-shadow(0 0 4px #C3D6FF)`,
-            }}>
-                TIME UNTIL HACKNC
+              <div 
+                className='font-jersey text-[48px] text-white'
+                style={{
+                    filter: `drop-shadow(0 0 4px #C3D6FF)`,
+                }}>
+                    HackNC in
             </div>
             <div
-            className='font-jersey text-[75px] text-white'
+            className='font-jersey text-[75px] text-center text-white leading-none flex flex-col items-start items-center'
             style={{
                 filter: `drop-shadow(0 0 4px #C3D6FF)`,
             }}>
-                <span className="inline-block w-[70px] text-center">{daysLeft}</span>:
-                <span className="inline-block w-[70px] text-center">{hoursLeft}</span>:
-                <span className="inline-block w-[70px] text-center">{minutesLeft}</span>:
-                <span className="inline-block w-[70px] text-center">{secondsLeft}</span>
+                <span className="text-9xl">
+                    <span className="inline-block w-[120px] text-center">{daysLeft}</span>days<br/>
+                </span>
+                <span className="text-8xl">
+                    <span className="inline-block w-[100px] text-center">{hoursLeft}</span>hours<br/>
+                </span>
+                <span className="text-6xl">
+                    <span className="inline-block w-[80px] text-center">{minutesLeft}</span>minutes<br/>
+                </span>
+                <span className="text-4xl">
+                    <span className="inline-block w-[50px] text-center">{secondsLeft}</span>seconds
+                </span>
             </div>
         </div>
     );
