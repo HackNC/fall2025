@@ -13,6 +13,7 @@ const Navigation: React.FC = () => {
      ============================================================ */
   const [aboutOpen, setAboutOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isMobileView, setMobileView] = useState(false);
 
   // Default Animation States:
   const [bgVisible, setBgVisible] = useState(false);
@@ -48,9 +49,11 @@ const Navigation: React.FC = () => {
      ============================================================ */
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 794 && mobileMenuOpen) {
+      if (window.innerWidth >= 794 && mobileMenuOpen) {
         setMobileMenuOpen(false);
         resetAnimations();
+      } else if (window.innerWidth < 794) {
+        setMobileView(true);
       }
     };
     window.addEventListener("resize", handleResize);
@@ -139,9 +142,18 @@ const Navigation: React.FC = () => {
             alt="HackNC Logo"
             className="w-[66px] h-[66px] max-[1047px]:w-[56px] max-[1047px]:h-[56px] max-[455px]:h-[46px] max-[375px]:h-[40px]"
           />
-          <h1 className="text-[48px] max-[1047px]:text-[38px] max-[455px]:text-[28px] max-[375px]:text-[22px] whitespace-nowrap">
+          <h1
+            className={`text-[48px] max-[1047px]:text-[38px] max-[455px]:text-[28px] max-[375px]:text-[22px] whitespace-nowrap
+    ${mobileMenuOpen
+                ? "text-primary-dark"
+                : isMobileView
+                  ? "text-primary-light"
+                  : "text-primary-dark"
+              }`}
+          >
             HACKNC 2025
           </h1>
+
         </a>
 
         {/* ------------------------------------------------------------

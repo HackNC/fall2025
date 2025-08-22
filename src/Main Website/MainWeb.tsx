@@ -5,6 +5,7 @@ import ScrollBar from "./ScrollBar";
 import FrontPage from "../Pages/FrontPage";
 import Navigation from "./Navigation";
 import AboutPage from "../Pages/AboutPage";
+import Countdown from "../Pages/Countdown";
 import BottomDecor from "./BottomDecor";
 import FAQ from "../Pages/FAQPage";
 import OurBoardPage from "../Pages/OurBoard/OurBoardPage";
@@ -117,6 +118,10 @@ const MainPage: React.FC = () => {
 
               <SectionWrapper>
                 <FrontPage scrollToSection={scrollToSection} />
+              </SectionWrapper>
+
+              <SectionWrapper>
+                <Countdown />
               </SectionWrapper>
 
               <SectionWrapper>
