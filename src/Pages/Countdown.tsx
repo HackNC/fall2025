@@ -62,7 +62,7 @@ const Countdown: React.FC = () => {
             style={{
                 filter: `drop-shadow(0 0 4px #C3D6FF)`,
             }}>
-                TIME LEFT
+                TIME UNTIL HACKNC
             </div>
             <div
             className='font-jersey text-[75px] text-white'
