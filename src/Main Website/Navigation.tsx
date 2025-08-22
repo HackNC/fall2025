@@ -51,6 +51,7 @@ const Navigation: React.FC = () => {
     const handleResize = () => {
       if (window.innerWidth >= 794 && mobileMenuOpen) {
         setMobileMenuOpen(false);
+        setMobileView(false)
         resetAnimations();
       } else if (window.innerWidth < 794) {
         setMobileView(true);
@@ -123,7 +124,7 @@ const Navigation: React.FC = () => {
           and hamburger menu button for mobile.
           ============================================================ */}
       <header
-        className="flex items-start justify-between fixed top-0 w-full text-primary-dark z-[3000]"
+        className="flex items-start justify-between sticky top-0 w-full text-primary-dark z-[3000] h-[70px]"
         style={{ fontFamily: "'Jersey 15', sans-serif" }}
       >
         {/* ------------------------------------------------------------
