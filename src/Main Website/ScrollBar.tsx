@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { makeIsMobileState } from "./Utils.tsx"
 
 interface HorizontalScrollerProps {
   children: React.ReactNode;
@@ -27,7 +28,6 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({ children }) => 
   const arcadeW = (width / 100) * window.innerWidth;
 
   // useStates
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [scrollLeft, setScrollLeft] = useState(0);
   const [scrollableWidth, setScrollableWidth] = useState(0);
   const [spriteLeft, setSpriteLeft] = useState(0);
@@ -45,29 +45,14 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({ children }) => 
   const noScrollEvent = new CustomEvent("noScrollEvent", { detail: "static", bubbles: true });
   const [isScrolling, setIsScrolling] = useState(false);
 
+  const [isMobile, setIsMobile] = makeIsMobileState(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    setScrollLeft(el.scrollLeft);
+    setScrollableWidth(el.scrollWidth - el.clientWidth);
+  });
 
-  // Update isMobile and scrollable width on resize
-  useEffect(() => {
-    const isMobileHandler = () => setIsMobile(window.innerWidth <= 768);
-    const scrollHandler = () => {
-      const el = containerRef.current;
-      if (!el) return;
-      setScrollLeft(el.scrollLeft);
-      setScrollableWidth(el.scrollWidth - el.clientWidth);
-    };
-
-    const composedFunction = () => {
-      isMobileHandler();
-      scrollHandler();
-    };
-
-    scrollHandler();
-
-    window.addEventListener("resize", composedFunction);
-    return () => window.removeEventListener("resize", composedFunction);
-  }, []);
-
-  // Handle wheel scroll, button scroll, and scroll direction for horizontal scroll 
+  // Handle wheel scroll, button scroll, and scroll direction for horizontal scroll
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
