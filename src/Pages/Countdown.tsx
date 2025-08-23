@@ -30,22 +30,22 @@ const Countdown: React.FC = () => {
                 const hours = Math.floor((diffSec - (days * SECONDS_PER_DAY)) / SECONDS_PER_HOUR);
                 const minutes = Math.floor((diffSec - (days * SECONDS_PER_DAY + hours * SECONDS_PER_HOUR)) / SECONDS_PER_MINUTE);
                 const seconds = Math.floor(diffSec - (days * SECONDS_PER_DAY + hours * SECONDS_PER_HOUR + minutes * SECONDS_PER_MINUTE));
-                
+
                 const formatTime = (time: number) => {
                     return String(time).padStart(2, "0");
                 };
-                
+
                 setDaysLeft(formatTime(days));
                 setHoursLeft(formatTime(hours));
                 setMinutesLeft(formatTime(minutes));
                 setSecondsLeft(formatTime(seconds));
             } else {
                 return (
-                    <div 
-                    className='text-white font-jersey text-[75px]'
-                    style={{
-                        filter: `drop-shadow(0 0 4px #C3D6FF)`,
-                    }}>
+                    <div
+                        className='text-white font-jersey text-[75px]'
+                        style={{
+                            filter: `drop-shadow(0 0 4px #C3D6FF)`,
+                        }}>
                         IT'S HACKING TIME!!!
                     </div>
                 );
@@ -58,26 +58,26 @@ const Countdown: React.FC = () => {
 
     return (
         <div className="flex flex-col items-center">
-              <div 
+            <div
                 className='font-jersey text-[48px] text-white'
                 style={{
                     filter: `drop-shadow(0 0 4px #C3D6FF)`,
                 }}>
-                    HackNC in
+                HackNC in
             </div>
             <div
-            className='font-jersey text-[75px] text-center text-white leading-none flex flex-col items-start items-center'
-            style={{
-                filter: `drop-shadow(0 0 4px #C3D6FF)`,
-            }}>
+                className='font-jersey text-[75px] text-center text-white leading-none flex flex-col items-start items-center'
+                style={{
+                    filter: `drop-shadow(0 0 4px #C3D6FF)`,
+                }}>
                 <span className="text-9xl">
-                    <span className="inline-block w-[120px] text-center">{daysLeft}</span>days<br/>
+                    <span className="inline-block w-[120px] text-center">{daysLeft}</span>days<br />
                 </span>
                 <span className="text-8xl">
-                    <span className="inline-block w-[100px] text-center">{hoursLeft}</span>hours<br/>
+                    <span className="inline-block w-[100px] text-center">{hoursLeft}</span>hours<br />
                 </span>
                 <span className="text-6xl">
-                    <span className="inline-block w-[80px] text-center">{minutesLeft}</span>minutes<br/>
+                    <span className="inline-block w-[80px] text-center">{minutesLeft}</span>minutes<br />
                 </span>
                 <span className="text-4xl">
                     <span className="inline-block w-[50px] text-center">{secondsLeft}</span>seconds

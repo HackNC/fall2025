@@ -16,7 +16,7 @@ const FrontPage: React.FC<FrontPageProps> = ({ scrollToSection }) => {
                 <img src="/logos/hacknc_logo_no_text_ glow.svg" alt="hacknc 2025 logo" className="scale-x-[-1] max-w-[90%] max-h-[90%]" />
                 <div className="flex items-center justify-center space-x-4">
                     <img src="/frontPageAssets/plain_arrow_pink.png" alt="pink arrow" className="max-w-[4%] max-h-[4%]" />
-                    <button id="play-now" onClick={() => scrollToSection("AboutPage")} className="text-7xl tracking-widest text-primary-light text-shadow-accent-pink hover:text-shadow-font-dark-blue font-thin mb-1">
+                    <button id="play-now" onClick={() => scrollToSection("CountDown")} className="text-7xl tracking-widest text-primary-light text-shadow-accent-pink hover:text-shadow-font-dark-blue font-thin mb-1">
                         play now
                     </button>
                     <img src="/frontPageAssets/plain_arrow_pink.png" alt="pink arrow" className="max-w-[4%] max-h-[4%] scale-x-[-1]" />
