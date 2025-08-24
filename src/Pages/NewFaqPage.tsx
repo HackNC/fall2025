@@ -37,7 +37,7 @@ const NewFaqPage: React.FC = () => {
         answer: "A hackathon is a weekend of fun and learning. You'll become a better programmer, meet awesome people, and make cool projects. There will also be opportunities to win fun prizes and network with our sponsors."
     };
     const q2 = {
-        question: "Is this hac kathon in-person or hybrid?",
+        question: "Is this hackathon in-person or hybrid?",
         answer: "This year, we are running a completely in-person hackathon! We have lots of fun events and workshops for you all and most importantly, free food!"
     };
     const q3 = {
