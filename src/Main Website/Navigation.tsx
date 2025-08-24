@@ -157,20 +157,62 @@ const Navigation: React.FC = () => {
            ------------------------------------------------------------ */}
         <nav className="pt-[20px] max-md:hidden">
           <ul className="flex gap-[100px] max-[1047px]:gap-[60px] list-none items-center m-0">
-
             <li>
               <a
                 href="#"
                 onClick={() => {
                   handleDesktopItemClick();
-                  scrollToSection("FrontPage");
+                  scrollToSection("AboutPage");
                 }}
                 className="text-[36px] max-[1047px]:text-[26px] no-underline"
                 style={{ fontFamily: "'Jersey 15', sans-serif" }}
               >
-                home
+                about
               </a>
             </li>
+            {/* FAQ link */}
+            <li>
+              <a
+                href="#"
+                onClick={() => {
+                  handleDesktopItemClick();
+                  scrollToSection("NewFaqPage");
+                }}
+                className="text-[36px] max-[1047px]:text-[26px] no-underline"
+                style={{ fontFamily: "'Jersey 15', sans-serif" }}
+              >
+                faq
+              </a>
+            </li>
+            {/* Sponsors link */}
+            <li>
+              <a
+                href="#"
+                onClick={() => {
+                  handleDesktopItemClick();
+                  scrollToSection("SponsorshipPage");
+                }}
+                className="text-[36px] max-[1047px]:text-[26px] no-underline"
+                style={{ fontFamily: "'Jersey 15', sans-serif" }}
+              >
+                sponsors
+              </a>
+            </li>
+            
+            {/* Login link */}
+            {/* <li>
+              <a
+                href="#"
+                onClick={() => {
+                  handleDesktopItemClick();
+                  scrollToSection("NewFaqPage");
+                }}
+                className="text-[36px] max-[1047px]:text-[26px] no-underline"
+                style={{ fontFamily: "'Jersey 15', sans-serif" }}
+              >
+                faq
+              </a>
+            </li> */}
 
             {/* <li className="relative"> */}
             {/* About dropdown toggle */}
@@ -260,35 +302,6 @@ const Navigation: React.FC = () => {
                 </div>
               </div>
             </li>  */}
-
-            {/* Sponsors link */}
-            <li>
-              <a
-                href="#"
-                onClick={() => {
-                  handleDesktopItemClick();
-                  scrollToSection("AboutPage");
-                }}
-                className="text-[36px] max-[1047px]:text-[26px] no-underline"
-                style={{ fontFamily: "'Jersey 15', sans-serif" }}
-              >
-                about
-              </a>
-            </li>
-            {/* Login link */}
-            <li>
-              <a
-                href="#"
-                onClick={() => {
-                  handleDesktopItemClick();
-                  scrollToSection("NewFaqPage");
-                }}
-                className="text-[36px] max-[1047px]:text-[26px] no-underline"
-                style={{ fontFamily: "'Jersey 15', sans-serif" }}
-              >
-                faq
-              </a>
-            </li>
           </ul>
         </nav>
 

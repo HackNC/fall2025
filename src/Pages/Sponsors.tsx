@@ -7,7 +7,7 @@ const SponsorshipPage: React.FC = () => {
     console.log(sponsors)
 
     return (
-        <div className="px-40 text-center">
+        <div id="SponsorshipPage" className="px-40 text-center">
             <h1 className="text-[#F6B1B1] text-shadow-font-pink">Past Sponsors</h1>
             <div className='grid sm:grid-cols-1 lg:grid-cols-3 grid-auto-col gap-x-8 sm:gap-y-4'>
                 <div className="bg-font-orange bg-opacity-50 rounded-xl shadow-font-orange shadow-md">
