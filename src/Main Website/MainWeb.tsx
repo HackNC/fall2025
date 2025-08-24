@@ -58,7 +58,7 @@ export const scrollToSection = (id: string) => {
 
 
 const MainPage: React.FC = () => {
-  const [page, setPage] = useState(Pages.EMPTY)
+  const [page, setPage] = useState(Pages.LEADS)
   useEffect(() => {
     const handlePageSwitch = (event: Event) => {
       console.log("received event");

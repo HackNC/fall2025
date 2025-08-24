@@ -21,9 +21,9 @@ const leadOurBoardDetailStyles = {
 const minhInfoCardProps = {
     name: "Minh Nguyen",
     position: "co-lead director",
-    laziness: 5,
-    strength: 3,
-    catchphrase: "he will get back to you",
+    attack: 5,
+    defense: 3,
+    special_ability: "he will get back to you",
 }
 const minhOurBoardDetailProps = {
     mainImage: "/HackNC24.png",
@@ -35,9 +35,9 @@ const minhOurBoardDetailProps = {
 const aliciaInfoCardProps = {
     name: "Alicia Bao",
     position: "co-lead director",
-    laziness: 5,
-    strength: 3,
-    catchphrase: "TBD",
+    attack: 5,
+    defense: 3,
+    special_ability: "TBD",
 }
 const aliciaOurBoardDetailProps = {
     mainImage: "/HackNC24.png",
@@ -49,9 +49,9 @@ const aliciaOurBoardDetailProps = {
 const nagaInfoCardProps = {
     name: "Naga Ritvika Yeyuvuri",
     position: "co-lead director",
-    laziness: 5,
-    strength: 3,
-    catchphrase: "TBD",
+    attack: 5,
+    defense: 3,
+    special_ability: "TBD",
 }
 const nagaOurBoardDetailProps = {
     mainImage: "/HackNC24.png",
@@ -63,9 +63,9 @@ const nagaOurBoardDetailProps = {
 const jackInfoCardProps = {
     name: "Jack Huo",
     position: "lead advisor",
-    laziness: 5,
-    strength: 3,
-    catchphrase: "he will get back to you",
+    attack: 5,
+    defense: 3,
+    special_ability: "he will get back to you",
 }
 const jackOurBoardDetailProps = {
     mainImage: "/HackNC24.png",
@@ -94,9 +94,9 @@ const graphicsOurBoardDetailStyles = {
 const paigeInfoCardProps = {
     name: "Paige Pan",
     position: "co-director of graphics",
-    laziness: 5,
-    strength: 3,
-    catchphrase: "meow",
+    attack: 5,
+    defense: 3,
+    special_ability: "meow",
 }
 const paigeOurBoardDetailProps = {
     mainImage: "/HackNC24.png",
@@ -108,9 +108,9 @@ const paigeOurBoardDetailProps = {
 const amberInfoCardProps = {
     name: "Amber Zhen",
     position: "co-director of graphics",
-    laziness: 5,
-    strength: 3,
-    catchphrase: "meow",
+    attack: 5,
+    defense: 3,
+    special_ability: "meow",
 }
 const amberOurBoardDetailProps = {
     mainImage: "/HackNC24.png",
@@ -140,9 +140,9 @@ const experienceOurBoardDetailStyles = {
 const ayushInfoCardProps = {
     name: "Ayush Subramanian",
     position: "director of logistics",
-    laziness: 5,
-    strength: 3,
-    catchphrase: "meow",
+    attack: 5,
+    defense: 3,
+    special_ability: "meow",
 }
 const ayushOurBoardDetailProps = {
     mainImage: "/HackNC24.png",
@@ -154,9 +154,9 @@ const ayushOurBoardDetailProps = {
 const harsehajInfoCardProps = {
     name: "Harsehaj Dhami",
     position: "co-director of hacker experience",
-    laziness: 5,
-    strength: 3,
-    catchphrase: "meow",
+    attack: 5,
+    defense: 3,
+    special_ability: "meow",
 }
 const harsehajOurBoardDetailProps = {
     mainImage: "/HackNC24.png",
@@ -168,9 +168,9 @@ const harsehajOurBoardDetailProps = {
 const alexInfoCardProps = {
     name: "Alexander Toney",
     position: "co-director of hacker experience",
-    laziness: 5,
-    strength: 3,
-    catchphrase: "meow",
+    attack: 5,
+    defense: 3,
+    special_ability: "meow",
 }
 const alexOurBoardDetailProps = {
     mainImage: "/HackNC24.png",
@@ -200,9 +200,9 @@ const operationsOurBoardDetailStyles = {
 const sanayInfoCardProps = {
     name: "Sanay Vastani",
     position: "co-director of event operations",
-    laziness: 5,
-    strength: 3,
-    catchphrase: "meow",
+    attack: 5,
+    defense: 3,
+    special_ability: "meow",
 }
 const sanayOurBoardDetailProps = {
     mainImage: "/HackNC24.png",
@@ -214,9 +214,9 @@ const sanayOurBoardDetailProps = {
 const skyInfoCardProps = {
     name: "Sky Wang",
     position: "co-director of event operations",
-    laziness: 5,
-    strength: 3,
-    catchphrase: "meow",
+    attack: 5,
+    defense: 3,
+    special_ability: "meow",
 }
 const skyOurBoardDetailProps = {
     mainImage: "/HackNC24.png",
@@ -246,9 +246,9 @@ const sponsorshipOurBoardDetailStyles = {
 const davydInfoCardProps = {
     name: "Davyd Voloshyn",
     position: "director of finance",
-    laziness: 5,
-    strength: 3,
-    catchphrase: "meow",
+    attack: 5,
+    defense: 3,
+    special_ability: "meow",
 }
 const davydOurBoardDetailProps = {
     mainImage: "/HackNC24.png",
@@ -261,9 +261,9 @@ const davydOurBoardDetailProps = {
 const ishithaInfoCardProps = {
     name: "Ishitha Jujjavarapu",
     position: "co-director of sponsorship",
-    laziness: 5,
-    strength: 3,
-    catchphrase: "meow",
+    attack: 5,
+    defense: 3,
+    special_ability: "meow",
 }
 const ishithaOurBoardDetailProps = {
     mainImage: "/HackNC24.png",
@@ -276,9 +276,9 @@ const ishithaOurBoardDetailProps = {
 const sahasraInfoCardProps = {
     name: "Sahasra Boga",
     position: "co-director of sponsorship",
-    laziness: 5,
-    strength: 3,
-    catchphrase: "meow",
+    attack: 5,
+    defense: 3,
+    special_ability: "meow",
 }
 const sahasraOurBoardDetailProps = {
     mainImage: "/HackNC24.png",
@@ -290,9 +290,9 @@ const sahasraOurBoardDetailProps = {
 const masonInfoCardProps = {
     name: "Mason Mines",
     position: "sponsor engagement lead",
-    laziness: 5,
-    strength: 3,
-    catchphrase: "meow",
+    attack: 5,
+    defense: 3,
+    special_ability: "meow",
 }
 const masonOurBoardDetailProps = {
     mainImage: "/HackNC24.png",
@@ -321,9 +321,9 @@ const devOurBoardDetailStyles = {
 const yahanInfoCardProps = {
     name: "Yahan Yang",
     position: "director of development",
-    laziness: 5,
-    strength: 3,
-    catchphrase: "meow",
+    attack: 5,
+    defense: 3,
+    special_ability: "meow",
 }
 const yahanOurBoardDetailProps = {
     mainImage: "/HackNC24.png",
@@ -336,9 +336,9 @@ const yahanOurBoardDetailProps = {
 const rishiInfoCardProps = {
     name: "Rishyendra Medamanuri",
     position: "advisor of development",
-    laziness: 5,
-    strength: 3,
-    catchphrase: "meow",
+    attack: 5,
+    defense: 3,
+    special_ability: "meow",
 }
 const rishiOurBoardDetailProps = {
     mainImage: "/HackNC24.png",
@@ -367,9 +367,9 @@ const marketingOurBoardDetailStyles = {
 const robertInfoCardProps = {
     name: "Robert Battle",
     position: "co-director of marketing",
-    laziness: 5,
-    strength: 3,
-    catchphrase: "meow",
+    attack: 5,
+    defense: 3,
+    special_ability: "meow",
 }
 const robertOurBoardDetailProps = {
     mainImage: "/HackNC24.png",
@@ -381,9 +381,9 @@ const robertOurBoardDetailProps = {
 const oscarInfoCardProps = {
     name: "Oscar Cheung",
     position: "co-director of marketing",
-    laziness: 5,
-    strength: 3,
-    catchphrase: "meow",
+    attack: 5,
+    defense: 3,
+    special_ability: "meow",
 }
 const oscarOurBoardDetailProps = {
     mainImage: "/HackNC24.png",

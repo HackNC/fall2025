@@ -6,9 +6,9 @@ import '@fontsource/jersey-15';
 interface InfoCardProps {
     name: string;
     position: string;
-    laziness: number;
-    strength: number;
-    catchphrase: string;
+    attack: number;
+    defense: number;
+    special_ability: string;
 }
 
 interface OurBoardDetailProps {
@@ -188,7 +188,7 @@ const InfoCardStarField: React.FC<{ fieldName: string, value: number, max: numbe
 };
 
 const InfoCard: React.FC<{ props: InfoCardProps, styles: OurBoardDetailStyles }> = ({ props, styles }) => {
-    const { name, position, laziness, strength, catchphrase } = props;
+    const { name, position, attack, defense, special_ability } = props;
     const { accentColor, border, filledStar, emptyStar } = styles;
 
     return (
@@ -198,10 +198,10 @@ const InfoCard: React.FC<{ props: InfoCardProps, styles: OurBoardDetailStyles }>
                 <GlowItem accentColor={accentColor} className={`font-jersey text-[21px] text-white text-center tracking-[0.10rem] leading-none`}>{position}</GlowItem>
             </div>
             <dl className="mx-4 my-2 grid grid-cols-2 gap-2 text-white">
-                <InfoCardStarField fieldName="laziness" value={laziness} max={5} filledStar={filledStar} emptyStar={emptyStar} />
-                <InfoCardStarField fieldName="strength" value={strength} max={5} filledStar={filledStar} emptyStar={emptyStar} />
-                <dt>catchphrase</dt>
-                <dl>"{catchphrase}"</dl>
+                <InfoCardStarField fieldName="attack" value={attack} max={5} filledStar={filledStar} emptyStar={emptyStar} />
+                <InfoCardStarField fieldName="defense" value={defense} max={5} filledStar={filledStar} emptyStar={emptyStar} />
+                <dt>special ability</dt>
+                <dl>"{special_ability}"</dl>
             </dl>
         </div>
     );
