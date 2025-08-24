@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { scrollToSection } from "./MainWeb";
 
 const Navigation: React.FC = () => {
   /* ============================================================
@@ -223,7 +224,9 @@ const Navigation: React.FC = () => {
                     <li className="py-1">
                       <a
                         href="#"
-                        onClick={handleDesktopItemClick}
+                        onClick={() => {
+                          handleDesktopItemClick();
+                          scrollToSection("NewFaqPage");}}
                         className="block text-primary-dark no-underline text-[36px] max-[1047px]:text-[26px]"
                         style={{ fontFamily: "'Jersey 15', sans-serif" }}
                       >
@@ -233,7 +236,9 @@ const Navigation: React.FC = () => {
                     <li className="py-1">
                       <a
                         href="#"
-                        onClick={handleDesktopItemClick}
+                        onClick={() => {
+                          handleDesktopItemClick();
+                          scrollToSection("OurBoardPage");}}
                         className="block text-[#050423] no-underline text-[36px] max-[1047px]:text-[26px]"
                         style={{ fontFamily: "'Jersey 15', sans-serif" }}
                       >
@@ -276,18 +281,23 @@ const Navigation: React.FC = () => {
         <div className="flex items-center max-[794px]:relative max-[794px]:w-full">
           {/* Mobile banner */}
           <div className="hidden max-[794px]:flex items-center absolute top-0 right-16">
+          <a href="https://mlh.io/seasons/2026/events" target="_blank" rel="noopener noreferrer">
             <img
               src="/MLHBanner.png"
               alt="MLH Banner"
               className="w-[112px] h-auto max-[1047px]:w-[102px] mr-2 max-[455px]:w-[98px] max-[394px]:w-[78px] max-[375px]:w-[68px] max-[340px]:w-[58px] max-[323px]:w-[38px]"
             />
+          </a>
+
           </div>
           {/* Desktop banner */}
+          <a href="https://mlh.io/seasons/2026/events" target="_blank" rel="noopener noreferrer">
           <img
             src="/MLHBanner.png"
             alt="MLH Banner"
             className="w-[112px] h-auto mr-[48px] max-[1047px]:w-[102px] max-[1047px]:mr-[38px] max-[794px]:hidden"
           />
+          </a>
           {/* Hamburger toggle */}
           <button
             onClick={() => setMobileMenuOpen((prev) => !prev)}
@@ -358,7 +368,10 @@ const Navigation: React.FC = () => {
                 : "opacity-0 translate-y-2"
                 }`}
             >
-              <a href="#" onClick={handleMobileItemClick}>
+              <a href="#" 
+              onClick={() => {
+                handleMobileItemClick();
+                scrollToSection("AboutPage");}}>
                 about
               </a>
             </li>
@@ -368,7 +381,10 @@ const Navigation: React.FC = () => {
                 : "opacity-0 translate-y-2"
                 }`}
             >
-              <a href="#" onClick={handleMobileItemClick}>
+              <a href="#" 
+              onClick={() => {
+                handleMobileItemClick();
+                scrollToSection("NewFaqPage");}}>
                 faq
               </a>
             </li>
@@ -378,7 +394,10 @@ const Navigation: React.FC = () => {
                 : "opacity-0 translate-y-2"
                 }`}
             >
-              <a href="#" onClick={handleMobileItemClick}>
+              <a href="#" 
+              onClick={() => {
+                handleMobileItemClick();
+                scrollToSection("OurBoardPage");}}>
                 our board
               </a>
             </li>
