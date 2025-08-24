@@ -66,32 +66,35 @@ const TeamCard: React.FC<TeamCardProps> = ({ teamName, img, color, navID }) => {
   };
 
   return (
-    <button onClick={() => handleOurBoardClick(navID)} >
-      <div className="m-2">
-        <p className={"text-center " + color}>{teamName}</p>
-        <img src={img} alt={teamName + " team picture"} className="m-auto w-[15rem] h-[10rem] rounded-3xl" />
-      </div>
+    <button
+      onClick={() => handleOurBoardClick(navID)}
+      className={`w-48 h-24 flex items-center justify-center 
+                text-center text-4xl font-jersey hover:bg-gradient-top
+                bg-primary-dark rounded-full ${color}`}
+    >
+      {teamName}
     </button>
-  );
+  )
 }
 
 const OurBoardPage: React.FC = () => {
   return (
-    <div className="w-full h-full p-4">
+    <div id="OurBoardPage" className="w-full h-full p-4">
       <h1 className="text-font-light-blue text-shadow-font-light-blue text-center leading-none tracking-[0.1em]">OUR BOARD</h1>
       <h3 className="text-font-light-blue text-shadow-font-light-blue text-center leading-none mb-2 tracking-[0.1em]">
         <img className="inline-block h-[1em] mr-3 scale-x-[-1]" src="/ourBoardPageAssets/plain_arrow.png" />
         choose your faction
         <img className="inline-block h-[1em] ml-3" src="/ourBoardPageAssets/plain_arrow.png" />
       </h3>
-      <div className="flex justify-center flex-wrap align-center">
-        <TeamCard teamName="leads" img="/EventPhoto.jpg" color="text-font-dark-blue" navID="leads" />
-        <TeamCard teamName="graphics" img="/EventPhoto.jpg" color="text-font-light-blue" navID="graphics" />
-        <TeamCard teamName="hacker experience" img="/EventPhoto.jpg" color="text-font-cyan" navID="experience" />
-        <TeamCard teamName="event operations" img="/EventPhoto.jpg" color="text-font-green" navID="operations" />
-        <TeamCard teamName="sponsorship" img="/EventPhoto.jpg" color="text-font-orange" navID="sponsorship" />
-        <TeamCard teamName="development" img="/EventPhoto.jpg" color="text-font-peach" navID="development" />
-        <TeamCard teamName="marketing" img="/EventPhoto.jpg" color="text-font-pink" navID="marketing" />
+
+      <div className="flex flex-wrap justify-center gap-8 mt-[10vh]">
+        <TeamCard teamName="leads" img="/EventPhoto.jpg" color="text-font-dark-blue text-shadow-font-dark-blue" navID="leads" />
+        <TeamCard teamName="graphics" img="/EventPhoto.jpg" color="text-font-light-blue text-shadow-font-light-blue" navID="graphics" />
+        <TeamCard teamName="hacker experience" img="/EventPhoto.jpg" color="text-font-cyan text-shadow-font-cyan" navID="experience" />
+        <TeamCard teamName="event operations" img="/EventPhoto.jpg" color="text-font-green text-shadow-font-green" navID="operations" />
+        <TeamCard teamName="sponsorship" img="/EventPhoto.jpg" color="text-font-orange text-shadow-font-orange" navID="sponsorship" />
+        <TeamCard teamName="development" img="/EventPhoto.jpg" color="text-font-peach text-shadow-font-peach" navID="development" />
+        <TeamCard teamName="marketing" img="/EventPhoto.jpg" color="text-font-pink text-shadow-font-pink" navID="marketing" />
       </div>
     </div>
 

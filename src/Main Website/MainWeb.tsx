@@ -129,20 +129,18 @@ const MainPage: React.FC = () => {
               <SectionWrapper>
                 <AboutPage />
               </SectionWrapper>
-              {/* <SectionWrapper>
-                <AboutPage />
-              </SectionWrapper> */}
+
               <SectionWrapper>
-                {/* <FrontPage scrollToSection={scrollToSection} /> */}
                 <NewFaqPage />
               </SectionWrapper>
               <SectionWrapper>
                 <SponsorshipPage/>
               </SectionWrapper>
 
-              <SectionWrapper>
+              {/* Not Ready Yet! */}
+              {/* <SectionWrapper>
                 <OurBoardPage />
-              </SectionWrapper>
+              </SectionWrapper>  */}
 
               {page === Pages.LEADS && (
                 <>

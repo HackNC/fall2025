@@ -47,6 +47,9 @@ export default {
       },
     },
   },
+  screens: {
+    "md": "1019px",
+  },
   plugins: [
     require('tailwindcss-textshadow'),
   ],
