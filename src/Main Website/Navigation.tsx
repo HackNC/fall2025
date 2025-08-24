@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { scrollToSection } from "./MainWeb";
-=======
 import { makeIsMobileState } from "./Utils.tsx"
 
 
