@@ -58,7 +58,7 @@ const NewFaqPage: React.FC = () => {
     };
     return (
 
-        <div id="NewFaqPage" className="w-full h-full flex flex-col items-center pl-20 pr-20 py-20 ">
+        <div className="w-full h-full flex flex-col items-center pl-20 pr-20 py-20 ">
             <h1
                 className="text-white text-4xl sm:text-5xl lg:text-6xl text-center mb-10 -mt-12"
                 style={{
