@@ -157,9 +157,24 @@ const Navigation: React.FC = () => {
            ------------------------------------------------------------ */}
         <nav className="pt-[20px] max-md:hidden">
           <ul className="flex gap-[100px] max-[1047px]:gap-[60px] list-none items-center m-0">
-            <li className="relative">
+
+          <li>
+              <a
+                href="#"
+                onClick={() => {
+                  handleDesktopItemClick();
+                  scrollToSection("FrontPage");
+                }}
+                className="text-[36px] max-[1047px]:text-[26px] no-underline"
+                style={{ fontFamily: "'Jersey 15', sans-serif" }}
+              >
+                home
+              </a>
+            </li>
+
+            {/* <li className="relative"> */}
               {/* About dropdown toggle */}
-              <button
+              {/* <button
                 onClick={toggleAboutDropdown}
                 className="inline-flex items-center gap-2 p-0 bg-transparent border-0 cursor-pointer text-[36px] max-[1047px]:text-[26px] leading-none"
                 style={{ fontFamily: "'Jersey 15', sans-serif" }}
@@ -184,10 +199,10 @@ const Navigation: React.FC = () => {
                     />
                   </svg>
                 </span>
-              </button>
+              </button> */}
 
               {/* Dropdown menu */}
-              <div
+              {/* <div
                 className={`mt-2 absolute left-1/2 top-[calc(100%+3px)] -translate-x-1/2 z-50 transition-all duration-200 ${aboutOpen
                   ? "opacity-100 translate-y-0 pointer-events-auto"
                   : "opacity-0 -translate-y-1 pointer-events-none"
@@ -198,9 +213,9 @@ const Navigation: React.FC = () => {
                   style={{
                     filter: "drop-shadow(0px 4px 6px rgba(85, 86, 122, 0.6))",
                   }}
-                >
+                > */}
                   {/* Dropdown pointer triangle */}
-                  <div
+                  {/* <div
                     className="absolute left-1/2 -translate-x-1/2 -top-[10px]"
                     style={{
                       width: 0,
@@ -209,9 +224,9 @@ const Navigation: React.FC = () => {
                       borderRight: "10px solid transparent",
                       borderBottom: "10px solid #E0E6EF",
                     }}
-                  />
+                  /> */}
                   {/* Dropdown links */}
-                  <ul
+                  {/* <ul
                     className="bg-[#E0E6EF] rounded-xl py-3 px-5 text-center min-w-[200px] max-[1047px]:min-w-[180px]"
                     role="menu"
                   >
@@ -244,28 +259,34 @@ const Navigation: React.FC = () => {
                   </ul>
                 </div>
               </div>
-            </li>
+            </li>  */}
 
             {/* Sponsors link */}
             <li>
               <a
                 href="#"
-                onClick={handleDesktopItemClick}
+                onClick={() => {
+                  handleDesktopItemClick();
+                  scrollToSection("AboutPage");
+                }}
                 className="text-[36px] max-[1047px]:text-[26px] no-underline"
                 style={{ fontFamily: "'Jersey 15', sans-serif" }}
               >
-                sponsors
+                about
               </a>
             </li>
             {/* Login link */}
             <li>
               <a
                 href="#"
-                onClick={handleDesktopItemClick}
+                onClick={() => {
+                  handleDesktopItemClick();
+                  scrollToSection("NewFaqPage");
+                }}
                 className="text-[36px] max-[1047px]:text-[26px] no-underline"
                 style={{ fontFamily: "'Jersey 15', sans-serif" }}
               >
-                login
+                faq
               </a>
             </li>
           </ul>
@@ -357,6 +378,21 @@ const Navigation: React.FC = () => {
         >
           {/* Main menu links */}
           <ul className="flex flex-col items-center gap-6 text-center text-primary-dark text-[32px] font-semibold max-[455px]:text-[30px] max-[375px]:text-[25px]">
+          <li
+              className={`transition-all duration-300 ${showAbout
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-2"
+                }`}
+            >
+              <a href="#"
+                onClick={() => {
+                  handleMobileItemClick();
+                  scrollToSection("FrontPage");
+                }}>
+                home
+              </a>
+            </li>
+            
             <li
               className={`transition-all duration-300 ${showAbout
                 ? "opacity-100 translate-y-0"
@@ -366,7 +402,7 @@ const Navigation: React.FC = () => {
               <a href="#"
                 onClick={() => {
                   handleMobileItemClick();
-                  scrollToSection("AboutPage");
+                  scrollToSection("AboutPageMobile");
                 }}>
                 about
               </a>
@@ -380,12 +416,12 @@ const Navigation: React.FC = () => {
               <a href="#"
                 onClick={() => {
                   handleMobileItemClick();
-                  scrollToSection("NewFaqPage");
+                  scrollToSection("NewFaqPageMobile");
                 }}>
                 faq
               </a>
             </li>
-            <li
+            {/* <li
               className={`transition-all duration-300 ${showOurBoard
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-2"
@@ -398,8 +434,8 @@ const Navigation: React.FC = () => {
                 }}>
                 our board
               </a>
-            </li>
-            <li
+            </li> */}
+            {/* <li
               className={`transition-all duration-300 ${showSponsors
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-2"
@@ -408,7 +444,7 @@ const Navigation: React.FC = () => {
               <a href="#" onClick={handleMobileItemClick}>
                 sponsors
               </a>
-            </li>
+            </li> */}
           </ul>
 
           {/* Divider */}
@@ -418,7 +454,7 @@ const Navigation: React.FC = () => {
           ></div>
 
           {/* Login */}
-          <ul className="flex flex-col items-center text-center text-primary-dark text-[32px] font-semibold max-[455px]:text-[30px] max-[375px]:text-[25px]">
+          {/* <ul className="flex flex-col items-center text-center text-primary-dark text-[32px] font-semibold max-[455px]:text-[30px] max-[375px]:text-[25px]">
             <li
               className={`transition-all duration-300 ${showLogin
                 ? "opacity-100 translate-y-0"
@@ -429,7 +465,7 @@ const Navigation: React.FC = () => {
                 login
               </a>
             </li>
-          </ul>
+          </ul> */}
 
           {/* HackNC Logo */}
           <div
