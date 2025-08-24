@@ -59,7 +59,7 @@ const Countdown: React.FC = () => {
     return (
         <div className="flex flex-col items-center">
               <div 
-                className='font-jersey text-[48px] text-white'
+                className='font-jersey text-[48px] text-font-light-blue'
                 style={{
                     filter: `drop-shadow(0 0 4px #C3D6FF)`,
                 }}>

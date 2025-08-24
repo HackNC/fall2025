@@ -12,6 +12,7 @@ import NewFaqPage from "../Pages/NewFaqPage";
 import OurBoardPage from "../Pages/OurBoard/OurBoardPage";
 import { Minh, Naga, Alicia, Jack, Paige, Amber, Ayush, Harsehaj, Sanay, Sky, Davyd, Ishitha, Sahasra, Mason, Rishi, Yahan, Robert, Oscar, Alex } from "../Pages/OurBoard/OurBoardInfo";
 import Pages from "../Pages/OurBoard/PagesEnum"
+import SponsorshipPage from "../Pages/Sponsors";
 
 const ScreenWrapper: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   return (
@@ -134,6 +135,9 @@ const MainPage: React.FC = () => {
               <SectionWrapper>
                 {/* <FrontPage scrollToSection={scrollToSection} /> */}
                 <NewFaqPage />
+              </SectionWrapper>
+              <SectionWrapper>
+                <SponsorshipPage/>
               </SectionWrapper>
 
               <SectionWrapper>
