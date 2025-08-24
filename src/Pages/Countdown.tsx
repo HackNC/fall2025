@@ -78,7 +78,7 @@ const Countdown: React.FC = () => {
                 </span>
             </div>
             <div>
-                <a href="https://Google.com" className="font-jersey text-[48px] text-primary-light text-shadow-accent-purple hover:text-font-orange">Register Here!</a>
+                <a href="https://Google.com" target="_blank" rel="noopener noreferrer" className="font-jersey text-[48px] text-primary-light text-shadow-accent-purple hover:text-font-orange">Register Here!</a>
             </div>
         </div>
     );

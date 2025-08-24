@@ -158,7 +158,7 @@ const Navigation: React.FC = () => {
         <nav className="pt-[20px] max-md:hidden">
           <ul className="flex gap-[100px] max-[1047px]:gap-[60px] list-none items-center m-0">
 
-          <li>
+            <li>
               <a
                 href="#"
                 onClick={() => {
@@ -173,8 +173,8 @@ const Navigation: React.FC = () => {
             </li>
 
             {/* <li className="relative"> */}
-              {/* About dropdown toggle */}
-              {/* <button
+            {/* About dropdown toggle */}
+            {/* <button
                 onClick={toggleAboutDropdown}
                 className="inline-flex items-center gap-2 p-0 bg-transparent border-0 cursor-pointer text-[36px] max-[1047px]:text-[26px] leading-none"
                 style={{ fontFamily: "'Jersey 15', sans-serif" }}
@@ -201,8 +201,8 @@ const Navigation: React.FC = () => {
                 </span>
               </button> */}
 
-              {/* Dropdown menu */}
-              {/* <div
+            {/* Dropdown menu */}
+            {/* <div
                 className={`mt-2 absolute left-1/2 top-[calc(100%+3px)] -translate-x-1/2 z-50 transition-all duration-200 ${aboutOpen
                   ? "opacity-100 translate-y-0 pointer-events-auto"
                   : "opacity-0 -translate-y-1 pointer-events-none"
@@ -214,8 +214,8 @@ const Navigation: React.FC = () => {
                     filter: "drop-shadow(0px 4px 6px rgba(85, 86, 122, 0.6))",
                   }}
                 > */}
-                  {/* Dropdown pointer triangle */}
-                  {/* <div
+            {/* Dropdown pointer triangle */}
+            {/* <div
                     className="absolute left-1/2 -translate-x-1/2 -top-[10px]"
                     style={{
                       width: 0,
@@ -225,8 +225,8 @@ const Navigation: React.FC = () => {
                       borderBottom: "10px solid #E0E6EF",
                     }}
                   /> */}
-                  {/* Dropdown links */}
-                  {/* <ul
+            {/* Dropdown links */}
+            {/* <ul
                     className="bg-[#E0E6EF] rounded-xl py-3 px-5 text-center min-w-[200px] max-[1047px]:min-w-[180px]"
                     role="menu"
                   >
@@ -378,7 +378,7 @@ const Navigation: React.FC = () => {
         >
           {/* Main menu links */}
           <ul className="flex flex-col items-center gap-6 text-center text-primary-dark text-[32px] font-semibold max-[455px]:text-[30px] max-[375px]:text-[25px]">
-          <li
+            <li
               className={`transition-all duration-300 ${showAbout
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-2"
@@ -392,7 +392,7 @@ const Navigation: React.FC = () => {
                 home
               </a>
             </li>
-            
+
             <li
               className={`transition-all duration-300 ${showAbout
                 ? "opacity-100 translate-y-0"
