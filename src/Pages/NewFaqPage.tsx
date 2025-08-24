@@ -59,7 +59,7 @@ const NewFaqPage: React.FC = () => {
     return (
         <div className="w-full h-full flex flex-col items-center pl-20 pr-20 py-20 ">
             <h1
-                className="text-white text-4xl sm:text-5xl lg:text-6xl text-center mb-10 -mt-10"
+                className="text-white text-4xl sm:text-5xl lg:text-6xl text-center mb-10 -mt-12"
                 style={{
                     filter: `drop-shadow(0 0 4px #ffffff)`
                 }}>Frequently Asked Questions</h1>

@@ -15,8 +15,8 @@ const AboutBorder: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
                 alt="lead border"
                 className="w-full h-full object-contain"
             />
-            <div className="absolute inset-0 flex items-center justify-center p-4">
-                <div className="text-center max-w-[90%] overflow-y-auto max-h-full">
+            <div className="absolute inset-0 flex items-center justify-center p-4 text-l max-md:text-2xl ">
+                <div className="text-center max-w-[80%] overflow-y-auto max-h-full">
                     {children}
                 </div>
             </div>
@@ -36,10 +36,10 @@ const AboutPage: React.FC = () => {
                     <h1 className="">About</h1>
                 </div>
 
-                <div className="flex flex-row justify-evenly items-center">
-                    <div className='mr-5'>
+
+                <div className="flex flex-row max-md:flex-col justify-evenly items-center">
+                    <div className="mr-5">
                         <AboutBorder>
-                            {/* Description Text */}
                             <p className="text-shadow-none text-center text-l">
                                 HackNC is a weekend for students of all skill levels to broaden their talents.
                                 Your challenge is to make an awesome project in just 24 hours. You will have
@@ -50,8 +50,11 @@ const AboutPage: React.FC = () => {
                         </AboutBorder>
                     </div>
                     <div className="-mr-20">
-                        <img src="/about_page_graphic.svg" alt="About page graphic" className="max-w-[50vh] max-h-[50vh]" /></div>
+                        <img src="/about_page_graphic.svg" alt="About page graphic" className="max-w-[50vh] max-h-[50vh]" />
+                    </div>
                 </div>
+
+
             </div>
         </div>
     );
