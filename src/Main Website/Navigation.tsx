@@ -133,6 +133,8 @@ const Navigation: React.FC = () => {
           onClick={() => {
             setMobileMenuOpen(false);
             setAboutOpen(false);
+            scrollToSection("FrontPage");
+
           }}
         >
           <img
