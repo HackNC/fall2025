@@ -42,7 +42,7 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({ children }) => 
   const prevScroll = useRef(0);
   const scrollingNext = new CustomEvent("scrollingNext", { detail: "next", bubbles: true });
   const scrollingPrev = new CustomEvent("scrollingPrev", { detail: "previous", bubbles: true });
-  const noScrollEvent = new CustomEvent("noScrollEvent", { detail: "static", bubbles: true });
+  //  const noScrollEvent = new CustomEvent("noScrollEvent", { detail: "static", bubbles: true });
   const [isScrolling, setIsScrolling] = useState(false);
 
   const [isMobile, setIsMobile] = makeIsMobileState(() => {
@@ -50,7 +50,7 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({ children }) => 
     if (!el) return;
     setScrollLeft(el.scrollLeft);
     setScrollableWidth(el.scrollWidth - el.clientWidth);
-  });
+  }, []); // 👈 empty deps if you don’t need re-run triggers
 
   // Handle wheel scroll, button scroll, and scroll direction for horizontal scroll
   useEffect(() => {

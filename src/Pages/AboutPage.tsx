@@ -16,7 +16,7 @@ const AboutBorder: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
                 className="w-full h-full object-contain"
             />
             <div className="absolute inset-0 flex items-center justify-center p-4 text-l max-md:text-2xl ">
-                <div className="text-center max-w-[80%] overflow-y-auto max-h-full">
+                <div id="AboutPageMobile"className="text-center max-w-[80%] overflow-y-auto max-h-full">
                     {children}
                 </div>
             </div>
@@ -37,7 +37,7 @@ const AboutPage: React.FC = () => {
                 </div>
 
 
-                <div className="flex flex-row max-md:flex-col justify-evenly items-center">
+                <div className="flex flex-row max-md:flex-col justify-evenly items-center mb-8">
                     <div className="mr-5">
                         <AboutBorder>
                             <p className="text-shadow-none text-center text-l">

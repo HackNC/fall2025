@@ -13,7 +13,7 @@ const FaqItem: React.FC<{ props: FaqItemProps }> = ({ props }) => {
         setIsOpened(!isOpened);
     }
     return (
-        <div className="flex flex-col">
+        <div id="NewFaqPageMobile" className="flex flex-col">
             <div className="flex items-center gap-4">
                 <button className="shrink-0" onClick={toggleIsOpened}>
                     {!isOpened && <img className="w-20 h-20" src="folder_open.png" alt="closed folder" />}
@@ -58,7 +58,7 @@ const NewFaqPage: React.FC = () => {
     };
     return (
 
-        <div className="w-full h-full flex flex-col items-center pl-20 pr-20 py-20 ">
+        <div id="NewFaqPage" className="w-full h-full flex flex-col items-center pl-20 pr-20 py-20 ">
             <h1
                 className="text-white text-4xl sm:text-5xl lg:text-6xl text-center mb-10 -mt-12"
                 style={{

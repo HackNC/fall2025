@@ -88,13 +88,13 @@ const OurBoardPage: React.FC = () => {
       </h3>
 
       <div className="flex flex-wrap justify-center gap-8 mt-[10vh]">
-        <TeamCard teamName="leads" img="/EventPhoto.jpg" color="text-font-dark-blue" navID="leads" />
-        <TeamCard teamName="graphics" img="/EventPhoto.jpg" color="text-font-light-blue" navID="graphics" />
-        <TeamCard teamName="hacker experience" img="/EventPhoto.jpg" color="text-font-cyan" navID="experience" />
-        <TeamCard teamName="event operations" img="/EventPhoto.jpg" color="text-font-green" navID="operations" />
-        <TeamCard teamName="sponsorship" img="/EventPhoto.jpg" color="text-font-orange" navID="sponsorship" />
-        <TeamCard teamName="development" img="/EventPhoto.jpg" color="text-font-peach" navID="development" />
-        <TeamCard teamName="marketing" img="/EventPhoto.jpg" color="text-font-pink" navID="marketing" />
+        <TeamCard teamName="leads" img="/EventPhoto.jpg" color="text-font-dark-blue text-shadow-font-dark-blue" navID="leads" />
+        <TeamCard teamName="graphics" img="/EventPhoto.jpg" color="text-font-light-blue text-shadow-font-light-blue" navID="graphics" />
+        <TeamCard teamName="hacker experience" img="/EventPhoto.jpg" color="text-font-cyan text-shadow-font-cyan" navID="experience" />
+        <TeamCard teamName="event operations" img="/EventPhoto.jpg" color="text-font-green text-shadow-font-green" navID="operations" />
+        <TeamCard teamName="sponsorship" img="/EventPhoto.jpg" color="text-font-orange text-shadow-font-orange" navID="sponsorship" />
+        <TeamCard teamName="development" img="/EventPhoto.jpg" color="text-font-peach text-shadow-font-peach" navID="development" />
+        <TeamCard teamName="marketing" img="/EventPhoto.jpg" color="text-font-pink text-shadow-font-pink" navID="marketing" />
       </div>
     </div>
 
