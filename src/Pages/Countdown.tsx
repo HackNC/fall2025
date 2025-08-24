@@ -77,9 +77,6 @@ const Countdown: React.FC = () => {
                     <span className="inline-block w-[50px] text-center">{secondsLeft}</span>seconds
                 </span>
             </div>
-            <div>
-                <a href="https://Google.com" target="_blank" rel="noopener noreferrer" className="font-jersey text-[48px] text-primary-light text-shadow-accent-purple hover:text-font-orange">Register Here!</a>
-            </div>
         </div>
     );
 };
