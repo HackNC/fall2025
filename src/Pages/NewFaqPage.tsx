@@ -57,6 +57,7 @@ const NewFaqPage: React.FC = () => {
         answer: "Parking will be free over the weekend. Please find availability in Rams Deck, Craige Deck, or Cobb Deck."
     };
     return (
+
         <div className="w-full h-full flex flex-col items-center pl-20 pr-20 py-20 ">
             <h1
                 className="text-white text-4xl sm:text-5xl lg:text-6xl text-center mb-10 -mt-12"

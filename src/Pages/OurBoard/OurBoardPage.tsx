@@ -79,7 +79,7 @@ const TeamCard: React.FC<TeamCardProps> = ({ teamName, img, color, navID }) => {
 
 const OurBoardPage: React.FC = () => {
   return (
-    <div className="w-full h-full p-4">
+    <div id="OurBoardPage" className="w-full h-full p-4">
       <h1 className="text-font-light-blue text-shadow-font-light-blue text-center leading-none tracking-[0.1em]">OUR BOARD</h1>
       <h3 className="text-font-light-blue text-shadow-font-light-blue text-center leading-none mb-2 tracking-[0.1em]">
         <img className="inline-block h-[1em] mr-3 scale-x-[-1]" src="/ourBoardPageAssets/plain_arrow.png" />
