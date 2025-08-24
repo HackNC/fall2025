@@ -57,7 +57,7 @@ const Countdown: React.FC = () => {
     }, [])
 
     return (
-        <div className="flex flex-col items-center">
+        <div id="CountDown" className="flex flex-col items-center">
             <div
                 className='font-jersey text-[48px] text-white'
                 style={{

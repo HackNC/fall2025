@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { scrollToSection } from "./MainWeb";
-=======
 import { makeIsMobileState } from "./Utils.tsx"
 
 
@@ -219,7 +218,8 @@ const Navigation: React.FC = () => {
                         href="#"
                         onClick={() => {
                           handleDesktopItemClick();
-                          scrollToSection("NewFaqPage");}}
+                          scrollToSection("NewFaqPage");
+                        }}
                         className="block text-primary-dark no-underline text-[36px] max-[1047px]:text-[26px]"
                         style={{ fontFamily: "'Jersey 15', sans-serif" }}
                       >
@@ -231,7 +231,8 @@ const Navigation: React.FC = () => {
                         href="#"
                         onClick={() => {
                           handleDesktopItemClick();
-                          scrollToSection("OurBoardPage");}}
+                          scrollToSection("OurBoardPage");
+                        }}
                         className="block text-[#050423] no-underline text-[36px] max-[1047px]:text-[26px]"
                         style={{ fontFamily: "'Jersey 15', sans-serif" }}
                       >
@@ -274,23 +275,23 @@ const Navigation: React.FC = () => {
         <div className="flex items-center max-md:relative max-md:w-full">
           {/* Mobile banner */}
           <div className="hidden max-[794px]:flex items-center absolute top-0 right-16">
-          <a href="https://mlh.io/seasons/2026/events" target="_blank" rel="noopener noreferrer">
+            <a href="https://mlh.io/seasons/2026/events" target="_blank" rel="noopener noreferrer">
 
-            <img
-              src="/MLHBanner.png"
-              alt="MLH Banner"
-              className="w-[112px] h-auto max-[1047px]:w-[102px] mr-2 max-[455px]:w-[98px] max-[394px]:w-[78px] max-[375px]:w-[68px] max-[340px]:w-[58px] max-[323px]:w-[38px]"
-            />
-          </a>
+              <img
+                src="/MLHBanner.png"
+                alt="MLH Banner"
+                className="w-[112px] h-auto max-[1047px]:w-[102px] mr-2 max-[455px]:w-[98px] max-[394px]:w-[78px] max-[375px]:w-[68px] max-[340px]:w-[58px] max-[323px]:w-[38px]"
+              />
+            </a>
 
           </div>
           {/* Desktop banner */}
           <a href="https://mlh.io/seasons/2026/events" target="_blank" rel="noopener noreferrer">
-          <img
-            src="/MLHBanner.png"
-            alt="MLH Banner"
-            className="w-[112px] h-auto mr-[48px] max-[1047px]:w-[102px] max-[1047px]:mr-[38px] max-md:hidden"
-          />
+            <img
+              src="/MLHBanner.png"
+              alt="MLH Banner"
+              className="w-[112px] h-auto mr-[48px] max-[1047px]:w-[102px] max-[1047px]:mr-[38px] max-md:hidden"
+            />
           </a>
           {/* Hamburger toggle */}
           <button
@@ -360,10 +361,11 @@ const Navigation: React.FC = () => {
                 : "opacity-0 translate-y-2"
                 }`}
             >
-              <a href="#" 
-              onClick={() => {
-                handleMobileItemClick();
-                scrollToSection("AboutPage");}}>
+              <a href="#"
+                onClick={() => {
+                  handleMobileItemClick();
+                  scrollToSection("AboutPage");
+                }}>
                 about
               </a>
             </li>
@@ -373,10 +375,11 @@ const Navigation: React.FC = () => {
                 : "opacity-0 translate-y-2"
                 }`}
             >
-              <a href="#" 
-              onClick={() => {
-                handleMobileItemClick();
-                scrollToSection("NewFaqPage");}}>
+              <a href="#"
+                onClick={() => {
+                  handleMobileItemClick();
+                  scrollToSection("NewFaqPage");
+                }}>
                 faq
               </a>
             </li>
@@ -386,10 +389,11 @@ const Navigation: React.FC = () => {
                 : "opacity-0 translate-y-2"
                 }`}
             >
-              <a href="#" 
-              onClick={() => {
-                handleMobileItemClick();
-                scrollToSection("OurBoardPage");}}>
+              <a href="#"
+                onClick={() => {
+                  handleMobileItemClick();
+                  scrollToSection("OurBoardPage");
+                }}>
                 our board
               </a>
             </li>
