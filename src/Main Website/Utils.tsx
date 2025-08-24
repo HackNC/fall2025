@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 
 // coordinate with screens.md in tailwind config
-const MAX_MOBILE_WIDTH = 800;
+const MAX_MOBILE_WIDTH = 1019;
 
 // get new instance of isMobile state. Calls onChange(nextValue) when isMobile 
 // is recalculated. On initialization, onChange is called with the initial 

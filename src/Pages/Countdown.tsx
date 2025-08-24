@@ -59,17 +59,11 @@ const Countdown: React.FC = () => {
     return (
         <div id="CountDown" className="flex flex-col items-center">
             <div
-                className='font-jersey text-[48px] text-white'
-                style={{
-                    filter: `drop-shadow(0 0 4px #C3D6FF)`,
-                }}>
+                className='font-jersey text-[48px] text-primary-light text-shadow-font-purple'>
                 HackNC in
             </div>
             <div
-                className='font-jersey text-[75px] text-center text-white leading-none flex flex-col items-start items-center'
-                style={{
-                    filter: `drop-shadow(0 0 4px #C3D6FF)`,
-                }}>
+                className='font-jersey text-[75px] text-center text-primary-light text-shadow-font-purple leading-none flex flex-col items-start items-center'>
                 <span className="text-9xl">
                     <span className="inline-block w-[120px] text-center">{daysLeft}</span>days<br />
                 </span>
@@ -82,6 +76,9 @@ const Countdown: React.FC = () => {
                 <span className="text-4xl">
                     <span className="inline-block w-[50px] text-center">{secondsLeft}</span>seconds
                 </span>
+            </div>
+            <div>
+                <a href="https://Google.com" className="font-jersey text-[48px] text-primary-light text-shadow-accent-purple hover:text-font-orange">Register Here!</a>
             </div>
         </div>
     );

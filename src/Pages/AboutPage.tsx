@@ -37,7 +37,7 @@ const AboutPage: React.FC = () => {
                 </div>
 
 
-                <div className="flex flex-row max-md:flex-col justify-evenly items-center">
+                <div className="flex flex-row max-md:flex-col justify-evenly items-center mb-8">
                     <div className="mr-5">
                         <AboutBorder>
                             <p className="text-shadow-none text-center text-l">
