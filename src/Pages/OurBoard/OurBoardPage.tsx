@@ -82,9 +82,9 @@ const OurBoardPage: React.FC = () => {
     <div id="OurBoardPage" className="w-full h-full p-4">
       <h1 className="text-font-light-blue text-shadow-font-light-blue text-center leading-none tracking-[0.1em]">OUR BOARD</h1>
       <h3 className="text-font-light-blue text-shadow-font-light-blue text-center leading-none mb-2 tracking-[0.1em]">
-        <img className="inline-block h-[1em] mr-3 scale-x-[-1]" src="/ourBoardPageAssets/plain_arrow.png" />
+        <img className="inline-block h-[1em] mr-3 scale-x-[-1]" src="./ourBoardPageAssets/plain_arrow.png" />
         choose your faction
-        <img className="inline-block h-[1em] ml-3" src="/ourBoardPageAssets/plain_arrow.png" />
+        <img className="inline-block h-[1em] ml-3" src="./ourBoardPageAssets/plain_arrow.png" />
       </h3>
 
       <div className="flex flex-wrap justify-center gap-8 mt-[10vh]">

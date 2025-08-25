@@ -6,12 +6,12 @@ const SponsorshipPage: React.FC = () => {
     const [isMobile, setIsMobile] = useState(window.innerWidth < MAX_MOBILE_WIDTH);
 
     var gridClass = isMobile ? 'grid grid-cols-1 gap-x-8 gap-y-4' : 'grid grid-cols-3 gap-x-8'
-    var divClass = isMobile ? 'px-20 text-center' : 'px-40 text-center' 
-    var imgClass = isMobile ? 'w-[60%] h-auto p-5 object-contain': 'w-full h-auto px-8 py-5 object-contain'
-    
+    var divClass = isMobile ? 'px-20 text-center' : 'px-40 text-center'
+    var imgClass = isMobile ? 'w-[60%] h-auto p-5 object-contain' : 'w-full h-auto px-8 py-5 object-contain'
+
 
     useEffect(() => {
-        const handleResize = (()=> {
+        const handleResize = (() => {
             setIsMobile(window.innerWidth < MAX_MOBILE_WIDTH);
         });
         window.addEventListener('resize', handleResize);
@@ -26,35 +26,35 @@ const SponsorshipPage: React.FC = () => {
             <div className={gridClass}>
                 <div className="flex flex-col items-center bg-font-orange bg-opacity-50 rounded-xl shadow-font-orange shadow-md">
                     {Object.values(sponsors).map((logo: any, index: number) => (
-                       index % 3 === 0 ? (
-                        <img
-                            key={index}
-                            src={logo.default}
-                            alt={`Sponsor ${index + 1}`}
-                            className={imgClass}
-                        />) : null
+                        index % 3 === 0 ? (
+                            <img
+                                key={index}
+                                src={logo.default}
+                                alt={`Sponsor ${index + 1}`}
+                                className={imgClass}
+                            />) : null
                     ))}
                 </div>
                 <div className="flex flex-col items-center bg-font-orange bg-opacity-50 rounded-xl shadow-font-orange shadow-md">
                     {Object.values(sponsors).map((logo: any, index: number) => (
-                       index % 3 === 1 ? (
-                        <img
-                            key={index}
-                            src={logo.default}
-                            alt={`Sponsor ${index + 1}`}
-                            className={imgClass}
-                        />) : null
+                        index % 3 === 1 ? (
+                            <img
+                                key={index}
+                                src={logo.default}
+                                alt={`Sponsor ${index + 1}`}
+                                className={imgClass}
+                            />) : null
                     ))}
                 </div>
                 <div className="flex flex-col items-center bg-font-orange bg-opacity-50 rounded-xl shadow-font-orange shadow-md">
                     {Object.values(sponsors).map((logo: any, index: number) => (
-                       index % 3 === 2 ? (
-                        <img
-                            key={index}
-                            src={logo.default}
-                            alt={`Sponsor ${index + 1}`}
-                            className={imgClass}
-                        />) : null
+                        index % 3 === 2 ? (
+                            <img
+                                key={index}
+                                src={logo.default}
+                                alt={`Sponsor ${index + 1}`}
+                                className={imgClass}
+                            />) : null
                     ))}
                 </div>
             </div>

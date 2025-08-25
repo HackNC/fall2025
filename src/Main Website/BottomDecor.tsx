@@ -53,18 +53,18 @@ const BottomDecor = () => {
             className="flex justify-evenly items-end mx-auto"
             style={{ width: "calc(var(--arcade-w) * 0.80)" }}
         >
-            <img src="/frontPageAssets/arrows.svg" alt="game arrows" className="drop-shadow-2xl w-[12vh] h-[7vh] max-w-[100px] max-h-[80px]" />
-            <img src="/frontPageAssets/button_green.svg" alt="green button" className="drop-shadow-2xl w-[10vh] h-[7vh] max-w-[80px] max-h-[80px]" />
-            <img src="/frontPageAssets/button_pink.svg" alt="pink button" className="drop-shadow-2xl w-[10vh] h-[7vh] max-w-[80px] max-h-[80px]" />
+            <img src="./frontPageAssets/arrows.svg" alt="game arrows" className="drop-shadow-2xl w-[12vh] h-[7vh] max-w-[100px] max-h-[80px]" />
+            <img src="./frontPageAssets/button_green.svg" alt="green button" className="drop-shadow-2xl w-[10vh] h-[7vh] max-w-[80px] max-h-[80px]" />
+            <img src="./frontPageAssets/button_pink.svg" alt="pink button" className="drop-shadow-2xl w-[10vh] h-[7vh] max-w-[80px] max-h-[80px]" />
 
             {scrollDirection === Directions.NEXT && (
-                <img src="/frontPageAssets/joystick_pink_right.svg" alt="pink joystick leaning to right" className="drop-shadow-2xl w-[15vh] h-[15vh] max-w-[150px] max-h-[150px] -mt-10" />
+                <img src="./frontPageAssets/joystick_pink_right.svg" alt="pink joystick leaning to right" className="drop-shadow-2xl w-[15vh] h-[15vh] max-w-[150px] max-h-[150px] -mt-10" />
             )}
             {scrollDirection === Directions.PREVIOUS && (
-                <img src="/frontPageAssets/joystick_pink_left.svg" alt="pink joystick leaning left" className="drop-shadow-2xl w-[15vh] h-[15vh] max-w-[160px] max-h-[160px] -mt-10" />
+                <img src="./frontPageAssets/joystick_pink_left.svg" alt="pink joystick leaning left" className="drop-shadow-2xl w-[15vh] h-[15vh] max-w-[160px] max-h-[160px] -mt-10" />
             )}
             {scrollDirection === Directions.STATIC && (
-                <img src="/frontPageAssets/joystick_vertical.svg" alt="joystick vertical" className="drop-shadow-2xl w-[15vh] h-[15vh] max-w-[150px] max-h-[150px] -mt-10" />
+                <img src="./frontPageAssets/joystick_vertical.svg" alt="joystick vertical" className="drop-shadow-2xl w-[15vh] h-[15vh] max-w-[150px] max-h-[150px] -mt-10" />
             )}
         </div>
     );

@@ -13,9 +13,9 @@ const leadMembers = {
 }
 const leadOurBoardDetailStyles = {
     accentColor: "#82A8FA",
-    border: "/ourBoardPageAssets/lead_border.png",
-    filledStar: "/ourBoardPageAssets/white_star_graphics.png",
-    emptyStar: "/ourBoardPageAssets/black_star_lead.png"
+    border: "./ourBoardPageAssets/lead_border.png",
+    filledStar: "./ourBoardPageAssets/white_star_graphics.png",
+    emptyStar: "./ourBoardPageAssets/black_star_lead.png"
 }
 // Minh
 const minhInfoCardProps = {
@@ -26,8 +26,8 @@ const minhInfoCardProps = {
     special_ability: "he will get back to you",
 }
 const minhOurBoardDetailProps = {
-    mainImage: "/HackNC24.png",
-    drawingImage: "/logos/HackNC_Sprite.gif",
+    mainImage: "./HackNC24.png",
+    drawingImage: "./logos/HackNC_Sprite.gif",
     infoCardProps: minhInfoCardProps,
     members: leadMembers,
 }
@@ -40,8 +40,8 @@ const aliciaInfoCardProps = {
     special_ability: "TBD",
 }
 const aliciaOurBoardDetailProps = {
-    mainImage: "/HackNC24.png",
-    drawingImage: "/logo/HackNC_Sprite.gif",
+    mainImage: "./HackNC24.png",
+    drawingImage: "./logo/HackNC_Sprite.gif",
     infoCardProps: aliciaInfoCardProps,
     members: leadMembers,
 }
@@ -54,8 +54,8 @@ const nagaInfoCardProps = {
     special_ability: "TBD",
 }
 const nagaOurBoardDetailProps = {
-    mainImage: "/HackNC24.png",
-    drawingImage: "/ourBoardPageAssets/HackNC_Sprite.gif",
+    mainImage: "./HackNC24.png",
+    drawingImage: "./ourBoardPageAssets/HackNC_Sprite.gif",
     infoCardProps: nagaInfoCardProps,
     members: leadMembers,
 }
@@ -68,8 +68,8 @@ const jackInfoCardProps = {
     special_ability: "he will get back to you",
 }
 const jackOurBoardDetailProps = {
-    mainImage: "/HackNC24.png",
-    drawingImage: "/logos/HackNC_Sprite.gif",
+    mainImage: "./HackNC24.png",
+    drawingImage: "./logos/HackNC_Sprite.gif",
     infoCardProps: jackInfoCardProps,
     members: leadMembers,
 }
@@ -86,9 +86,9 @@ const graphicsMembers = {
 }
 const graphicsOurBoardDetailStyles = {
     accentColor: "#82CCFA",
-    border: "/ourBoardPageAssets/graphics_border.png",
-    filledStar: "/ourBoardPageAssets/white_star_graphics.png",
-    emptyStar: "/ourBoardPageAssets/black_star_lead.png"
+    border: "./ourBoardPageAssets/graphics_border.png",
+    filledStar: "./ourBoardPageAssets/white_star_graphics.png",
+    emptyStar: "./ourBoardPageAssets/black_star_lead.png"
 }
 // Paige
 const paigeInfoCardProps = {
@@ -99,8 +99,8 @@ const paigeInfoCardProps = {
     special_ability: "meow",
 }
 const paigeOurBoardDetailProps = {
-    mainImage: "/HackNC24.png",
-    drawingImage: "/logos/HackNC_Sprite.gif",
+    mainImage: "./HackNC24.png",
+    drawingImage: "./logos/HackNC_Sprite.gif",
     infoCardProps: paigeInfoCardProps,
     members: graphicsMembers,
 }
@@ -113,8 +113,8 @@ const amberInfoCardProps = {
     special_ability: "meow",
 }
 const amberOurBoardDetailProps = {
-    mainImage: "/HackNC24.png",
-    drawingImage: "/logos/HackNC_Sprite.gif",
+    mainImage: "./HackNC24.png",
+    drawingImage: "./logos/HackNC_Sprite.gif",
     infoCardProps: amberInfoCardProps,
     members: graphicsMembers,
 }
@@ -132,9 +132,9 @@ const experienceMembers = {
 }
 const experienceOurBoardDetailStyles = {
     accentColor: "#65E6DB",
-    border: "/ourBoardPageAssets/hacker_exp_border.png",
-    filledStar: "/ourBoardPageAssets/white_star_graphics.png",
-    emptyStar: "/ourBoardPageAssets/black_star_lead.png"
+    border: "./ourBoardPageAssets/hacker_exp_border.png",
+    filledStar: "./ourBoardPageAssets/white_star_graphics.png",
+    emptyStar: "./ourBoardPageAssets/black_star_lead.png"
 }
 // Ayush
 const ayushInfoCardProps = {
@@ -145,8 +145,8 @@ const ayushInfoCardProps = {
     special_ability: "meow",
 }
 const ayushOurBoardDetailProps = {
-    mainImage: "/HackNC24.png",
-    drawingImage: "/logos/HackNC_Sprite.gif",
+    mainImage: "./HackNC24.png",
+    drawingImage: "./logos/HackNC_Sprite.gif",
     infoCardProps: ayushInfoCardProps,
     members: experienceMembers,
 }
@@ -159,8 +159,8 @@ const harsehajInfoCardProps = {
     special_ability: "meow",
 }
 const harsehajOurBoardDetailProps = {
-    mainImage: "/HackNC24.png",
-    drawingImage: "/logos/HackNC_Sprite.gif",
+    mainImage: "./HackNC24.png",
+    drawingImage: "./logos/HackNC_Sprite.gif",
     infoCardProps: harsehajInfoCardProps,
     members: experienceMembers,
 }
@@ -173,8 +173,8 @@ const alexInfoCardProps = {
     special_ability: "meow",
 }
 const alexOurBoardDetailProps = {
-    mainImage: "/HackNC24.png",
-    drawingImage: "/logos/HackNC_Sprite.gif",
+    mainImage: "./HackNC24.png",
+    drawingImage: "./logos/HackNC_Sprite.gif",
     infoCardProps: alexInfoCardProps,
     members: experienceMembers,
 }
@@ -192,9 +192,9 @@ const operationsMembers = {
 }
 const operationsOurBoardDetailStyles = {
     accentColor: "#8AFAA6",
-    border: "/ourBoardPageAssets/event_ops_border.png",
-    filledStar: "/ourBoardPageAssets/white_star_graphics.png",
-    emptyStar: "/ourBoardPageAssets/black_star_lead.png"
+    border: "./ourBoardPageAssets/event_ops_border.png",
+    filledStar: "./ourBoardPageAssets/white_star_graphics.png",
+    emptyStar: "./ourBoardPageAssets/black_star_lead.png"
 }
 // Sanay Vastani 
 const sanayInfoCardProps = {
@@ -205,8 +205,8 @@ const sanayInfoCardProps = {
     special_ability: "meow",
 }
 const sanayOurBoardDetailProps = {
-    mainImage: "/HackNC24.png",
-    drawingImage: "/logos/HackNC_Sprite.gif",
+    mainImage: "./HackNC24.png",
+    drawingImage: "./logos/HackNC_Sprite.gif",
     infoCardProps: sanayInfoCardProps,
     members: operationsMembers,
 }
@@ -219,8 +219,8 @@ const skyInfoCardProps = {
     special_ability: "meow",
 }
 const skyOurBoardDetailProps = {
-    mainImage: "/HackNC24.png",
-    drawingImage: "/logos/HackNC_Sprite.gif",
+    mainImage: "./HackNC24.png",
+    drawingImage: "./logos/HackNC_Sprite.gif",
     infoCardProps: skyInfoCardProps,
     members: operationsMembers,
 }
@@ -238,9 +238,9 @@ const sponsorshipMembers = {
 }
 const sponsorshipOurBoardDetailStyles = {
     accentColor: "#FAD082",
-    border: "/ourBoardPageAssets/sponsorship_border.png",
-    filledStar: "/ourBoardPageAssets/white_star_graphics.png",
-    emptyStar: "/ourBoardPageAssets/black_star_lead.png"
+    border: "./ourBoardPageAssets/sponsorship_border.png",
+    filledStar: "./ourBoardPageAssets/white_star_graphics.png",
+    emptyStar: "./ourBoardPageAssets/black_star_lead.png"
 }
 // Davyd 
 const davydInfoCardProps = {
@@ -251,8 +251,8 @@ const davydInfoCardProps = {
     special_ability: "meow",
 }
 const davydOurBoardDetailProps = {
-    mainImage: "/HackNC24.png",
-    drawingImage: "/logos/HackNC_Sprite.gif",
+    mainImage: "./HackNC24.png",
+    drawingImage: "./logos/HackNC_Sprite.gif",
     infoCardProps: davydInfoCardProps,
     members: sponsorshipMembers,
 }
@@ -266,8 +266,8 @@ const ishithaInfoCardProps = {
     special_ability: "meow",
 }
 const ishithaOurBoardDetailProps = {
-    mainImage: "/HackNC24.png",
-    drawingImage: "/logos/HackNC_Sprite.gif",
+    mainImage: "./HackNC24.png",
+    drawingImage: "./logos/HackNC_Sprite.gif",
     infoCardProps: ishithaInfoCardProps,
     members: sponsorshipMembers,
 }
@@ -281,8 +281,8 @@ const sahasraInfoCardProps = {
     special_ability: "meow",
 }
 const sahasraOurBoardDetailProps = {
-    mainImage: "/HackNC24.png",
-    drawingImage: "/logos/HackNC_Sprite.gif",
+    mainImage: "./HackNC24.png",
+    drawingImage: "./logos/HackNC_Sprite.gif",
     infoCardProps: sahasraInfoCardProps,
     members: sponsorshipMembers,
 }
@@ -295,8 +295,8 @@ const masonInfoCardProps = {
     special_ability: "meow",
 }
 const masonOurBoardDetailProps = {
-    mainImage: "/HackNC24.png",
-    drawingImage: "/logos/HackNC_Sprite.gif",
+    mainImage: "./HackNC24.png",
+    drawingImage: "./logos/HackNC_Sprite.gif",
     infoCardProps: masonInfoCardProps,
     members: sponsorshipMembers,
 }
@@ -313,9 +313,9 @@ const devMembers = {
 }
 const devOurBoardDetailStyles = {
     accentColor: "#FA9E82",
-    border: "/ourBoardPageAssets/dev_border.png",
-    filledStar: "/ourBoardPageAssets/white_star_graphics.png",
-    emptyStar: "/ourBoardPageAssets/black_star_lead.png"
+    border: "./ourBoardPageAssets/dev_border.png",
+    filledStar: "./ourBoardPageAssets/white_star_graphics.png",
+    emptyStar: "./ourBoardPageAssets/black_star_lead.png"
 }
 // Yahan Yang
 const yahanInfoCardProps = {
@@ -326,8 +326,8 @@ const yahanInfoCardProps = {
     special_ability: "meow",
 }
 const yahanOurBoardDetailProps = {
-    mainImage: "/HackNC24.png",
-    drawingImage: "/logos/HackNC_Sprite.gif",
+    mainImage: "./HackNC24.png",
+    drawingImage: "./logos/HackNC_Sprite.gif",
     infoCardProps: yahanInfoCardProps,
     members: devMembers,
 }
@@ -341,8 +341,8 @@ const rishiInfoCardProps = {
     special_ability: "meow",
 }
 const rishiOurBoardDetailProps = {
-    mainImage: "/HackNC24.png",
-    drawingImage: "/logos/HackNC_Sprite.gif",
+    mainImage: "./HackNC24.png",
+    drawingImage: "./logos/HackNC_Sprite.gif",
     infoCardProps: rishiInfoCardProps,
     members: devMembers,
 }
@@ -359,9 +359,9 @@ const marketingMembers = {
 }
 const marketingOurBoardDetailStyles = {
     accentColor: "#FA8282",
-    border: "/ourBoardPageAssets/marketing_border.png",
-    filledStar: "/ourBoardPageAssets/white_star_graphics.png",
-    emptyStar: "/ourBoardPageAssets/black_star_lead.png"
+    border: "./ourBoardPageAssets/marketing_border.png",
+    filledStar: "./ourBoardPageAssets/white_star_graphics.png",
+    emptyStar: "./ourBoardPageAssets/black_star_lead.png"
 }
 // Robert
 const robertInfoCardProps = {
@@ -372,8 +372,8 @@ const robertInfoCardProps = {
     special_ability: "meow",
 }
 const robertOurBoardDetailProps = {
-    mainImage: "/HackNC24.png",
-    drawingImage: "/logos/HackNC_Sprite.gif",
+    mainImage: "./HackNC24.png",
+    drawingImage: "./logos/HackNC_Sprite.gif",
     infoCardProps: robertInfoCardProps,
     members: marketingMembers,
 }
@@ -386,8 +386,8 @@ const oscarInfoCardProps = {
     special_ability: "meow",
 }
 const oscarOurBoardDetailProps = {
-    mainImage: "/HackNC24.png",
-    drawingImage: "/logos/HackNC_Sprite.gif",
+    mainImage: "./HackNC24.png",
+    drawingImage: "./logos/HackNC_Sprite.gif",
     infoCardProps: oscarInfoCardProps,
     members: marketingMembers,
 }

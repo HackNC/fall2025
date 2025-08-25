@@ -129,7 +129,7 @@ const Navigation: React.FC = () => {
            ------------------------------------------------------------ */}
         <a
           href="#"
-          className="flex items-center gap-3 py-[10px] px-[48px] max-[1018px]:px-[38px]"
+          className="flex items-center gap-3 py-[10px] px-[48px] max-[1047px]:px-[38px]"
           onClick={() => {
             setMobileMenuOpen(false);
             setAboutOpen(false);
@@ -138,9 +138,9 @@ const Navigation: React.FC = () => {
           }}
         >
           <img
-            src="/HackNC25.svg"
+            src="./HackNC25.svg"
             alt="HackNC Logo"
-            className="w-[66px] h-[66px] max-[1047px]:w-[56px] max-[1018px]:h-[56px] max-[455px]:h-[46px] max-[375px]:h-[40px]"
+            className="w-[66px] h-[66px] max-[1047px]:w-[56px] max-[1047px]:h-[56px] max-[455px]:h-[46px] max-[375px]:h-[40px]"
           />
           <h1
             className={`text-[48px] max-[1047px]:text-[38px] max-[455px]:text-[28px] max-[375px]:text-[22px] whitespace-nowrap
@@ -314,7 +314,7 @@ const Navigation: React.FC = () => {
             <a href="https://mlh.io/seasons/2026/events" target="_blank" rel="noopener noreferrer">
 
               <img
-                src="/MLHBanner.png"
+                src="./MLHBanner.png"
                 alt="MLH Banner"
                 className="w-[112px] h-auto max-[1047px]:w-[102px] mr-2 max-[455px]:w-[98px] max-[394px]:w-[78px] max-[375px]:w-[68px] max-[340px]:w-[58px] max-[323px]:w-[38px]"
               />
@@ -324,7 +324,7 @@ const Navigation: React.FC = () => {
           {/* Desktop banner */}
           <a href="https://mlh.io/seasons/2026/events" target="_blank" rel="noopener noreferrer">
             <img
-              src="/MLHBanner.png"
+              src="./MLHBanner.png"
               alt="MLH Banner"
               className="w-[112px] h-auto mr-[48px] max-[1047px]:w-[102px] max-[1047px]:mr-[38px] max-md:hidden"
             />
@@ -486,7 +486,7 @@ const Navigation: React.FC = () => {
               }`}
           >
             <img
-              src="/HackNC_Glow.png"
+              src="./HackNC_Glow.png"
               alt="HackNC Glow"
               className="max-w-[150px] mx-auto max-[455px]:max-w-[120px] max-[375px]:max-w-[100px]"
             />

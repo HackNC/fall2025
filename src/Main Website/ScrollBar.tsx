@@ -255,7 +255,7 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({ children }) => 
             }}
           >
             <img
-              src="/logos/runningram.gif"
+              src="./logos/runningram.gif"
               alt="Horizontal Scroll Bar Character"
               className="select-none"
               style={{ width: "90%" }}
