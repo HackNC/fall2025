@@ -11,12 +11,12 @@ const AboutBorder: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
     return (
         <div className="relative w-full h-400 mx-auto my-auto">
             <img
-                src="/ourBoardPageAssets/lead_border.png"
+                src="./ourBoardPageAssets/lead_border.png"
                 alt="lead border"
                 className="w-full h-full object-contain"
             />
             <div className="absolute inset-0 flex items-center justify-center p-4 text-l max-md:text-2xl ">
-                <div id="AboutPageMobile"className="text-center max-w-[80%] overflow-y-auto max-h-full">
+                <div id="AboutPageMobile" className="text-center max-w-[80%] overflow-y-auto max-h-full">
                     {children}
                 </div>
             </div>
@@ -50,7 +50,7 @@ const AboutPage: React.FC = () => {
                         </AboutBorder>
                     </div>
                     <div className="-mr-20">
-                        <img src="/about_page_graphic.svg" alt="About page graphic" className="max-w-[50vh] max-h-[50vh]" />
+                        <img src="./about_page_graphic.svg" alt="About page graphic" className="max-w-[50vh] max-h-[50vh]" />
                     </div>
                 </div>
 

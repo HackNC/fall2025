@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://hacknc.github.io/fall2025/",
+  "homepage": "https://hacknc.com/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
