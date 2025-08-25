@@ -129,7 +129,7 @@ const Navigation: React.FC = () => {
            ------------------------------------------------------------ */}
         <a
           href="#"
-          className="flex items-center gap-3 py-[10px] px-[48px] max-[1047px]:px-[38px]"
+          className="flex items-center gap-3 py-[10px] px-[48px] max-[1018px]:px-[38px]"
           onClick={() => {
             setMobileMenuOpen(false);
             setAboutOpen(false);
@@ -140,7 +140,7 @@ const Navigation: React.FC = () => {
           <img
             src="/HackNC25.svg"
             alt="HackNC Logo"
-            className="w-[66px] h-[66px] max-[1047px]:w-[56px] max-[1047px]:h-[56px] max-[455px]:h-[46px] max-[375px]:h-[40px]"
+            className="w-[66px] h-[66px] max-[1047px]:w-[56px] max-[1018px]:h-[56px] max-[455px]:h-[46px] max-[375px]:h-[40px]"
           />
           <h1
             className={`text-[48px] max-[1047px]:text-[38px] max-[455px]:text-[28px] max-[375px]:text-[22px] whitespace-nowrap
@@ -198,7 +198,7 @@ const Navigation: React.FC = () => {
                 sponsors
               </a>
             </li>
-            
+
             {/* Login link */}
             {/* <li>
               <a

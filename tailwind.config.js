@@ -45,10 +45,11 @@ export default {
         'font-pink': '0 2px 4px #FA8282',
         'font-purple': '0 2px 4px #C3D6FF'
       },
+
+      screens: {
+        "md": "1019px",
+      },
     },
-  },
-  screens: {
-    "md": "1019px",
   },
   plugins: [
     require('tailwindcss-textshadow'),
