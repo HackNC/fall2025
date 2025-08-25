@@ -19,9 +19,9 @@ const FrontPage: React.FC<FrontPageProps> = ({ scrollToSection }) => {
                     {/* <a id="play-now" href="https://Google.com" target="_blank" rel="noopener noreferrer" onClick={() => scrollToSection("CountDown")} className="text-7xl tracking-widest text-primary-light text-shadow-accent-pink hover:text-shadow-font-dark-blue font-thin mb-1">
                         play now
                     </a> */}
-                    <a id="play-now" onClick={() => scrollToSection("CountDown")} className="text-7xl tracking-widest text-primary-light text-shadow-accent-pink hover:text-shadow-font-dark-blue font-thin mb-1">
+                    <button id="play-now" onClick={() => scrollToSection("CountdownPage")} className="text-7xl tracking-widest text-primary-light text-shadow-accent-pink hover:text-shadow-font-dark-blue font-thin mb-1">
                         play now
-                    </a>
+                    </button>
                     <img src="/frontPageAssets/plain_arrow_pink.png" alt="pink arrow" className="max-w-[4%] max-h-[4%] scale-x-[-1]" />
                 </div>
             </div>
