@@ -60,10 +60,7 @@ const NewFaqPage: React.FC = () => {
 
         <div id="NewFaqPage" className="w-full h-full flex flex-col items-center pl-10 pr-10 py-20 ">
             <h1
-                className="text-white text-2xl sm:text-5xl lg:text-6xl text-center mb-5 -mt-12"
-                style={{
-                    filter: `drop-shadow(0 0 4px #ffffff)`
-                }}>FAQ</h1>
+                className="text-primary-light text-2xl text-shadow-primary-light sm:text-5xl lg:text-6xl text-center mb-5 -mt-12">FAQ</h1>
             <div className="lg:p-4 lg:grid lg:grid-cols-2 md:gap-4 flex flex-col gap-5 ml-4">
                 <FaqItem props={q1} />
                 <FaqItem props={q2} />

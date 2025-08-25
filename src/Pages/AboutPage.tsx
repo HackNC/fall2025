@@ -42,7 +42,7 @@ const AboutPage: React.FC = () => {
             <div className="flex flex-col text-primary-light text-shadow-font-purple tracking-widest max-w-3xl">
                 {/* Page Title */}
                 <div className="relative top-0 left-1/2 transform -translate-x-1/2">
-                    <h1 className="">ABOUT</h1>
+                    <h1 className="text-shadow-primary-light">ABOUT</h1>
                 </div>
 
 
