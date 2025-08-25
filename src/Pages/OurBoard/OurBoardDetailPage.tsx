@@ -141,7 +141,7 @@ const Carousel: React.FC<{ members: Record<string, string>, accentColor: string 
                 <button onClick={handlePrev}>
                     <img
                         className="w-6 h-6 mr-3 transform rotate-180"
-                        src="/ourBoardPageAssets/plain_arrow.png"
+                        src="./ourBoardPageAssets/plain_arrow.png"
                         alt="Prev arrow"
                     />
                 </button>
@@ -165,7 +165,7 @@ const Carousel: React.FC<{ members: Record<string, string>, accentColor: string 
                 <button onClick={handleNext}>
                     <img
                         className="w-6 h-6 ml-2"
-                        src="/ourBoardPageAssets/plain_arrow.png"
+                        src="./ourBoardPageAssets/plain_arrow.png"
                         alt="Next arrow"
                     />
                 </button>

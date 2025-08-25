@@ -22,7 +22,7 @@ const SponsorshipPage: React.FC = () => {
 
     return (
         <div id="SponsorshipPage" className={divClass}>
-            <h1 className="text-[#F6B1B1] text-shadow-font-pink">Past Sponsors</h1>
+            <h1 className="text-[#F6B1B1] text-shadow-font-pink">PAST SPONSORS</h1>
             <div className={gridClass}>
                 <div className="flex flex-col items-center bg-font-orange bg-opacity-50 rounded-xl shadow-font-orange shadow-md">
                     {Object.values(sponsors).map((logo: any, index: number) => (

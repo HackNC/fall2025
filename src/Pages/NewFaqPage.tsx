@@ -14,18 +14,18 @@ const FaqItem: React.FC<{ props: FaqItemProps }> = ({ props }) => {
     }
     return (
         <div id="NewFaqPageMobile" className="flex flex-col">
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2">
                 <button className="shrink-0" onClick={toggleIsOpened}>
-                    {!isOpened && <img className="w-20 h-20" src="folder_open.png" alt="closed folder" />}
-                    {isOpened && <img className="w-20 h-20" src="folder_closed.png" alt="opened folder" />}
+                    {!isOpened && <img className="w-20 h-20" src="./folder_open.png" alt="closed folder" />}
+                    {isOpened && <img className="w-20 h-20" src="./folder_closed.png" alt="opened folder" />}
                 </button>
                 <p className="text-white font-medium">{question}</p>
             </div>
             <div
-                className={`flex gap-4 overflow-hidden transition-all duration-700 ease-in-out ${isOpened ? "max-h-60 opacity-100" : "max-h-0 opacity-0"
+                className={`flex gap-4 overflow-y-scroll transition-all duration-700 ease-in-out ${isOpened ? "max-h-60 opacity-100" : "max-h-0 opacity-0"
                     }`}
             >
-                <p className="text-gray-300 pl-16 mt-2">{answer}</p>
+                <p className="text-gray-300 text-sm pl-10 mt-2 overflow-y-scroll">{answer}</p>
             </div>
         </div>
     );
@@ -50,7 +50,7 @@ const NewFaqPage: React.FC = () => {
     };
     const q5 = {
         question: "How do teams work?",
-        answer: "Teams can be organized prior to HackNC or during the event itself. If you are already in a team, then you're all set! If not, that's completely fine! We have a team building event on Friday (Nov 1st), where you can meet other participants and form your teams. We strongly recommend around 3-4 members."
+        answer: "Teams can be organized prior to HackNC or during the event itself. If you are already in a team, then you're all set! If not, we will have team finding events! We strongly recommend around 3-4 members."
     };
     const q6 = {
         question: "Where do I park?",
@@ -58,13 +58,13 @@ const NewFaqPage: React.FC = () => {
     };
     return (
 
-        <div id="NewFaqPage" className="w-full h-full flex flex-col items-center pl-20 pr-20 py-20 ">
+        <div id="NewFaqPage" className="w-full h-full flex flex-col items-center pl-10 pr-10 py-20 ">
             <h1
-                className="text-white text-4xl sm:text-5xl lg:text-6xl text-center mb-10 -mt-12"
+                className="text-white text-2xl sm:text-5xl lg:text-6xl text-center mb-5 -mt-12"
                 style={{
                     filter: `drop-shadow(0 0 4px #ffffff)`
-                }}>Frequently Asked Questions</h1>
-            <div className="lg:p-4 lg:grid lg:grid-cols-2 md:gap-4 flex flex-col gap-5 ml-12">
+                }}>FAQ</h1>
+            <div className="lg:p-4 lg:grid lg:grid-cols-2 md:gap-4 flex flex-col gap-5 ml-4">
                 <FaqItem props={q1} />
                 <FaqItem props={q2} />
                 <FaqItem props={q3} />

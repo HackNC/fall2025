@@ -9,20 +9,29 @@ import React from 'react';
 // placeholder rn 
 const AboutBorder: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
     return (
-        <div className="relative w-full h-400 mx-auto my-auto">
-            <img
-                src="./ourBoardPageAssets/lead_border.png"
-                alt="lead border"
-                className="w-full h-full object-contain"
-            />
-            <div className="absolute inset-0 flex items-center justify-center p-4 text-l max-md:text-2xl ">
-                <div id="AboutPageMobile" className="text-center max-w-[80%] overflow-y-auto max-h-full">
-                    {children}
+        <div className="relative w-full mx-auto my-auto">
+            {/* Desktop version with border */}
+            <div className="hidden md:block relative w-full h-[400px]">
+                <img
+                    src="./ourBoardPageAssets/lead_border.png"
+                    alt="lead border"
+                    className="w-full h-full object-contain"
+                />
+                <div className="absolute inset-0 flex items-center justify-center p-4 text-base">
+                    <div className="text-center max-w-[80%] overflow-y-auto max-h-full">
+                        {children}
+                    </div>
                 </div>
+            </div>
+
+            {/* Mobile version without border */}
+            <div className="block md:hidden p-4 text-2xl text-center">
+                {children}
             </div>
         </div>
     );
 };
+
 
 const AboutPage: React.FC = () => {
     return (
@@ -33,7 +42,7 @@ const AboutPage: React.FC = () => {
             <div className="flex flex-col text-primary-light text-shadow-font-purple tracking-widest max-w-3xl">
                 {/* Page Title */}
                 <div className="relative top-0 left-1/2 transform -translate-x-1/2">
-                    <h1 className="">About</h1>
+                    <h1 className="">ABOUT</h1>
                 </div>
 
 
