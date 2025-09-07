@@ -6,8 +6,8 @@ const SponsorshipPage: React.FC = () => {
     const [isMobile, setIsMobile] = useState(window.innerWidth < MAX_MOBILE_WIDTH);
 
     var gridClass = isMobile ? 'grid grid-cols-1 gap-x-8 gap-y-4' : 'grid grid-cols-3 gap-x-8'
-    var divClass = isMobile ? 'px-20 text-center' : 'px-40 text-center'
-    var imgClass = isMobile ? 'w-[60%] h-auto p-5 object-contain' : 'w-full h-auto px-8 py-5 object-contain'
+    var divClass = isMobile ? 'px-30 text-center' : 'px-20 text-center'
+    var imgClass = isMobile ? 'w-[40%] h-auto p-5 object-contain' : 'w-full h-auto px-8 py-5 object-contain'
 
 
     useEffect(() => {
