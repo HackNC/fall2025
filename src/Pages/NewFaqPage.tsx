@@ -1,8 +1,9 @@
+import type { JSX } from "react";
 import { useState } from "react";
 
 interface FaqItemProps {
     question: string;
-    answer: string;
+    answer: string | JSX.Element;
 }
 
 const FaqItem: React.FC<{ props: FaqItemProps }> = ({ props }) => {
@@ -25,7 +26,7 @@ const FaqItem: React.FC<{ props: FaqItemProps }> = ({ props }) => {
                 className={`flex gap-4 overflow-y-scroll transition-all duration-700 ease-in-out ${isOpened ? "max-h-60 opacity-100" : "max-h-0 opacity-0"
                     }`}
             >
-                <p className="text-gray-300 text-sm pl-10 mt-2 overflow-y-scroll">{answer}</p>
+                <div className="text-gray-300 text-sm pl-10 mt-2 overflow-y-scroll">{answer}</div>
             </div>
         </div>
     );
@@ -60,6 +61,10 @@ const NewFaqPage: React.FC = () => {
         question: "Will travel be reimbursed?",
         answer: "Unfortunately, we will not be able to offer travel reimbursements this year. We encourage students to reach out to their CS departments for potential funding."
     };
+    const q8 = {
+        question: "What is the MLH Code of Conduct?",
+        answer: <a href='https://mlh.io/code-of-conduct' className='text-primary-light underline' target='_blank' rel='noopener noreferrer'>MLH Code of Conduct</a>
+    };
     return (
 
         <div id="NewFaqPage" className="w-full h-full flex flex-col items-center pl-10 pr-10 py-20 ">
@@ -73,6 +78,7 @@ const NewFaqPage: React.FC = () => {
                 <FaqItem props={q5} />
                 <FaqItem props={q6} />
                 <FaqItem props={q7} />
+                <FaqItem props={q8} />
             </div>
         </div>
     );

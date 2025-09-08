@@ -11,7 +11,7 @@ const AboutBorder: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
     return (
         <div className="relative w-full mx-auto my-auto">
             {/* Desktop version with border */}
-            <div className="hidden md:block relative w-[110%] h-full"> {/* Change height here */}
+            <div className="hidden md:block relative w-[100%] h-full"> {/* Change height here */}
                 <img
                     src="./ourBoardPageAssets/lead_border.png"
                     alt="lead border"

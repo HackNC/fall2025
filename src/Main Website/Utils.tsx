@@ -1,13 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 
 // coordinate with screens.md in tailwind config
-const MAX_MOBILE_WIDTH = 1019;
+const MAX_MOBILE_WIDTH = 1024;
 
 // get new instance of isMobile state. Calls onChange(nextValue) when isMobile 
 // is recalculated. On initialization, onChange is called with the initial 
 // value. onChange is optional. deps is the dependencies that the onChange 
 // handler adds
-function makeIsMobileState(onChange, deps) {
+function makeIsMobileState(onChange: { (): void; (nextValue: any): void; } | undefined, deps: React.DependencyList | undefined) {
   const getNextIsMobile = () => window.innerWidth <= MAX_MOBILE_WIDTH;
   const [isMobile, setIsMobile] = useState(getNextIsMobile());
   const update = (onChange != undefined) ? onChange : () => null;
