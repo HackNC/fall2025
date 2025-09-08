@@ -17,7 +17,7 @@ const FrontPage: React.FC<FrontPageProps> = ({ scrollToSection }) => {
                 <div className="flex items-center justify-center space-x-4">
                     <img src="./frontPageAssets/plain_arrow_pink.png" alt="pink arrow" className="max-w-[4%] max-h-[4%]" />
                     <a id="play-now" href="https://form.typeform.com/to/GipUgr2w" target="_blank" rel="noopener noreferrer" onClick={() => scrollToSection("CountDown")} className="text-7xl tracking-widest text-primary-light text-shadow-accent-pink hover:text-shadow-font-dark-blue font-thin mb-1">
-                        play now
+                        register now
                     </a>
                     {/* <button id="play-now" onClick={() => scrollToSection("CountdownPage")} className="text-7xl tracking-widest text-primary-light text-shadow-accent-pink hover:text-shadow-font-dark-blue font-thin mb-1">
                         play now
