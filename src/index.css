@@ -44,8 +44,6 @@ nav {
 
 .text-stroke {
   -webkit-text-stroke: 0.3px #050423;
-  /* Use your primary-light color */
-  text-stroke: 0.3px #050423;
 }
 
 .font-jersey {

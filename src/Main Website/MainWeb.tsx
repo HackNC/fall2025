@@ -10,8 +10,28 @@ import BottomDecor from "./BottomDecor";
 // import FAQ from "../Pages/FAQPage";
 import NewFaqPage from "../Pages/NewFaqPage";
 import OurBoardPage from "../Pages/OurBoard/OurBoardPage";
-import { Minh, Naga, Alicia, Jack, Paige, Amber, Ayush, Harsehaj, Sanay, Sky, Davyd, Ishitha, Sahasra, Mason, Rishi, Yahan, Robert, Oscar, Alex } from "../Pages/OurBoard/OurBoardInfo";
-import Pages from "../Pages/OurBoard/PagesEnum"
+import {
+  Minh,
+  Naga,
+  Alicia,
+  Jack,
+  Paige,
+  Amber,
+  Ayush,
+  Harsehaj,
+  Sanay,
+  Sky,
+  Davyd,
+  Ishitha,
+  Sahasra,
+  Mason,
+  Rishi,
+  Yahan,
+  Robert,
+  Oscar,
+  Alex,
+} from "../Pages/OurBoard/OurBoardInfo";
+import Pages from "../Pages/OurBoard/PagesEnum";
 import SponsorshipPage from "../Pages/Sponsors";
 
 const ScreenWrapper: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
@@ -38,7 +58,9 @@ const ScreenWrapper: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   );
 };
 
-export const SectionWrapper: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
+export const SectionWrapper: React.FC<React.PropsWithChildren<{}>> = ({
+  children,
+}) => {
   return (
     <>
       <section className=" overflow-y-scroll min-w-[var(--arcade-w)] md:w-[var(--arcade-w)] min-h-[var(--arcade-h)] md:h-[var(--arcade-h)] flex flex-shrink-0 items-center justify-center bg-transparent pb-[5vh]">
@@ -52,44 +74,47 @@ export const SectionWrapper: React.FC<React.PropsWithChildren<{}>> = ({ children
 export const scrollToSection = (id: string) => {
   const section = document.getElementById(id);
   if (section) {
-    section.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+      inline: "center",
+    });
   }
 };
 
-
 const MainPage: React.FC = () => {
-  const [page, setPage] = useState(Pages.EMPTY)
+  const [page, setPage] = useState(Pages.EMPTY);
   useEffect(() => {
     const handlePageSwitch = (event: Event) => {
       console.log("received event");
       const customEvent = event as CustomEvent<String>;
       switch (customEvent.detail) {
         case "leads":
-          setPage(Pages.LEADS)
-          console.log("Pages set to leads")
+          setPage(Pages.LEADS);
+          console.log("Pages set to leads");
           break;
         case Pages.GRAPHICS:
-          setPage(Pages.GRAPHICS)
+          setPage(Pages.GRAPHICS);
           break;
         case Pages.EXPERIENCE:
-          setPage(Pages.EXPERIENCE)
+          setPage(Pages.EXPERIENCE);
           break;
         case Pages.OPERATIONS:
-          setPage(Pages.OPERATIONS)
+          setPage(Pages.OPERATIONS);
           break;
         case Pages.SPONSORSHIP:
-          setPage(Pages.SPONSORSHIP)
+          setPage(Pages.SPONSORSHIP);
           break;
         case Pages.DEVELOPMENT:
-          setPage(Pages.DEVELOPMENT)
+          setPage(Pages.DEVELOPMENT);
           break;
         case Pages.MARKETING:
-          setPage(Pages.MARKETING)
+          setPage(Pages.MARKETING);
           break;
         default:
-          setPage(Pages.EMPTY)
+          setPage(Pages.EMPTY);
       }
-    }
+    };
     window.addEventListener("leads" as any, handlePageSwitch);
     window.addEventListener("graphics" as any, handlePageSwitch);
     window.addEventListener("experience" as any, handlePageSwitch);
@@ -97,7 +122,6 @@ const MainPage: React.FC = () => {
     window.addEventListener("sponsorship" as any, handlePageSwitch);
     window.addEventListener("development" as any, handlePageSwitch);
     window.addEventListener("marketing" as any, handlePageSwitch);
-
 
     return () => {
       window.removeEventListener("leads" as any, handlePageSwitch);
@@ -107,7 +131,7 @@ const MainPage: React.FC = () => {
       window.removeEventListener("sponsorship" as any, handlePageSwitch);
       window.removeEventListener("development" as any, handlePageSwitch);
       window.removeEventListener("marketing" as any, handlePageSwitch);
-    }
+    };
   }, []);
   return (
     <>
@@ -117,7 +141,6 @@ const MainPage: React.FC = () => {
           <div className="bg-transparent -mt-50"></div>
           <ScreenWrapper>
             <ScrollBar>
-
               <SectionWrapper>
                 <FrontPage scrollToSection={scrollToSection} />
               </SectionWrapper>
@@ -135,62 +158,107 @@ const MainPage: React.FC = () => {
               </SectionWrapper>
 
               {/* Not Ready Yet! */}
-              {/* <SectionWrapper>
+              <SectionWrapper>
                 <OurBoardPage />
-              </SectionWrapper>  */}
+              </SectionWrapper>
 
               {page === Pages.LEADS && (
                 <>
-                  <SectionWrapper> <Minh /></SectionWrapper>
-                  <SectionWrapper><Alicia /></SectionWrapper>
-                  <SectionWrapper><Naga /></SectionWrapper>
-                  <SectionWrapper><Jack /></SectionWrapper>
+                  <SectionWrapper>
+                    {" "}
+                    <Minh />
+                  </SectionWrapper>
+                  <SectionWrapper>
+                    <Alicia />
+                  </SectionWrapper>
+                  <SectionWrapper>
+                    <Naga />
+                  </SectionWrapper>
+                  <SectionWrapper>
+                    <Jack />
+                  </SectionWrapper>
                 </>
               )}
               {page === Pages.GRAPHICS && (
                 <>
-                  <SectionWrapper> <Paige /></SectionWrapper>
-                  <SectionWrapper><Amber /></SectionWrapper>
+                  <SectionWrapper>
+                    {" "}
+                    <Paige />
+                  </SectionWrapper>
+                  <SectionWrapper>
+                    <Amber />
+                  </SectionWrapper>
                 </>
               )}
               {page === Pages.EXPERIENCE && (
                 <>
-                  <SectionWrapper> <Ayush /></SectionWrapper>
-                  <SectionWrapper><Harsehaj /></SectionWrapper>
+                  <SectionWrapper>
+                    {" "}
+                    <Ayush />
+                  </SectionWrapper>
+                  <SectionWrapper>
+                    <Harsehaj />
+                  </SectionWrapper>
+                  <SectionWrapper>
+                    <Alex />
+                  </SectionWrapper>
                 </>
               )}
               {page === Pages.OPERATIONS && (
                 <>
-                  <SectionWrapper> <Sanay /></SectionWrapper>
-                  <SectionWrapper><Sky /></SectionWrapper>
+                  <SectionWrapper>
+                    {" "}
+                    <Sanay />
+                  </SectionWrapper>
+                  {/* <SectionWrapper>
+                    <Sky />
+                  </SectionWrapper> */}
                 </>
               )}
               {page === Pages.SPONSORSHIP && (
                 <>
-                  <SectionWrapper> <Davyd /></SectionWrapper>
-                  <SectionWrapper><Ishitha /></SectionWrapper>
-                  <SectionWrapper><Sahasra /></SectionWrapper>
-                  <SectionWrapper><Mason /></SectionWrapper>
+                  <SectionWrapper>
+                    {" "}
+                    <Davyd />
+                  </SectionWrapper>
+                  <SectionWrapper>
+                    <Ishitha />
+                  </SectionWrapper>
+                  <SectionWrapper>
+                    <Sahasra />
+                  </SectionWrapper>
+                  <SectionWrapper>
+                    <Mason />
+                  </SectionWrapper>
                 </>
               )}
               {page === Pages.DEVELOPMENT && (
                 <>
-                  <SectionWrapper> <Rishi /></SectionWrapper>
-                  <SectionWrapper><Yahan /></SectionWrapper>
+                  <SectionWrapper>
+                    {" "}
+                    <Rishi />
+                  </SectionWrapper>
+                  <SectionWrapper>
+                    <Yahan />
+                  </SectionWrapper>
                 </>
               )}
               {page === Pages.MARKETING && (
                 <>
-                  <SectionWrapper> <Robert /></SectionWrapper>
-                  <SectionWrapper><Oscar /></SectionWrapper>
+                  <SectionWrapper>
+                    {" "}
+                    <Robert />
+                  </SectionWrapper>
+                  <SectionWrapper>
+                    <Oscar />
+                  </SectionWrapper>
                 </>
               )}
-
             </ScrollBar>
           </ScreenWrapper>
         </div>
         <BottomDecor />
-      </div >
+      </div>
     </>
   );
 };
