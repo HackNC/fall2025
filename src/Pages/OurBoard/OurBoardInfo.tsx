@@ -41,7 +41,7 @@ const minhInfoCardProps = {
 
 const minhOurBoardDetailProps = {
   mainImage: "/memberPhotos/Minh_Nguyen.jpg",
-  drawingImage: "/underConstruction/work-in-progress-sign.png", // ToBeUpdated
+  drawingImage: "/ourBoardDrawings/minh.png",
   infoCardProps: minhInfoCardProps,
   members: leadMembers,
 };
@@ -60,7 +60,7 @@ const aliciaInfoCardProps = {
 
 const aliciaOurBoardDetailProps = {
   mainImage: "/underConstruction/work-in-progress-barrier.png", // ToBeUpdated
-  drawingImage: "/underConstruction/work-in-progress-sign.png", // ToBeUpdated
+  drawingImage: "/ourBoardDrawings/alicia.png",
   infoCardProps: aliciaInfoCardProps,
   members: leadMembers,
 };
@@ -70,7 +70,7 @@ const aliciaOurBoardDetailProps = {
    ------------------------------------------------------------ */
 
 const nagaInfoCardProps = {
-  name: "Naga Ritvika Yeyuvuri",
+  name: "Naga Yeyuvuri",
   position: "co-lead director",
   attack: 5, // ToBeUpdated
   defense: 3, // ToBeUpdated
@@ -141,7 +141,7 @@ const paigeInfoCardProps = {
 
 const paigeOurBoardDetailProps = {
   mainImage: "/memberPhotos/Paige_Pan.jpg",
-  drawingImage: "/underConstruction/work-in-progress-sign.png", // ToBeUpdated
+  drawingImage: "/ourBoardDrawings/paige.png",
   infoCardProps: paigeInfoCardProps,
   members: graphicsMembers,
 };
@@ -160,7 +160,7 @@ const amberInfoCardProps = {
 
 const amberOurBoardDetailProps = {
   mainImage: "/underConstruction/work-in-progress-barrier.png", // ToBeUpdated
-  drawingImage: "/underConstruction/work-in-progress-sign.png", // ToBeUpdated
+  drawingImage: "/ourBoardDrawings/amber.png",
   infoCardProps: amberInfoCardProps,
   members: graphicsMembers,
 };
@@ -194,7 +194,7 @@ const experienceOurBoardDetailStyles = {
    ------------------------------------------------------------ */
 
 const ayushInfoCardProps = {
-  name: "Ayush Subramanian",
+  name: "Ayush S.",
   position: "director of logistics",
   attack: 5, // ToBeUpdated
   defense: 3, // ToBeUpdated
@@ -203,7 +203,7 @@ const ayushInfoCardProps = {
 
 const ayushOurBoardDetailProps = {
   mainImage: "/underConstruction/work-in-progress-barrier.png", // ToBeUpdated
-  drawingImage: "/underConstruction/work-in-progress-sign.png", // ToBeUpdated
+  drawingImage: "/ourBoardDrawings/ayush.png",
   infoCardProps: ayushInfoCardProps,
   members: experienceMembers,
 };
@@ -213,7 +213,7 @@ const ayushOurBoardDetailProps = {
    ------------------------------------------------------------ */
 
 const harsehajInfoCardProps = {
-  name: "Harsehaj Dhami",
+  name: "Harsehaj D.",
   position: "co-director of hacker experience",
   attack: 5, // ToBeUpdated
   defense: 3, // ToBeUpdated
@@ -222,7 +222,7 @@ const harsehajInfoCardProps = {
 
 const harsehajOurBoardDetailProps = {
   mainImage: "/memberPhotos/Harsehaj_Dhami.png",
-  drawingImage: "/underConstruction/work-in-progress-sign.png", // ToBeUpdated
+  drawingImage: "/ourBoardDrawings/harsehaj.png",
   infoCardProps: harsehajInfoCardProps,
   members: experienceMembers,
 };
@@ -232,7 +232,7 @@ const harsehajOurBoardDetailProps = {
    ------------------------------------------------------------ */
 
 const alexInfoCardProps = {
-  name: "Alexander Toney",
+  name: "Alexander T.",
   position: "co-director of hacker experience",
   attack: 5,
   defense: 5,
@@ -241,7 +241,7 @@ const alexInfoCardProps = {
 
 const alexOurBoardDetailProps = {
   mainImage: "/memberPhotos/Alexander_Toney.jpg",
-  drawingImage: "/underConstruction/work-in-progress-sign.png", // ToBeUpdated
+  drawingImage: "/ourBoardDrawings/alexander.png",
   infoCardProps: alexInfoCardProps,
   members: experienceMembers,
 };
@@ -275,7 +275,7 @@ const operationsOurBoardDetailStyles = {
    ------------------------------------------------------------ */
 
 const sanayInfoCardProps = {
-  name: "Sanay Vastani",
+  name: "Sanay V.",
   position: "co-director of event operations",
   attack: 2,
   defense: 5,
@@ -284,7 +284,7 @@ const sanayInfoCardProps = {
 
 const sanayOurBoardDetailProps = {
   mainImage: "/memberPhotos/Sanay_Vastani.jpg",
-  drawingImage: "/underConstruction/work-in-progress-sign.png", // ToBeUpdated
+  drawingImage: "/ourBoardDrawings/sanay.jpeg",
   infoCardProps: sanayInfoCardProps,
   members: operationsMembers,
 };
@@ -337,7 +337,7 @@ const sponsorshipOurBoardDetailStyles = {
    ------------------------------------------------------------ */
 
 const davydInfoCardProps = {
-  name: "Davyd Voloshyn",
+  name: "Davyd V.",
   position: "director of finance",
   attack: 4,
   defense: 4,
@@ -346,7 +346,7 @@ const davydInfoCardProps = {
 
 const davydOurBoardDetailProps = {
   mainImage: "/underConstruction/work-in-progress-barrier.png", // ToBeUpdated
-  drawingImage: "/underConstruction/work-in-progress-sign.png", // ToBeUpdated
+  drawingImage: "/ourBoardDrawings/davyd.png",
   infoCardProps: davydInfoCardProps,
   members: sponsorshipMembers,
 };
@@ -356,7 +356,7 @@ const davydOurBoardDetailProps = {
    ------------------------------------------------------------ */
 
 const ishithaInfoCardProps = {
-  name: "Ishitha Jujjavarapu",
+  name: "Ishitha J.",
   position: "co-director of sponsorship",
   attack: 5, // ToBeUpdated
   defense: 3, // ToBeUpdated
@@ -365,7 +365,7 @@ const ishithaInfoCardProps = {
 
 const ishithaOurBoardDetailProps = {
   mainImage: "/underConstruction/work-in-progress-barrier.png", // ToBeUpdated
-  drawingImage: "/underConstruction/work-in-progress-sign.png", // ToBeUpdated
+  drawingImage: "/ourBoardDrawings/ishitha.png",
   infoCardProps: ishithaInfoCardProps,
   members: sponsorshipMembers,
 };
@@ -375,7 +375,7 @@ const ishithaOurBoardDetailProps = {
    ------------------------------------------------------------ */
 
 const sahasraInfoCardProps = {
-  name: "Sahasra Boga",
+  name: "Sahasra B.",
   position: "co-director of sponsorship",
   attack: 5, // ToBeUpdated
   defense: 3, // ToBeUpdated
@@ -384,7 +384,7 @@ const sahasraInfoCardProps = {
 
 const sahasraOurBoardDetailProps = {
   mainImage: "/memberPhotos/Sahasra_Boga.JPEG",
-  drawingImage: "/underConstruction/work-in-progress-sign.png", // ToBeUpdated
+  drawingImage: "/ourBoardDrawings/sahasra.png",
   infoCardProps: sahasraInfoCardProps,
   members: sponsorshipMembers,
 };
@@ -403,7 +403,7 @@ const masonInfoCardProps = {
 
 const masonOurBoardDetailProps = {
   mainImage: "/memberPhotos/Mason.jpeg",
-  drawingImage: "/underConstruction/work-in-progress-sign.png", // ToBeUpdated
+  drawingImage: "/ourBoardDrawings/mason.png",
   infoCardProps: masonInfoCardProps,
   members: sponsorshipMembers,
 };
@@ -447,7 +447,7 @@ const yahanInfoCardProps = {
 
 const yahanOurBoardDetailProps = {
   mainImage: "/memberPhotos/Yahan_Yang.JPG",
-  drawingImage: "/underConstruction/work-in-progress-sign.png", // ToBeUpdated
+  drawingImage: "/ourBoardDrawings/yahan.jpeg",
   infoCardProps: yahanInfoCardProps,
   members: devMembers,
 };
@@ -457,7 +457,7 @@ const yahanOurBoardDetailProps = {
    ------------------------------------------------------------ */
 
 const rishiInfoCardProps = {
-  name: "Rishyendra Medamanuri",
+  name: "Rishyendra M.",
   position: "advisor of development",
   attack: 5,
   defense: 3,
@@ -509,7 +509,7 @@ const robertInfoCardProps = {
 
 const robertOurBoardDetailProps = {
   mainImage: "/underConstruction/work-in-progress-barrier.png", // ToBeUpdated
-  drawingImage: "/underConstruction/work-in-progress-sign.png", // ToBeUpdated
+  drawingImage: "/ourBoardDrawings/robert.png",
   infoCardProps: robertInfoCardProps,
   members: marketingMembers,
 };
@@ -528,7 +528,7 @@ const oscarInfoCardProps = {
 
 const oscarOurBoardDetailProps = {
   mainImage: "/memberPhotos/Oscar.JPG",
-  drawingImage: "/underConstruction/work-in-progress-sign.png", // ToBeUpdated
+  drawingImage: "/ourBoardDrawings/oscar.png",
   infoCardProps: oscarInfoCardProps,
   members: marketingMembers,
 };
@@ -616,19 +616,23 @@ export const Ayush = () => {
   );
 };
 
-export const Harsehaj = () => (
-  <OurDetailBoardPage
-    props={harsehajOurBoardDetailProps}
-    styles={experienceOurBoardDetailStyles}
-  />
-);
+export const Harsehaj = () => {
+  return (
+    <OurDetailBoardPage
+      props={harsehajOurBoardDetailProps}
+      styles={experienceOurBoardDetailStyles}
+    />
+  );
+};
 
-export const Alex = () => (
-  <OurDetailBoardPage
-    props={alexOurBoardDetailProps}
-    styles={experienceOurBoardDetailStyles}
-  />
-);
+export const Alex = () => {
+  return (
+    <OurDetailBoardPage
+      props={alexOurBoardDetailProps}
+      styles={experienceOurBoardDetailStyles}
+    />
+  );
+};
 
 /* ============================================================
                             OPERATIONS

@@ -23,7 +23,10 @@ h3 {
   font-weight: regular;
 }
 
-p, dl, dt, dd {
+p,
+dl,
+dt,
+dd {
   font-family: "Poppins", sans-serif;
   font-size: 12pt;
   font-weight: regular;
@@ -43,9 +46,8 @@ nav {
 }
 
 .text-stroke {
-  -webkit-text-stroke: 0.3px #050423;
-  /* Use your primary-light color */
-  text-stroke: 0.3px #050423;
+  -webkit-text-stroke: 3px #151a3c;
+  text-stroke: 3px #151a3c;
 }
 
 .font-jersey {
