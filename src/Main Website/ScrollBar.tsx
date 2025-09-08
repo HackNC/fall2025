@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { makeIsMobileState } from "./Utils.tsx"
+import { scrollToSection } from "./MainWeb.tsx";
 
 interface HorizontalScrollerProps {
   children: React.ReactNode;
@@ -34,9 +35,19 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({ children }) => 
   const [bannerVisibleWidth, setBannerVisibleWidth] = useState(0);
 
   // pink arrow navigation consts
-  const [currentPage, setCurrentPage] = useState(0);
   const [startOfPage, setStartOfPage] = useState(true);
   const [endOfPage, setEndOfPage] = useState(false);
+  const [currentPageIndx, setCurrentPageIndx] = useState(0);
+
+  const pageIndex:{ [key: number]: string} = {
+    0: "FrontPage",
+    1: "CountdownPage",
+    2: "AboutPage",
+    3: "NewFaqPage",
+    4: "SponsorsPage",
+    5: "OurBoardPage"
+  };
+
 
   // Custom events and useState for joystick scroll direction
   const prevScroll = useRef(0);
@@ -84,9 +95,11 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({ children }) => 
         setStartOfPage(false);
       }
 
-      // Update current page based on scroll position
-      const page = Math.round(scrolled / arcadeW);
-      setCurrentPage(page);
+      // Update Index based on manual scroll positions
+      if (scrolled >= arcadeW) {
+        let scrolledPage = Math.round(scrolled / arcadeW);
+        setCurrentPageIndx(Math.min(scrolledPage, Object.keys(pageIndex).length - 1));
+      }
     };
 
     const handleScrollDirection = () => {
@@ -110,14 +123,6 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({ children }) => 
       prevScroll.current = currentScroll;
 
     }
-
-    // const handleNoScrollEvent = () => {
-    //   // Detect activity
-    //   clearTimeout(timeout);
-    //   timeout = setTimeout(() => {
-    //     setIsScrolling(false);
-    //   }, 30000);
-    // };
 
     if (!isMobile) {
       el.addEventListener("wheel", handleWheel, { passive: false });
@@ -155,34 +160,18 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({ children }) => 
   const handleNext = () => {
     const container = containerRef.current;
     if (!container) return;
-
-    const maxScrollLeft = container.scrollWidth - container.clientWidth;
-    const nextScrollLeft = container.scrollLeft + arcadeW;
-
-    // Scroll one page forward (even if it reaches the end)
-    container.scrollTo({
-      left: nextScrollLeft,
-      behavior: "smooth",
-    });
-
-    // Restrict currentPage to max
-    const clampedPage = Math.min(currentPage + 1, Math.floor(maxScrollLeft / arcadeW));
-    setCurrentPage(clampedPage);
+    
+    let id = pageIndex[currentPageIndx+1];
+    scrollToSection(id);
+    setCurrentPageIndx((prev) => Math.min(prev + 1, Object.keys(pageIndex).length - 1));
   };
   // handle previous button
   const handlePrevious = () => {
     const container = containerRef.current;
     if (!container) return;
-
-    const prevScrollLeft = Math.max(container.scrollLeft - arcadeW, 0);
-
-    container.scrollTo({
-      left: prevScrollLeft,
-      behavior: 'smooth',
-    });
-
-    // Decrease currentPage, but not below 0
-    setCurrentPage((prev) => Math.max(prev - 1, 0));
+    let id = pageIndex[currentPageIndx-1];
+    scrollToSection(id);
+    setCurrentPageIndx((prev) => Math.max(prev - 1, 0));
   };
 
   return (
