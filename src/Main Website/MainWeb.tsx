@@ -51,6 +51,7 @@ export const SectionWrapper: React.FC<React.PropsWithChildren<{}>> = ({ children
 // "Play Now" Button scroll handler
 export const scrollToSection = (id: string) => {
   const section = document.getElementById(id);
+  console.log(section);
   if (section) {
     section.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
   }
@@ -132,6 +133,10 @@ const MainPage: React.FC = () => {
 
               <SectionWrapper>
                 <NewFaqPage />
+              </SectionWrapper>
+
+              <SectionWrapper>
+                <SponsorshipPage />
               </SectionWrapper>
 
               {/* Not Ready Yet! */}

@@ -37,16 +37,18 @@ const NewFaqPage: React.FC = () => {
         answer: "A hackathon is a weekend of fun and learning. You'll become a better programmer, meet awesome people, and make cool projects. There will also be opportunities to win fun prizes and network with our sponsors."
     };
     const q2 = {
-        question: "Is this hackathon in-person or hybrid?",
-        answer: "This year, we are running a completely in-person hackathon! We have lots of fun events and workshops for you all and most importantly, free food!"
+        question: "Who can hack?",
+        answer: "If you are a student at UNC, there is no age requirement. If you are coming from outside UNC, you must be 18 years of age or older to attend! High schoolers, undergraduates, and graduate students from any school are welcome to participate as hackers."
+
     };
     const q3 = {
         question: "Do I need extensive coding knowledge for HackNC?",
         answer: "Not at all! HackNC is a completely beginner friendly event, and we have a project track specifically for beginners. We'll have plenty of resources to help you get started, including beginner workshops, mentors, and more."
     };
     const q4 = {
-        question: "Who can hack?",
-        answer: "If you are a student at UNC, there is no age requirement. If you are coming from outside UNC, you must be 18 years of age or older to attend! High schoolers, undergraduates, and graduate students from any school are welcome to participate as hackers."
+        question: "Is this hackathon in-person or hybrid?",
+        answer: "This year, we are running a completely in-person hackathon! We have lots of fun events and workshops for you all and most importantly, free food!"
+
     };
     const q5 = {
         question: "How do teams work?",
