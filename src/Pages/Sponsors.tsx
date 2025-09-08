@@ -24,7 +24,7 @@ const SponsorshipPage: React.FC = () => {
         <div id="SponsorshipPage" className={divClass}>
             <h1 className="text-[#F6B1B1] text-shadow-font-pink">SPONSORS</h1>
             <div className={gridClass}>
-                <div className="flex flex-col items-center bg-font-orange bg-opacity-50 rounded-xl shadow-font-orange shadow-md">
+                <div className="flex flex-col items-center bg-font-orange bg-opacity-80 rounded-xl shadow-font-orange shadow-md">
                     {Object.values(sponsors).map((logo: any, index: number) => (
                         index % 3 === 0 ? (
                             <img
@@ -35,7 +35,7 @@ const SponsorshipPage: React.FC = () => {
                             />) : null
                     ))}
                 </div>
-                <div className="flex flex-col items-center bg-font-orange bg-opacity-50 rounded-xl shadow-font-orange shadow-md">
+                <div className="flex flex-col items-center bg-font-orange bg-opacity-80 rounded-xl shadow-font-orange shadow-md">
                     {Object.values(sponsors).map((logo: any, index: number) => (
                         index % 3 === 1 ? (
                             <img
@@ -46,7 +46,7 @@ const SponsorshipPage: React.FC = () => {
                             />) : null
                     ))}
                 </div>
-                <div className="flex flex-col items-center bg-font-orange bg-opacity-50 rounded-xl shadow-font-orange shadow-md">
+                <div className="flex flex-col items-center bg-font-orange bg-opacity-80 rounded-xl shadow-font-orange shadow-md">
                     {Object.values(sponsors).map((logo: any, index: number) => (
                         index % 3 === 2 ? (
                             <img

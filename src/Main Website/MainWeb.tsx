@@ -163,10 +163,10 @@ const MainPage: React.FC = () => {
               </SectionWrapper>
 
               {/* Not Ready Yet! */}
-              <SectionWrapper>
+              {/* <SectionWrapper>
                 <OurBoardPage />
-              </SectionWrapper>
-
+              </SectionWrapper> */}
+              {/* Set default as leads when its ready */}
               {page === Pages.LEADS && (
                 <>
                   <SectionWrapper>

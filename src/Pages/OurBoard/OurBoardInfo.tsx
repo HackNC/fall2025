@@ -78,7 +78,7 @@ const nagaInfoCardProps = {
 };
 
 const nagaOurBoardDetailProps = {
-  mainImage: "/memberPhotos/Rithwikmishra.png",
+  mainImage: "/underConstruction/work-in-progress-barrier.png",
   drawingImage: "/underConstruction/work-in-progress-sign.png",
   infoCardProps: nagaInfoCardProps,
   members: leadMembers,
@@ -422,8 +422,8 @@ const devMembers = {
   Vuong: "/underConstruction/traffic-barrier.png",
   Siddhant: "/underConstruction/traffic-barrier.png",
   Sai: "/underConstruction/traffic-barrier.png",
-  Rithwik: "/underConstruction/traffic-barrier.png",
-  Jason: "/underConstruction/traffic-barrier.png",
+  Rithwik: "/memberPhotos/Rithwikmishra.png",
+  // Jason: "/underConstruction/traffic-barrier.png",
 };
 
 const devOurBoardDetailStyles = {
@@ -541,7 +541,7 @@ const oscarOurBoardDetailProps = {
 
 export const Minh = () => {
   return (
-    <div id="leads">
+    <div id="MembersPage_1">
       <OurDetailBoardPage
         props={minhOurBoardDetailProps}
         styles={leadOurBoardDetailStyles}
@@ -552,28 +552,34 @@ export const Minh = () => {
 
 export const Alicia = () => {
   return (
+    <div id="MembersPage_2">
     <OurDetailBoardPage
       props={aliciaOurBoardDetailProps}
       styles={leadOurBoardDetailStyles}
     />
+    </div>
   );
 };
 
 export const Naga = () => {
   return (
+    <div id="MembersPage_3">
     <OurDetailBoardPage
       props={nagaOurBoardDetailProps}
       styles={leadOurBoardDetailStyles}
     />
+    </div>
   );
 };
 
 export const Jack = () => {
   return (
+    <div id="MembersPage_4">  
     <OurDetailBoardPage
       props={jackOurBoardDetailProps}
       styles={leadOurBoardDetailStyles}
     />
+    </div>
   );
 };
 
@@ -583,7 +589,7 @@ export const Jack = () => {
 
 export const Paige = () => {
   return (
-    <div id="graphics">
+    <div id="MembersPage_1">
       <OurDetailBoardPage
         props={paigeOurBoardDetailProps}
         styles={graphicsOurBoardDetailStyles}
@@ -594,10 +600,12 @@ export const Paige = () => {
 
 export const Amber = () => {
   return (
+    <div id="MembersPage_2">
     <OurDetailBoardPage
       props={amberOurBoardDetailProps}
       styles={graphicsOurBoardDetailStyles}
     />
+    </div>
   );
 };
 
@@ -607,7 +615,7 @@ export const Amber = () => {
 
 export const Ayush = () => {
   return (
-    <div id="experience">
+    <div id="MembersPage_1">
       <OurDetailBoardPage
         props={ayushOurBoardDetailProps}
         styles={experienceOurBoardDetailStyles}
@@ -618,19 +626,23 @@ export const Ayush = () => {
 
 export const Harsehaj = () => {
   return (
+    <div id="MembersPage_2">
     <OurDetailBoardPage
       props={harsehajOurBoardDetailProps}
       styles={experienceOurBoardDetailStyles}
     />
+    </div>
   );
 };
 
 export const Alex = () => {
   return (
+    <div id="MembersPage_3">
     <OurDetailBoardPage
       props={alexOurBoardDetailProps}
       styles={experienceOurBoardDetailStyles}
     />
+    </div>
   );
 };
 
@@ -640,7 +652,7 @@ export const Alex = () => {
 
 export const Sanay = () => {
   return (
-    <div id="operations">
+    <div id="MembersPage_1">
       <OurDetailBoardPage
         props={sanayOurBoardDetailProps}
         styles={operationsOurBoardDetailStyles}
@@ -661,7 +673,7 @@ export const Sky = () => (
    ============================================================ */
 export const Davyd = () => {
   return (
-    <div id="sponsorship">
+    <div id="MembersPage_1">
       <OurDetailBoardPage
         props={davydOurBoardDetailProps}
         styles={sponsorshipOurBoardDetailStyles}
@@ -671,24 +683,30 @@ export const Davyd = () => {
 };
 
 export const Ishitha = () => (
+  <div id="MembersPage_2">
   <OurDetailBoardPage
     props={ishithaOurBoardDetailProps}
     styles={sponsorshipOurBoardDetailStyles}
   />
+  </div>
 );
 
 export const Sahasra = () => (
+  <div id="MembersPage_3">
   <OurDetailBoardPage
     props={sahasraOurBoardDetailProps}
     styles={sponsorshipOurBoardDetailStyles}
   />
+ </div>
 );
 
 export const Mason = () => (
+  <div id="MembersPage_4">
   <OurDetailBoardPage
     props={masonOurBoardDetailProps}
     styles={sponsorshipOurBoardDetailStyles}
   />
+  </div>
 );
 
 /* ============================================================
@@ -697,7 +715,7 @@ export const Mason = () => (
 
 export const Rishi = () => {
   return (
-    <div id="development">
+    <div id="MembersPage_1">
       <OurDetailBoardPage
         props={rishiOurBoardDetailProps}
         styles={devOurBoardDetailStyles}
@@ -707,10 +725,12 @@ export const Rishi = () => {
 };
 
 export const Yahan = () => (
+  <div id="MembersPage_2">
   <OurDetailBoardPage
     props={yahanOurBoardDetailProps}
     styles={devOurBoardDetailStyles}
   />
+  </div>
 );
 
 /* ============================================================
@@ -719,7 +739,7 @@ export const Yahan = () => (
 
 export const Robert = () => {
   return (
-    <div id="marketing">
+    <div id="MembersPage_1">
       <OurDetailBoardPage
         props={robertOurBoardDetailProps}
         styles={marketingOurBoardDetailStyles}
@@ -729,8 +749,10 @@ export const Robert = () => {
 };
 
 export const Oscar = () => (
+  <div id="MembersPage_2">
   <OurDetailBoardPage
     props={oscarOurBoardDetailProps}
     styles={marketingOurBoardDetailStyles}
   />
+  </div>
 );

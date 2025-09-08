@@ -1,5 +1,6 @@
 import React from "react";
 import Pages from "./PagesEnum"
+import { scrollToSection } from "../../Main Website/MainWeb";
 
 type TeamCardProps = {
   teamName: string;
@@ -17,12 +18,12 @@ const sponsorship = new CustomEvent("sponsorship", { detail: Pages.SPONSORSHIP, 
 const development = new CustomEvent("development", { detail: Pages.DEVELOPMENT, bubbles: true });
 const marketing = new CustomEvent("marketing", { detail: Pages.MARKETING, bubbles: true });
 
-const scrollToSection = (id: string) => {
-  const section = document.getElementById(id);
-  if (section) {
-    section.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
-  }
-};
+// const scrollToSection = (id: string) => {
+//   const section = document.getElementById(id);
+//   if (section) {
+//     section.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+//   }
+// };
 
 const TeamCard: React.FC<TeamCardProps> = ({ teamName, img, color, navID }) => {
   // dispatch events for OurrPageComposed to listen and display appropriate pages
@@ -32,37 +33,30 @@ const TeamCard: React.FC<TeamCardProps> = ({ teamName, img, color, navID }) => {
         // console.log("handled button click leads")
         window.dispatchEvent(leads)
         // console.log("dispatched leads event")
-        scrollToSection(navID)
         break;
       case "graphics":
         window.dispatchEvent(graphics)
-        scrollToSection(navID)
         // console.log("dispatched graphics event")
         break;
       case "experience":
         window.dispatchEvent(experience)
-        scrollToSection(navID)
         break;
       case "operations":
         window.dispatchEvent(operations)
-        scrollToSection(navID)
         break;
       case "sponsorship":
         window.dispatchEvent(sponsorship)
-        scrollToSection(navID)
         break;
       case "development":
         window.dispatchEvent(development)
-        scrollToSection(navID)
         break;
       case "marketing":
         window.dispatchEvent(marketing)
-        scrollToSection(navID)
         break;
       default:
         window.dispatchEvent(leads)
-        scrollToSection(navID)
     }
+    scrollToSection("MembersPage_1")
   };
 
   return (
@@ -70,7 +64,7 @@ const TeamCard: React.FC<TeamCardProps> = ({ teamName, img, color, navID }) => {
       onClick={() => handleOurBoardClick(navID)}
       className={`w-48 h-24 flex items-center justify-center 
                 text-center text-4xl font-jersey hover:bg-gradient-top
-                bg-primary-dark rounded-full ${color}`}
+                bg-primary-dark rounded-full ${color} shadow-font-dark-blue`}
     >
       {teamName}
     </button>
