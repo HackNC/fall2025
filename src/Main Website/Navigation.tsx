@@ -292,7 +292,7 @@ const Navigation: React.FC = () => {
                           handleDesktopItemClick();
                           scrollToSection("OurBoardPage");
                         }}
-                        className="block text-[#050423] no-underline text-[36px] max-[1047px]:text-[26px]"
+                        className="block text-primary-dark no-underline text-[36px] max-[1047px]:text-[26px]"
                         style={{ fontFamily: "'Jersey 15', sans-serif" }}
                       >
                         our board
