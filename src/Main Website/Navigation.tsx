@@ -312,11 +312,10 @@ const Navigation: React.FC = () => {
           {/* Mobile banner */}
           <div className="hidden max-[794px]:flex items-center absolute top-0 right-16">
             <a href="https://mlh.io/seasons/2026/events" target="_blank" rel="noopener noreferrer">
-
               <img
                 src="./MLHBanner.png"
                 alt="MLH Banner"
-                className="w-[112px] h-auto max-[1047px]:w-[102px] mr-2 max-[455px]:w-[98px] max-[394px]:w-[78px] max-[375px]:w-[68px] max-[340px]:w-[58px] max-[323px]:w-[38px]"
+                className="w-[72px] h-auto max-[1047px]:w-[62px] mr-2 max-[455px]:w-[48px] max-[394px]:w-[38px] max-[375px]:w-[32px] max-[340px]:w-[28px] max-[323px]:w-[20px]"
               />
             </a>
 

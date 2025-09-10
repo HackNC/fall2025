@@ -37,7 +37,7 @@ const AboutPage: React.FC = () => {
     return (
         <div
             id="AboutPage"
-            className="flex flex-col items-center relative px-4 py-20 text-center"
+            className="flex flex-col items-center relative px-4 py-20 md:py-0 text-center"
         >
             <div className="flex flex-col text-primary-light text-shadow-font-purple tracking-widest max-w-3xl">
                 {/* Page Title */}
@@ -46,8 +46,8 @@ const AboutPage: React.FC = () => {
                 </div>
 
 
-                <div className="flex flex-row max-md:flex-col justify-evenly items-center mb-8">
-                    <div className="mr-5">
+                <div className="flex flex-row max-md:flex-col justify-center items-center mb-8">
+                    <div className="md:mr-5">
                         <AboutBorder>
                             <p className="">
                                 HackNC is a weekend for students of all skill levels to broaden their talents.
@@ -58,7 +58,7 @@ const AboutPage: React.FC = () => {
                             </p>
                         </AboutBorder>
                     </div>
-                    <div className="-mr-20">
+                    <div className="md:-mr-20">
                         <img src="./about_page_graphic.svg" alt="About page graphic" className="max-w-[50vh] max-h-[50vh]" />
                     </div>
                 </div>

@@ -40,18 +40,12 @@ const ScreenWrapper: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
       className="
         md:rounded-[140px] md:shadow-2xl md:bg-gradient-to-b md:from-gradient-top md:to-gradient-bottom
         mx-auto my-auto
-        w-full h-full md:w-[75vw] md:h-[80vh]
+        w-[95vw] h-[95vh] md:w-[75vw] md:h-[80vh]
         overflow-x-auto
         overflow-y-scroll
         drop-shadow-lg
         shadow-inner-lg
       "
-      style={
-        {
-          width: "var(--arcade-w)",
-          height: "var(--arcade-h)",
-        } as React.CSSProperties
-      }
     >
       {children}
     </div>
@@ -62,11 +56,13 @@ export const SectionWrapper: React.FC<React.PropsWithChildren<{}>> = ({
   children,
 }) => {
   return (
-    <>
-      <section className=" overflow-y-scroll min-w-[var(--arcade-w)] md:w-[var(--arcade-w)] min-h-[var(--arcade-h)] md:h-[var(--arcade-h)] flex flex-shrink-0 items-center justify-center bg-transparent pb-[5vh]">
-        {children}
-      </section>
-    </>
+    <section
+      className="
+        md:overflow-y-scroll md:min-w-[var(--arcade-w)] md:w-[var(--arcade-w)] md:min-h-[var(--arcade-h)] md:h-[var(--arcade-h)]
+      "
+    >
+      {children}
+    </section>
   );
 };
 
@@ -163,9 +159,10 @@ const MainPage: React.FC = () => {
               </SectionWrapper>
 
               {/* Not Ready Yet! */}
-              {/* <SectionWrapper>
+              <SectionWrapper>
                 <OurBoardPage />
-              </SectionWrapper> */}
+              </SectionWrapper>
+
               {/* Set default as leads when its ready */}
               {page === Pages.LEADS && (
                 <>

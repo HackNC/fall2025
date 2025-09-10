@@ -50,7 +50,7 @@ const BottomDecor = () => {
     return (
         <div
             ref={containerRef}
-            className="flex justify-evenly items-end mx-auto"
+            className="hidden md:flex justify-evenly items-end mx-auto"
             style={{ width: "calc(var(--arcade-w) * 0.80)" }}
         >
             <img src="./frontPageAssets/arrows.svg" alt="game arrows" className="drop-shadow-2xl w-[12vh] h-[7vh] max-w-[100px] max-h-[80px]" />

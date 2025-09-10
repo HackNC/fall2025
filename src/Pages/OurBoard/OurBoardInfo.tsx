@@ -112,12 +112,8 @@ const jackOurBoardDetailProps = {
 
 const graphicsMembers = {
   AngLam: "/memberPhotos/Ang_Lam.jpg",
-  Goataclysm: "/underConstruction/traffic-barrier.png",
-  Baarserker: "/underConstruction/traffic-barrier.png",
-  Shearlock: "/underConstruction/traffic-barrier.png",
-  Ramurai: "/underConstruction/traffic-barrier.png",
-  Baaard: "/underConstruction/traffic-barrier.png",
-  GoatLord: "/underConstruction/traffic-barrier.png",
+  Star: "/ourBoardPageAssets/white_star_graphics.png",
+  Ram: "/logos/pixel_ram128.png",
 };
 
 const graphicsOurBoardDetailStyles = {
@@ -442,7 +438,7 @@ const yahanInfoCardProps = {
   position: "director of development",
   attack: 5, // ToBeUpdated
   defense: 3, // ToBeUpdated
-  special_ability: "summon the sacred goat", // ToBeUpdated
+  special_ability: "SleepzzZZ", // ToBeUpdated
 };
 
 const yahanOurBoardDetailProps = {
@@ -553,10 +549,10 @@ export const Minh = () => {
 export const Alicia = () => {
   return (
     <div id="MembersPage_2">
-    <OurDetailBoardPage
-      props={aliciaOurBoardDetailProps}
-      styles={leadOurBoardDetailStyles}
-    />
+      <OurDetailBoardPage
+        props={aliciaOurBoardDetailProps}
+        styles={leadOurBoardDetailStyles}
+      />
     </div>
   );
 };
@@ -564,21 +560,21 @@ export const Alicia = () => {
 export const Naga = () => {
   return (
     <div id="MembersPage_3">
-    <OurDetailBoardPage
-      props={nagaOurBoardDetailProps}
-      styles={leadOurBoardDetailStyles}
-    />
+      <OurDetailBoardPage
+        props={nagaOurBoardDetailProps}
+        styles={leadOurBoardDetailStyles}
+      />
     </div>
   );
 };
 
 export const Jack = () => {
   return (
-    <div id="MembersPage_4">  
-    <OurDetailBoardPage
-      props={jackOurBoardDetailProps}
-      styles={leadOurBoardDetailStyles}
-    />
+    <div id="MembersPage_4">
+      <OurDetailBoardPage
+        props={jackOurBoardDetailProps}
+        styles={leadOurBoardDetailStyles}
+      />
     </div>
   );
 };
@@ -601,10 +597,10 @@ export const Paige = () => {
 export const Amber = () => {
   return (
     <div id="MembersPage_2">
-    <OurDetailBoardPage
-      props={amberOurBoardDetailProps}
-      styles={graphicsOurBoardDetailStyles}
-    />
+      <OurDetailBoardPage
+        props={amberOurBoardDetailProps}
+        styles={graphicsOurBoardDetailStyles}
+      />
     </div>
   );
 };
@@ -627,10 +623,10 @@ export const Ayush = () => {
 export const Harsehaj = () => {
   return (
     <div id="MembersPage_2">
-    <OurDetailBoardPage
-      props={harsehajOurBoardDetailProps}
-      styles={experienceOurBoardDetailStyles}
-    />
+      <OurDetailBoardPage
+        props={harsehajOurBoardDetailProps}
+        styles={experienceOurBoardDetailStyles}
+      />
     </div>
   );
 };
@@ -638,10 +634,10 @@ export const Harsehaj = () => {
 export const Alex = () => {
   return (
     <div id="MembersPage_3">
-    <OurDetailBoardPage
-      props={alexOurBoardDetailProps}
-      styles={experienceOurBoardDetailStyles}
-    />
+      <OurDetailBoardPage
+        props={alexOurBoardDetailProps}
+        styles={experienceOurBoardDetailStyles}
+      />
     </div>
   );
 };
@@ -684,28 +680,28 @@ export const Davyd = () => {
 
 export const Ishitha = () => (
   <div id="MembersPage_2">
-  <OurDetailBoardPage
-    props={ishithaOurBoardDetailProps}
-    styles={sponsorshipOurBoardDetailStyles}
-  />
+    <OurDetailBoardPage
+      props={ishithaOurBoardDetailProps}
+      styles={sponsorshipOurBoardDetailStyles}
+    />
   </div>
 );
 
 export const Sahasra = () => (
   <div id="MembersPage_3">
-  <OurDetailBoardPage
-    props={sahasraOurBoardDetailProps}
-    styles={sponsorshipOurBoardDetailStyles}
-  />
- </div>
+    <OurDetailBoardPage
+      props={sahasraOurBoardDetailProps}
+      styles={sponsorshipOurBoardDetailStyles}
+    />
+  </div>
 );
 
 export const Mason = () => (
   <div id="MembersPage_4">
-  <OurDetailBoardPage
-    props={masonOurBoardDetailProps}
-    styles={sponsorshipOurBoardDetailStyles}
-  />
+    <OurDetailBoardPage
+      props={masonOurBoardDetailProps}
+      styles={sponsorshipOurBoardDetailStyles}
+    />
   </div>
 );
 
@@ -726,10 +722,10 @@ export const Rishi = () => {
 
 export const Yahan = () => (
   <div id="MembersPage_2">
-  <OurDetailBoardPage
-    props={yahanOurBoardDetailProps}
-    styles={devOurBoardDetailStyles}
-  />
+    <OurDetailBoardPage
+      props={yahanOurBoardDetailProps}
+      styles={devOurBoardDetailStyles}
+    />
   </div>
 );
 
@@ -750,9 +746,9 @@ export const Robert = () => {
 
 export const Oscar = () => (
   <div id="MembersPage_2">
-  <OurDetailBoardPage
-    props={oscarOurBoardDetailProps}
-    styles={marketingOurBoardDetailStyles}
-  />
+    <OurDetailBoardPage
+      props={oscarOurBoardDetailProps}
+      styles={marketingOurBoardDetailStyles}
+    />
   </div>
 );

@@ -68,9 +68,8 @@ const BorderItem: React.FC<{
         }}
       />
       <div
-        className={`${
-          image ? "w-full h-full flex justify-center items-center" : ""
-        } absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2`}
+        className={`${image ? "w-full h-full flex justify-center items-center" : ""
+          } absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2`}
       >
         {children}
       </div>
@@ -134,36 +133,36 @@ const GlowItem: React.FC<{
   glowOnly = false,
   cutout = false,
 }) => {
-  if (cutout) {
-    return (
-      <div className="relative h-fit overflow-hidden">
-        {/* this is the background for the names of board members */}
-        <div className="absolute w-full h-[80vh] bg-gradient-to-b from-gradient-top to-gradient-bottom bg-opacity-90 z-15 -translate-y-5"></div>
-        <div
-          className={`z-15 ${className}`}
-          style={{
-            ...(glowOnly ? {} : { color: `${accentColor}` }),
-            filter: `drop-shadow(0 0 4px ${accentColor})`,
-          }}
-        >
-          {children}
+    if (cutout) {
+      return (
+        <div className="relative h-fit overflow-hidden">
+          {/* this is the background for the names of board members */}
+          <div className="absolute w-full h-[80vh] bg-gradient-to-b from-gradient-top to-gradient-bottom bg-opacity-90 z-15 -translate-y-5"></div>
+          <div
+            className={`z-15 ${className}`}
+            style={{
+              ...(glowOnly ? {} : { color: `${accentColor}` }),
+              filter: `drop-shadow(0 0 4px ${accentColor})`,
+            }}
+          >
+            {children}
+          </div>
         </div>
+      );
+    }
+
+    return (
+      <div
+        className={className}
+        style={{
+          ...(glowOnly ? {} : { color: `${accentColor}` }),
+          filter: `drop-shadow(0 0 4px ${accentColor})`,
+        }}
+      >
+        {children}
       </div>
     );
-  }
-
-  return (
-    <div
-      className={className}
-      style={{
-        ...(glowOnly ? {} : { color: `${accentColor}` }),
-        filter: `drop-shadow(0 0 4px ${accentColor})`,
-      }}
-    >
-      {children}
-    </div>
-  );
-};
+  };
 
 /* ------------------------------------------------------------
     CarouselItem: Single member portrait in carousel
@@ -190,9 +189,8 @@ const CarouselItem: React.FC<{
         />
       </GlowItem>
       <p
-        className={`transition-opacity duration-700 ${
-          relativeIdx === 0 ? "opacity-100" : "opacity-0"
-        } text-white text-center`}
+        className={`transition-opacity duration-700 ${relativeIdx === 0 ? "opacity-100" : "opacity-0"
+          } text-white text-center`}
       >
         {name}
       </p>
@@ -399,7 +397,7 @@ const OurBoardDetailPage: React.FC<{
   };
 
   return (
-    <div className="flex flex-col md:flex-row gap-4 mb-20">
+    <div className="flex flex-col items-center md:flex-row justify-center gap-4 mb-20">
       {/* Portrait and drawing section */}
       <div className="flex justify-center items-center">
         <div className="relative mt-12">
@@ -457,7 +455,7 @@ const OurBoardDetailPage: React.FC<{
       </div>
       {/* Info card and carousel section */}
       <div
-        className="mt-12 relative"
+        className="md:mt-12 relative"
         style={{ width: infoBorderAttrs.width, height: infoBorderAttrs.height }}
       >
         {/* Director name centered and inline with top border */}
