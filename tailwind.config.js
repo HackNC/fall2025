@@ -19,7 +19,7 @@ export default {
         'font-light-blue': '#82CCFA',
         'font-dark-blue': '#82A8FA',
         'font-cyan': '#65E6DB',
-        'font-green': '#8AFAA6',
+        'font-green': '#8AFA82',
         'font-orange': '#FAD082',
         'font-peach': '#FA9E82',
         'font-pink': '#FA8282',
