@@ -17,6 +17,7 @@ export default {
         'gradient-top': '#151A3C',
         'gradient-bottom': '#3746A2',
         'font-light-blue': '#82CCFA',
+        'font-sky-blue': '#3ABDDE',
         'font-dark-blue': '#82A8FA',
         'font-cyan': '#65E6DB',
         'font-green': '#8AFA82',
