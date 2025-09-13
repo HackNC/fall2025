@@ -11,7 +11,7 @@ const AboutBorder: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
     return (
         <div className="relative w-full mx-auto my-auto">
             {/* Desktop version with border */}
-            <div className="hidden md:block relative w-[100%] h-full"> {/* Change height here */}
+            <div className="hidden md:block relative w-full h-full">
                 <img
                     src="./ourBoardPageAssets/lead_border.png"
                     alt="lead border"
@@ -25,7 +25,7 @@ const AboutBorder: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
             </div>
 
             {/* Mobile version without border */}
-            <div className="block md:hidden p-4 text-2xl text-center">
+            <div className="flex flex-col items-center w-full max-w-full px-4 whitespace-normal break-words md:hidden">
                 {children}
             </div>
         </div>
@@ -37,19 +37,19 @@ const AboutPage: React.FC = () => {
     return (
         <div
             id="AboutPage"
-            className="flex flex-col items-center relative px-4 py-20 md:py-0 text-center"
+            className="md:flex flex-col items-center justify-center"
         >
             <div className="flex flex-col text-primary-light text-shadow-font-purple tracking-widest max-w-3xl">
                 {/* Page Title */}
-                <div className="display:inline">
-                    <h1 className="text-shadow-primary-light">ABOUT</h1>
+                <div className="flex justify-center mt-20 md:mt-0">
+                    <h1 className="text-font-purple text-shadow-font-purple justify-center">ABOUT</h1>
                 </div>
 
 
                 <div className="flex flex-row max-md:flex-col justify-center items-center mb-8">
-                    <div className="md:mr-5">
+                    <div className="">
                         <AboutBorder>
-                            <p className="">
+                            <p className="flex-center whitespace-normal break-words">
                                 HackNC is a weekend for students of all skill levels to broaden their talents.
                                 Your challenge is to make an awesome project in just 24 hours. You will have
                                 access to hands-on tech workshops, sponsor networking, as well as exciting talks
@@ -58,7 +58,7 @@ const AboutPage: React.FC = () => {
                             </p>
                         </AboutBorder>
                     </div>
-                    <div className="md:-mr-20">
+                    <div className="flex flex-col md:-mr-20">
                         <img src="./about_page_graphic.svg" alt="About page graphic" className="max-w-[50vh] max-h-[50vh]" />
                     </div>
                 </div>
@@ -71,15 +71,5 @@ const AboutPage: React.FC = () => {
 
 
 
-<AboutBorder>
-    {/* Description Text */}
-    <p className="text-shadow-none text-center text-l">
-        HackNC is a weekend for students of all skill levels to broaden their talents.
-        Your challenge is to make an awesome project in just 24 hours. You will have
-        access to hands-on tech workshops, sponsor networking, as well as exciting talks
-        about the awesome things happening right now with computer science and technology –
-        not to mention all of the free food, shirts, stickers, and swag!
-    </p>
-</AboutBorder>
 
 export default AboutPage;

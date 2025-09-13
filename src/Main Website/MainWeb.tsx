@@ -33,16 +33,16 @@ import {
 } from "../Pages/OurBoard/OurBoardInfo";
 import Pages from "../Pages/OurBoard/PagesEnum";
 import SponsorshipPage from "../Pages/Sponsors";
-
 const ScreenWrapper: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   return (
     <div
       className="
-        md:rounded-[140px] md:shadow-2xl md:bg-gradient-to-b md:from-gradient-top md:to-gradient-bottom
         mx-auto my-auto
         w-[95vw] h-[95vh] md:w-[75vw] md:h-[80vh]
-        overflow-x-auto
-        overflow-y-scroll
+        max-w-full     
+        md:rounded-[140px] md:shadow-2xl md:bg-gradient-to-b md:from-gradient-top md:to-gradient-bottom
+        md:overflow-x-auto
+        overflow-y-auto
         drop-shadow-lg
         shadow-inner-lg
       "
@@ -52,14 +52,24 @@ const ScreenWrapper: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   );
 };
 
+
+
 export const SectionWrapper: React.FC<React.PropsWithChildren<{}>> = ({
   children,
 }) => {
   return (
     <section
       className="
-        md:overflow-y-scroll md:min-w-[var(--arcade-w)] md:w-[var(--arcade-w)] md:min-h-[var(--arcade-h)] md:h-[var(--arcade-h)]
+        md:overflow-y-scroll 
+        max-w-full 
+        md:min-w-[var(--arcade-w)] 
+        md:w-[var(--arcade-w)] 
+        md:min-h-[var(--arcade-h)] 
+        md:h-[var(--arcade-h)]
       "
+    // bg-[url('/noise_bg.svg')]
+    // bg-repeat
+    // bg-blend-overlay
     >
       {children}
     </section>
@@ -80,7 +90,7 @@ export const scrollToSection = (id: string) => {
 };
 
 const MainPage: React.FC = () => {
-  const [page, setPage] = useState(Pages.EMPTY);
+  const [page, setPage] = useState(Pages.LEADS);
   useEffect(() => {
     const handlePageSwitch = (event: Event) => {
       console.log("received event");
@@ -159,9 +169,9 @@ const MainPage: React.FC = () => {
               </SectionWrapper>
 
               {/* Not Ready Yet! */}
-              {/* <SectionWrapper>
+              <SectionWrapper>
                 <OurBoardPage />
-              </SectionWrapper> */}
+              </SectionWrapper>
 
               {/* Set default as leads when its ready */}
               {page === Pages.LEADS && (

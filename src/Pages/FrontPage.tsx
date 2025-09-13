@@ -8,7 +8,7 @@ interface FrontPageProps {
 const FrontPage: React.FC<FrontPageProps> = ({ scrollToSection }) => {
 
     return (
-        <div id="FrontPage" className="flex text-center items-center justify-center">
+        <div id="FrontPage" className="flex text-center items-center justify-center md:mt-10">
             <div className="flex flex-col text-center items-center font-jersey tracking-widest"
                 style={{ gap: "2.5rems" }}>
                 <h1 className="text-9xl text-font-light-blue text-shadow-accent-blue">HACKNC 2025</h1>

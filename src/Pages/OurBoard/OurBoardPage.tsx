@@ -64,7 +64,7 @@ const TeamCard: React.FC<TeamCardProps> = ({ teamName, img, color, navID }) => {
       onClick={() => handleOurBoardClick(navID)}
       className={`w-48 h-24 flex items-center justify-center 
                 text-center text-4xl font-jersey hover:bg-gradient-top
-                bg-primary-dark rounded-full ${color} shadow-font-dark-blue`}
+                bg-primary-dark bg-opacity-80 rounded-lg ${color} shadow-font-dark-blue`}
     >
       {teamName}
     </button>

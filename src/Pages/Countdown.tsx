@@ -57,9 +57,9 @@ const Countdown: React.FC = () => {
     }, [])
 
     return (
-        <div id="CountdownPage" className="flex flex-col items-center mt-20">
+        <div id="CountdownPage" className="flex flex-col items-center mt-20 md:mb-20">
             <div
-                className='font-jersey text-[48px] text-primary-light text-shadow-font-purple'>
+                className='font-jersey text-[48px] md:text-6xl text-primary-light text-shadow-font-purple'>
                 HackNC in
             </div>
             <div
