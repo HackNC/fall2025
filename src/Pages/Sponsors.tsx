@@ -7,7 +7,7 @@ type SponsorModule = { default: string };
 const SponsorshipPage: React.FC = () => {
     // Import all sponsor images from the public directory
     const sponsors: Record<string, SponsorModule> = import.meta.glob(
-        '/public/sponsors/*.{png,jpg,jpeg,svg}',
+        '/sponsors/*.{png,jpg,jpeg,svg}',
         { eager: true }
     );
 
