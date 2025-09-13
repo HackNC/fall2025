@@ -9,7 +9,7 @@ import React from 'react';
 // placeholder rn 
 const AboutBorder: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
     return (
-        <div className="relative w-full mx-auto my-auto">
+        <div className="relative max-w-[90%] mx-auto my-auto">
             {/* Desktop version with border */}
             <div className="hidden md:block relative w-full h-full">
                 <img
@@ -25,7 +25,7 @@ const AboutBorder: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
             </div>
 
             {/* Mobile version without border */}
-            <div className="flex flex-col items-center w-full max-w-full px-4 whitespace-normal break-words md:hidden">
+            <div className="flex flex-col justify-center items-center w-full max-w-full px-4 md:hidden">
                 {children}
             </div>
         </div>
@@ -37,7 +37,7 @@ const AboutPage: React.FC = () => {
     return (
         <div
             id="AboutPage"
-            className="md:flex flex-col items-center justify-center"
+            className="md:flex flex-col items-center justify-center max-w-[90%]"
         >
             <div className="flex flex-col text-primary-light text-shadow-font-purple tracking-widest max-w-3xl">
                 {/* Page Title */}
@@ -46,10 +46,10 @@ const AboutPage: React.FC = () => {
                 </div>
 
 
-                <div className="flex flex-row max-md:flex-col justify-center items-center mb-8">
+                <div className="flex md:flex-row flex-col justify-center items-center mb-4">
                     <div className="">
                         <AboutBorder>
-                            <p className="flex-center whitespace-normal break-words">
+                            <p className="justify-center md:ml-0 ml-20">
                                 HackNC is a weekend for students of all skill levels to broaden their talents.
                                 Your challenge is to make an awesome project in just 24 hours. You will have
                                 access to hands-on tech workshops, sponsor networking, as well as exciting talks
@@ -58,7 +58,7 @@ const AboutPage: React.FC = () => {
                             </p>
                         </AboutBorder>
                     </div>
-                    <div className="flex flex-col md:-mr-20">
+                    <div className="flex flex-col mr-0 md:-mr-20">
                         <img src="./about_page_graphic.svg" alt="About page graphic" className="max-w-[50vh] max-h-[50vh]" />
                     </div>
                 </div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, type JSX } from 'react';
 import { MAX_MOBILE_WIDTH } from '../Main Website/Utils';
 
 // Type the imported images
@@ -7,7 +7,7 @@ type SponsorModule = { default: string };
 const SponsorshipPage: React.FC = () => {
     // Import all sponsor images from the public directory
     const sponsors: Record<string, SponsorModule> = import.meta.glob(
-        '/sponsors/*.{png,jpg,jpeg,svg}',
+        '/public/sponsors/*.{png,jpg,jpeg,svg}',
         { eager: true }
     );
 
