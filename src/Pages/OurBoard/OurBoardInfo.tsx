@@ -260,7 +260,7 @@ const operationsMembers = {
 };
 
 const operationsOurBoardDetailStyles = {
-  accentColor: "#8AFAA6",
+  accentColor: "#8AFA82",
   border: "./ourBoardPageAssets/event_ops_border.png",
   filledStar: "./ourBoardPageAssets/white_star_graphics.png",
   emptyStar: "./ourBoardPageAssets/black_star_lead.png",

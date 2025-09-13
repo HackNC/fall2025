@@ -20,7 +20,7 @@ const FaqItem: React.FC<{ props: FaqItemProps }> = ({ props }) => {
                     {!isOpened && <img className="w-16" src="./folder_open.png" alt="closed folder" />}
                     {isOpened && <img className="w-16" src="./folder_closed.png" alt="opened folder" />}
                 </button>
-                <p className="text-white font-medium">{question}</p>
+                <p className="text-primary-light font-medium">{question}</p>
             </div>
             <div
                 className={`flex gap-4 overflow-y-scroll transition-all duration-700 ease-in-out ${isOpened ? "max-h-60 opacity-100" : "max-h-0 opacity-0"
