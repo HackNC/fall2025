@@ -84,15 +84,15 @@ const SponsorshipPage: React.FC = () => {
             <h1 className="text-[#F6B1B1] text-shadow-font-pink mb-10">SPONSORS</h1>
             <div className={gridClass}>
                 {/* Column 1 (Left) */}
-                <div className="flex flex-col items-center justify-around scale-95 bg-font-peach bg-opacity-65 rounded-xl shadow-font-purple shadow-md">
+                <div className="flex flex-col items-center justify-around md:scale-95 bg-font-peach bg-opacity-65 rounded-xl shadow-font-purple shadow-md">
                     {columns[0]}
                 </div>
                 {/* Column 2 (Middle) - This one is scaled up for emphasis */}
-                <div className="flex flex-col items-center justify-around scale-110 bg-font-peach bg-opacity-65 rounded-xl shadow-font-light-blue shadow-md">
+                <div className="flex flex-col items-center justify-around md:scale-110 bg-font-peach bg-opacity-65 rounded-xl shadow-font-light-blue shadow-md">
                     {columns[1]}
                 </div>
                 {/* Column 3 (Right) */}
-                <div className="flex flex-col items-center justify-around scale-95 bg-font-peach bg-opacity-65 rounded-xl shadow-font-purple shadow-md">
+                <div className="flex flex-col items-center justify-around md:scale-95 bg-font-peach bg-opacity-65 rounded-xl shadow-font-purple shadow-md">
                     {columns[2]}
                 </div>
             </div>
