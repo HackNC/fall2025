@@ -1,5 +1,5 @@
 import React, { useState, useEffect, type JSX } from 'react';
-import { MAX_MOBILE_WIDTH } from '../Main Website/Utils';
+import { makeIsMobileState } from '../Main Website/Utils';
 
 // Type the imported images
 type SponsorModule = { default: string };
@@ -20,17 +20,11 @@ const SponsorshipPage: React.FC = () => {
         // NOTE: The placeholder "/logos/pixel_ram128.png" is filtered out below.
     ];
 
-    const [isMobile, setIsMobile] = useState(window.innerWidth < MAX_MOBILE_WIDTH);
+    const [isMobile, setIsMobile] = makeIsMobileState();
 
     const gridClass = isMobile ? 'grid grid-cols-1 gap-y-12' : 'grid grid-cols-3 gap-x-8';
     const divClass = 'px-4 sm:px-20 text-center';
     const imgClass = isMobile ? 'w-[50%] h-auto p-5 object-contain' : 'w-full h-auto px-5 py-2 object-contain';
-
-    useEffect(() => {
-        const handleResize = () => setIsMobile(window.innerWidth < MAX_MOBILE_WIDTH);
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
 
     // --- NEW LOGIC FOR COLUMN DISTRIBUTION ---
 
