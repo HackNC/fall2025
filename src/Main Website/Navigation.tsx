@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { scrollToSection } from "./MainWeb";
+import { scrollToFrontSection } from "./MainWeb";
 import { makeIsMobileState } from "./Utils.tsx"
 
 
@@ -432,7 +433,7 @@ const Navigation: React.FC = () => {
               <a href="#"
                 onClick={() => {
                   handleMobileItemClick();
-                  scrollToSection("AboutPageMobile");
+                  scrollToFrontSection("AboutPage");
                 }}>
                 about
               </a>
@@ -460,7 +461,7 @@ const Navigation: React.FC = () => {
               <a href="#"
                 onClick={() => {
                   handleMobileItemClick();
-                  scrollToSection("OurBoardPage");
+                  scrollToFrontSection("OurBoardPage");
                 }}>
                 our board
               </a>
@@ -471,7 +472,10 @@ const Navigation: React.FC = () => {
                 : "opacity-0 translate-y-2"
                 }`}
             >
-              <a href="#" onClick={handleMobileItemClick}>
+              <a href="#" onClick={() => {
+                handleMobileItemClick();
+                scrollToFrontSection("SponsorshipPage");
+              }}>
                 sponsors
               </a>
             </li>

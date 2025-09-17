@@ -76,7 +76,7 @@ export const SectionWrapper: React.FC<React.PropsWithChildren<{}>> = ({
   );
 };
 
-// "Play Now" Button scroll handler
+// Scrolls to the center of the Section:
 export const scrollToSection = (id: string) => {
   const section = document.getElementById(id);
   console.log(section);
@@ -84,6 +84,19 @@ export const scrollToSection = (id: string) => {
     section.scrollIntoView({
       behavior: "smooth",
       block: "center",
+      inline: "center",
+    });
+  }
+};
+
+// Scroll to the Start of the Section:
+export const scrollToFrontSection = (id: string) => {
+  const section = document.getElementById(id);
+  console.log(section);
+  if (section) {
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
       inline: "center",
     });
   }
