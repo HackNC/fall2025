@@ -211,9 +211,9 @@ const ayushOurBoardDetailProps = {
 const harsehajInfoCardProps = {
   name: "Harsehaj D.",
   position: "co-director of hacker experience",
-  attack: 5, // ToBeUpdated
-  defense: 3, // ToBeUpdated
-  special_ability: "summon the sacred goat", // ToBeUpdated
+  attack: 5,
+  defense: 3,
+  special_ability: "rollerblading",
 };
 
 const harsehajOurBoardDetailProps = {
@@ -498,9 +498,9 @@ const marketingOurBoardDetailStyles = {
 const robertInfoCardProps = {
   name: "Robert Battle",
   position: "co-director of marketing",
-  attack: 5, // ToBeUpdated
-  defense: 3, // ToBeUpdated
-  special_ability: "summon the sacred goat", // ToBeUpdated
+  attack: 3,
+  defense: 2,
+  special_ability: "being chalant",
 };
 
 const robertOurBoardDetailProps = {
