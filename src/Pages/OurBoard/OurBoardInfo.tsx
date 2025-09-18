@@ -413,11 +413,11 @@ const masonOurBoardDetailProps = {
 
 const devMembers = {
   Rachel: "/memberPhotos/Rachel_Lin.png",
+  Luca: "/memberPhotos/Luca.jpg",
   Aidan: "/underConstruction/traffic-barrier.png",
-  Luca: "/underConstruction/traffic-barrier.png",
-  Vuong: "/underConstruction/traffic-barrier.png",
+  Vuong: "/memberPhotos/Vuong.jpg",
   Siddhant: "/underConstruction/traffic-barrier.png",
-  Sai: "/underConstruction/traffic-barrier.png",
+  Sai: "/memberPhotos/Sai.jpg",
   Rithwik: "/memberPhotos/Rithwikmishra.png",
   // Jason: "/underConstruction/traffic-barrier.png",
 };
