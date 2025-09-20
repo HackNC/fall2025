@@ -27,6 +27,14 @@ export default {
         'font-purple': '#C3D6FF'
       },
 
+      dropShadow: {
+        'sponsor-logo': '0 2px 5px #EAE4DE'
+      },
+      
+      boxShadow: {
+        'sponsor-box': '0 2px 8px #EAE4DECF'
+      },
+
       textShadow: {
         'primary-dark': '0 2px 4px #050423',
         'primary-light': '0 2px 4px #EAE4DE',
