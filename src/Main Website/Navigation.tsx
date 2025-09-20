@@ -156,7 +156,7 @@ const Navigation: React.FC = () => {
         {/* ------------------------------------------------------------
             DESKTOP NAVIGATION (visible above md)
            ------------------------------------------------------------ */}
-        <nav className="pt-[20px] max-md:hidden">
+        <nav className="pt-[20px]  max-md:hidden">
           <ul className="flex gap-[100px] max-[1047px]:gap-[60px] list-none items-center m-0">
             {/* <li>
               <a

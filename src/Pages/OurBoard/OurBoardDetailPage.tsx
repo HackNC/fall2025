@@ -173,7 +173,7 @@ const CarouselItem: React.FC<{
   image: string;
   accentColor: string;
   styles: string;
-}> = ({ relativeIdx, name, image, accentColor, styles }) => {
+}> = React.memo(({ relativeIdx, name, image, accentColor, styles }) => {
   return (
     <div
       className={`absolute transition-all duration-500 ease-in-out ${styles}`}
@@ -196,7 +196,7 @@ const CarouselItem: React.FC<{
       </p>
     </div>
   );
-};
+});
 
 /* ------------------------------------------------------------
     Carousel: Member carousel for team section
@@ -211,12 +211,12 @@ const Carousel: React.FC<{
   // Carousel navigation handlers
   const handleNext = () => {
     setCurrentIndex(
-      currentIndex === 0 ? memberNames.length - 1 : currentIndex - 1
+      currentIndex === memberNames.length - 1 ? 0 : currentIndex + 1
     );
   };
   const handlePrev = () => {
     setCurrentIndex(
-      currentIndex === memberNames.length - 1 ? 0 : currentIndex + 1
+      currentIndex === 0 ? memberNames.length - 1 : currentIndex - 1
     );
   };
 
@@ -230,13 +230,8 @@ const Carousel: React.FC<{
       currentIndex + 2,
     ];
     const newNames = idxs.map((idx) => {
-      if (idx < 0) {
-        return memberNames[idx + memberNames.length];
-      } else if (idx > memberNames.length - 1) {
-        return memberNames[idx - memberNames.length];
-      } else {
-        return memberNames[idx];
-      }
+      const wrappedIdx = (idx + memberNames.length) % memberNames.length;
+      return memberNames[wrappedIdx];
     });
     return newNames;
   }, [currentIndex]);
@@ -272,7 +267,7 @@ const Carousel: React.FC<{
             if (positionClasses) {
               return (
                 <CarouselItem
-                  key={name}
+                  key={`${name}-${idx}`}
                   relativeIdx={relativeIdx}
                   name={name}
                   image={members[name]}
