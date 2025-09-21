@@ -19,7 +19,7 @@ const BottomDecor = () => {
         // maybe just put Event as CustomEvent and get rid of type casting
         const handleScrollEvent = (event: Event) => {
             let timeout: ReturnType<typeof setTimeout>;
-            timeout = 3000
+            // timeout = 3000
             const customEvent = event as CustomEvent<String>;
             // console.log("Received scroll event:", customEvent.detail);
 
@@ -28,7 +28,7 @@ const BottomDecor = () => {
             } else if (customEvent.detail === "previous") {
                 setScrollDirection(Directions.PREVIOUS);
             } else if (customEvent.detail == "static") {
-                clearTimeout(timeout);
+                // clearTimeout(timeout);
                 timeout = setTimeout(() => {
                     setScrollDirection(Directions.STATIC);
                 }, 3000);

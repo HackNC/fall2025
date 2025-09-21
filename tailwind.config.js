@@ -17,13 +17,22 @@ export default {
         'gradient-top': '#151A3C',
         'gradient-bottom': '#3746A2',
         'font-light-blue': '#82CCFA',
+        'font-sky-blue': '#3ABDDE',
         'font-dark-blue': '#82A8FA',
         'font-cyan': '#65E6DB',
-        'font-green': '#8AFAA6',
+        'font-green': '#8AFA82',
         'font-orange': '#FAD082',
         'font-peach': '#FA9E82',
         'font-pink': '#FA8282',
         'font-purple': '#C3D6FF'
+      },
+
+      dropShadow: {
+        'sponsor-logo': '0 2px 5px #EAE4DE'
+      },
+      
+      boxShadow: {
+        'sponsor-box': '0 2px 8px #EAE4DECF'
       },
 
       textShadow: {

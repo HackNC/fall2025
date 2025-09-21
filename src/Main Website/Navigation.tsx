@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { scrollToSection } from "./MainWeb";
+import { scrollToFrontSection } from "./MainWeb";
 import { makeIsMobileState } from "./Utils.tsx"
 
 
@@ -155,7 +156,7 @@ const Navigation: React.FC = () => {
         {/* ------------------------------------------------------------
             DESKTOP NAVIGATION (visible above md)
            ------------------------------------------------------------ */}
-        <nav className="pt-[20px] max-md:hidden">
+        <nav className="pt-[20px]  max-md:hidden">
           <ul className="flex gap-[100px] max-[1047px]:gap-[60px] list-none items-center m-0">
             {/* <li>
               <a
@@ -279,7 +280,7 @@ const Navigation: React.FC = () => {
                           handleDesktopItemClick();
                           scrollToSection("OurBoardPage");
                         }}
-                        className="block text-[#050423] no-underline text-[36px] max-[1047px]:text-[26px]"
+                        className="block text-primary-dark no-underline text-[36px] max-[1047px]:text-[26px]"
                         style={{ fontFamily: "'Jersey 15', sans-serif" }}
                       >
                         our board
@@ -432,7 +433,7 @@ const Navigation: React.FC = () => {
               <a href="#"
                 onClick={() => {
                   handleMobileItemClick();
-                  scrollToSection("AboutPageMobile");
+                  scrollToFrontSection("AboutPage");
                 }}>
                 about
               </a>
@@ -460,7 +461,7 @@ const Navigation: React.FC = () => {
               <a href="#"
                 onClick={() => {
                   handleMobileItemClick();
-                  scrollToSection("OurBoardPage");
+                  scrollToFrontSection("OurBoardPage");
                 }}>
                 our board
               </a>
@@ -471,7 +472,10 @@ const Navigation: React.FC = () => {
                 : "opacity-0 translate-y-2"
                 }`}
             >
-              <a href="#" onClick={handleMobileItemClick}>
+              <a href="#" onClick={() => {
+                handleMobileItemClick();
+                scrollToFrontSection("SponsorshipPage");
+              }}>
                 sponsors
               </a>
             </li>
