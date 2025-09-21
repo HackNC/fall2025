@@ -37,7 +37,7 @@ const AboutPage: React.FC = () => {
     return (
         <div
             id="AboutPage"
-            className="md:flex flex-col items-center justify-center max-w-[90%]"
+            className="md:flex flex-col items-center justify-center md:max-w-[90%]"
         >
             <div className="flex flex-col text-primary-light text-shadow-font-purple tracking-widest max-w-3xl">
                 {/* Page Title */}
@@ -49,7 +49,7 @@ const AboutPage: React.FC = () => {
                 <div className="flex md:flex-row flex-col justify-center items-center mb-4">
                     <div className="">
                         <AboutBorder>
-                            <p className="justify-center md:ml-0 ml-20">
+                            <p className="justify-center">
                                 HackNC is a weekend for students of all skill levels to broaden their talents.
                                 Your challenge is to make an awesome project in just 24 hours. You will have
                                 access to hands-on tech workshops, sponsor networking, as well as exciting talks

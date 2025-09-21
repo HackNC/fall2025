@@ -1,5 +1,5 @@
 import React, { useState, useEffect, type JSX } from 'react';
-import { MAX_MOBILE_WIDTH } from '../Main Website/Utils';
+import { makeIsMobileState } from '../Main Website/Utils';
 
 const SponsorshipPage: React.FC = () => {
     // Define the exact order of sponsor filenames
@@ -10,19 +10,13 @@ const SponsorshipPage: React.FC = () => {
         'infosys.png', 'unc_cs_dept.png',
     ];
 
-    const [isMobile, setIsMobile] = useState(window.innerWidth < MAX_MOBILE_WIDTH);
+    const [isMobile, setIsMobile] = makeIsMobileState();
 
     const gridClass = isMobile ? 'grid grid-cols-1 gap-y-12' : 'grid grid-cols-3 gap-x-8';
     const divClass = 'px-4 sm:px-20 text-center';
     const imgClass = isMobile
         ? 'w-[50%] h-auto p-5 object-contain drop-shadow-sponsor-logo'
         : 'w-full h-auto px-5 py-2 object-contain drop-shadow-sponsor-logo';
-
-    useEffect(() => {
-        const handleResize = () => setIsMobile(window.innerWidth < MAX_MOBILE_WIDTH);
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
 
     // --- NEW LOGIC FOR COLUMN DISTRIBUTION ---
 
@@ -72,15 +66,15 @@ const SponsorshipPage: React.FC = () => {
             <h1 className="text-[#F6B1B1] text-shadow-font-pink mb-10">SPONSORS</h1>
             <div className={gridClass}>
                 {/* Column 1 (Left) */}
-                <div className="flex flex-col items-center justify-around scale-95 rounded-xl bg-font-light-blue bg-opacity-[10%] shadow-sponsor-box">
+                <div className="flex flex-col items-center justify-around md:scale-95 bg-font-peach bg-opacity-65 rounded-xl shadow-font-purple shadow-md">
                     {columns[0]}
                 </div>
-                {/* Column 2 (Middle) */}
-                <div className="flex flex-col items-center justify-around scale-110 rounded-xl bg-font-light-blue bg-opacity-[10%] shadow-sponsor-box">
+                {/* Column 2 (Middle) - This one is scaled up for emphasis */}
+                <div className="flex flex-col items-center justify-around md:scale-110 bg-font-peach bg-opacity-65 rounded-xl shadow-font-light-blue shadow-md">
                     {columns[1]}
                 </div>
                 {/* Column 3 (Right) */}
-                <div className="flex flex-col items-center justify-around scale-95 rounded-xl bg-font-light-blue bg-opacity-[10%] shadow-sponsor-box">
+                <div className="flex flex-col items-center justify-around md:scale-95 bg-font-peach bg-opacity-65 rounded-xl shadow-font-purple shadow-md">
                     {columns[2]}
                 </div>
             </div>
