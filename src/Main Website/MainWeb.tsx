@@ -38,9 +38,10 @@ const ScreenWrapper: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
     <div
       className="
         mx-auto my-auto
-        w-[95vw] h-[95vh] md:w-[75vw] md:h-[80vh]
-        max-w-full     
+        w-full md:w-[75vw] md:h-[80vh]
+        px-[2.5vw] md:px-0
         md:rounded-[140px] md:shadow-2xl md:bg-gradient-to-b md:from-gradient-top md:to-gradient-bottom
+        overflow-x-hidden
         md:overflow-x-auto
         overflow-y-auto
         drop-shadow-lg
