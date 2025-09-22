@@ -15,9 +15,9 @@ const leadMembers = {
 
 const leadOurBoardDetailStyles = {
   accentColor: "#82A8FA",
-  border: "./ourBoardPageAssets/lead_border.png",
-  filledStar: "./ourBoardPageAssets/white star graphics.png",
-  emptyStar: "./ourBoardPageAssets/black star lead.png",
+  border: "/ourBoardPageAssets/lead_border.png",
+  filledStar: "/ourBoardPageAssets/white star graphics.png",
+  emptyStar: "/ourBoardPageAssets/black star lead.png",
 };
 
 /* ------------------------------------------------------------
@@ -109,9 +109,9 @@ const graphicsMembers = {
 
 const graphicsOurBoardDetailStyles = {
   accentColor: "#82CCFA",
-  border: "./ourBoardPageAssets/graphics_border.png",
-  filledStar: "./ourBoardPageAssets/white star graphics.png",
-  emptyStar: "./ourBoardPageAssets/black star graphics.png",
+  border: "/ourBoardPageAssets/graphics_border.png",
+  filledStar: "/ourBoardPageAssets/white star graphics.png",
+  emptyStar: "/ourBoardPageAssets/black star graphics.png",
 };
 
 /* ------------------------------------------------------------
@@ -165,9 +165,9 @@ const experienceMembers = {
 
 const experienceOurBoardDetailStyles = {
   accentColor: "#65E6DB",
-  border: "./ourBoardPageAssets/hacker_exp_border.png",
-  filledStar: "./ourBoardPageAssets/white star hacker exp.png",
-  emptyStar: "./ourBoardPageAssets/black star hacker exp.png",
+  border: "/ourBoardPageAssets/hacker_exp_border.png",
+  filledStar: "/ourBoardPageAssets/white star hacker exp.png",
+  emptyStar: "/ourBoardPageAssets/black star hacker exp.png",
 };
 
 /* ------------------------------------------------------------
@@ -240,9 +240,9 @@ const operationsMembers = {
 
 const operationsOurBoardDetailStyles = {
   accentColor: "#8AFA82",
-  border: "./ourBoardPageAssets/event_ops_border.png",
-  filledStar: "./ourBoardPageAssets/white star event ops.png",
-  emptyStar: "./ourBoardPageAssets/black star event ops.png",
+  border: "/ourBoardPageAssets/event_ops_border.png",
+  filledStar: "/ourBoardPageAssets/white star event ops.png",
+  emptyStar: "/ourBoardPageAssets/black star event ops.png",
 };
 
 /* ------------------------------------------------------------
@@ -296,9 +296,9 @@ const sponsorshipMembers = {
 
 const sponsorshipOurBoardDetailStyles = {
   accentColor: "#FAD082",
-  border: "./ourBoardPageAssets/sponsorship_border.png",
-  filledStar: "./ourBoardPageAssets/white star sponsorship.png",
-  emptyStar: "./ourBoardPageAssets/black star sponsorship.png",
+  border: "/ourBoardPageAssets/sponsorship_border.png",
+  filledStar: "/ourBoardPageAssets/white star sponsorship.png",
+  emptyStar: "/ourBoardPageAssets/black star sponsorship.png",
 };
 
 /* ------------------------------------------------------------
@@ -395,9 +395,9 @@ const devMembers = {
 
 const devOurBoardDetailStyles = {
   accentColor: "#FA9E82",
-  border: "./ourBoardPageAssets/dev_border.png",
-  filledStar: "./ourBoardPageAssets/white star development.png",
-  emptyStar: "./ourBoardPageAssets/black star development.png",
+  border: "/ourBoardPageAssets/dev_border.png",
+  filledStar: "/ourBoardPageAssets/white star development.png",
+  emptyStar: "/ourBoardPageAssets/black star development.png",
 };
 
 /* ------------------------------------------------------------
@@ -451,9 +451,9 @@ const marketingMembers = {
 
 const marketingOurBoardDetailStyles = {
   accentColor: "#FA8282",
-  border: "./ourBoardPageAssets/marketing_border.png",
-  filledStar: "./ourBoardPageAssets/white star marketing.png",
-  emptyStar: "./ourBoardPageAssets/black star marketing.png",
+  border: "/ourBoardPageAssets/marketing_border.png",
+  filledStar: "/ourBoardPageAssets/white star marketing.png",
+  emptyStar: "/ourBoardPageAssets/black star marketing.png",
 };
 
 /* ------------------------------------------------------------
