@@ -386,7 +386,7 @@ const masonOurBoardDetailProps = {
 
 const devMembers = {
   Rachel_Lin: "/memberPhotos/Rachel_Lin.png",
-  Aidan_Kim: "/underConstruction/traffic-barrier.png",
+  Aidan_Kim: "/memberPhotos/Aidan_Kim.jpg",
   Luca_Just: "/memberPhotos/Luca Just.jpeg",
   Vuong_Nguyen: "/memberPhotos/Vuong_Nguyen.JPG",
   Sai_Nagamalla: "/memberPhotos/Sai.jpeg",
