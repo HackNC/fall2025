@@ -45,6 +45,8 @@ const ScreenWrapper: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
         md:rounded-[140px] md:shadow-2xl md:bg-gradient-to-b md:from-gradient-top md:to-gradient-bottom
         overflow-x-hidden
         md:overflow-x-auto md:overflow-y-hidden
+        overflow-x-hidden
+        md:overflow-x-auto md:overflow-y-hidden
         overflow-y-auto
         drop-shadow-lg
         shadow-inner-lg
