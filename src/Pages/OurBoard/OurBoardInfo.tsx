@@ -1,4 +1,5 @@
 import OurDetailBoardPage from "./OurBoardDetailPage";
+import { SectionWrapper } from "../../Main Website/MainWeb";
 
 /* <<<============================ [START] BOARD INFORMATION================================>>> */
 
@@ -10,14 +11,20 @@ import OurDetailBoardPage from "./OurBoardDetailPage";
    ------------------------------------------------------------ */
 
 const leadMembers = {
-  Ram: "/logos/pixel_ram128.png",
+  Baarbarian: "/underConstruction/traffic-barrier.png",
+  Goataclysm: "/underConstruction/traffic-barrier.png",
+  Baarserker: "/underConstruction/traffic-barrier.png",
+  Shearlock: "/underConstruction/traffic-barrier.png",
+  Ramurai: "/underConstruction/traffic-barrier.png",
+  Baaard: "/underConstruction/traffic-barrier.png",
+  GoatLord: "/underConstruction/traffic-barrier.png",
 };
 
 const leadOurBoardDetailStyles = {
   accentColor: "#82A8FA",
   border: "./ourBoardPageAssets/lead_border.png",
-  filledStar: "./ourBoardPageAssets/white star graphics.png",
-  emptyStar: "./ourBoardPageAssets/black star lead.png",
+  filledStar: "./ourBoardPageAssets/white_star_graphics.png",
+  emptyStar: "./ourBoardPageAssets/black_star_lead.png",
 };
 
 /* ------------------------------------------------------------
@@ -52,7 +59,7 @@ const aliciaInfoCardProps = {
 };
 
 const aliciaOurBoardDetailProps = {
-  mainImage: "/memberPhotos/albao.jpg", // ToBeUpdated
+  mainImage: "/underConstruction/work-in-progress-barrier.png", // ToBeUpdated
   drawingImage: "/ourBoardDrawings/alicia.png",
   infoCardProps: aliciaInfoCardProps,
   members: leadMembers,
@@ -71,8 +78,8 @@ const nagaInfoCardProps = {
 };
 
 const nagaOurBoardDetailProps = {
-  mainImage: "/memberPhotos/Naga_Yeyuvuri.jpg",
-  drawingImage: "/ourBoardPageAssets/white star lead.png",
+  mainImage: "/underConstruction/work-in-progress-barrier.png",
+  drawingImage: "/underConstruction/work-in-progress-sign.png",
   infoCardProps: nagaInfoCardProps,
   members: leadMembers,
 };
@@ -90,8 +97,8 @@ const jackInfoCardProps = {
 };
 
 const jackOurBoardDetailProps = {
-  mainImage: "/memberPhotos/Jack_Huo.jpg",
-  drawingImage: "/ourBoardPageAssets/white star lead.png",
+  mainImage: "/underConstruction/work-in-progress-barrier.png",
+  drawingImage: "/underConstruction/work-in-progress-sign.png",
   infoCardProps: jackInfoCardProps,
   members: leadMembers,
 };
@@ -105,13 +112,15 @@ const jackOurBoardDetailProps = {
 
 const graphicsMembers = {
   AngLam: "/memberPhotos/Ang_Lam.jpg",
+  Star: "/ourBoardPageAssets/white_star_graphics.png",
+  Ram: "/logos/pixel_ram128.png",
 };
 
 const graphicsOurBoardDetailStyles = {
   accentColor: "#82CCFA",
   border: "./ourBoardPageAssets/graphics_border.png",
-  filledStar: "./ourBoardPageAssets/white star graphics.png",
-  emptyStar: "./ourBoardPageAssets/black star graphics.png",
+  filledStar: "./ourBoardPageAssets/white_star_graphics.png",
+  emptyStar: "./ourBoardPageAssets/black_star_lead.png",
 };
 
 /* ------------------------------------------------------------
@@ -160,14 +169,20 @@ const amberOurBoardDetailProps = {
    ------------------------------------------------------------ */
 
 const experienceMembers = {
-  Ram: "/logos/pixel_ram128.png",
+  Baarbarian: "/underConstruction/traffic-barrier.png",
+  Goataclysm: "/underConstruction/traffic-barrier.png",
+  Baarserker: "/underConstruction/traffic-barrier.png",
+  Shearlock: "/underConstruction/traffic-barrier.png",
+  Ramurai: "/underConstruction/traffic-barrier.png",
+  Baaard: "/underConstruction/traffic-barrier.png",
+  GoatLord: "/underConstruction/traffic-barrier.png",
 };
 
 const experienceOurBoardDetailStyles = {
   accentColor: "#65E6DB",
   border: "./ourBoardPageAssets/hacker_exp_border.png",
-  filledStar: "./ourBoardPageAssets/white star hacker exp.png",
-  emptyStar: "./ourBoardPageAssets/black star hacker exp.png",
+  filledStar: "./ourBoardPageAssets/white_star_graphics.png",
+  emptyStar: "./ourBoardPageAssets/black_star_lead.png",
 };
 
 /* ------------------------------------------------------------
@@ -198,7 +213,7 @@ const harsehajInfoCardProps = {
   position: "co-director of hacker experience",
   attack: 5, // ToBeUpdated
   defense: 3, // ToBeUpdated
-  special_ability: "rollerblading", // ToBeUpdated
+  special_ability: "summon the sacred goat", // ToBeUpdated
 };
 
 const harsehajOurBoardDetailProps = {
@@ -235,14 +250,20 @@ const alexOurBoardDetailProps = {
    ------------------------------------------------------------ */
 
 const operationsMembers = {
-  Ram: "/logos/pixel_ram128.png",
+  Baarbarian: "/underConstruction/traffic-barrier.png",
+  Goataclysm: "/underConstruction/traffic-barrier.png",
+  Baarserker: "/underConstruction/traffic-barrier.png",
+  Shearlock: "/underConstruction/traffic-barrier.png",
+  Ramurai: "/underConstruction/traffic-barrier.png",
+  Baaard: "/underConstruction/traffic-barrier.png",
+  GoatLord: "/underConstruction/traffic-barrier.png",
 };
 
 const operationsOurBoardDetailStyles = {
   accentColor: "#8AFA82",
   border: "./ourBoardPageAssets/event_ops_border.png",
-  filledStar: "./ourBoardPageAssets/white star event ops.png",
-  emptyStar: "./ourBoardPageAssets/black star event ops.png",
+  filledStar: "./ourBoardPageAssets/white_star_graphics.png",
+  emptyStar: "./ourBoardPageAssets/black_star_lead.png",
 };
 
 /* ------------------------------------------------------------
@@ -265,7 +286,7 @@ const sanayOurBoardDetailProps = {
 };
 
 /* ------------------------------------------------------------
-                            Sky Removed
+                            Sky
    ------------------------------------------------------------ */
 
 const skyInfoCardProps = {
@@ -291,14 +312,20 @@ const skyOurBoardDetailProps = {
    ------------------------------------------------------------ */
 
 const sponsorshipMembers = {
-  Ram: "/logos/pixel_ram128.png",
+  Baarbarian: "/underConstruction/traffic-barrier.png",
+  Goataclysm: "/underConstruction/traffic-barrier.png",
+  Baarserker: "/underConstruction/traffic-barrier.png",
+  Shearlock: "/underConstruction/traffic-barrier.png",
+  Ramurai: "/underConstruction/traffic-barrier.png",
+  Baaard: "/underConstruction/traffic-barrier.png",
+  GoatLord: "/underConstruction/traffic-barrier.png",
 };
 
 const sponsorshipOurBoardDetailStyles = {
   accentColor: "#FAD082",
   border: "./ourBoardPageAssets/sponsorship_border.png",
-  filledStar: "./ourBoardPageAssets/white star sponsorship.png",
-  emptyStar: "./ourBoardPageAssets/black star sponsorship.png",
+  filledStar: "./ourBoardPageAssets/white_star_graphics.png",
+  emptyStar: "./ourBoardPageAssets/black_star_lead.png",
 };
 
 /* ------------------------------------------------------------
@@ -314,7 +341,7 @@ const davydInfoCardProps = {
 };
 
 const davydOurBoardDetailProps = {
-  mainImage: "/memberPhotos/Davyd_Voloshyn.jpg",
+  mainImage: "/underConstruction/work-in-progress-barrier.png", // ToBeUpdated
   drawingImage: "/ourBoardDrawings/davyd.png",
   infoCardProps: davydInfoCardProps,
   members: sponsorshipMembers,
@@ -396,8 +423,8 @@ const devMembers = {
 const devOurBoardDetailStyles = {
   accentColor: "#FA9E82",
   border: "./ourBoardPageAssets/dev_border.png",
-  filledStar: "./ourBoardPageAssets/white star development.png",
-  emptyStar: "./ourBoardPageAssets/black star development.png",
+  filledStar: "./ourBoardPageAssets/white_star_graphics.png",
+  emptyStar: "./ourBoardPageAssets/black_star_lead.png",
 };
 
 /* ------------------------------------------------------------
@@ -407,8 +434,8 @@ const devOurBoardDetailStyles = {
 const yahanInfoCardProps = {
   name: "Yahan Yang",
   position: "director of development",
-  attack: 3,
-  defense: 3,
+  attack: 5, // ToBeUpdated
+  defense: 3, // ToBeUpdated
   special_ability: "SleepzzZZ", // ToBeUpdated
 };
 
@@ -433,7 +460,7 @@ const rishiInfoCardProps = {
 
 const rishiOurBoardDetailProps = {
   mainImage: "/memberPhotos/Rishyendra.JPG",
-  drawingImage: "/ourBoardPageAssets/white star lead.png",
+  drawingImage: "/underConstruction/work-in-progress-sign.png",
   infoCardProps: rishiInfoCardProps,
   members: devMembers,
 };
@@ -446,14 +473,20 @@ const rishiOurBoardDetailProps = {
    ------------------------------------------------------------ */
 
 const marketingMembers = {
-  Ram: "/logos/pixel_ram128.png"
+  Baarbarian: "/underConstruction/traffic-barrier.png",
+  Goataclysm: "/underConstruction/traffic-barrier.png",
+  Baarserker: "/underConstruction/traffic-barrier.png",
+  Shearlock: "/underConstruction/traffic-barrier.png",
+  Ramurai: "/underConstruction/traffic-barrier.png",
+  Baaard: "/underConstruction/traffic-barrier.png",
+  GoatLord: "/underConstruction/traffic-barrier.png",
 };
 
 const marketingOurBoardDetailStyles = {
   accentColor: "#FA8282",
   border: "./ourBoardPageAssets/marketing_border.png",
-  filledStar: "./ourBoardPageAssets/white star marketing.png",
-  emptyStar: "./ourBoardPageAssets/black star marketing.png",
+  filledStar: "./ourBoardPageAssets/white_star_graphics.png",
+  emptyStar: "./ourBoardPageAssets/black_star_lead.png",
 };
 
 /* ------------------------------------------------------------
@@ -463,9 +496,9 @@ const marketingOurBoardDetailStyles = {
 const robertInfoCardProps = {
   name: "Robert Battle",
   position: "co-director of marketing",
-  attack: 3,
-  defense: 2,
-  special_ability: "being chalant",
+  attack: 5, // ToBeUpdated
+  defense: 3, // ToBeUpdated
+  special_ability: "summon the sacred goat", // ToBeUpdated
 };
 
 const robertOurBoardDetailProps = {

@@ -39,14 +39,14 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({ children }) => 
   const [endOfPage, setEndOfPage] = useState(false);
   const [currentPageIndx, setCurrentPageIndx] = useState(0);
 
-  const pageIndex: { [key: number]: string } = {
+  const pageIndex:{ [key: number]: string} = {
     0: "FrontPage",
     1: "CountdownPage",
     2: "AboutPage",
     3: "NewFaqPage",
     4: "SponsorshipPage",
     5: "OurBoardPage",
-    6: "MembersPage_1",
+    6: "MembersPage_1" , 
     7: "MembersPage_2",
     8: "MembersPage_3",
     9: "MembersPage_4"
@@ -164,8 +164,8 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({ children }) => 
   const handleNext = () => {
     const container = containerRef.current;
     if (!container) return;
-
-    let id = pageIndex[currentPageIndx + 1];
+    
+    let id = pageIndex[currentPageIndx+1];
     scrollToSection(id);
     setCurrentPageIndx((prev) => Math.min(prev + 1, Object.keys(pageIndex).length - 1));
   };
@@ -173,7 +173,7 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({ children }) => 
   const handlePrevious = () => {
     const container = containerRef.current;
     if (!container) return;
-    let id = pageIndex[currentPageIndx - 1];
+    let id = pageIndex[currentPageIndx-1];
     scrollToSection(id);
     setCurrentPageIndx((prev) => Math.max(prev - 1, 0));
   };
@@ -186,7 +186,7 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({ children }) => 
           // Previous Pink Arrow Navigation 
           <button
             onClick={handlePrevious}
-            className="bg-[url('/ourBoardPageAssets/plain_arrow.png')] bg-cover bg-center w-[65px] h-[65px] absolute left-10 flex items-center justify-center transition-shadow scale-x-[-1] z-50"
+            className="bg-[url('/frontPageAssets/pink_arrow.png')] bg-cover bg-center w-[8%] h-[8%] absolute left-10 flex items-center justify-center transition-shadow scale-x-[-1] z-50"
           />
         )}
         {/* Scroll Container */}
@@ -205,7 +205,7 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({ children }) => 
         {!isMobile && !endOfPage && (
           <button
             onClick={handleNext}
-            className="bg-[url('/ourBoardPageAssets/plain_arrow.png')] bg-cover bg-center w-[65px] h-[65px] absolute right-10 flex items-center justify-center transition-shadow"
+            className="bg-[url('/frontPageAssets/pink_arrow.png')] bg-cover bg-center w-[8%] h-[8%] absolute right-10 flex items-center justify-center transition-shadow"
           />
         )}
       </div>
