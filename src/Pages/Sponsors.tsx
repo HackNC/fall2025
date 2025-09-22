@@ -10,7 +10,7 @@ const SponsorshipPage: React.FC = () => {
         'infosys.png', 'unc_cs_dept.png',
     ];
 
-    const [isMobile, setIsMobile] = makeIsMobileState();
+    const [isMobile, setIsMobile] = makeIsMobileState(undefined, []);
 
     const gridClass = isMobile ? 'grid grid-cols-1 gap-y-12' : 'grid grid-cols-3 gap-x-8';
     const divClass = 'px-4 sm:px-20 text-center';

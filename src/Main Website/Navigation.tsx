@@ -50,12 +50,13 @@ const Navigation: React.FC = () => {
      Description: Automatically closes mobile menu if mobile view 
      is exited
      ============================================================ */
-  const [isMobile, setIsMobile] = makeIsMobileState((nextValue) => {
+  const [isMobile, setIsMobile] = makeIsMobileState((nextValue = false) => {
     if (!nextValue && mobileMenuOpen) {
       setMobileMenuOpen(false);
       resetAnimations();
     }
   }, [mobileMenuOpen]);
+
 
   /* ============================================================
      RESET ANIMATIONS
