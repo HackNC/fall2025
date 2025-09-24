@@ -193,12 +193,20 @@ const Navigation: React.FC = () => {
               <li className="relative">
                 {/* About dropdown toggle */}
                 <button
-                  onClick={toggleAboutDropdown}
                   className="inline-flex items-center gap-2 p-0 bg-transparent border-0 cursor-pointer text-[36px] max-[1132px]:text-[33px] leading-none"
                   style={{ fontFamily: "'Jersey 15', sans-serif" }}
                 >
-                  about
                   <span
+                    onClick={() => {
+                      handleMobileItemClick();
+                      scrollToFrontSection("AboutPage");
+                    }}
+                  >
+                    about
+                  </span>
+
+                  <span
+                    onClick={toggleAboutDropdown}
                     className={`inline-flex items-center transition-transform duration-200 ${
                       aboutOpen ? "rotate-180" : ""
                     }`}
@@ -255,26 +263,12 @@ const Navigation: React.FC = () => {
                           href="#"
                           onClick={() => {
                             handleDesktopItemClick();
-                            scrollToSection("FrontPage");
+                            scrollToSection("NewFaqPage");
                           }}
                           className="block text-primary-dark no-underline text-[36px] max-[1132px]:text-[33px]"
                           style={{ fontFamily: "'Jersey 15', sans-serif" }}
                         >
-                          home
-                        </a>
-                      </li>
-
-                      <li className="py-1">
-                        <a
-                          href="#"
-                          onClick={() => {
-                            handleDesktopItemClick();
-                            scrollToSection("AboutPage");
-                          }}
-                          className="block text-primary-dark no-underline text-[36px] max-[1132px]:text-[33px]"
-                          style={{ fontFamily: "'Jersey 15', sans-serif" }}
-                        >
-                          about
+                          faq
                         </a>
                       </li>
 
@@ -297,7 +291,7 @@ const Navigation: React.FC = () => {
               </li>
 
               {/* Link */}
-              <li>
+              {/* <li>
                 <a
                   href="#"
                   onClick={() => {
@@ -309,7 +303,7 @@ const Navigation: React.FC = () => {
                 >
                   faq
                 </a>
-              </li>
+              </li> */}
 
               {/* Sponsors link */}
               <li>
@@ -325,6 +319,21 @@ const Navigation: React.FC = () => {
                   sponsors
                 </a>
               </li>
+
+              {/* Portal link: UNCOMMENT WHEN PORTAL LINKING IS PROVIDED */}
+              {/* <li>
+                <a
+                  href="#"
+                  onClick={() => {
+                    handleDesktopItemClick();
+                    scrollToSection("");
+                  }}
+                  className="text-[36px] max-[1132px]:text-[33px] no-underline"
+                  style={{ fontFamily: "'Jersey 15', sans-serif" }}
+                >
+                  login
+                </a>
+              </li> */}
             </ul>
           </nav>
 
@@ -332,26 +341,6 @@ const Navigation: React.FC = () => {
             BANNER + HAMBURGER MENU
            ------------------------------------------------------------ */}
           <div className="flex items-center max-md:relative max-md:w-full">
-            {/* Mobile banner */}
-            <div className="hidden max-[1023px]:flex items-center absolute top-0 right-16">
-              <a
-                href="https://mlh.io/seasons/2026/events"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="./MLHBanner.png"
-                  alt="MLH Banner"
-                  className="w-[72px] h-auto
-                max-[1132px]:mr-1 max-[1132px]:w-[70px] 
-                max-[455px]:mr-[0rem] max-[455px]:w-[55px]
-                max-[375px]:mr-[0rem] max-[375px]:w-[50px]
-                max-[320px]:w-[45px]
-                max-[314px]:w-[40px]
-                max-[300px]:w-[35px]"
-                />
-              </a>
-            </div>
             {/* Desktop banner */}
             <a
               href="https://mlh.io/seasons/2026/events"
@@ -364,46 +353,68 @@ const Navigation: React.FC = () => {
                 className="w-[112px] h-auto mr-[48px] max-[1132px]:w-[102px] max-[1132px]:mr-[38px] max-md:hidden"
               />
             </a>
-            {/* Hamburger toggle */}
-            <button
-              onClick={() => setMobileMenuOpen((prev) => !prev)}
-              className="hidden max-md:flex justify-center items-center p-2 absolute top-4 right-4 z-[3500] bg-transparent transition-transform duration-150 ease-in-out max-[455px]:p-[0.3rem] max-[375px]:p-[0.2rem]"
-              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+          </div>
+
+          {/* Hamburger toggle */}
+          <button
+            onClick={() => setMobileMenuOpen((prev) => !prev)}
+            className="hidden max-md:flex justify-center items-center p-2 absolute top-4 right-4 z-[3500] bg-transparent transition-transform duration-150 ease-in-out max-[455px]:p-[0.3rem] max-[375px]:p-[0.2rem]"
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+          >
+            {mobileMenuOpen ? (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.8}
+                className="w-8 h-8 transform transition-transform duration-150 ease-in-out rotate-90 max-[455px]:h-6 stroke-primary-dark"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18 18 6M6 6l12 12"
+                />
+              </svg>
+            ) : (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.8}
+                className={`w-8 h-8 transform transition-transform duration-150 ease-in-out max-[455px]:h-6 ${
+                  getShowLightNavColor()
+                    ? "stroke-primary-light"
+                    : "stroke-primary-dark"
+                }`}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+            )}
+          </button>
+
+          {/* Mobile MLH Banner */}
+          <div className="hidden max-[1023px]:flex items-center absolute top-0 right-16">
+            <a
+              href="https://mlh.io/seasons/2026/events"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              {mobileMenuOpen ? (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.8}
-                  className="w-8 h-8 transform transition-transform duration-150 ease-in-out rotate-90 max-[455px]:h-6 stroke-primary-dark"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 18 18 6M6 6l12 12"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.8}
-                  className={`w-8 h-8 transform transition-transform duration-150 ease-in-out max-[455px]:h-6 ${
-                    getShowLightNavColor()
-                      ? "stroke-primary-light"
-                      : "stroke-primary-dark"
-                  }`}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                  />
-                </svg>
-              )}
-            </button>
+              <img
+                src="./MLHBanner.png"
+                alt="MLH Banner"
+                className="w-[72px] h-auto
+                max-[1132px]:mr-1 max-[1132px]:w-[70px] 
+                max-[455px]:mr-[0rem] max-[455px]:w-[55px]
+                max-[375px]:mr-[0rem] max-[375px]:w-[50px]
+                max-[320px]:w-[45px]
+                max-[314px]:w-[40px]
+                max-[300px]:w-[35px]"
+              />
+            </a>
           </div>
         </div>
       </header>
