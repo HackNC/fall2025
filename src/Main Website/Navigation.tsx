@@ -348,10 +348,10 @@ const Navigation: React.FC = () => {
               rel="noopener noreferrer"
             >
               <img
-                src="./MLHBanner.png"
-                alt="MLH Banner"
+                src="https://s3.amazonaws.com/logged-assets/trust-badge/2026/mlh-trust-badge-2026-blue.svg"
+                alt="Major League Hacking 2026 Hackathon Season"
                 className="w-[112px] h-auto mr-[48px] max-[1132px]:w-[102px] max-[1132px]:mr-[38px] max-md:hidden"
-              />
+              ></img>
             </a>
           </div>
 
@@ -404,8 +404,8 @@ const Navigation: React.FC = () => {
               rel="noopener noreferrer"
             >
               <img
-                src="./MLHBanner.png"
-                alt="MLH Banner"
+                src="https://s3.amazonaws.com/logged-assets/trust-badge/2026/mlh-trust-badge-2026-blue.svg"
+                alt="Major League Hacking 2026 Hackathon Season"
                 className="w-[72px] h-auto
                 max-[1132px]:mr-1 max-[1132px]:w-[70px] 
                 max-[455px]:mr-[0rem] max-[455px]:w-[55px]
@@ -413,7 +413,7 @@ const Navigation: React.FC = () => {
                 max-[320px]:w-[45px]
                 max-[314px]:w-[40px]
                 max-[300px]:w-[35px]"
-              />
+              ></img>
             </a>
           </div>
         </div>
