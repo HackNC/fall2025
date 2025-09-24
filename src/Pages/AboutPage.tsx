@@ -39,7 +39,7 @@ const AboutPage: React.FC = () => {
             id="AboutPage"
             className="md:flex flex-col items-center justify-center md:max-w-[90%]"
         >
-            <div className="flex flex-col text-primary-light text-shadow-font-purple tracking-widest max-w-3xl">
+            <div className="flex flex-col text-primary-light text-shadow-font-purple tracking-widest max-w-3xl mx-auto">
                 {/* Page Title */}
                 <div className="flex justify-center mt-20 md:mt-0">
                     <h1 className="text-font-purple text-shadow-font-purple justify-center">ABOUT</h1>
