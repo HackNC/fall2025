@@ -57,8 +57,6 @@ const ScreenWrapper: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   );
 };
 
-
-
 export const SectionWrapper: React.FC<React.PropsWithChildren<{}>> = ({
   children,
 }) => {
@@ -71,10 +69,11 @@ export const SectionWrapper: React.FC<React.PropsWithChildren<{}>> = ({
         md:w-[var(--arcade-w)] 
         md:min-h-[var(--arcade-h)] 
         md:h-[var(--arcade-h)]
+        min-[1024px]:my-[5vw]
       "
-    // bg-[url('/noise_bg.svg')]
-    // bg-repeat
-    // bg-blend-overlay
+      // bg-[url('/noise_bg.svg')]
+      // bg-repeat
+      // bg-blend-overlay
     >
       {children}
     </section>
