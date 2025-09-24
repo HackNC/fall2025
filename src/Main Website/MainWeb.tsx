@@ -10,6 +10,7 @@ import BottomDecor from "./BottomDecor";
 // import FAQ from "../Pages/FAQPage";
 import NewFaqPage from "../Pages/NewFaqPage";
 import OurBoardPage from "../Pages/OurBoard/OurBoardPage";
+import Portal from "../Pages/Portal";
 import {
   Minh,
   Naga,
@@ -20,7 +21,6 @@ import {
   Ayush,
   Harsehaj,
   Sanay,
-  Sky,
   Davyd,
   Ishitha,
   Sahasra,
@@ -185,6 +185,11 @@ const MainPage: React.FC = () => {
               </SectionWrapper>
 
               {/* Not Ready Yet! */}
+              {/* <SectionWrapper>
+                <Portal />
+              </SectionWrapper> */}
+
+              {/* Not Ready Yet! */}
               <SectionWrapper>
                 <OurBoardPage />
               </SectionWrapper>
@@ -263,11 +268,10 @@ const MainPage: React.FC = () => {
               {page === Pages.DEVELOPMENT && (
                 <>
                   <SectionWrapper>
-                    {" "}
-                    <Rishi />
+                    <Yahan />
                   </SectionWrapper>
                   <SectionWrapper>
-                    <Yahan />
+                    <Rishi />
                   </SectionWrapper>
                 </>
               )}

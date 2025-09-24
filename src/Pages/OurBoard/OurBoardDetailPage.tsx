@@ -249,24 +249,19 @@ const Carousel: React.FC<{
       >
         team members
       </GlowItem>
-      <div className="flex justify-center items-center">
-        <button onClick={handlePrev}>
-          <img
-            className="w-6 h-6 mr-3 transform rotate-180"
-            src="./ourBoardPageAssets/plain_arrow.png"
-            alt="Prev arrow"
-          />
-        </button>
-        <div className="w-[275px] h-[125px] mt-4 scale- -mx-2 flex items-center justify-center relative">
+
+      <div className="relative flex justify-center items-center">
+        {/* Carousel container */}
+        <div className="relative w-[275px] h-[125px] mt-4 mx-8 flex items-center justify-center">
           {names.map((name, idx) => {
             const relativeIdx = idx - 2;
 
             const positionClasses = {
-              "-2": "opacity-0 scale-[60%] -translate-x-[80px] z-5",
+              "-2": "opacity-0 scale-[60%] -translate-x-[80px] z-5 pointer-events-none",
               "-1": "opacity-100 scale-[80%] -translate-x-[80px] z-10",
               "0": "opacity-100 scale-[100%] translate-x-0 z-20",
               "1": "opacity-100 scale-[80%] translate-x-[80px] z-10",
-              "2": "opacity-0 scale-[60%] translate-x-[80px] z-5",
+              "2": "opacity-0 scale-[60%] translate-x-[80px] z-5 pointer-events-none",
             }[relativeIdx.toString()];
 
             if (positionClasses) {
@@ -283,15 +278,33 @@ const Carousel: React.FC<{
             }
           })}
         </div>
-        <button onClick={handleNext}>
+
+        {/* Prev button */}
+        <button
+          onClick={handlePrev}
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-30"
+        >
           <img
-            className="w-6 h-6 ml-2"
+            className="w-10 h-10 transform rotate-180"
+            src="./ourBoardPageAssets/plain_arrow.png"
+            alt="Prev arrow"
+          />
+        </button>
+
+        {/* Next button */}
+        <button
+          onClick={handleNext}
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-30"
+        >
+          <img
+            className="w-10 h-10"
             src="./ourBoardPageAssets/plain_arrow.png"
             alt="Next arrow"
           />
         </button>
       </div>
     </>
+
   );
 };
 

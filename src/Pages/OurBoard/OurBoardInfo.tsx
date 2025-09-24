@@ -29,7 +29,7 @@ const minhInfoCardProps = {
   position: "co-lead director",
   attack: 3,
   defense: 4,
-  special_ability: "he will get back to you", // ToBeUpdated
+  special_ability: "summon the scared goat", // ToBeUpdated
 };
 
 const minhOurBoardDetailProps = {
@@ -86,7 +86,7 @@ const jackInfoCardProps = {
   position: "lead advisor",
   attack: 5,
   defense: 3,
-  special_ability: "he will get back to you",
+  special_ability: "summon the sacred goat",
 };
 
 const jackOurBoardDetailProps = {
@@ -146,7 +146,7 @@ const amberInfoCardProps = {
 };
 
 const amberOurBoardDetailProps = {
-  mainImage: "/underConstruction/work-in-progress-barrier.png", // ToBeUpdated
+  mainImage: "/memberPhotos/amber.jpg", // ToBeUpdated
   drawingImage: "/ourBoardDrawings/amber.png",
   infoCardProps: amberInfoCardProps,
   members: graphicsMembers,
@@ -183,7 +183,7 @@ const ayushInfoCardProps = {
 };
 
 const ayushOurBoardDetailProps = {
-  mainImage: "/underConstruction/work-in-progress-barrier.png", // ToBeUpdated
+  mainImage: "/memberPhotos/Ayush.jpg", // ToBeUpdated
   drawingImage: "/ourBoardDrawings/ayush.png",
   infoCardProps: ayushInfoCardProps,
   members: experienceMembers,
@@ -264,25 +264,6 @@ const sanayOurBoardDetailProps = {
   members: operationsMembers,
 };
 
-/* ------------------------------------------------------------
-                            Sky Removed
-   ------------------------------------------------------------ */
-
-const skyInfoCardProps = {
-  name: "Sky Wang",
-  position: "co-director of event operations",
-  attack: 5, // ToBeUpdated
-  defense: 3, // ToBeUpdated
-  special_ability: "summon the sacred goat", // ToBeUpdated
-};
-
-const skyOurBoardDetailProps = {
-  mainImage: "/underConstruction/work-in-progress-barrier.png",
-  drawingImage: "/underConstruction/work-in-progress-sign.png",
-  infoCardProps: skyInfoCardProps,
-  members: operationsMembers,
-};
-
 /* ============================================================
                         SPONSORS TEAM
    ============================================================ */
@@ -333,7 +314,7 @@ const ishithaInfoCardProps = {
 };
 
 const ishithaOurBoardDetailProps = {
-  mainImage: "/underConstruction/work-in-progress-barrier.png", // ToBeUpdated
+  mainImage: "/memberPhotos/Ishitha.jpg", // ToBeUpdated
   drawingImage: "/ourBoardDrawings/ishitha.png",
   infoCardProps: ishithaInfoCardProps,
   members: sponsorshipMembers,
@@ -469,7 +450,7 @@ const robertInfoCardProps = {
 };
 
 const robertOurBoardDetailProps = {
-  mainImage: "/underConstruction/work-in-progress-barrier.png", // ToBeUpdated
+  mainImage: "/memberPhotos/Robert.jpg", // ToBeUpdated
   drawingImage: "/ourBoardDrawings/robert.png",
   infoCardProps: robertInfoCardProps,
   members: marketingMembers,
@@ -622,13 +603,6 @@ export const Sanay = () => {
   );
 };
 
-export const Sky = () => (
-  <OurDetailBoardPage
-    props={skyOurBoardDetailProps}
-    styles={operationsOurBoardDetailStyles}
-  />
-);
-
 /* ============================================================
                             SPONSORSHIP
    ============================================================ */
@@ -676,7 +650,7 @@ export const Mason = () => (
 
 export const Rishi = () => {
   return (
-    <div id="MembersPage_1">
+    <div id="MembersPage_2">
       <OurDetailBoardPage
         props={rishiOurBoardDetailProps}
         styles={devOurBoardDetailStyles}
@@ -686,7 +660,7 @@ export const Rishi = () => {
 };
 
 export const Yahan = () => (
-  <div id="MembersPage_2">
+  <div id="MembersPage_1">
     <OurDetailBoardPage
       props={yahanOurBoardDetailProps}
       styles={devOurBoardDetailStyles}
