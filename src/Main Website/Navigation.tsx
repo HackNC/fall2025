@@ -146,10 +146,9 @@ const Navigation: React.FC = () => {
           />
           <h1
             className={`text-[48px] max-[1132px]:text-[45px] max-[455px]:text-[28px] max-[375px]:text-[22px] whitespace-nowrap
-              ${
-                getShowLightNavColor()
-                  ? "text-primary-light"
-                  : "text-primary-dark"
+              ${getShowLightNavColor()
+                ? "text-primary-light"
+                : "text-primary-dark"
               }`}
           >
             HACKNC 2025
@@ -207,9 +206,8 @@ const Navigation: React.FC = () => {
 
                   <span
                     onClick={toggleAboutDropdown}
-                    className={`inline-flex items-center transition-transform duration-200 ${
-                      aboutOpen ? "rotate-180" : ""
-                    }`}
+                    className={`inline-flex items-center transition-transform duration-200 ${aboutOpen ? "rotate-180" : ""
+                      }`}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -230,11 +228,10 @@ const Navigation: React.FC = () => {
 
                 {/* Dropdown menu */}
                 <div
-                  className={`mt-2 absolute left-1/2 top-[calc(100%+3px)] -translate-x-1/2 z-50 transition-all duration-200 ${
-                    aboutOpen
-                      ? "opacity-100 translate-y-0 pointer-events-auto"
-                      : "opacity-0 -translate-y-1 pointer-events-none"
-                  }`}
+                  className={`mt-2 absolute left-1/2 top-[calc(100%+3px)] -translate-x-1/2 z-50 transition-all duration-200 ${aboutOpen
+                    ? "opacity-100 translate-y-0 pointer-events-auto"
+                    : "opacity-0 -translate-y-1 pointer-events-none"
+                    }`}
                 >
                   <div
                     className="relative"
@@ -285,6 +282,16 @@ const Navigation: React.FC = () => {
                           our board
                         </a>
                       </li>
+
+                      {/* <li className="py-1">
+                        <a
+                          href="mailto:hacknsea@gmail.com"
+                          className="block text-primary-dark no-underline text-[36px] max-[1132px]:text-[33px]"
+                          style={{ fontFamily: "'Jersey 15', sans-serif" }}
+                        >
+                          contact us
+                        </a>
+                      </li> */}
                     </ul>
                   </div>
                 </div>
@@ -381,11 +388,10 @@ const Navigation: React.FC = () => {
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={1.8}
-                className={`w-8 h-8 transform transition-transform duration-150 ease-in-out max-[455px]:h-6 ${
-                  getShowLightNavColor()
-                    ? "stroke-primary-light"
-                    : "stroke-primary-dark"
-                }`}
+                className={`w-8 h-8 transform transition-transform duration-150 ease-in-out max-[455px]:h-6 ${getShowLightNavColor()
+                  ? "stroke-primary-light"
+                  : "stroke-primary-dark"
+                  }`}
               >
                 <path
                   strokeLinecap="round"
@@ -426,15 +432,13 @@ const Navigation: React.FC = () => {
           Includes background, menu links, divider, login, and glow image.
           ============================================================ */}
       <div
-        className={`fixed inset-0 z-[2000] flex flex-col max-md:flex ${
-          mobileMenuOpen || bgVisible ? "" : "pointer-events-none"
-        }`}
+        className={`fixed inset-0 z-[2000] flex flex-col max-md:flex ${mobileMenuOpen || bgVisible ? "" : "pointer-events-none"
+          }`}
       >
         {/* Background overlay */}
         <div
-          className={`absolute inset-0 bg-white transition-transform duration-500 ease-out origin-top ${
-            bgVisible ? "scale-y-100" : "scale-y-0"
-          }`}
+          className={`absolute inset-0 bg-white transition-transform duration-500 ease-out origin-top ${bgVisible ? "scale-y-100" : "scale-y-0"
+            }`}
         />
 
         {/* Menu content */}
@@ -445,11 +449,10 @@ const Navigation: React.FC = () => {
           {/* Main menu links */}
           <ul className="flex flex-col items-center gap-6 text-center text-primary-dark text-[32px] font-semibold max-[455px]:text-[30px] max-[375px]:text-[25px]">
             <li
-              className={`transition-all duration-300 ${
-                showAbout
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-2"
-              }`}
+              className={`transition-all duration-300 ${showAbout
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-2"
+                }`}
             >
               <a
                 href="#"
@@ -463,11 +466,10 @@ const Navigation: React.FC = () => {
             </li>
 
             <li
-              className={`transition-all duration-300 ${
-                showAbout
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-2"
-              }`}
+              className={`transition-all duration-300 ${showAbout
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-2"
+                }`}
             >
               <a
                 href="#"
@@ -480,11 +482,10 @@ const Navigation: React.FC = () => {
               </a>
             </li>
             <li
-              className={`transition-all duration-300 ${
-                showFaq
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-2"
-              }`}
+              className={`transition-all duration-300 ${showFaq
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-2"
+                }`}
             >
               <a
                 href="#"
@@ -497,11 +498,10 @@ const Navigation: React.FC = () => {
               </a>
             </li>
             <li
-              className={`transition-all duration-300 ${
-                showOurBoard
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-2"
-              }`}
+              className={`transition-all duration-300 ${showOurBoard
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-2"
+                }`}
             >
               <a
                 href="#"
@@ -514,11 +514,10 @@ const Navigation: React.FC = () => {
               </a>
             </li>
             <li
-              className={`transition-all duration-300 ${
-                showSponsors
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-2"
-              }`}
+              className={`transition-all duration-300 ${showSponsors
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-2"
+                }`}
             >
               <a
                 href="#"
@@ -534,9 +533,8 @@ const Navigation: React.FC = () => {
 
           {/* Divider */}
           <div
-            className={`w-[60%] border-t-2 border-gray-300 my-6 transition-all duration-300 ${
-              showDivider ? "opacity-100" : "opacity-0"
-            }`}
+            className={`w-[60%] border-t-2 border-gray-300 my-6 transition-all duration-300 ${showDivider ? "opacity-100" : "opacity-0"
+              }`}
           ></div>
 
           {/* Login */}
@@ -555,9 +553,8 @@ const Navigation: React.FC = () => {
 
           {/* HackNC Logo */}
           <div
-            className={`mt-[50px] transition-all duration-300 ${
-              showGlow ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
-            }`}
+            className={`mt-[50px] transition-all duration-300 ${showGlow ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
+              }`}
           >
             <img
               src="./HackNC_Glow.png"

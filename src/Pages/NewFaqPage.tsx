@@ -65,6 +65,10 @@ const NewFaqPage: React.FC = () => {
         question: "What is the MLH Code of Conduct?",
         answer: <a href='https://mlh.io/code-of-conduct' className='text-primary-light underline' target='_blank' rel='noopener noreferrer'>MLH Code of Conduct</a>
     };
+    const q9 = {
+        question: "More Questions? Get in touch!",
+        answer: <a href='https://linktr.ee/HackNC?utm_source=linktree_profile_share&ltsid=a05eb92f-2ddf-4ad3-9233-3dde0c4c546e' className='text-primary-light underline' target='_blank' rel='noopener noreferrer'>HackNC Linktree</a>
+    };
     return (
 
         <div id="NewFaqPage" className="w-full h-full flex flex-col items-center pl-10 pr-10 py-20 ">
@@ -79,6 +83,7 @@ const NewFaqPage: React.FC = () => {
                 <FaqItem props={q6} />
                 <FaqItem props={q7} />
                 <FaqItem props={q8} />
+                <FaqItem props={q9} />
             </div>
         </div>
     );
