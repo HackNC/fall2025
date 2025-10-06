@@ -38,13 +38,10 @@ const ScreenWrapper: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
     <div
       className="
         mx-auto my-auto
-        w-full md:w-[75vw] md:h-[80vh]
-        px-[2.5vw] md:px-0
-        w-full md:w-[75vw] md:h-[80vh]
+        w-full md:w-[75vw] 
+        h-[100vh] md:h-[80vh]
         px-[2.5vw] md:px-0
         md:rounded-[140px] md:shadow-2xl md:bg-gradient-to-b md:from-gradient-top md:to-gradient-bottom
-        overflow-x-hidden
-        md:overflow-x-auto md:overflow-y-hidden
         overflow-x-hidden
         md:overflow-x-auto md:overflow-y-hidden
         overflow-y-auto
@@ -70,9 +67,9 @@ export const SectionWrapper: React.FC<React.PropsWithChildren<{}>> = ({
         md:min-h-[var(--arcade-h)] 
         md:h-[var(--arcade-h)]
       "
-    // bg-[url('/noise_bg.svg')]
-    // bg-repeat
-    // bg-blend-overlay
+      // bg-[url('/noise_bg.svg')]
+      // bg-repeat
+      // bg-blend-overlay
     >
       {children}
     </section>
