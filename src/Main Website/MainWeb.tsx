@@ -184,12 +184,10 @@ const MainPage: React.FC = () => {
                 <SponsorshipPage />
               </SectionWrapper>
 
-              {/* Not Ready Yet! */}
-              {/* <SectionWrapper>
+              <SectionWrapper>
                 <Portal />
-              </SectionWrapper> */}
+              </SectionWrapper>
 
-              {/* Not Ready Yet! */}
               <SectionWrapper>
                 <OurBoardPage />
               </SectionWrapper>

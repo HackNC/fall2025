@@ -372,6 +372,7 @@ const devMembers = {
   Vuong_Nguyen: "/memberPhotos/Vuong_Nguyen.JPG",
   Sai_Nagamalla: "/memberPhotos/Sai.jpeg",
   Rithwik_Mishra: "/memberPhotos/Rithwikmishra.png",
+  Elizabeth_Chanda: "/memberPhotos/ElizabethChanda.jpg",
 };
 
 const devOurBoardDetailStyles = {

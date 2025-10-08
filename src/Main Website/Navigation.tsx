@@ -50,8 +50,8 @@ const Navigation: React.FC = () => {
      is exited
      ============================================================ */
   const [isMobile, setIsMobile] = makeIsMobileState(
-    (nextValue) => {
-      if (!nextValue && mobileMenuOpen) {
+    function (nextValue?: any) {
+      if (typeof nextValue !== "undefined" && !nextValue && mobileMenuOpen) {
         setMobileMenuOpen(false);
         resetAnimations();
       }
@@ -328,19 +328,19 @@ const Navigation: React.FC = () => {
               </li>
 
               {/* Portal link: UNCOMMENT WHEN PORTAL LINKING IS PROVIDED */}
-              {/* <li>
+              <li>
                 <a
                   href="#"
                   onClick={() => {
                     handleDesktopItemClick();
-                    scrollToSection("");
+                    scrollToSection("Portal");
                   }}
                   className="text-[36px] max-[1132px]:text-[33px] no-underline"
                   style={{ fontFamily: "'Jersey 15', sans-serif" }}
                 >
                   login
                 </a>
-              </li> */}
+              </li>
             </ul>
           </nav>
 

@@ -45,11 +45,12 @@ const HorizontalScroller: React.FC<HorizontalScrollerProps> = ({ children }) => 
     2: "AboutPage",
     3: "NewFaqPage",
     4: "SponsorshipPage",
-    5: "OurBoardPage",
-    6: "MembersPage_1",
-    7: "MembersPage_2",
-    8: "MembersPage_3",
-    9: "MembersPage_4",
+    5: "Portal",
+    6: "OurBoardPage",
+    7: "MembersPage_1",
+    8: "MembersPage_2",
+    9: "MembersPage_3",
+    10: "MembersPage_4",
   };
 
 
